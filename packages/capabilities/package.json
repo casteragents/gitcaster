@@ -1,0 +1,21 @@
+{
+  "name": "@gitcaster/capabilities",
+  "version": "0.1.0-alpha",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "node ../../src/node_modules/typescript/bin/tsc -p tsconfig.json",
+    "test": "node --test dist/capability.test.js",
+    "lint": "node ../../scripts/identity/check-pr03-identity.cjs --package-only",
+    "typecheck": "node ../../src/node_modules/typescript/bin/tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@gitcaster/protocol": "workspace:*",
+    "@gitcaster/identity": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

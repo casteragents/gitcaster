@@ -1,0 +1,26 @@
+export const GITCASTER_EVENTS = [
+  "gitcaster.repo.created.v1",
+  "gitcaster.repo.imported.v1",
+  "gitcaster.commit.pushed.v1",
+  "gitcaster.ref.updated.v1",
+  "gitcaster.ref.certificate.issued.v1",
+  "gitcaster.issue.opened.v1",
+  "gitcaster.issue.updated.v1",
+  "gitcaster.pr.opened.v1",
+  "gitcaster.pr.reviewed.v1",
+  "gitcaster.pr.merged.v1",
+  "gitcaster.agent.joined.v1",
+  "gitcaster.agent.capability.delegated.v1",
+  "gitcaster.app.published.v1",
+  "gitcaster.miniapp.imported.v1",
+  "gitcaster.domain.requested.v1",
+  "gitcaster.domain.mapped.v1",
+  "gitcaster.qstorage.published.v1",
+  "gitcaster.castercloud.deployed.v1",
+  "gitcaster.token.reward.proof.v1",
+  "gitcaster.node.announced.v1",
+  "gitcaster.node.health.signed.v1",
+  "gitcaster.replication.proof.v1",
+] as const;
+
+export type GitCasterEventName = (typeof GITCASTER_EVENTS)[number];

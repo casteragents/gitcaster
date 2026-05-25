@@ -1,0 +1,33 @@
+{
+  "type": "gitcaster.preview.ecosystem.v1",
+  "status": "preview",
+  "label": "Preview ecosystem - canonical manifest is local preview until PR-13 evidence passes.",
+  "canonicalManifest": "/gitcaster-ecosystem.canonical.json",
+  "entries": [
+    {
+      "name": "Caster Intelligence",
+      "status": "preview",
+      "sensitivity": "needs-review"
+    },
+    {
+      "name": "Caster-A1",
+      "status": "preview",
+      "sensitivity": "needs-review"
+    },
+    {
+      "name": "Caster Claim Miniapp",
+      "status": "preview",
+      "sensitivity": "public"
+    },
+    {
+      "name": "CasterAgents",
+      "status": "preview",
+      "sensitivity": "sensitive"
+    },
+    {
+      "name": "Caster Punks",
+      "status": "preview",
+      "sensitivity": "public-index-only"
+    }
+  ]
+}

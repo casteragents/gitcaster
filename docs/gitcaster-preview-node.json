@@ -1,0 +1,22 @@
+{
+  "type": "gitcaster.preview.node.v1",
+  "status": "preview",
+  "label": "Preview data - connect NEXT_PUBLIC_GITCASTER_NODE_URL to show Caster node telemetry after proof exists.",
+  "nodes": [
+    {
+      "name": "node.gitcaster.casterchain",
+      "status": "blocked",
+      "reason": "No signed public node health proof yet."
+    },
+    {
+      "name": "node2.gitcaster.casterchain",
+      "status": "blocked",
+      "reason": "No signed public node health proof yet."
+    },
+    {
+      "name": "node3.gitcaster.casterchain",
+      "status": "blocked",
+      "reason": "No signed public node health proof yet."
+    }
+  ]
+}

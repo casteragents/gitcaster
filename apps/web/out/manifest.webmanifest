@@ -1,0 +1,9 @@
+{
+  "name": "GitCaster",
+  "short_name": "GitCaster",
+  "description": "Build apps. Run agents. Own the repo.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07090d",
+  "theme_color": "#50e6d6"
+}

@@ -1,0 +1,6 @@
+{
+  "type": "gitcaster.preview.repos.v1",
+  "status": "preview",
+  "label": "Preview repos - start a local alpha node to show real repo data.",
+  "repos": []
+}

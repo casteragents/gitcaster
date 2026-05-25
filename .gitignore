@@ -1,0 +1,12 @@
+node_modules/
+.next/
+.next-*/
+dist/
+.env
+.env.*
+*.log
+*.pem
+*.key
+.vercel/
+.quilibrium/
+.DS_Store

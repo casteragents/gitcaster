@@ -1,0 +1,26 @@
+{
+  "name": "@gitcaster/web",
+  "version": "0.1.0-alpha",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node ../../scripts/web/build-static-export-copy.cjs",
+    "export": "node ../../scripts/web/build-static-export-copy.cjs",
+    "test": "node ../../scripts/web/check-web-truth-table.cjs",
+    "lint": "node ../../scripts/web/check-pr12-web-ui.cjs --package-only",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@gitcaster/protocol": "workspace:*",
+    "@gitcaster/repo-records": "workspace:*",
+    "next": "^16.2.3",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.4",
+    "@types/react-dom": "^19.2.3",
+    "typescript": "^5.9.3"
+  }
+}

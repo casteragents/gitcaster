@@ -1,0 +1,21 @@
+{
+  "name": "@gitcaster/cli",
+  "version": "0.1.0-alpha",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "gc": "dist/index.js"
+  },
+  "scripts": {
+    "build": "node ../../src/node_modules/typescript/bin/tsc -p tsconfig.json",
+    "typecheck": "node ../../src/node_modules/typescript/bin/tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@gitcaster/protocol": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

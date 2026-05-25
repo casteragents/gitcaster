@@ -1,0 +1,1026 @@
+{
+  "type": "gitcaster.ecosystem.rc-directory.v1",
+  "status": "ecosystem-rc-ready",
+  "createdAt": "2026-05-21T21:37:23.348Z",
+  "product": "GitCaster",
+  "source": {
+    "canonicalManifest": "apps/web/public/gitcaster-ecosystem.canonical.json",
+    "evidence": [
+      {
+        "path": "launch/evidence/pr-13-canonical-ecosystem.json",
+        "found": true
+      },
+      {
+        "path": "launch/evidence/pr-14-claim-miniapp-import.json",
+        "found": true
+      },
+      {
+        "path": "launch/evidence/pr-15-caster-punks-lite-index.json",
+        "found": true
+      },
+      {
+        "path": "launch/evidence/pr-16-casteragents-safety-lock.json",
+        "found": true
+      },
+      {
+        "path": "launch/evidence/pr-23-castercloud-qstorage-live-gate.json",
+        "found": true
+      },
+      {
+        "path": "launch/evidence/pr-24-public-node-ops-federation.json",
+        "found": true
+      },
+      {
+        "path": "launch/evidence/pr-25-web-production-hardening.json",
+        "found": true
+      },
+      {
+        "path": "launch/evidence/pr-27-security-redteam-crypto-audit.json",
+        "found": true
+      }
+    ]
+  },
+  "entries": [
+    {
+      "type": "gitcaster.ecosystem.app-directory.entry.v1",
+      "id": "gitcaster",
+      "name": "GitCaster",
+      "category": "Infrastructure",
+      "status": "alpha-local",
+      "sourcePath": ".",
+      "builder": "CasterChain",
+      "builderUrl": null,
+      "repoUrl": null,
+      "demoUrl": null,
+      "description": "Canonical GitCaster ecosystem entry with preview status until evidence exists.",
+      "uses": [
+        "GitCaster"
+      ],
+      "proof": {
+        "live": false,
+        "deployed": false,
+        "verified": false,
+        "qstorageVerified": false,
+        "castercloudVerified": false,
+        "securityReviewed": false,
+        "evidence": [
+          "."
+        ]
+      },
+      "safety": {
+        "sensitivity": "public",
+        "runtimeStatePublic": false,
+        "secretsExposed": false,
+        "imagesBundled": false,
+        "redacted": true
+      },
+      "badges": [],
+      "blockers": [
+        "Deployment status requires CasterCloud/QStorage evidence.",
+        "Evidence required before stronger status.",
+        "Live status requires direct evidence.",
+        "Verification status requires review evidence."
+      ],
+      "createdAt": "2026-05-21T19:31:57.889Z",
+      "updatedAt": "2026-05-21T19:31:57.889Z"
+    },
+    {
+      "type": "gitcaster.ecosystem.app-directory.entry.v1",
+      "id": "casterchain",
+      "name": "CasterChain",
+      "category": "Infrastructure",
+      "status": "preview",
+      "sourcePath": ".",
+      "builder": "CasterChain",
+      "builderUrl": null,
+      "repoUrl": null,
+      "demoUrl": null,
+      "description": "Canonical GitCaster ecosystem entry with preview status until evidence exists.",
+      "uses": [
+        "GitCaster"
+      ],
+      "proof": {
+        "live": false,
+        "deployed": false,
+        "verified": false,
+        "qstorageVerified": false,
+        "castercloudVerified": false,
+        "securityReviewed": false,
+        "evidence": [
+          "."
+        ]
+      },
+      "safety": {
+        "sensitivity": "public",
+        "runtimeStatePublic": false,
+        "secretsExposed": false,
+        "imagesBundled": false,
+        "redacted": true
+      },
+      "badges": [],
+      "blockers": [
+        "Deployment status requires CasterCloud/QStorage evidence.",
+        "Evidence required before stronger status.",
+        "Live status requires direct evidence.",
+        "Verification status requires review evidence."
+      ],
+      "createdAt": "2026-05-21T19:31:57.889Z",
+      "updatedAt": "2026-05-21T19:31:57.889Z"
+    },
+    {
+      "type": "gitcaster.ecosystem.app-directory.entry.v1",
+      "id": "caster-intelligence",
+      "name": "Caster Intelligence",
+      "category": "Builder tools",
+      "status": "preview",
+      "sourcePath": "caster intelligence",
+      "builder": "CasterChain",
+      "builderUrl": null,
+      "repoUrl": null,
+      "demoUrl": null,
+      "description": "Canonical GitCaster ecosystem entry with preview status until evidence exists.",
+      "uses": [
+        "GitCaster"
+      ],
+      "proof": {
+        "live": false,
+        "deployed": false,
+        "verified": false,
+        "qstorageVerified": false,
+        "castercloudVerified": false,
+        "securityReviewed": false,
+        "evidence": [
+          "caster intelligence"
+        ]
+      },
+      "safety": {
+        "sensitivity": "needs-review",
+        "runtimeStatePublic": false,
+        "secretsExposed": false,
+        "imagesBundled": false,
+        "redacted": true
+      },
+      "badges": [],
+      "blockers": [
+        "Deployment status requires CasterCloud/QStorage evidence.",
+        "Evidence required before stronger status.",
+        "Live status requires direct evidence.",
+        "Verification status requires review evidence."
+      ],
+      "createdAt": "2026-05-21T19:31:57.889Z",
+      "updatedAt": "2026-05-21T19:31:57.889Z"
+    },
+    {
+      "type": "gitcaster.ecosystem.app-directory.entry.v1",
+      "id": "caster-a1",
+      "name": "Caster-A1",
+      "category": "Local runtime",
+      "status": "preview",
+      "sourcePath": "caster-a1",
+      "builder": "CasterChain",
+      "builderUrl": null,
+      "repoUrl": null,
+      "demoUrl": null,
+      "description": "Canonical GitCaster ecosystem entry with preview status until evidence exists.",
+      "uses": [
+        "GitCaster"
+      ],
+      "proof": {
+        "live": false,
+        "deployed": false,
+        "verified": false,
+        "qstorageVerified": false,
+        "castercloudVerified": false,
+        "securityReviewed": false,
+        "evidence": [
+          "caster-a1"
+        ]
+      },
+      "safety": {
+        "sensitivity": "needs-review",
+        "runtimeStatePublic": false,
+        "secretsExposed": false,
+        "imagesBundled": false,
+        "redacted": true
+      },
+      "badges": [],
+      "blockers": [
+        "Deployment status requires CasterCloud/QStorage evidence.",
+        "Evidence required before stronger status.",
+        "Live status requires direct evidence.",
+        "Verification status requires review evidence."
+      ],
+      "createdAt": "2026-05-21T19:31:57.889Z",
+      "updatedAt": "2026-05-21T19:31:57.889Z"
+    },
+    {
+      "type": "gitcaster.ecosystem.app-directory.entry.v1",
+      "id": "caster-studio",
+      "name": "Caster Studio",
+      "category": "Proof / evidence",
+      "status": "preview",
+      "sourcePath": "caster-studio",
+      "builder": "CasterChain",
+      "builderUrl": null,
+      "repoUrl": null,
+      "demoUrl": null,
+      "description": "Canonical GitCaster ecosystem entry with preview status until evidence exists.",
+      "uses": [
+        "GitCaster"
+      ],
+      "proof": {
+        "live": false,
+        "deployed": false,
+        "verified": false,
+        "qstorageVerified": false,
+        "castercloudVerified": false,
+        "securityReviewed": false,
+        "evidence": [
+          "caster-studio"
+        ]
+      },
+      "safety": {
+        "sensitivity": "needs-review",
+        "runtimeStatePublic": false,
+        "secretsExposed": false,
+        "imagesBundled": false,
+        "redacted": true
+      },
+      "badges": [],
+      "blockers": [
+        "Deployment status requires CasterCloud/QStorage evidence.",
+        "Evidence required before stronger status.",
+        "Live status requires direct evidence.",
+        "Verification status requires review evidence."
+      ],
+      "createdAt": "2026-05-21T19:31:57.889Z",
+      "updatedAt": "2026-05-21T19:31:57.889Z"
+    },
+    {
+      "type": "gitcaster.ecosystem.app-directory.entry.v1",
+      "id": "caster-claim-miniapp",
+      "name": "Caster Claim Miniapp",
+      "category": "Miniapps",
+      "status": "template-candidate",
+      "sourcePath": "caster-claim-miniapp",
+      "builder": "CasterChain",
+      "builderUrl": null,
+      "repoUrl": null,
+      "demoUrl": null,
+      "description": "First miniapp migration target for PR-14; listed here without migration.",
+      "uses": [
+        "CasterCloud",
+        "Farcaster",
+        "GitCaster",
+        "Miniapps"
+      ],
+      "proof": {
+        "live": false,
+        "deployed": false,
+        "verified": false,
+        "qstorageVerified": false,
+        "castercloudVerified": false,
+        "securityReviewed": false,
+        "evidence": [
+          "caster-claim-miniapp"
+        ]
+      },
+      "safety": {
+        "sensitivity": "public",
+        "runtimeStatePublic": false,
+        "secretsExposed": false,
+        "imagesBundled": false,
+        "redacted": true
+      },
+      "badges": [],
+      "blockers": [
+        "CasterCloud/QStorage verification required before stronger claims.",
+        "Deployment proof required before live or deployed labels.",
+        "Deployment status requires CasterCloud/QStorage evidence.",
+        "Evidence required before stronger status.",
+        "Live status requires direct evidence.",
+        "Verification status requires review evidence."
+      ],
+      "createdAt": "2026-05-21T19:31:57.889Z",
+      "updatedAt": "2026-05-21T19:31:57.889Z"
+    },
+    {
+      "type": "gitcaster.ecosystem.app-directory.entry.v1",
+      "id": "casteragents",
+      "name": "CasterAgents",
+      "category": "Agents",
+      "status": "needs-review",
+      "sourcePath": "casteragents-projects",
+      "builder": "CasterChain",
+      "builderUrl": null,
+      "repoUrl": null,
+      "demoUrl": null,
+      "description": "Agent workspace listed with sensitive runtime state redacted until safety review.",
+      "uses": [
+        "GitCaster"
+      ],
+      "proof": {
+        "live": false,
+        "deployed": false,
+        "verified": false,
+        "qstorageVerified": false,
+        "castercloudVerified": false,
+        "securityReviewed": false,
+        "evidence": [
+          "casteragents-projects"
+        ]
+      },
+      "safety": {
+        "sensitivity": "sensitive",
+        "runtimeStatePublic": false,
+        "secretsExposed": false,
+        "imagesBundled": false,
+        "redacted": true
+      },
+      "badges": [],
+      "blockers": [
+        "Deployment status requires CasterCloud/QStorage evidence.",
+        "Evidence required before stronger status.",
+        "Live status requires direct evidence.",
+        "Sensitive runtime state remains redacted.",
+        "Verification status requires review evidence."
+      ],
+      "createdAt": "2026-05-21T19:31:57.889Z",
+      "updatedAt": "2026-05-21T19:31:57.889Z"
+    },
+    {
+      "type": "gitcaster.ecosystem.app-directory.entry.v1",
+      "id": "casterai",
+      "name": "CasterAI",
+      "category": "Agents",
+      "status": "needs-review",
+      "sourcePath": "casteragents-projects/.npm-cache-casterai",
+      "builder": "CasterChain",
+      "builderUrl": null,
+      "repoUrl": null,
+      "demoUrl": null,
+      "description": "Canonical GitCaster ecosystem entry with preview status until evidence exists.",
+      "uses": [
+        "GitCaster"
+      ],
+      "proof": {
+        "live": false,
+        "deployed": false,
+        "verified": false,
+        "qstorageVerified": false,
+        "castercloudVerified": false,
+        "securityReviewed": false,
+        "evidence": [
+          "casteragents-projects/.npm-cache-casterai"
+        ]
+      },
+      "safety": {
+        "sensitivity": "sensitive",
+        "runtimeStatePublic": false,
+        "secretsExposed": false,
+        "imagesBundled": false,
+        "redacted": true
+      },
+      "badges": [],
+      "blockers": [
+        "Deployment status requires CasterCloud/QStorage evidence.",
+        "Evidence required before stronger status.",
+        "Live status requires direct evidence.",
+        "Sensitive runtime state remains redacted.",
+        "Verification status requires review evidence."
+      ],
+      "createdAt": "2026-05-21T19:31:57.889Z",
+      "updatedAt": "2026-05-21T19:31:57.889Z"
+    },
+    {
+      "type": "gitcaster.ecosystem.app-directory.entry.v1",
+      "id": "casterapp",
+      "name": "CasterApp",
+      "category": "Agents",
+      "status": "needs-review",
+      "sourcePath": "caster-a1/apps/desktop/src/lib/casterAppServerClient.ts",
+      "builder": "CasterChain",
+      "builderUrl": null,
+      "repoUrl": null,
+      "demoUrl": null,
+      "description": "Canonical GitCaster ecosystem entry with preview status until evidence exists.",
+      "uses": [
+        "GitCaster"
+      ],
+      "proof": {
+        "live": false,
+        "deployed": false,
+        "verified": false,
+        "qstorageVerified": false,
+        "castercloudVerified": false,
+        "securityReviewed": false,
+        "evidence": [
+          "caster-a1/apps/desktop/src/lib/casterAppServerClient.ts"
+        ]
+      },
+      "safety": {
+        "sensitivity": "secret-risk",
+        "runtimeStatePublic": false,
+        "secretsExposed": false,
+        "imagesBundled": false,
+        "redacted": true
+      },
+      "badges": [],
+      "blockers": [
+        "Agent/API code requires review before public claims.",
+        "Deployment status requires CasterCloud/QStorage evidence.",
+        "Evidence required before stronger status.",
+        "Live status requires direct evidence.",
+        "Verification status requires review evidence."
+      ],
+      "createdAt": "2026-05-21T19:31:57.889Z",
+      "updatedAt": "2026-05-21T19:31:57.889Z"
+    },
+    {
+      "type": "gitcaster.ecosystem.app-directory.entry.v1",
+      "id": "tapcaster",
+      "name": "TapCaster",
+      "category": "Integrations",
+      "status": "needs-review",
+      "sourcePath": "casteragents-projects/.npm-cache-tapcaster",
+      "builder": "CasterChain",
+      "builderUrl": null,
+      "repoUrl": null,
+      "demoUrl": null,
+      "description": "Canonical GitCaster ecosystem entry with preview status until evidence exists.",
+      "uses": [
+        "Farcaster",
+        "GitCaster"
+      ],
+      "proof": {
+        "live": false,
+        "deployed": false,
+        "verified": false,
+        "qstorageVerified": false,
+        "castercloudVerified": false,
+        "securityReviewed": false,
+        "evidence": [
+          "casteragents-projects/.npm-cache-tapcaster"
+        ]
+      },
+      "safety": {
+        "sensitivity": "sensitive",
+        "runtimeStatePublic": false,
+        "secretsExposed": false,
+        "imagesBundled": false,
+        "redacted": true
+      },
+      "badges": [],
+      "blockers": [
+        "Deployment status requires CasterCloud/QStorage evidence.",
+        "Evidence required before stronger status.",
+        "Live status requires direct evidence.",
+        "Sensitive runtime state remains redacted.",
+        "Verification status requires review evidence."
+      ],
+      "createdAt": "2026-05-21T19:31:57.889Z",
+      "updatedAt": "2026-05-21T19:31:57.889Z"
+    },
+    {
+      "type": "gitcaster.ecosystem.app-directory.entry.v1",
+      "id": "casterchain-agents",
+      "name": "CasterChain Agents",
+      "category": "Agents",
+      "status": "needs-review",
+      "sourcePath": "caster-a1/crates/caster-app-server/src/agents_md.rs",
+      "builder": "CasterChain",
+      "builderUrl": null,
+      "repoUrl": null,
+      "demoUrl": null,
+      "description": "Agent workspace listed with sensitive runtime state redacted until safety review.",
+      "uses": [
+        "GitCaster"
+      ],
+      "proof": {
+        "live": false,
+        "deployed": false,
+        "verified": false,
+        "qstorageVerified": false,
+        "castercloudVerified": false,
+        "securityReviewed": false,
+        "evidence": [
+          "caster-a1/crates/caster-app-server/src/agents_md.rs"
+        ]
+      },
+      "safety": {
+        "sensitivity": "needs-review",
+        "runtimeStatePublic": false,
+        "secretsExposed": false,
+        "imagesBundled": false,
+        "redacted": true
+      },
+      "badges": [],
+      "blockers": [
+        "Deployment status requires CasterCloud/QStorage evidence.",
+        "Evidence required before stronger status.",
+        "Live status requires direct evidence.",
+        "Verification status requires review evidence."
+      ],
+      "createdAt": "2026-05-21T19:31:57.889Z",
+      "updatedAt": "2026-05-21T19:31:57.889Z"
+    },
+    {
+      "type": "gitcaster.ecosystem.app-directory.entry.v1",
+      "id": "caster-punks",
+      "name": "Caster Punks",
+      "category": "Collectibles",
+      "status": "index-only",
+      "sourcePath": "casteragents-projects/Caster Punks",
+      "builder": "CasterChain",
+      "builderUrl": null,
+      "repoUrl": null,
+      "demoUrl": null,
+      "description": "Collectibles surface listed index-only until PR-15.",
+      "uses": [
+        "GitCaster",
+        "QStorage"
+      ],
+      "proof": {
+        "live": false,
+        "deployed": false,
+        "verified": false,
+        "qstorageVerified": false,
+        "castercloudVerified": false,
+        "securityReviewed": false,
+        "evidence": [
+          "casteragents-projects/Caster Punks"
+        ]
+      },
+      "safety": {
+        "sensitivity": "public",
+        "runtimeStatePublic": false,
+        "secretsExposed": false,
+        "imagesBundled": false,
+        "redacted": true
+      },
+      "badges": [],
+      "blockers": [
+        "CasterCloud/QStorage verification required before stronger claims.",
+        "Deployment status requires CasterCloud/QStorage evidence.",
+        "Evidence required before stronger status.",
+        "Live status requires direct evidence.",
+        "Publish proof required before image or collection availability claims.",
+        "Verification status requires review evidence."
+      ],
+      "createdAt": "2026-05-21T19:31:57.889Z",
+      "updatedAt": "2026-05-21T19:31:57.889Z"
+    },
+    {
+      "type": "gitcaster.ecosystem.app-directory.entry.v1",
+      "id": "castergames-xgames",
+      "name": "CasterGames / xgames",
+      "category": "Games",
+      "status": "preview",
+      "sourcePath": "not-found/castergames-xgames",
+      "builder": "CasterChain",
+      "builderUrl": null,
+      "repoUrl": null,
+      "demoUrl": null,
+      "description": "Canonical GitCaster ecosystem entry with preview status until evidence exists.",
+      "uses": [
+        "GitCaster"
+      ],
+      "proof": {
+        "live": false,
+        "deployed": false,
+        "verified": false,
+        "qstorageVerified": false,
+        "castercloudVerified": false,
+        "securityReviewed": false,
+        "evidence": []
+      },
+      "safety": {
+        "sensitivity": "public",
+        "runtimeStatePublic": false,
+        "secretsExposed": false,
+        "imagesBundled": false,
+        "redacted": true
+      },
+      "badges": [],
+      "blockers": [
+        "Deployment status requires CasterCloud/QStorage evidence.",
+        "Entry not found in allowed PR-13 scan roots.",
+        "Live status requires direct evidence.",
+        "Verification status requires review evidence."
+      ],
+      "createdAt": "2026-05-21T19:31:57.889Z",
+      "updatedAt": "2026-05-21T19:31:57.889Z"
+    },
+    {
+      "type": "gitcaster.ecosystem.app-directory.entry.v1",
+      "id": "casterexchange",
+      "name": "CasterExchange",
+      "category": "Finance",
+      "status": "preview",
+      "sourcePath": "casterexchange",
+      "builder": "CasterChain",
+      "builderUrl": null,
+      "repoUrl": null,
+      "demoUrl": null,
+      "description": "Canonical GitCaster ecosystem entry with preview status until evidence exists.",
+      "uses": [
+        "GitCaster"
+      ],
+      "proof": {
+        "live": false,
+        "deployed": false,
+        "verified": false,
+        "qstorageVerified": false,
+        "castercloudVerified": false,
+        "securityReviewed": false,
+        "evidence": [
+          "casterexchange"
+        ]
+      },
+      "safety": {
+        "sensitivity": "public",
+        "runtimeStatePublic": false,
+        "secretsExposed": false,
+        "imagesBundled": false,
+        "redacted": true
+      },
+      "badges": [],
+      "blockers": [
+        "Deployment status requires CasterCloud/QStorage evidence.",
+        "Evidence required before stronger status.",
+        "Live status requires direct evidence.",
+        "Verification status requires review evidence."
+      ],
+      "createdAt": "2026-05-21T19:31:57.889Z",
+      "updatedAt": "2026-05-21T19:31:57.889Z"
+    },
+    {
+      "type": "gitcaster.ecosystem.app-directory.entry.v1",
+      "id": "qstorage-tools",
+      "name": "QStorage tools",
+      "category": "Storage",
+      "status": "requires-endpoint",
+      "sourcePath": "packages/object-store/src/qstorage-driver.ts",
+      "builder": "CasterChain",
+      "builderUrl": null,
+      "repoUrl": null,
+      "demoUrl": null,
+      "description": "QStorage tool surface listed as endpoint-gated.",
+      "uses": [
+        "GitCaster",
+        "QStorage"
+      ],
+      "proof": {
+        "live": false,
+        "deployed": false,
+        "verified": false,
+        "qstorageVerified": false,
+        "castercloudVerified": false,
+        "securityReviewed": false,
+        "evidence": [
+          "packages/object-store/src/qstorage-driver.ts"
+        ]
+      },
+      "safety": {
+        "sensitivity": "public",
+        "runtimeStatePublic": false,
+        "secretsExposed": false,
+        "imagesBundled": false,
+        "redacted": true
+      },
+      "badges": [],
+      "blockers": [
+        "CasterCloud/QStorage verification required before stronger claims.",
+        "Deployment status requires CasterCloud/QStorage evidence.",
+        "Evidence required before stronger status.",
+        "Live status requires direct evidence.",
+        "Verification status requires review evidence."
+      ],
+      "createdAt": "2026-05-21T19:31:57.889Z",
+      "updatedAt": "2026-05-21T19:31:57.889Z"
+    },
+    {
+      "type": "gitcaster.ecosystem.app-directory.entry.v1",
+      "id": "castercloud-tools",
+      "name": "CasterCloud tools",
+      "category": "CasterCloud deployments",
+      "status": "requires-endpoint",
+      "sourcePath": "packages/object-store/src/castercloud-driver.ts",
+      "builder": "CasterChain",
+      "builderUrl": null,
+      "repoUrl": null,
+      "demoUrl": null,
+      "description": "CasterCloud tool surface listed as endpoint-gated.",
+      "uses": [
+        "CasterCloud",
+        "GitCaster"
+      ],
+      "proof": {
+        "live": false,
+        "deployed": false,
+        "verified": false,
+        "qstorageVerified": false,
+        "castercloudVerified": false,
+        "securityReviewed": false,
+        "evidence": [
+          "packages/object-store/src/castercloud-driver.ts"
+        ]
+      },
+      "safety": {
+        "sensitivity": "public",
+        "runtimeStatePublic": false,
+        "secretsExposed": false,
+        "imagesBundled": false,
+        "redacted": true
+      },
+      "badges": [],
+      "blockers": [
+        "CasterCloud/QStorage verification required before stronger claims.",
+        "Deployment status requires CasterCloud/QStorage evidence.",
+        "Evidence required before stronger status.",
+        "Live status requires direct evidence.",
+        "Verification status requires review evidence."
+      ],
+      "createdAt": "2026-05-21T19:31:57.889Z",
+      "updatedAt": "2026-05-21T19:31:57.889Z"
+    },
+    {
+      "type": "gitcaster.ecosystem.app-directory.entry.v1",
+      "id": "farcaster-miniapps",
+      "name": "Farcaster miniapps",
+      "category": "Integrations",
+      "status": "template-candidate",
+      "sourcePath": "caster-claim-miniapp/vendor/farcaster-miniapp-sdk-0.3.0.esm.js",
+      "builder": "CasterChain",
+      "builderUrl": null,
+      "repoUrl": null,
+      "demoUrl": null,
+      "description": "Canonical GitCaster ecosystem entry with preview status until evidence exists.",
+      "uses": [
+        "Farcaster",
+        "GitCaster",
+        "Miniapps"
+      ],
+      "proof": {
+        "live": false,
+        "deployed": false,
+        "verified": false,
+        "qstorageVerified": false,
+        "castercloudVerified": false,
+        "securityReviewed": false,
+        "evidence": [
+          "caster-claim-miniapp/vendor/farcaster-miniapp-sdk-0.3.0.esm.js"
+        ]
+      },
+      "safety": {
+        "sensitivity": "public",
+        "runtimeStatePublic": false,
+        "secretsExposed": false,
+        "imagesBundled": false,
+        "redacted": true
+      },
+      "badges": [],
+      "blockers": [
+        "Deployment proof required before live or deployed labels.",
+        "Deployment status requires CasterCloud/QStorage evidence.",
+        "Evidence required before stronger status.",
+        "Live status requires direct evidence.",
+        "Verification status requires review evidence."
+      ],
+      "createdAt": "2026-05-21T19:31:57.889Z",
+      "updatedAt": "2026-05-21T19:31:57.889Z"
+    },
+    {
+      "type": "gitcaster.ecosystem.app-directory.entry.v1",
+      "id": "castercaster-token",
+      "name": "$CASTER token",
+      "category": "Token",
+      "status": "proof-only",
+      "sourcePath": "[redacted-sensitive-path]",
+      "builder": "CasterChain",
+      "builderUrl": null,
+      "repoUrl": null,
+      "demoUrl": null,
+      "description": "$CASTER token surface listed as proof-only until contract, audit, and governance evidence exists.",
+      "uses": [
+        "GitCaster"
+      ],
+      "proof": {
+        "live": false,
+        "deployed": false,
+        "verified": false,
+        "qstorageVerified": false,
+        "castercloudVerified": false,
+        "securityReviewed": false,
+        "evidence": [
+          "[redacted-sensitive-path]"
+        ]
+      },
+      "safety": {
+        "sensitivity": "public",
+        "runtimeStatePublic": false,
+        "secretsExposed": false,
+        "imagesBundled": false,
+        "redacted": true
+      },
+      "badges": [],
+      "blockers": [
+        "Contract, audit, and governance proof required.",
+        "Deployment status requires CasterCloud/QStorage evidence.",
+        "Evidence required before stronger status.",
+        "Live status requires direct evidence.",
+        "Verification status requires review evidence."
+      ],
+      "createdAt": "2026-05-21T19:31:57.889Z",
+      "updatedAt": "2026-05-21T19:31:57.889Z"
+    },
+    {
+      "type": "gitcaster.ecosystem.app-directory.entry.v1",
+      "id": "wallet-security-tools",
+      "name": "Wallet/security tools",
+      "category": "Security",
+      "status": "preview",
+      "sourcePath": "caster-a1/ALPHA_SECURITY_NOTICE.md",
+      "builder": "CasterChain",
+      "builderUrl": null,
+      "repoUrl": null,
+      "demoUrl": null,
+      "description": "Canonical GitCaster ecosystem entry with preview status until evidence exists.",
+      "uses": [
+        "GitCaster"
+      ],
+      "proof": {
+        "live": false,
+        "deployed": false,
+        "verified": false,
+        "qstorageVerified": false,
+        "castercloudVerified": false,
+        "securityReviewed": false,
+        "evidence": [
+          "caster-a1/ALPHA_SECURITY_NOTICE.md"
+        ]
+      },
+      "safety": {
+        "sensitivity": "needs-review",
+        "runtimeStatePublic": false,
+        "secretsExposed": false,
+        "imagesBundled": false,
+        "redacted": true
+      },
+      "badges": [],
+      "blockers": [
+        "Deployment status requires CasterCloud/QStorage evidence.",
+        "Evidence required before stronger status.",
+        "Live status requires direct evidence.",
+        "Verification status requires review evidence."
+      ],
+      "createdAt": "2026-05-21T19:31:57.889Z",
+      "updatedAt": "2026-05-21T19:31:57.889Z"
+    },
+    {
+      "type": "gitcaster.ecosystem.app-directory.entry.v1",
+      "id": "proof-release-evidence",
+      "name": "Proof/release evidence",
+      "category": "Proof / evidence",
+      "status": "preview",
+      "sourcePath": "launch/evidence",
+      "builder": "CasterChain",
+      "builderUrl": null,
+      "repoUrl": null,
+      "demoUrl": null,
+      "description": "Canonical GitCaster ecosystem entry with preview status until evidence exists.",
+      "uses": [
+        "GitCaster"
+      ],
+      "proof": {
+        "live": false,
+        "deployed": false,
+        "verified": false,
+        "qstorageVerified": false,
+        "castercloudVerified": false,
+        "securityReviewed": false,
+        "evidence": [
+          "launch/evidence"
+        ]
+      },
+      "safety": {
+        "sensitivity": "public",
+        "runtimeStatePublic": false,
+        "secretsExposed": false,
+        "imagesBundled": false,
+        "redacted": true
+      },
+      "badges": [],
+      "blockers": [
+        "Deployment status requires CasterCloud/QStorage evidence.",
+        "Evidence required before stronger status.",
+        "Live status requires direct evidence.",
+        "Verification status requires review evidence."
+      ],
+      "createdAt": "2026-05-21T19:31:57.889Z",
+      "updatedAt": "2026-05-21T19:31:57.889Z"
+    },
+    {
+      "type": "gitcaster.ecosystem.app-directory.entry.v1",
+      "id": "policy-sandbox-wallet-guard-crates",
+      "name": "Policy/sandbox/wallet guard crates",
+      "category": "Security",
+      "status": "preview",
+      "sourcePath": "caster-a1/crates/caster-policy",
+      "builder": "CasterChain",
+      "builderUrl": null,
+      "repoUrl": null,
+      "demoUrl": null,
+      "description": "Canonical GitCaster ecosystem entry with preview status until evidence exists.",
+      "uses": [
+        "GitCaster"
+      ],
+      "proof": {
+        "live": false,
+        "deployed": false,
+        "verified": false,
+        "qstorageVerified": false,
+        "castercloudVerified": false,
+        "securityReviewed": false,
+        "evidence": [
+          "caster-a1/crates/caster-policy"
+        ]
+      },
+      "safety": {
+        "sensitivity": "needs-review",
+        "runtimeStatePublic": false,
+        "secretsExposed": false,
+        "imagesBundled": false,
+        "redacted": true
+      },
+      "badges": [],
+      "blockers": [
+        "Deployment status requires CasterCloud/QStorage evidence.",
+        "Evidence required before stronger status.",
+        "Live status requires direct evidence.",
+        "Verification status requires review evidence."
+      ],
+      "createdAt": "2026-05-21T19:31:57.889Z",
+      "updatedAt": "2026-05-21T19:31:57.889Z"
+    },
+    {
+      "type": "gitcaster.ecosystem.app-directory.entry.v1",
+      "id": "agent-workspace-skills",
+      "name": "Agent workspace/skills",
+      "category": "Agents",
+      "status": "preview",
+      "sourcePath": "caster-a1/crates/caster-app-server/src/agents_md.rs",
+      "builder": "CasterChain",
+      "builderUrl": null,
+      "repoUrl": null,
+      "demoUrl": null,
+      "description": "Canonical GitCaster ecosystem entry with preview status until evidence exists.",
+      "uses": [
+        "GitCaster"
+      ],
+      "proof": {
+        "live": false,
+        "deployed": false,
+        "verified": false,
+        "qstorageVerified": false,
+        "castercloudVerified": false,
+        "securityReviewed": false,
+        "evidence": [
+          "caster-a1/crates/caster-app-server/src/agents_md.rs"
+        ]
+      },
+      "safety": {
+        "sensitivity": "needs-review",
+        "runtimeStatePublic": false,
+        "secretsExposed": false,
+        "imagesBundled": false,
+        "redacted": true
+      },
+      "badges": [],
+      "blockers": [
+        "Deployment status requires CasterCloud/QStorage evidence.",
+        "Evidence required before stronger status.",
+        "Live status requires direct evidence.",
+        "Verification status requires review evidence."
+      ],
+      "createdAt": "2026-05-21T19:31:57.889Z",
+      "updatedAt": "2026-05-21T19:31:57.889Z"
+    }
+  ],
+  "summary": {
+    "entriesTotal": 22,
+    "featured": 0,
+    "live": 0,
+    "needsReview": 5,
+    "blocked": 22,
+    "sensitive": 3,
+    "secretRisk": 1
+  },
+  "rootHash": "sha256:73681bb4ffe8b946b180cfb5c90819a9f4ca239ed609026f7711d8fcab238a45",
+  "canShipProduction": false,
+  "notes": [
+    "RC directory is proof-aware.",
+    "Listings are not approval.",
+    "Live/deployed/verified labels require evidence."
+  ]
+}

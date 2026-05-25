@@ -1,0 +1,6 @@
+{
+  "type": "gitcaster.preview.evidence.v1",
+  "status": "preview",
+  "label": "Preview evidence list - generated launch/evidence files are linked when present.",
+  "evidence": []
+}

@@ -1,0 +1,25 @@
+{
+  "name": "@gitcaster/ref-consensus",
+  "version": "0.1.0-alpha",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "node ../../src/node_modules/typescript/bin/tsc -p tsconfig.json",
+    "test": "node --test dist/ref-consensus.test.js",
+    "lint": "node ../../scripts/ref-consensus/check-pr07-ref-consensus.cjs --package-only",
+    "typecheck": "node ../../src/node_modules/typescript/bin/tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@gitcaster/protocol": "workspace:*",
+    "@gitcaster/identity": "workspace:*",
+    "@gitcaster/capabilities": "workspace:*",
+    "@gitcaster/security": "workspace:*",
+    "@gitcaster/object-store": "workspace:*",
+    "@gitcaster/repo-records": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

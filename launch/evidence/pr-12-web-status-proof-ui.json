@@ -1,0 +1,377 @@
+{
+  "type": "gitcaster.pr.evidence.v1",
+  "pr": "PR-12",
+  "title": "Web status and proof UI",
+  "createdAt": "2026-05-25T08:37:46.320Z",
+  "repoRoot": "D:\\user\\xxxcrypto-vercel-clean\\.quilibrium\\gitcaster-public-github-release\\gitcaster-public-repo",
+  "filesChanged": [
+    "apps/web/package.json",
+    "apps/web/tsconfig.json",
+    "apps/web/next.config.mjs",
+    "apps/web/app/layout.tsx",
+    "apps/web/app/page.tsx",
+    "apps/web/app/start/page.tsx",
+    "apps/web/app/status/page.tsx",
+    "apps/web/app/node/page.tsx",
+    "apps/web/app/node/repos/page.tsx",
+    "apps/web/app/ecosystem/page.tsx",
+    "apps/web/app/security/page.tsx",
+    "apps/web/app/deploy/page.tsx",
+    "apps/web/app/token/page.tsx",
+    "apps/web/app/domains/page.tsx",
+    "apps/web/components/TruthStatusPill.tsx",
+    "apps/web/components/TruthTable.tsx",
+    "apps/web/components/ProofPanel.tsx",
+    "apps/web/components/ExternalBlockerPanel.tsx",
+    "apps/web/components/CasterShell.tsx",
+    "apps/web/components/CasterNav.tsx",
+    "apps/web/components/CasterFooter.tsx",
+    "apps/web/components/CasterTerminal.tsx",
+    "apps/web/components/NodePreviewPanel.tsx",
+    "apps/web/components/RepoPreviewPanel.tsx",
+    "apps/web/components/TokenHonestyPanel.tsx",
+    "apps/web/components/DomainHonestyPanel.tsx",
+    "apps/web/components/DeployHonestyPanel.tsx",
+    "apps/web/components/SecurityPosturePanel.tsx",
+    "apps/web/lib/status-truth.ts",
+    "apps/web/lib/preview-data.ts",
+    "apps/web/lib/evidence-links.ts",
+    "apps/web/lib/caster-copy.ts",
+    "apps/web/styles/caster-theme.css",
+    "apps/web/public/gitcaster-preview-node.json",
+    "apps/web/public/gitcaster-preview-evidence.json",
+    "apps/web/public/gitcaster-preview-repos.json",
+    "apps/web/public/gitcaster-preview-ecosystem.json",
+    "apps/web/public/manifest.webmanifest",
+    "apps/web/public/robots.txt",
+    "scripts/web/check-web-truth-table.cjs",
+    "scripts/web/check-pr12-web-ui.cjs",
+    "launch/evidence/pr-12-web-status-proof-ui.json"
+  ],
+  "commandsRun": [
+    "node scripts/web/check-web-truth-table.cjs"
+  ],
+  "passed": true,
+  "failed": false,
+  "blockers": [],
+  "artifacts": [
+    {
+      "path": "apps/web/package.json",
+      "sha256": "948b0f695bd60d0726d21a91ef88ac22857a742b1e5dcf09b8549dfc55ca9e98"
+    },
+    {
+      "path": "apps/web/tsconfig.json",
+      "sha256": "2f1fa70c9bf664d04de6c91f92dedb481b217bd1b935406d0c10d1cf764afc3f"
+    },
+    {
+      "path": "apps/web/next.config.mjs",
+      "sha256": "2de1b8439e871ff93acd8bcdfe6a72fe8cba016bc83d483a19e827df00c80656"
+    },
+    {
+      "path": "apps/web/app/layout.tsx",
+      "sha256": "4cd4f9ba5481082332abe211a53d7b5b5112f3c87b43d0c44a96972c44bddb60"
+    },
+    {
+      "path": "apps/web/app/page.tsx",
+      "sha256": "fb902b375d640d63a7bcdcad07aa3f4b33333fb21130729374d63ea470df524b"
+    },
+    {
+      "path": "apps/web/app/start/page.tsx",
+      "sha256": "693b4a7d1efa51daba821ef01ec93f9c31f5787018e02dc80b06d715d67e94d4"
+    },
+    {
+      "path": "apps/web/app/status/page.tsx",
+      "sha256": "1dfeab85cd5f1bcd61e266941dc7ba1db78e00767bfdad0b3e91bd14730a0ef8"
+    },
+    {
+      "path": "apps/web/app/node/page.tsx",
+      "sha256": "f05dbbd3609f0c87dead74e1cfe4bdc6087613c8bfb9077e612aec472f294115"
+    },
+    {
+      "path": "apps/web/app/node/repos/page.tsx",
+      "sha256": "ec56f6f73be5e3c7dbb74db0069626edc139e408647826587f04feca4cdd2bf1"
+    },
+    {
+      "path": "apps/web/app/ecosystem/page.tsx",
+      "sha256": "547dfe1ec08417dab86265a151de8a6f0a7567ec080f553789183bfd5b2302b9"
+    },
+    {
+      "path": "apps/web/app/security/page.tsx",
+      "sha256": "e921ee4b491f04c71ca7301b891fb6c437e4e78b2fecd1a4249c4c549d61761e"
+    },
+    {
+      "path": "apps/web/app/deploy/page.tsx",
+      "sha256": "23596728425f937e048d36bddedfa2b535627ccf9f5e01952dfdc21bb13b7aa7"
+    },
+    {
+      "path": "apps/web/app/token/page.tsx",
+      "sha256": "e24e81da908f20cdd2c33e454a6bc246ba1ce642d62069db85f8898390abf223"
+    },
+    {
+      "path": "apps/web/app/domains/page.tsx",
+      "sha256": "c743b1263ea6debddb802070a08e4bcf9297932ac9d958baa0c702c97534b960"
+    },
+    {
+      "path": "apps/web/components/TruthStatusPill.tsx",
+      "sha256": "13c2a6d51689fbb5a943c339e9f5950deb25fd8c47f9695b11a2ceadb2a897bf"
+    },
+    {
+      "path": "apps/web/components/TruthTable.tsx",
+      "sha256": "f457ab2417fb44fe42e666454cd6a7003b99ecaf72196a9f51d6aa7a1fc1d896"
+    },
+    {
+      "path": "apps/web/components/ProofPanel.tsx",
+      "sha256": "ee7e3fe229a82b4a7b9e1c28eb479a846731f694a260732173d7d0238c8caaed"
+    },
+    {
+      "path": "apps/web/components/ExternalBlockerPanel.tsx",
+      "sha256": "2e00b1063e0abe053b704ef453bdaa79fc7d43c7695fc5099bce82ad9598b0ce"
+    },
+    {
+      "path": "apps/web/components/CasterShell.tsx",
+      "sha256": "b0f2127afec8669ea2d787407e2b0af3b46b0b45a24a868fcc922cfee9c8c4ec"
+    },
+    {
+      "path": "apps/web/components/CasterNav.tsx",
+      "sha256": "7f3a013508b4a014d9e738919adc36e0215ea6b67277c35697da4e84ff3d342e"
+    },
+    {
+      "path": "apps/web/components/CasterFooter.tsx",
+      "sha256": "d6bfaf31eca0ac3769b929ed5fb7c2a5370934461993d161bb11bf709ac52575"
+    },
+    {
+      "path": "apps/web/components/CasterTerminal.tsx",
+      "sha256": "434dc5987afabe9d7cbf40321855c2a9ae6b9d9743e0e7c6cd1b93ee9090009d"
+    },
+    {
+      "path": "apps/web/components/NodePreviewPanel.tsx",
+      "sha256": "e326f1b40965a78eacd71922504bd1bddbadab7861b2fcb07f7e701eafff11ae"
+    },
+    {
+      "path": "apps/web/components/RepoPreviewPanel.tsx",
+      "sha256": "13c8b2fca23be1cce79d7c6f033f2774af62362d2e283a59abb35ecdac1f2414"
+    },
+    {
+      "path": "apps/web/components/TokenHonestyPanel.tsx",
+      "sha256": "0785c308cec81674ec9844d2f303f635760da12c73540cccda4c295b33efc427"
+    },
+    {
+      "path": "apps/web/components/DomainHonestyPanel.tsx",
+      "sha256": "771372e8d3b99fd2b9c15984088e6b12a65debdd59ad4e3adde1e18cc5d4b2d6"
+    },
+    {
+      "path": "apps/web/components/DeployHonestyPanel.tsx",
+      "sha256": "ee5d5631169921dcf043a41cc26e1d49cc1efa35b2afcf250ff3dbeab5ba3544"
+    },
+    {
+      "path": "apps/web/components/SecurityPosturePanel.tsx",
+      "sha256": "40191722dc98dc52378b2af110064c93580edcaae70d24841cd62a1ccd330a8c"
+    },
+    {
+      "path": "apps/web/lib/status-truth.ts",
+      "sha256": "f5b7af2a8e0e034bda8b7db51c320dc92452735821f749c290e80a94cfe10c0d"
+    },
+    {
+      "path": "apps/web/lib/preview-data.ts",
+      "sha256": "761ae9674585f97d08f736850e05ef9867681ec85bba49bf5d816d4f2ad197b4"
+    },
+    {
+      "path": "apps/web/lib/evidence-links.ts",
+      "sha256": "32bad0cfef9525aaa228a36760ddab3b5f60dfe9c99035666bb544ceee0b78ef"
+    },
+    {
+      "path": "apps/web/lib/caster-copy.ts",
+      "sha256": "0ffb6294253020055cd4ff7329ed2bbfb7bcc2a36f2adb3dce466b28ea17b06d"
+    },
+    {
+      "path": "apps/web/styles/caster-theme.css",
+      "sha256": "fb286ce9bb619e50b3721b88fd342b6346d2da48f514e451994552e1b828edb4"
+    },
+    {
+      "path": "apps/web/public/gitcaster-preview-node.json",
+      "sha256": "9ef4ed5483faf2e754e847a2d939abaa1b14f3874a18ef7a603d1d7dd378fae6"
+    },
+    {
+      "path": "apps/web/public/gitcaster-preview-evidence.json",
+      "sha256": "a21eec38d6d3cab5f889291cacc45ee9f7322432d772ec86b676f42aab368d9e"
+    },
+    {
+      "path": "apps/web/public/gitcaster-preview-repos.json",
+      "sha256": "999874bbdc9c98df858a9fba3bc2215b3e7ed2444b6e530087be7f684a625581"
+    },
+    {
+      "path": "apps/web/public/gitcaster-preview-ecosystem.json",
+      "sha256": "570419e0e8b807b1d141a1b58a2eadc963abdb3fe83550dc5f5490b745c4f204"
+    },
+    {
+      "path": "apps/web/public/manifest.webmanifest",
+      "sha256": "1a4cad03623ad9bf74abc0b5afa5e311a9c3d4659f080fbf6680a4a6464b7447"
+    },
+    {
+      "path": "apps/web/public/robots.txt",
+      "sha256": "16ceb5ee3e0dc13aa9adf31a3ebbe45a1d965b8c2b9f72eaf84e5911e140ed95"
+    },
+    {
+      "path": "scripts/web/check-web-truth-table.cjs",
+      "sha256": "4f26d68027c71b4838b99e4c897f07cd8e52f616c474b47a76244489faf62d9c"
+    },
+    {
+      "path": "scripts/web/check-pr12-web-ui.cjs",
+      "sha256": "151df3027d36d2fd9a9e30d4ec9a87fbd256fa7c0f2cf961f13b12e7aec627c1"
+    }
+  ],
+  "summary": {
+    "webPackageFound": true,
+    "webBuildPassed": true,
+    "staticExportReady": true,
+    "outDirProduced": true,
+    "serverRuntimeRequired": false,
+    "homepageCreated": true,
+    "startPageCreated": true,
+    "statusPageCreated": true,
+    "nodePageCreated": true,
+    "repoListPageCreated": true,
+    "ecosystemPreviewCreated": true,
+    "securityPageCreated": true,
+    "deployPageCreated": true,
+    "tokenPageCreated": true,
+    "domainsPageCreated": true,
+    "truthTableCreated": true,
+    "previewDataLabeled": true,
+    "liveClaimsWithoutEvidence": 0,
+    "verifiedClaimsWithoutEvidence": 0,
+    "deploymentClaimsWithoutEvidence": 0,
+    "qstorageVerifiedClaimed": false,
+    "castercloudDeployedClaimed": false,
+    "casterDomainMappedClaimed": false,
+    "tokenLiveUtilityClaimed": false,
+    "normalGitPushClaimed": false,
+    "publicNodesOnlineClaimed": false,
+    "multiNodeReplicationClaimed": false,
+    "unhackableClaimed": false,
+    "docsUseGitCasterCommands": true,
+    "docsUseGitlawbCommands": false,
+    "pr11EvidenceFound": false,
+    "forbiddenIdentityViolations": 0,
+    "hostedPlatformProductionViolations": 0,
+    "fakeLiveClaimsFound": 0,
+    "secretLeakFindings": 0
+  },
+  "truthTable": {
+    "surfaces": [
+      "website static build",
+      "QStorage publish",
+      "CasterCloud deploy",
+      "local alpha node",
+      "node.gitcaster.casterchain",
+      "node2.gitcaster.casterchain",
+      "node3.gitcaster.casterchain",
+      "CLI",
+      "git-remote-gitcaster",
+      "push-local",
+      "ref certificates",
+      "object store",
+      "MCP",
+      "SDK TS",
+      "SDK Python",
+      "ecosystem manifest",
+      "Claim Miniapp",
+      "Caster Punks",
+      "CasterAgents",
+      "token utility",
+      "token contracts",
+      "domains",
+      "installer",
+      "security gate",
+      "production QA",
+      "production launch gate"
+    ],
+    "allRowsHaveEvidenceOrBlocker": true,
+    "previewRowsLabeled": true
+  },
+  "web": {
+    "status": "alpha-local",
+    "staticExport": "ready",
+    "publicDeploymentClaimed": false,
+    "productionClaimed": false
+  },
+  "externalServices": {
+    "qstorage": {
+      "status": "requires-endpoint",
+      "verified": false
+    },
+    "castercloud": {
+      "status": "requires-endpoint",
+      "deployed": false,
+      "verified": false
+    },
+    "domains": {
+      "status": "requires-registry",
+      "mapped": false
+    }
+  },
+  "token": {
+    "token": "$CASTER",
+    "tokenAddress": "0xa1db936b33cec552d453c21a44f7153777f6f5ee373e47680ab58fcc4efebe2f",
+    "stakingLiveClaimed": false,
+    "rewardsPaidClaimed": false,
+    "governanceLiveClaimed": false,
+    "contractAuditClaimed": false
+  },
+  "releaseQuality": {
+    "releaseLevel": "alpha-local",
+    "qaRequired": true,
+    "unitTests": "not-applicable",
+    "integrationTests": "passed",
+    "securityGate": "not-applicable",
+    "secretScan": "passed",
+    "fakeClaimScan": "passed",
+    "staticExport": "passed",
+    "accessibilityReview": "manual-required",
+    "performanceReview": "manual-required",
+    "productionBlockers": [
+      "Canonical ecosystem import is not implemented until PR-13.",
+      "Miniapp import is not implemented until PR-14.",
+      "Caster Punks index is not implemented until PR-15.",
+      "CasterAgents safety lock is not implemented until PR-16.",
+      "Deploy pipeline is not implemented until PR-17/PR-23.",
+      "Security gate is not implemented until PR-18/PR-27.",
+      "Full Git transport is not release-candidate until PR-22.",
+      "Production launch gate is not evaluated until PR-32."
+    ],
+    "canShipProduction": false
+  },
+  "forbiddenReferenceFindings": [],
+  "hostedPlatformFindings": [],
+  "secretFindings": [],
+  "publicClaimsAdded": [],
+  "publicClaimsRemoved": [],
+  "noFakeProgressChecks": {
+    "gitlawbPublicBranding": false,
+    "hostedPlatformProductionDependency": false,
+    "fakeLiveClaim": false,
+    "secretExposed": false,
+    "sensitiveAgentStatePublic": false
+  },
+  "nextPrHandoff": {
+    "nextPr": "PR-13",
+    "title": "Canonical ecosystem manifest",
+    "requiredInputs": [
+      "apps/web/app/ecosystem/page.tsx",
+      "apps/web/public/gitcaster-preview-ecosystem.json",
+      "launch/evidence/pr-12-web-status-proof-ui.json"
+    ],
+    "knownRisks": [
+      "PR-12 creates ecosystem preview only.",
+      "PR-12 does not import CasterAgents state.",
+      "PR-12 does not index Caster Punks.",
+      "PR-12 does not migrate the Claim Miniapp.",
+      "PR-12 does not deploy to CasterCloud/QStorage."
+    ],
+    "recommendedCommands": [
+      "pnpm --filter @gitcaster/web build",
+      "pnpm --filter @gitcaster/web export",
+      "node scripts/web/check-web-truth-table.cjs"
+    ]
+  }
+}

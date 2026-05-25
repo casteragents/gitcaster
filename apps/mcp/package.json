@@ -1,0 +1,26 @@
+{
+  "name": "@gitcaster/mcp",
+  "version": "0.1.0-alpha",
+  "private": true,
+  "type": "module",
+  "main": "dist/server.js",
+  "types": "dist/server.d.ts",
+  "scripts": {
+    "build": "node ../../src/node_modules/typescript/bin/tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "test": "node --test dist/mcp.test.js",
+    "lint": "node ../../scripts/mcp/check-pr11-mcp-tools.cjs --package-only",
+    "typecheck": "node ../../src/node_modules/typescript/bin/tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@gitcaster/protocol": "workspace:*",
+    "@gitcaster/identity": "workspace:*",
+    "@gitcaster/capabilities": "workspace:*",
+    "@gitcaster/repo-records": "workspace:*",
+    "@gitcaster/object-store": "workspace:*",
+    "@gitcaster/ref-consensus": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

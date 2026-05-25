@@ -1,0 +1,21 @@
+{
+  "name": "@gitcaster/ecosystem",
+  "version": "0.1.0-alpha",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "node ../../src/node_modules/typescript/bin/tsc -p tsconfig.json",
+    "test": "node dist/ecosystem.test.js && node dist/app-directory.test.js",
+    "test:directory": "node dist/app-directory.test.js",
+    "lint": "node ../../scripts/ecosystem/check-pr28-ecosystem-rc.cjs --package-only",
+    "typecheck": "node ../../src/node_modules/typescript/bin/tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@gitcaster/protocol": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

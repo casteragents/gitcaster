@@ -1,0 +1,659 @@
+{
+  "type": "gitcaster.ecosystem.canonical-manifest.v1",
+  "status": "preview",
+  "createdAt": "2026-05-21T19:31:57.889Z",
+  "product": "GitCaster",
+  "entries": [
+    {
+      "type": "gitcaster.ecosystem.entry.v1",
+      "privateNotesRedacted": true,
+      "id": "gitcaster",
+      "name": "GitCaster",
+      "category": "Protocol",
+      "sourcePath": ".",
+      "sensitivity": "public",
+      "status": "alpha-local",
+      "repoStatus": "alpha-local",
+      "deployStatus": "blocked",
+      "qstorageStatus": "not-applicable",
+      "castercloudStatus": "not-applicable",
+      "miniappCompatible": null,
+      "farcasterCompatible": null,
+      "gameCompatible": null,
+      "tokenHooks": [],
+      "agents": [],
+      "evidence": [
+        "."
+      ],
+      "blockers": [
+        "Evidence required before stronger status."
+      ],
+      "publicDescription": "Canonical GitCaster ecosystem entry with preview status until evidence exists."
+    },
+    {
+      "type": "gitcaster.ecosystem.entry.v1",
+      "privateNotesRedacted": true,
+      "id": "casterchain",
+      "name": "CasterChain",
+      "category": "Infrastructure",
+      "sourcePath": ".",
+      "sensitivity": "public",
+      "status": "preview",
+      "repoStatus": "not-imported",
+      "deployStatus": "blocked",
+      "qstorageStatus": "not-applicable",
+      "castercloudStatus": "not-applicable",
+      "miniappCompatible": null,
+      "farcasterCompatible": null,
+      "gameCompatible": null,
+      "tokenHooks": [],
+      "agents": [],
+      "evidence": [
+        "."
+      ],
+      "blockers": [
+        "Evidence required before stronger status."
+      ],
+      "publicDescription": "Canonical GitCaster ecosystem entry with preview status until evidence exists."
+    },
+    {
+      "type": "gitcaster.ecosystem.entry.v1",
+      "privateNotesRedacted": true,
+      "id": "caster-intelligence",
+      "name": "Caster Intelligence",
+      "category": "Builder tools",
+      "sourcePath": "caster intelligence",
+      "sensitivity": "needs-review",
+      "status": "preview",
+      "repoStatus": "not-imported",
+      "deployStatus": "blocked",
+      "qstorageStatus": "not-applicable",
+      "castercloudStatus": "not-applicable",
+      "miniappCompatible": null,
+      "farcasterCompatible": null,
+      "gameCompatible": null,
+      "tokenHooks": [],
+      "agents": [],
+      "evidence": [
+        "caster intelligence"
+      ],
+      "blockers": [
+        "Evidence required before stronger status."
+      ],
+      "publicDescription": "Canonical GitCaster ecosystem entry with preview status until evidence exists."
+    },
+    {
+      "type": "gitcaster.ecosystem.entry.v1",
+      "privateNotesRedacted": true,
+      "id": "caster-a1",
+      "name": "Caster-A1",
+      "category": "Desktop / local runtime",
+      "sourcePath": "caster-a1",
+      "sensitivity": "needs-review",
+      "status": "preview",
+      "repoStatus": "not-imported",
+      "deployStatus": "blocked",
+      "qstorageStatus": "not-applicable",
+      "castercloudStatus": "not-applicable",
+      "miniappCompatible": null,
+      "farcasterCompatible": null,
+      "gameCompatible": null,
+      "tokenHooks": [],
+      "agents": [],
+      "evidence": [
+        "caster-a1"
+      ],
+      "blockers": [
+        "Evidence required before stronger status."
+      ],
+      "publicDescription": "Canonical GitCaster ecosystem entry with preview status until evidence exists."
+    },
+    {
+      "type": "gitcaster.ecosystem.entry.v1",
+      "privateNotesRedacted": true,
+      "id": "caster-studio",
+      "name": "Caster Studio",
+      "category": "Proof / evidence",
+      "sourcePath": "caster-studio",
+      "sensitivity": "needs-review",
+      "status": "preview",
+      "repoStatus": "not-imported",
+      "deployStatus": "blocked",
+      "qstorageStatus": "not-applicable",
+      "castercloudStatus": "not-applicable",
+      "miniappCompatible": null,
+      "farcasterCompatible": null,
+      "gameCompatible": null,
+      "tokenHooks": [],
+      "agents": [],
+      "evidence": [
+        "caster-studio"
+      ],
+      "blockers": [
+        "Evidence required before stronger status."
+      ],
+      "publicDescription": "Canonical GitCaster ecosystem entry with preview status until evidence exists."
+    },
+    {
+      "type": "gitcaster.ecosystem.entry.v1",
+      "privateNotesRedacted": true,
+      "id": "caster-claim-miniapp",
+      "name": "Caster Claim Miniapp",
+      "category": "Miniapps",
+      "sourcePath": "caster-claim-miniapp",
+      "sensitivity": "public",
+      "status": "preview",
+      "repoStatus": "not-imported",
+      "deployStatus": "requires-endpoint",
+      "qstorageStatus": "not-applicable",
+      "castercloudStatus": "requires-endpoint",
+      "miniappCompatible": true,
+      "farcasterCompatible": true,
+      "gameCompatible": null,
+      "tokenHooks": [],
+      "agents": [],
+      "evidence": [
+        "caster-claim-miniapp"
+      ],
+      "blockers": [
+        "Evidence required before stronger status."
+      ],
+      "publicDescription": "First miniapp migration target for PR-14; listed here without migration."
+    },
+    {
+      "type": "gitcaster.ecosystem.entry.v1",
+      "privateNotesRedacted": true,
+      "id": "casteragents",
+      "name": "CasterAgents",
+      "category": "Agents",
+      "sourcePath": "casteragents-projects",
+      "sensitivity": "sensitive",
+      "status": "needs-review",
+      "repoStatus": "not-imported",
+      "deployStatus": "blocked",
+      "qstorageStatus": "not-applicable",
+      "castercloudStatus": "not-applicable",
+      "miniappCompatible": null,
+      "farcasterCompatible": null,
+      "gameCompatible": null,
+      "tokenHooks": [],
+      "agents": [
+        "needs-review"
+      ],
+      "evidence": [
+        "casteragents-projects"
+      ],
+      "blockers": [
+        "Evidence required before stronger status."
+      ],
+      "publicDescription": "Agent workspace listed with sensitive runtime state redacted until safety review."
+    },
+    {
+      "type": "gitcaster.ecosystem.entry.v1",
+      "privateNotesRedacted": true,
+      "id": "casterai",
+      "name": "CasterAI",
+      "category": "Agents",
+      "sourcePath": "casteragents-projects/.npm-cache-casterai",
+      "sensitivity": "secret-risk",
+      "status": "needs-review",
+      "repoStatus": "not-applicable",
+      "deployStatus": "blocked",
+      "qstorageStatus": "not-applicable",
+      "castercloudStatus": "not-applicable",
+      "miniappCompatible": null,
+      "farcasterCompatible": null,
+      "gameCompatible": null,
+      "tokenHooks": [],
+      "agents": [
+        "needs-review"
+      ],
+      "evidence": [
+        "casteragents-projects/.npm-cache-casterai"
+      ],
+      "blockers": [
+        "Evidence required before stronger status."
+      ],
+      "publicDescription": "Canonical GitCaster ecosystem entry with preview status until evidence exists."
+    },
+    {
+      "type": "gitcaster.ecosystem.entry.v1",
+      "privateNotesRedacted": true,
+      "id": "casterapp",
+      "name": "CasterApp",
+      "category": "Agents",
+      "sourcePath": "caster-a1/apps/desktop/src/lib/casterAppServerClient.ts",
+      "sensitivity": "secret-risk",
+      "status": "needs-review",
+      "repoStatus": "not-applicable",
+      "deployStatus": "blocked",
+      "qstorageStatus": "not-applicable",
+      "castercloudStatus": "not-applicable",
+      "miniappCompatible": null,
+      "farcasterCompatible": null,
+      "gameCompatible": null,
+      "tokenHooks": [],
+      "agents": [
+        "needs-review"
+      ],
+      "evidence": [
+        "caster-a1/apps/desktop/src/lib/casterAppServerClient.ts"
+      ],
+      "blockers": [
+        "Evidence required before stronger status."
+      ],
+      "publicDescription": "Canonical GitCaster ecosystem entry with preview status until evidence exists."
+    },
+    {
+      "type": "gitcaster.ecosystem.entry.v1",
+      "privateNotesRedacted": true,
+      "id": "tapcaster",
+      "name": "TapCaster",
+      "category": "Social / Farcaster",
+      "sourcePath": "casteragents-projects/.npm-cache-tapcaster",
+      "sensitivity": "secret-risk",
+      "status": "needs-review",
+      "repoStatus": "not-applicable",
+      "deployStatus": "blocked",
+      "qstorageStatus": "not-applicable",
+      "castercloudStatus": "not-applicable",
+      "miniappCompatible": null,
+      "farcasterCompatible": true,
+      "gameCompatible": null,
+      "tokenHooks": [],
+      "agents": [],
+      "evidence": [
+        "casteragents-projects/.npm-cache-tapcaster"
+      ],
+      "blockers": [
+        "Evidence required before stronger status."
+      ],
+      "publicDescription": "Canonical GitCaster ecosystem entry with preview status until evidence exists."
+    },
+    {
+      "type": "gitcaster.ecosystem.entry.v1",
+      "privateNotesRedacted": true,
+      "id": "casterchain-agents",
+      "name": "CasterChain Agents",
+      "category": "Agents",
+      "sourcePath": "caster-a1/crates/caster-app-server/src/agents_md.rs",
+      "sensitivity": "needs-review",
+      "status": "needs-review",
+      "repoStatus": "not-applicable",
+      "deployStatus": "blocked",
+      "qstorageStatus": "not-applicable",
+      "castercloudStatus": "not-applicable",
+      "miniappCompatible": null,
+      "farcasterCompatible": null,
+      "gameCompatible": null,
+      "tokenHooks": [],
+      "agents": [
+        "needs-review"
+      ],
+      "evidence": [
+        "caster-a1/crates/caster-app-server/src/agents_md.rs"
+      ],
+      "blockers": [
+        "Evidence required before stronger status."
+      ],
+      "publicDescription": "Agent workspace listed with sensitive runtime state redacted until safety review."
+    },
+    {
+      "type": "gitcaster.ecosystem.entry.v1",
+      "privateNotesRedacted": true,
+      "id": "caster-punks",
+      "name": "Caster Punks",
+      "category": "Collectibles",
+      "sourcePath": "casteragents-projects/Caster Punks",
+      "sensitivity": "public",
+      "status": "preview",
+      "repoStatus": "not-imported",
+      "deployStatus": "blocked",
+      "qstorageStatus": "requires-endpoint",
+      "castercloudStatus": "not-applicable",
+      "miniappCompatible": null,
+      "farcasterCompatible": null,
+      "gameCompatible": null,
+      "tokenHooks": [],
+      "agents": [],
+      "evidence": [
+        "casteragents-projects/Caster Punks"
+      ],
+      "blockers": [
+        "Evidence required before stronger status."
+      ],
+      "publicDescription": "Collectibles surface listed index-only until PR-15."
+    },
+    {
+      "type": "gitcaster.ecosystem.entry.v1",
+      "privateNotesRedacted": true,
+      "id": "castergames-xgames",
+      "name": "CasterGames / xgames",
+      "category": "Games",
+      "sourcePath": "not-found/castergames-xgames",
+      "sensitivity": "public",
+      "status": "preview",
+      "repoStatus": "not-applicable",
+      "deployStatus": "blocked",
+      "qstorageStatus": "not-applicable",
+      "castercloudStatus": "not-applicable",
+      "miniappCompatible": null,
+      "farcasterCompatible": null,
+      "gameCompatible": true,
+      "tokenHooks": [],
+      "agents": [],
+      "evidence": [],
+      "blockers": [
+        "Entry not found in allowed PR-13 scan roots."
+      ],
+      "publicDescription": "Canonical GitCaster ecosystem entry with preview status until evidence exists."
+    },
+    {
+      "type": "gitcaster.ecosystem.entry.v1",
+      "privateNotesRedacted": true,
+      "id": "casterexchange",
+      "name": "CasterExchange",
+      "category": "Finance",
+      "sourcePath": "casterexchange",
+      "sensitivity": "public",
+      "status": "preview",
+      "repoStatus": "not-applicable",
+      "deployStatus": "blocked",
+      "qstorageStatus": "not-applicable",
+      "castercloudStatus": "not-applicable",
+      "miniappCompatible": null,
+      "farcasterCompatible": null,
+      "gameCompatible": null,
+      "tokenHooks": [],
+      "agents": [],
+      "evidence": [
+        "casterexchange"
+      ],
+      "blockers": [
+        "Evidence required before stronger status."
+      ],
+      "publicDescription": "Canonical GitCaster ecosystem entry with preview status until evidence exists."
+    },
+    {
+      "type": "gitcaster.ecosystem.entry.v1",
+      "privateNotesRedacted": true,
+      "id": "qstorage-tools",
+      "name": "QStorage tools",
+      "category": "Storage",
+      "sourcePath": "packages/object-store/src/qstorage-driver.ts",
+      "sensitivity": "public",
+      "status": "requires-endpoint",
+      "repoStatus": "not-applicable",
+      "deployStatus": "requires-endpoint",
+      "qstorageStatus": "requires-endpoint",
+      "castercloudStatus": "not-applicable",
+      "miniappCompatible": null,
+      "farcasterCompatible": null,
+      "gameCompatible": null,
+      "tokenHooks": [],
+      "agents": [],
+      "evidence": [
+        "packages/object-store/src/qstorage-driver.ts"
+      ],
+      "blockers": [
+        "Evidence required before stronger status."
+      ],
+      "publicDescription": "QStorage tool surface listed as endpoint-gated."
+    },
+    {
+      "type": "gitcaster.ecosystem.entry.v1",
+      "privateNotesRedacted": true,
+      "id": "castercloud-tools",
+      "name": "CasterCloud tools",
+      "category": "CasterCloud deployments",
+      "sourcePath": "packages/object-store/src/castercloud-driver.ts",
+      "sensitivity": "public",
+      "status": "requires-endpoint",
+      "repoStatus": "not-applicable",
+      "deployStatus": "requires-endpoint",
+      "qstorageStatus": "not-applicable",
+      "castercloudStatus": "requires-endpoint",
+      "miniappCompatible": null,
+      "farcasterCompatible": null,
+      "gameCompatible": null,
+      "tokenHooks": [],
+      "agents": [],
+      "evidence": [
+        "packages/object-store/src/castercloud-driver.ts"
+      ],
+      "blockers": [
+        "Evidence required before stronger status."
+      ],
+      "publicDescription": "CasterCloud tool surface listed as endpoint-gated."
+    },
+    {
+      "type": "gitcaster.ecosystem.entry.v1",
+      "privateNotesRedacted": true,
+      "id": "farcaster-miniapps",
+      "name": "Farcaster miniapps",
+      "category": "Social / Farcaster",
+      "sourcePath": "caster-claim-miniapp/vendor/farcaster-miniapp-sdk-0.3.0.esm.js",
+      "sensitivity": "needs-review",
+      "status": "preview",
+      "repoStatus": "not-applicable",
+      "deployStatus": "blocked",
+      "qstorageStatus": "not-applicable",
+      "castercloudStatus": "not-applicable",
+      "miniappCompatible": true,
+      "farcasterCompatible": true,
+      "gameCompatible": null,
+      "tokenHooks": [],
+      "agents": [],
+      "evidence": [
+        "caster-claim-miniapp/vendor/farcaster-miniapp-sdk-0.3.0.esm.js"
+      ],
+      "blockers": [
+        "Evidence required before stronger status."
+      ],
+      "publicDescription": "Canonical GitCaster ecosystem entry with preview status until evidence exists."
+    },
+    {
+      "type": "gitcaster.ecosystem.entry.v1",
+      "privateNotesRedacted": true,
+      "id": "castercaster-token",
+      "name": "$CASTER token",
+      "category": "Token",
+      "sourcePath": "token/$CASTER",
+      "sensitivity": "public",
+      "status": "proof-only",
+      "repoStatus": "not-applicable",
+      "deployStatus": "blocked",
+      "qstorageStatus": "not-applicable",
+      "castercloudStatus": "not-applicable",
+      "miniappCompatible": null,
+      "farcasterCompatible": null,
+      "gameCompatible": null,
+      "tokenHooks": [
+        "proof-only"
+      ],
+      "agents": [],
+      "evidence": [
+        "token/$CASTER"
+      ],
+      "blockers": [
+        "Evidence required before stronger status."
+      ],
+      "publicDescription": "$CASTER token surface listed as proof-only until contract, audit, and governance evidence exists."
+    },
+    {
+      "type": "gitcaster.ecosystem.entry.v1",
+      "privateNotesRedacted": true,
+      "id": "wallet-security-tools",
+      "name": "Wallet/security tools",
+      "category": "Security",
+      "sourcePath": "caster-a1/ALPHA_SECURITY_NOTICE.md",
+      "sensitivity": "needs-review",
+      "status": "preview",
+      "repoStatus": "not-applicable",
+      "deployStatus": "blocked",
+      "qstorageStatus": "not-applicable",
+      "castercloudStatus": "not-applicable",
+      "miniappCompatible": null,
+      "farcasterCompatible": null,
+      "gameCompatible": null,
+      "tokenHooks": [],
+      "agents": [],
+      "evidence": [
+        "caster-a1/ALPHA_SECURITY_NOTICE.md"
+      ],
+      "blockers": [
+        "Evidence required before stronger status."
+      ],
+      "publicDescription": "Canonical GitCaster ecosystem entry with preview status until evidence exists."
+    },
+    {
+      "type": "gitcaster.ecosystem.entry.v1",
+      "privateNotesRedacted": true,
+      "id": "proof-release-evidence",
+      "name": "Proof/release evidence",
+      "category": "Proof / evidence",
+      "sourcePath": "launch/evidence",
+      "sensitivity": "public",
+      "status": "preview",
+      "repoStatus": "not-imported",
+      "deployStatus": "blocked",
+      "qstorageStatus": "not-applicable",
+      "castercloudStatus": "not-applicable",
+      "miniappCompatible": null,
+      "farcasterCompatible": null,
+      "gameCompatible": null,
+      "tokenHooks": [],
+      "agents": [],
+      "evidence": [
+        "launch/evidence"
+      ],
+      "blockers": [
+        "Evidence required before stronger status."
+      ],
+      "publicDescription": "Canonical GitCaster ecosystem entry with preview status until evidence exists."
+    },
+    {
+      "type": "gitcaster.ecosystem.entry.v1",
+      "privateNotesRedacted": true,
+      "id": "policy-sandbox-wallet-guard-crates",
+      "name": "Policy/sandbox/wallet guard crates",
+      "category": "Security",
+      "sourcePath": "caster-a1/crates/caster-policy",
+      "sensitivity": "needs-review",
+      "status": "preview",
+      "repoStatus": "not-applicable",
+      "deployStatus": "blocked",
+      "qstorageStatus": "not-applicable",
+      "castercloudStatus": "not-applicable",
+      "miniappCompatible": null,
+      "farcasterCompatible": null,
+      "gameCompatible": null,
+      "tokenHooks": [],
+      "agents": [],
+      "evidence": [
+        "caster-a1/crates/caster-policy"
+      ],
+      "blockers": [
+        "Evidence required before stronger status."
+      ],
+      "publicDescription": "Canonical GitCaster ecosystem entry with preview status until evidence exists."
+    },
+    {
+      "type": "gitcaster.ecosystem.entry.v1",
+      "privateNotesRedacted": true,
+      "id": "agent-workspace-skills",
+      "name": "Agent workspace/skills",
+      "category": "Agents",
+      "sourcePath": "caster-a1/crates/caster-app-server/src/agents_md.rs",
+      "sensitivity": "needs-review",
+      "status": "preview",
+      "repoStatus": "not-applicable",
+      "deployStatus": "blocked",
+      "qstorageStatus": "not-applicable",
+      "castercloudStatus": "not-applicable",
+      "miniappCompatible": null,
+      "farcasterCompatible": null,
+      "gameCompatible": null,
+      "tokenHooks": [],
+      "agents": [
+        "needs-review"
+      ],
+      "evidence": [
+        "caster-a1/crates/caster-app-server/src/agents_md.rs"
+      ],
+      "blockers": [
+        "Evidence required before stronger status."
+      ],
+      "publicDescription": "Canonical GitCaster ecosystem entry with preview status until evidence exists."
+    }
+  ],
+  "summary": {
+    "entriesTotal": 22,
+    "categoryCounts": {
+      "Protocol": 1,
+      "Infrastructure": 1,
+      "Builder tools": 1,
+      "Desktop / local runtime": 1,
+      "Proof / evidence": 2,
+      "Miniapps": 1,
+      "Agents": 5,
+      "Social / Farcaster": 2,
+      "Collectibles": 1,
+      "Games": 1,
+      "Finance": 1,
+      "Storage": 1,
+      "CasterCloud deployments": 1,
+      "Token": 1,
+      "Security": 2
+    },
+    "sensitivityCounts": {
+      "public": 10,
+      "needs-review": 8,
+      "sensitive": 1,
+      "secret-risk": 3
+    },
+    "statusCounts": {
+      "alpha-local": 1,
+      "preview": 13,
+      "needs-review": 5,
+      "requires-endpoint": 2,
+      "proof-only": 1
+    },
+    "requiredEntriesPresent": [
+      "GitCaster",
+      "CasterChain",
+      "Caster Intelligence",
+      "Caster-A1",
+      "Caster Studio",
+      "Caster Claim Miniapp",
+      "CasterAgents",
+      "CasterAI",
+      "CasterApp",
+      "TapCaster",
+      "CasterChain Agents",
+      "Caster Punks",
+      "CasterExchange",
+      "QStorage tools",
+      "CasterCloud tools",
+      "Farcaster miniapps",
+      "$CASTER token",
+      "Wallet/security tools",
+      "Proof/release evidence",
+      "Policy/sandbox/wallet guard crates",
+      "Agent workspace/skills"
+    ],
+    "requiredEntriesNotFound": [
+      "CasterGames / xgames"
+    ],
+    "sensitiveFilesDetected": 54,
+    "sensitiveFilesPubliclyExposed": 0,
+    "casterPunksIndexOnly": true,
+    "casterPunksImagesRead": false
+  },
+  "notes": [
+    "Sensitive runtime state is redacted.",
+    "Caster Punks are index-only until PR-15.",
+    "Caster Claim Miniapp migration is PR-14."
+  ],
+  "rootHash": "sha256:87b7cd22037c89bd91063d8282d7691e4d8db48e2759e6069a8513811e733c2a"
+}
