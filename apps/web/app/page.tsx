@@ -4,6 +4,7 @@ import { ProofPanel } from "../components/ProofPanel";
 import { SecurityPosturePanel } from "../components/SecurityPosturePanel";
 import { TruthTable } from "../components/TruthTable";
 import { PRODUCT, PROOF_STRIP } from "../lib/caster-copy";
+import { sitePath } from "../lib/site-url";
 
 export default function HomePage() {
   return (
@@ -14,11 +15,11 @@ export default function HomePage() {
           <h1>{PRODUCT.line}</h1>
           <p className="lede">{PRODUCT.description}</p>
           <div className="actions">
-            <a className="button primary" href="/start">Start local alpha</a>
-            <a className="button" href="/status">View status</a>
-            <a className="button" href="/node">Explore node preview</a>
-            <a className="button" href="/console">Open CasterCloud console</a>
-            <a className="button" href="/security">Read MCP docs</a>
+            <a className="button primary" href={sitePath("/start")}>Start local alpha</a>
+            <a className="button" href={sitePath("/status")}>View status</a>
+            <a className="button" href={sitePath("/node")}>Explore node preview</a>
+            <a className="button" href={sitePath("/console")}>Open CasterCloud console</a>
+            <a className="button" href={sitePath("/security")}>Read MCP docs</a>
           </div>
         </div>
         <CasterTerminal />
@@ -63,7 +64,7 @@ export default function HomePage() {
       <section className="section">
         <h2>Start local alpha</h2>
         <p>Preview data is labeled. Proof-backed data requires evidence.</p>
-        <a className="button primary" href="/start">Start local alpha</a>
+        <a className="button primary" href={sitePath("/start")}>Start local alpha</a>
       </section>
     </>
   );

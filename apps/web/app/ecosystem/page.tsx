@@ -1,6 +1,7 @@
 import { EcosystemDirectory, type EcosystemDirectoryEntry } from "../../components/EcosystemDirectory";
 import canonicalManifest from "../../public/gitcaster-ecosystem.canonical.json";
 import rcManifest from "../../public/gitcaster-ecosystem.rc.json";
+import { sitePath } from "../../lib/site-url";
 
 type EcosystemRcManifest = {
   entries?: EcosystemDirectoryEntry[];
@@ -21,8 +22,8 @@ export default function EcosystemPage() {
         <h1>GitCaster ecosystem</h1>
         <p className="lede">RC directory candidate. Listings are not approval. Proof and blockers render before stronger claims.</p>
         <div className="actions">
-          <a className="button primary" href="/ecosystem/submit">Preview submission policy</a>
-          <a className="button" href="/status">View proof status</a>
+          <a className="button primary" href={sitePath("/ecosystem/submit")}>Preview submission policy</a>
+          <a className="button" href={sitePath("/status")}>View proof status</a>
         </div>
       </div>
       <EcosystemDirectory entries={entries} summary={summary} showProof showBlockers />

@@ -793,7 +793,7 @@
     {
       "type": "gitcaster.ecosystem.app-directory.entry.v1",
       "id": "castercaster-token",
-      "name": "$CASTER token",
+      "name": "$GITCASTER token",
       "category": "Token",
       "status": "proof-only",
       "sourcePath": "[redacted-sensitive-path]",
@@ -801,7 +801,7 @@
       "builderUrl": null,
       "repoUrl": null,
       "demoUrl": null,
-      "description": "$CASTER token surface listed as proof-only until contract, audit, and governance evidence exists.",
+      "description": "$GITCASTER token surface listed as proof-only until contract, audit, and governance evidence exists.",
       "uses": [
         "GitCaster"
       ],

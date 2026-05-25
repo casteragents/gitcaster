@@ -13,5 +13,5 @@ export const evidenceLinks: EvidenceLink[] = [
   { label: "QStorage publish", path: "blocked: CASTER_QSTORAGE_ENDPOINT", status: "requires-endpoint" },
   { label: "CasterCloud deploy", path: "blocked: CASTER_CLOUD_DEPLOY_ENDPOINT", status: "requires-endpoint" },
   { label: ".caster domains", path: "blocked: CASTER_DOMAIN_REGISTRY_ENDPOINT", status: "requires-registry" },
-  { label: "$CASTER utility", path: "blocked: audited contracts and governance", status: "proof-only" }
+  { label: "$GITCASTER utility", path: "blocked: audited contracts and governance", status: "proof-only" }
 ];

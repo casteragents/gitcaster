@@ -1,5 +1,6 @@
 import { appDeploymentCatalog, castercloudDocsSections } from "../lib/castercloud-docs-data";
 import { consoleEndpoints, qconsoleServiceAliases, statusClass } from "../lib/castercloud-console-data";
+import { sitePath } from "../lib/site-url";
 
 export function CasterCloudDocs() {
   return (
@@ -13,7 +14,7 @@ export function CasterCloudDocs() {
             registry that replace manual QConsole dependency for the Caster stack.
           </p>
           <div className="actions">
-            <a className="button primary" href="/console">Open console</a>
+            <a className="button primary" href={sitePath("/console")}>Open console</a>
             <a className="button" href="#api">API endpoints</a>
             <a className="button" href="#apps">App registry</a>
           </div>
@@ -111,7 +112,7 @@ export function CasterCloudDocs() {
             <h2>App Registry</h2>
             <p>Apps and mini apps that move through CasterCloud-owned deployment control.</p>
           </div>
-          <a className="button" href="http://127.0.0.1:8788/v1/deployments/workbench">Open workbench</a>
+          <a className="button" href={sitePath("/console#app-workbench")}>Open workbench</a>
         </div>
         <div className="table-wrap">
           <table className="truth-table">

@@ -96,7 +96,72 @@ declare global {
 }
 
 const apiBase =
-  process.env.NEXT_PUBLIC_CASTERCLOUD_CONSOLE_API_BASE_URL?.replace(/\/+$/, "") || "http://127.0.0.1:8788";
+  process.env.NEXT_PUBLIC_CASTERCLOUD_CONSOLE_API_BASE_URL?.replace(/\/+$/, "") || "";
+const publicPreviewMode = !apiBase;
+const previewWallet = "public-preview-operator";
+const previewCompletion: CompletionStatus = {
+  status: "public-alpha",
+  actionOrder: [
+    {
+      id: "public-pages-smoke",
+      label: "Public website smoke",
+      endpoint: "https://casteragents.github.io/gitcaster/",
+      status: "passed",
+      detail: "GitHub Pages renders without requiring private operator APIs.",
+    },
+    {
+      id: "api-handoff",
+      label: "Owned API handoff",
+      endpoint: "NEXT_PUBLIC_CASTERCLOUD_CONSOLE_API_BASE_URL",
+      status: "blocked_external",
+      detail: "Set this env to execute live wallet-gated API actions.",
+    },
+  ],
+  strictReadiness: {
+    status: "public-alpha",
+    blockers: ["Owned CasterCloud API is not connected to this public static build."],
+  },
+  nextAction: "Public preview is live. Connect the owned CasterCloud API for live operator imports.",
+};
+const previewApproval: ApprovalMessage = {
+  status: "public-alpha",
+  requestHash: "preview-gitcaster-deploy-request",
+  message: "GitCaster public alpha deployment preview approval",
+  messageHash: "preview-gitcaster-approval-message",
+  nextAction: "Connect an owned API endpoint to verify live operator approval.",
+};
+const previewTargetConfirmation: TargetConfirmationMessage = {
+  status: "public-alpha",
+  cloudTargetHash: "preview-cloud-target",
+  apiTargetHash: "preview-api-target",
+  message: "GitCaster public alpha endpoint target preview",
+  messageHash: "preview-target-confirmation-message",
+  nextAction: "Connect public endpoint target proof before live deployment claims.",
+};
+const previewPublicConsoleEnv: PublicConsoleEnvStatus = {
+  status: "public-alpha",
+  importerReady: false,
+  strictReadiness: {
+    status: "blocked_external",
+    blockers: ["NEXT_PUBLIC_CASTERCLOUD_CONSOLE_API_BASE_URL is not set for this static public build."],
+  },
+  nextAction: "Public preview can validate URL shape locally; live import requires the owned API.",
+};
+const previewTargetHandoff: TargetSigningHandoff = {
+  status: "public-alpha",
+  messageReady: true,
+  operatorInputPresent: false,
+  messageHash: "preview-target-handoff-message",
+  cloudTargetHash: "preview-cloud-target",
+  apiTargetHash: "preview-api-target",
+  targetConfirmationStatus: "preview",
+  strictReadiness: {
+    status: "blocked_external",
+    strictReady: false,
+    blockers: ["Live endpoint target confirmation is not imported yet."],
+  },
+  nextAction: "Use the preview controls here, then connect the owned API for live evidence import.",
+};
 
 function shorten(value: string) {
   if (!value) return "missing";
@@ -104,7 +169,40 @@ function shorten(value: string) {
   return `${value.slice(0, 10)}...${value.slice(-8)}`;
 }
 
+function previewAllowlist(address: string): AllowlistMessage {
+  return {
+    status: "public-alpha",
+    operatorWallets: [address || previewWallet],
+    walletCount: 1,
+    message: `GitCaster public alpha operator allowlist preview for ${address || previewWallet}`,
+    messageHash: `preview-allowlist-${(address || previewWallet).slice(0, 12)}`,
+    nextAction: "Connect the owned API to import a real allowlist signature.",
+  };
+}
+
+async function previewSignature(message: string) {
+  const bytes = new TextEncoder().encode(message);
+  const digest = await crypto.subtle.digest("SHA-256", bytes);
+  const hash = Array.from(new Uint8Array(digest))
+    .map((byte) => byte.toString(16).padStart(2, "0"))
+    .join("");
+  return `public-preview:${hash}`;
+}
+
+function previewImportResult(inputWritten = false): ImportResult {
+  return {
+    status: "public-alpha",
+    verified: true,
+    inputWritten,
+    redacted: { signatureHash: "public-preview-signature" },
+    nextAction: "Live import requires the owned CasterCloud API endpoint.",
+  };
+}
+
 async function readJson<T>(route: string, init?: RequestInit): Promise<T> {
+  if (publicPreviewMode) {
+    throw new Error("Public preview mode is active. Connect the owned CasterCloud API to execute this endpoint.");
+  }
   const response = await fetch(`${apiBase}${route}`, {
     ...init,
     headers: {
@@ -174,6 +272,16 @@ export function CasterCloudApprovalSigner() {
 
   useEffect(() => {
     let cancelled = false;
+    if (publicPreviewMode) {
+      setApproval(previewApproval);
+      setTargetHandoff(previewTargetHandoff);
+      setTargetConfirmation(previewTargetConfirmation);
+      setPublicConsoleEnv(previewPublicConsoleEnv);
+      setCompletion(previewCompletion);
+      return () => {
+        cancelled = true;
+      };
+    }
     setBusy("Loading approval");
     Promise.allSettled([
       readJson<ApprovalMessage>("/v1/deployments/approvals/gitcaster/message"),
@@ -210,6 +318,11 @@ export function CasterCloudApprovalSigner() {
   }, []);
 
   async function refreshCompletion(silent = false) {
+    if (publicPreviewMode) {
+      setCompletion(previewCompletion);
+      if (!silent) setError("");
+      return;
+    }
     try {
       const json = await readJson<CompletionStatus>("/v1/deployments/approvals/gitcaster/completion");
       setCompletion(json);
@@ -221,12 +334,20 @@ export function CasterCloudApprovalSigner() {
 
   async function refreshAllowlist(address: string) {
     if (!address) return;
+    if (publicPreviewMode) {
+      setAllowlist(previewAllowlist(address));
+      return;
+    }
     const route = `/v1/iam/operators/allowlist/message?wallet=${encodeURIComponent(address)}`;
     const json = await readJson<AllowlistMessage>(route);
     setAllowlist(json);
   }
 
   async function refreshPublicConsoleEnv() {
+    if (publicPreviewMode) {
+      setPublicConsoleEnv(previewPublicConsoleEnv);
+      return;
+    }
     const json = await readJson<PublicConsoleEnvStatus>("/v1/console/public-console-env");
     setPublicConsoleEnv(json);
   }
@@ -235,6 +356,19 @@ export function CasterCloudApprovalSigner() {
     setBusy(writeInput ? "Staging endpoint env" : "Verifying endpoint env");
     setError("");
     try {
+      if (publicPreviewMode) {
+        const urls = [consolePublicBaseUrl, consoleApiBaseUrl, casterchainApiPublicBaseUrl];
+        if (!urls.every((url) => /^https:\/\/[^ ]+\.[^ ]+/.test(url))) {
+          throw new Error("Public URLs must be absolute https URLs.");
+        }
+        setPublicConsoleEnvResult(previewImportResult(false));
+        setPublicConsoleEnv({
+          ...previewPublicConsoleEnv,
+          status: "public-alpha",
+          nextAction: "URL shape verified locally. Live import waits for owned API evidence.",
+        });
+        return;
+      }
       const json = await readJson<ImportResult>("/v1/console/public-console-env/import", {
         method: "POST",
         body: JSON.stringify({
@@ -255,12 +389,16 @@ export function CasterCloudApprovalSigner() {
   }
 
   async function connectWallet() {
-    setBusy("Connecting wallet");
+    setBusy(publicPreviewMode ? "Starting preview operator" : "Connecting wallet");
     setError("");
     try {
-      if (!window.ethereum) throw new Error("Browser wallet not found");
-      const accounts = (await window.ethereum.request({ method: "eth_requestAccounts" })) as string[];
-      const selected = accounts[0] || "";
+      let selected = "";
+      if (window.ethereum) {
+        const accounts = (await window.ethereum.request({ method: "eth_requestAccounts" })) as string[];
+        selected = accounts[0] || "";
+      }
+      if (!selected && !publicPreviewMode) throw new Error("Browser wallet not found");
+      if (!selected) selected = previewWallet;
       setWallet(selected);
       setAllowlistSignature("");
       setApprovalSignature("");
@@ -282,12 +420,14 @@ export function CasterCloudApprovalSigner() {
     setBusy("Signing allowlist");
     setError("");
     try {
-      if (!window.ethereum) throw new Error("Browser wallet not found");
       if (!wallet || !allowlist?.message) throw new Error("Allowlist message is not ready");
-      const signed = (await window.ethereum.request({
-        method: "personal_sign",
-        params: [allowlist.message, wallet],
-      })) as string;
+      const signed =
+        publicPreviewMode && (!window.ethereum || wallet === previewWallet)
+          ? await previewSignature(allowlist.message)
+          : ((await window.ethereum?.request({
+              method: "personal_sign",
+              params: [allowlist.message, wallet],
+            })) as string);
       setAllowlistSignature(signed);
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err));
@@ -301,6 +441,11 @@ export function CasterCloudApprovalSigner() {
     setError("");
     try {
       if (!allowlist) throw new Error("Allowlist message is not ready");
+      if (publicPreviewMode) {
+        setAllowlistResult(previewImportResult(false));
+        await refreshCompletion(true);
+        return;
+      }
       const json = await readJson<ImportResult>("/v1/iam/operators/allowlist/import", {
         method: "POST",
         body: JSON.stringify({
@@ -326,12 +471,14 @@ export function CasterCloudApprovalSigner() {
     setBusy("Signing approval");
     setError("");
     try {
-      if (!window.ethereum) throw new Error("Browser wallet not found");
       if (!wallet || !approval?.message) throw new Error("Approval message is not ready");
-      const signed = (await window.ethereum.request({
-        method: "personal_sign",
-        params: [approval.message, wallet],
-      })) as string;
+      const signed =
+        publicPreviewMode && (!window.ethereum || wallet === previewWallet)
+          ? await previewSignature(approval.message)
+          : ((await window.ethereum?.request({
+              method: "personal_sign",
+              params: [approval.message, wallet],
+            })) as string);
       setApprovalSignature(signed);
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err));
@@ -345,6 +492,11 @@ export function CasterCloudApprovalSigner() {
     setError("");
     try {
       if (!approval) throw new Error("Approval message is not ready");
+      if (publicPreviewMode) {
+        setApprovalResult(previewImportResult(false));
+        await refreshCompletion(true);
+        return;
+      }
       const json = await readJson<ImportResult>("/v1/deployments/approvals/gitcaster/import", {
         method: "POST",
         body: JSON.stringify({
@@ -370,12 +522,14 @@ export function CasterCloudApprovalSigner() {
     setBusy("Signing target confirmation");
     setError("");
     try {
-      if (!window.ethereum) throw new Error("Browser wallet not found");
       if (!wallet || !targetConfirmation?.message) throw new Error("Target confirmation message is not ready");
-      const signed = (await window.ethereum.request({
-        method: "personal_sign",
-        params: [targetConfirmation.message, wallet],
-      })) as string;
+      const signed =
+        publicPreviewMode && (!window.ethereum || wallet === previewWallet)
+          ? await previewSignature(targetConfirmation.message)
+          : ((await window.ethereum?.request({
+              method: "personal_sign",
+              params: [targetConfirmation.message, wallet],
+            })) as string);
       setTargetConfirmationSignature(signed);
     } catch (err) {
       setError(err instanceof Error ? err.message : String(err));
@@ -389,6 +543,12 @@ export function CasterCloudApprovalSigner() {
     setError("");
     try {
       if (!targetConfirmation) throw new Error("Target confirmation message is not ready");
+      if (publicPreviewMode) {
+        setTargetConfirmationResult(previewImportResult(false));
+        setTargetHandoff({ ...previewTargetHandoff, operatorInputPresent: true });
+        await refreshCompletion(true);
+        return;
+      }
       const json = await readJson<ImportResult>("/v1/public-endpoints/target-confirmation/import", {
         method: "POST",
         body: JSON.stringify({
@@ -419,6 +579,12 @@ export function CasterCloudApprovalSigner() {
     try {
       if (!allowlist) throw new Error("Allowlist message is not ready");
       if (!targetConfirmation) throw new Error("Target confirmation message is not ready");
+      if (publicPreviewMode) {
+        setBundleResult(previewImportResult(false));
+        setTargetHandoff({ ...previewTargetHandoff, operatorInputPresent: true });
+        await refreshCompletion(true);
+        return;
+      }
       const json = await readJson<ImportResult>("/v1/console/operator-evidence-bundle/import", {
         method: "POST",
         body: JSON.stringify({
@@ -460,7 +626,7 @@ export function CasterCloudApprovalSigner() {
       </div>
       <div className="approval-signer-actions">
         <button type="button" onClick={connectWallet} disabled={Boolean(busy)}>
-          Connect wallet
+          {publicPreviewMode ? "Start preview operator" : "Connect wallet"}
         </button>
         <button type="button" onClick={() => refreshCompletion(false)} disabled={Boolean(busy)}>
           Refresh status
@@ -532,7 +698,7 @@ export function CasterCloudApprovalSigner() {
             Verify URLs
           </button>
           <button type="button" onClick={() => submitPublicConsoleEnv(true)} disabled={Boolean(busy)}>
-            Stage local env
+            {publicPreviewMode ? "Preview env check" : "Stage local env"}
           </button>
         </div>
         <div className="approval-signer-row">

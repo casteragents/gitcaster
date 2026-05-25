@@ -30,7 +30,8 @@ declare global {
 }
 
 const apiBase =
-  process.env.NEXT_PUBLIC_CASTERCLOUD_CONSOLE_API_BASE_URL?.replace(/\/+$/, "") || "http://127.0.0.1:8788";
+  process.env.NEXT_PUBLIC_CASTERCLOUD_CONSOLE_API_BASE_URL?.replace(/\/+$/, "") || "";
+const publicPreviewMode = !apiBase;
 
 function shorten(value: string) {
   if (!value) return "missing";
@@ -44,7 +45,18 @@ function resultToken(result: ActionResult | SessionResult) {
   return (result as SessionResult).sessionId || "";
 }
 
+async function previewHash(value: string) {
+  const bytes = new TextEncoder().encode(value);
+  const digest = await crypto.subtle.digest("SHA-256", bytes);
+  return Array.from(new Uint8Array(digest))
+    .map((byte) => byte.toString(16).padStart(2, "0"))
+    .join("");
+}
+
 async function readJson<T>(route: string, init?: RequestInit): Promise<T> {
+  if (publicPreviewMode) {
+    throw new Error("Public preview mode is active. Connect the owned CasterCloud API to execute this endpoint.");
+  }
   const response = await fetch(`${apiBase}${route}`, {
     ...init,
     headers: {
@@ -70,13 +82,16 @@ export function CasterCloudServiceActions() {
   const sessionReady = useMemo(() => Boolean(wallet && sessionId), [wallet, sessionId]);
 
   async function connectSession() {
-    setBusy("Connecting wallet");
+    setBusy(publicPreviewMode ? "Starting preview session" : "Connecting wallet");
     setError("");
     try {
-      if (!window.ethereum) throw new Error("Browser wallet not found");
-      const accounts = (await window.ethereum.request({ method: "eth_requestAccounts" })) as string[];
-      const selected = accounts[0] || "";
-      if (!selected) throw new Error("No wallet account selected");
+      let selected = "";
+      if (window.ethereum) {
+        const accounts = (await window.ethereum.request({ method: "eth_requestAccounts" })) as string[];
+        selected = accounts[0] || "";
+      }
+      if (!selected && !publicPreviewMode) throw new Error("No wallet account selected");
+      if (!selected) selected = "public-preview-wallet";
       const message = [
         "CasterCloud Console Session",
         "version=1",
@@ -84,10 +99,25 @@ export function CasterCloudServiceActions() {
         "liveMutation=false",
         `issuedAt=${new Date().toISOString()}`,
       ].join("\n");
-      const signature = (await window.ethereum.request({
-        method: "personal_sign",
-        params: [message, selected],
-      })) as string;
+      const signature =
+        window.ethereum && selected !== "public-preview-wallet"
+          ? ((await window.ethereum.request({
+              method: "personal_sign",
+              params: [message, selected],
+            })) as string)
+          : `public-preview:${await previewHash(message)}`;
+      if (publicPreviewMode) {
+        const previewSession = {
+          status: "queued_dry_run",
+          verified: true,
+          sessionId: `preview-${(await previewHash(`${selected}:${signature}`)).slice(0, 24)}`,
+          address: selected,
+        };
+        setWallet(selected);
+        setSessionId(previewSession.sessionId);
+        setLastResult(previewSession);
+        return;
+      }
       const session = await readJson<SessionResult>("/v1/wallet/session", {
         method: "POST",
         body: JSON.stringify({ address: selected, message, signature }),
@@ -109,6 +139,24 @@ export function CasterCloudServiceActions() {
     setError("");
     try {
       if (!sessionReady) throw new Error("Wallet session required");
+      if (publicPreviewMode) {
+        const requestHash = await previewHash(
+          JSON.stringify({
+            endpoint: action.endpoint,
+            method: action.method,
+            resource: action.resource,
+            wallet,
+            sessionId,
+          })
+        );
+        setLastResult({
+          id: action.id,
+          status: "queued_dry_run",
+          resource: action.resource,
+          requestHash,
+        });
+        return;
+      }
       const result = await readJson<ActionResult>(action.endpoint, {
         method: action.method,
         headers: { authorization: `Bearer ${sessionId}` },
@@ -133,10 +181,14 @@ export function CasterCloudServiceActions() {
       <div className="service-action-header">
         <div>
           <strong>Owned service actions</strong>
-          <p>Wallet sessions queue local dry-run receipts for every CasterCloud service surface.</p>
+          <p>
+            {publicPreviewMode
+              ? "Public preview mode creates local dry-run receipts without calling a private operator API."
+              : "Wallet sessions queue local dry-run receipts for every CasterCloud service surface."}
+          </p>
         </div>
         <button type="button" onClick={connectSession} disabled={Boolean(busy)}>
-          Connect wallet
+          {publicPreviewMode ? "Start preview session" : "Connect wallet"}
         </button>
       </div>
       <div className="approval-signer-row">

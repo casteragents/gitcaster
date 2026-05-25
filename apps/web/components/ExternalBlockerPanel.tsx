@@ -10,7 +10,7 @@ const blockers = [
   "CASTER_DEPLOY_SIGNING_KEY_PATH",
   "CASTER_DOMAIN_REGISTRY_ENDPOINT",
   "public Caster node endpoints",
-  "audited $CASTER contracts",
+  "audited $GITCASTER contracts",
   "external security audit"
 ];
 

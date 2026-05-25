@@ -99,7 +99,7 @@ export function truthTableRows(): TruthTableRow[] {
     { surface: "Claim Miniapp", status: "preview", blocker: "Claim Miniapp migration is not PR-12", nextProof: "Dedicated miniapp migration evidence" },
     { surface: "Caster Punks", status: "preview", blocker: "Image indexing is not PR-12", nextProof: "Public index-only proof" },
     { surface: "CasterAgents", status: "blocked", blocker: "Runtime state is protected and not read by PR-12", nextProof: "Safety-lock evidence" },
-    { surface: "token utility", status: "proof-only", blocker: "$CASTER utility remains planned/proof-only here", nextProof: "Contract and audit evidence" },
+    { surface: "token utility", status: "proof-only", blocker: "$GITCASTER utility remains planned/proof-only here", nextProof: "Contract and audit evidence" },
     { surface: "token contracts", status: "requires-contract", blocker: "Audited contract evidence missing", nextProof: "Contract deployment and audit proof" },
     { surface: "domains", status: "requires-registry", blocker: ".caster registry proof missing", nextProof: "Domain registry evidence" },
     { surface: "installer", status: "blocked", blocker: "Hosted installer proof missing", nextProof: "Installer release evidence" },

@@ -456,9 +456,9 @@
       "type": "gitcaster.ecosystem.entry.v1",
       "privateNotesRedacted": true,
       "id": "castercaster-token",
-      "name": "$CASTER token",
+      "name": "$GITCASTER token",
       "category": "Token",
-      "sourcePath": "token/$CASTER",
+      "sourcePath": "token/$GITCASTER",
       "sensitivity": "public",
       "status": "proof-only",
       "repoStatus": "not-applicable",
@@ -473,12 +473,12 @@
       ],
       "agents": [],
       "evidence": [
-        "token/$CASTER"
+        "token/$GITCASTER"
       ],
       "blockers": [
         "Evidence required before stronger status."
       ],
-      "publicDescription": "$CASTER token surface listed as proof-only until contract, audit, and governance evidence exists."
+      "publicDescription": "$GITCASTER token surface listed as proof-only until contract, audit, and governance evidence exists."
     },
     {
       "type": "gitcaster.ecosystem.entry.v1",
@@ -636,7 +636,7 @@
       "QStorage tools",
       "CasterCloud tools",
       "Farcaster miniapps",
-      "$CASTER token",
+      "$GITCASTER token",
       "Wallet/security tools",
       "Proof/release evidence",
       "Policy/sandbox/wallet guard crates",

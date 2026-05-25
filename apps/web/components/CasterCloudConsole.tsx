@@ -11,6 +11,7 @@ import {
   qconsoleServiceAliases,
   statusClass,
 } from "../lib/castercloud-console-data";
+import { sitePath } from "../lib/site-url";
 import { CasterCloudApprovalSigner } from "./CasterCloudApprovalSigner";
 import { CasterCloudServiceActions } from "./CasterCloudServiceActions";
 
@@ -28,7 +29,7 @@ export function CasterCloudConsole() {
           <div className="actions">
             <a className="button primary" href="#services">Open services</a>
             <a className="button" href="#deployments">Deployment queue</a>
-            <a className="button" href="/docs">API docs</a>
+            <a className="button" href={sitePath("/docs")}>API docs</a>
           </div>
         </div>
         <div className="console-status-panel">
@@ -94,7 +95,7 @@ export function CasterCloudConsole() {
             <h2>Owned QConsole aliases</h2>
             <p>QStorage, QKMS, QQ, and QPing names now route through CasterCloud-owned endpoints.</p>
           </div>
-          <a className="button" href="http://127.0.0.1:8788/v1/qconsole/services">Open alias API</a>
+          <a className="button" href={sitePath("/docs#qconsole-aliases")}>Open alias API</a>
         </div>
         <div className="alias-grid">
           {qconsoleServiceAliases.map((alias) => (
@@ -131,7 +132,7 @@ export function CasterCloudConsole() {
             <h2>Deploy apps and miniapps</h2>
             <p>One owned workbench for GitCaster, casterchain.online, agents, miniapps, channels, and service apps.</p>
           </div>
-          <a className="button" href="http://127.0.0.1:8788/v1/deployments/workbench">Open workbench API</a>
+          <a className="button" href="#app-workbench">Open workbench API</a>
         </div>
         <div className="workbench-summary" aria-label="CasterCloud app deploy workbench summary">
           <div>
@@ -191,7 +192,7 @@ export function CasterCloudConsole() {
             <h2>Public target and wallet readiness</h2>
             <p>One owned checkpoint for public URLs, DNS target hashes, operator wallets, and deploy workbench evidence.</p>
           </div>
-          <a className="button" href="http://127.0.0.1:8788/v1/public-target-wallet-readiness">Open readiness API</a>
+          <a className="button" href="#target-wallet-readiness">Open readiness API</a>
         </div>
         <div className="table-wrap">
           <table className="truth-table">
@@ -256,7 +257,7 @@ export function CasterCloudConsole() {
             <h2>Wallet deploy queue</h2>
             <p>Signed manifests are ready for dry-run queueing; live execution waits for strict proof.</p>
           </div>
-          <a className="button" href="http://127.0.0.1:8788/v1/deployments/queue">Open queue API</a>
+          <a className="button" href="#deploy-queue">Open queue API</a>
         </div>
         <div className="table-wrap">
           <table className="truth-table">
@@ -288,7 +289,7 @@ export function CasterCloudConsole() {
             <h2>Wallet deployment journal</h2>
             <p>GitCaster dry-run requests are signed, hashed, and recorded before live deployment is allowed.</p>
           </div>
-          <a className="button" href="http://127.0.0.1:8788/v1/deployments/journal/gitcaster">Open GitCaster entry</a>
+          <a className="button" href="#deploy-journal">Open GitCaster entry</a>
         </div>
         <div className="table-wrap">
           <table className="truth-table">
@@ -320,7 +321,7 @@ export function CasterCloudConsole() {
             <h2>Operator approvals</h2>
             <p>Live deployment requires a real operator wallet signature and a clean completion sentinel.</p>
           </div>
-          <a className="button" href="http://127.0.0.1:8788/v1/deployments/approvals/gitcaster">Open GitCaster approval</a>
+          <a className="button" href="#deploy-approvals">Open GitCaster approval</a>
         </div>
         <div className="table-wrap">
           <table className="truth-table">
@@ -352,7 +353,7 @@ export function CasterCloudConsole() {
             <h2>CasterCloud API</h2>
             <p>Local docs replace console guessing with stable endpoints for apps and mini apps.</p>
           </div>
-          <a className="button" href="/docs">Open docs</a>
+          <a className="button" href={sitePath("/docs")}>Open docs</a>
         </div>
         <div className="endpoint-list">
           {consoleEndpoints.map(([method, route, detail]) => (

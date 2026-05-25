@@ -1,4 +1,5 @@
 import { PRODUCT } from "../lib/caster-copy";
+import { sitePath } from "../lib/site-url";
 
 const links = [
   ["/start", "Start"],
@@ -22,13 +23,13 @@ const links = [
 export function CasterNav() {
   return (
     <nav className="nav" aria-label="GitCaster navigation">
-      <a className="brand" href="/">
+      <a className="brand" href={sitePath("/")}>
         <span className="brand-mark">gc</span>
         <span>{PRODUCT.name}</span>
       </a>
       <div className="nav-links">
         {links.map(([href, label]) => (
-          <a href={href} key={href}>{label}</a>
+          <a href={sitePath(href)} key={href}>{label}</a>
         ))}
       </div>
     </nav>

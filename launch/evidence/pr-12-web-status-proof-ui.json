@@ -2,7 +2,7 @@
   "type": "gitcaster.pr.evidence.v1",
   "pr": "PR-12",
   "title": "Web status and proof UI",
-  "createdAt": "2026-05-25T08:40:21.853Z",
+  "createdAt": "2026-05-25T09:44:47.565Z",
   "repoRoot": "D:\\user\\xxxcrypto-vercel-clean\\.quilibrium\\gitcaster-public-github-release\\gitcaster-public-repo",
   "filesChanged": [
     "apps/web/package.json",
@@ -69,11 +69,11 @@
     },
     {
       "path": "apps/web/app/layout.tsx",
-      "sha256": "4cd4f9ba5481082332abe211a53d7b5b5112f3c87b43d0c44a96972c44bddb60"
+      "sha256": "458e7b5f2de14874b57605a53cdade6b263a2a3ae7d0e9b187bc5e1fe80a14a7"
     },
     {
       "path": "apps/web/app/page.tsx",
-      "sha256": "fb902b375d640d63a7bcdcad07aa3f4b33333fb21130729374d63ea470df524b"
+      "sha256": "4bc4d5f81acf434f890f29087563c23f07408ac7cc1e1b7ba52100bae87379eb"
     },
     {
       "path": "apps/web/app/start/page.tsx",
@@ -93,7 +93,7 @@
     },
     {
       "path": "apps/web/app/ecosystem/page.tsx",
-      "sha256": "547dfe1ec08417dab86265a151de8a6f0a7567ec080f553789183bfd5b2302b9"
+      "sha256": "7e82b5df34dcc7e19b77824f378216a56abf5a6c4539af53f8a3ff9f96bcb6f8"
     },
     {
       "path": "apps/web/app/security/page.tsx",
@@ -105,7 +105,7 @@
     },
     {
       "path": "apps/web/app/token/page.tsx",
-      "sha256": "e24e81da908f20cdd2c33e454a6bc246ba1ce642d62069db85f8898390abf223"
+      "sha256": "003a70209cf30740388d94b78868afd68d5e310ceecb62c58e7af251e0cba0a1"
     },
     {
       "path": "apps/web/app/domains/page.tsx",
@@ -125,7 +125,7 @@
     },
     {
       "path": "apps/web/components/ExternalBlockerPanel.tsx",
-      "sha256": "2e00b1063e0abe053b704ef453bdaa79fc7d43c7695fc5099bce82ad9598b0ce"
+      "sha256": "392c2d479a5302bb57af83c41913559ecdd6f521b8ab1f34021fbacbaa8ec2ae"
     },
     {
       "path": "apps/web/components/CasterShell.tsx",
@@ -133,7 +133,7 @@
     },
     {
       "path": "apps/web/components/CasterNav.tsx",
-      "sha256": "7f3a013508b4a014d9e738919adc36e0215ea6b67277c35697da4e84ff3d342e"
+      "sha256": "d60ef1481bc60bc5e0dac60537b82b8ce025d1b03c2a1a23766f0b264fd6b63e"
     },
     {
       "path": "apps/web/components/CasterFooter.tsx",
@@ -169,7 +169,7 @@
     },
     {
       "path": "apps/web/lib/status-truth.ts",
-      "sha256": "f5b7af2a8e0e034bda8b7db51c320dc92452735821f749c290e80a94cfe10c0d"
+      "sha256": "6be978453d57725f88ff513b5bbb235680b621cbe1da9c1716196a7ff09b5017"
     },
     {
       "path": "apps/web/lib/preview-data.ts",
@@ -177,11 +177,11 @@
     },
     {
       "path": "apps/web/lib/evidence-links.ts",
-      "sha256": "32bad0cfef9525aaa228a36760ddab3b5f60dfe9c99035666bb544ceee0b78ef"
+      "sha256": "4413277cae38f2d27d4560902f18e88b8592463560fa11fe44f7ab3eca63dea2"
     },
     {
       "path": "apps/web/lib/caster-copy.ts",
-      "sha256": "0ffb6294253020055cd4ff7329ed2bbfb7bcc2a36f2adb3dce466b28ea17b06d"
+      "sha256": "94de193c188481a5bcecfa5ebce145c09633da9d1f9b05a10187803aa7597f49"
     },
     {
       "path": "apps/web/styles/caster-theme.css",
