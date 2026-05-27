@@ -10,7 +10,7 @@ export const PRODUCT = {
   localIdentityDir: "~/.gitcaster",
   storage: "CasterCloud / QStorage / Quilibrium",
   token: "$GITCASTER",
-  tokenAddress: "0x6de4da2ef9b1260142cd3d1f34a0cdf11bb5dba3",
+  tokenAddress: "0x764697544F09921c3c8bA89F1Fb6388C4127fB07",
   nodes: ["node.gitcaster.casterchain", "node2.gitcaster.casterchain", "node3.gitcaster.casterchain"]
 };
 

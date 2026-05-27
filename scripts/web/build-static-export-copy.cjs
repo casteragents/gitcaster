@@ -38,6 +38,7 @@ function copyOut(source, target) {
   if (!fs.existsSync(source)) {
     throw new Error(`static export output missing: ${source}`);
   }
+  fs.rmSync(target, { recursive: true, force: true });
   fs.mkdirSync(target, { recursive: true });
   fs.cpSync(source, target, { recursive: true, force: true });
 }
@@ -120,6 +121,7 @@ if (nextStatus !== 0) {
   }
 }
 copyOut(fs.existsSync(outSource) ? outSource : distDirExportSource, outTarget);
+fs.writeFileSync(path.join(outTarget, ".nojekyll"), "");
 
 console.log(JSON.stringify({
   status: "passed",
