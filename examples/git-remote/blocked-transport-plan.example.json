@@ -1,0 +1,28 @@
+{
+  "format": "gitcaster.git-remote.public-alpha-plan.v1",
+  "package": "@gitcaster/git-remote-gitcaster",
+  "status": "public-alpha",
+  "remoteUrlExamples": [
+    "gitcaster://did:caster:z6MkwExample/demo",
+    "gitcaster://node.gitcaster.casterchain/did:caster:z6MkwExample/demo"
+  ],
+  "availableDiagnostics": [
+    "git-remote-gitcaster --parse <gitcaster-url>",
+    "git-remote-gitcaster --status <gitcaster-url>",
+    "git-remote-gitcaster --explain-push <gitcaster-url>",
+    "git-remote-gitcaster --explain-fetch <gitcaster-url>"
+  ],
+  "blockedTransport": {
+    "packPush": "blocked",
+    "packFetch": "blocked",
+    "clone": "blocked",
+    "requiredProof": "PR-22 Git transport release-candidate evidence"
+  },
+  "safety": {
+    "normalGitPushClaimed": false,
+    "normalGitCloneClaimed": false,
+    "qstorageClaimed": false,
+    "castercloudClaimed": false,
+    "secretsRequired": false
+  }
+}

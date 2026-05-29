@@ -1,0 +1,155 @@
+{
+  "type": "gitcaster.pr.evidence.v1",
+  "pr": "PR-09",
+  "title": "Git remote helper scaffold with honest mode",
+  "createdAt": "2026-05-29T18:24:08.981Z",
+  "repoRoot": "D:\\user\\xxxcrypto-vercel-clean\\.quilibrium\\gitcaster-public-github-release\\gitcaster-public-repo",
+  "filesChanged": [
+    "apps/git-remote-gitcaster/package.json",
+    "apps/git-remote-gitcaster/tsconfig.json",
+    "apps/git-remote-gitcaster/src/index.ts",
+    "apps/git-remote-gitcaster/src/protocol.ts",
+    "apps/git-remote-gitcaster/src/refs.ts",
+    "apps/git-remote-gitcaster/src/push.ts",
+    "apps/git-remote-gitcaster/src/fetch.ts",
+    "apps/git-remote-gitcaster/src/node-client.ts",
+    "apps/git-remote-gitcaster/src/transport-status.ts",
+    "apps/git-remote-gitcaster/src/git-remote-gitcaster.test.ts",
+    "apps/web/app/open-source/git-remote/page.tsx",
+    "apps/web/public/git-remote-gitcaster.md",
+    "docs-source/developer-layers/git-remote.md",
+    "examples/git-remote/blocked-transport-plan.example.json",
+    "docs/git-remote-gitcaster.md",
+    "scripts/git/check-git-transport-beta.cjs",
+    "scripts/git/check-pr09-git-remote-helper.cjs",
+    "launch/evidence/pr-09-git-remote-helper.json"
+  ],
+  "commandsRun": [
+    "pnpm --filter @gitcaster/protocol build",
+    "pnpm --filter @gitcaster/repo-records build",
+    "pnpm --filter @gitcaster/git-remote-gitcaster build",
+    "pnpm --filter @gitcaster/git-remote-gitcaster test",
+    "node scripts/git/check-git-transport-beta.cjs",
+    "node scripts/git/check-pr09-git-remote-helper.cjs"
+  ],
+  "passed": true,
+  "failed": false,
+  "blockers": [],
+  "summary": {
+    "gitRemotePackageFound": true,
+    "gitRemoteBuildPassed": true,
+    "gitRemoteTestsPassed": true,
+    "urlParserPassed": true,
+    "gitcasterUrlAccepted": true,
+    "gitlawbUrlRejected": true,
+    "didGitlawbRejected": true,
+    "unsafeRepoRejected": true,
+    "nodeResolverUsesGitCasterEnv": true,
+    "nodeResolverIgnoresGitlawbEnv": true,
+    "refListModeStatus": "blocked",
+    "packModeStatus": "blocked",
+    "fetchModeStatus": "blocked",
+    "pushModeStatus": "blocked",
+    "normalGitPushClaimed": false,
+    "normalGitCloneClaimed": false,
+    "pushLocalRecognizedAsWorkingAlphaPath": false,
+    "docsHonest": true,
+    "publicAlphaSourceReleased": true,
+    "normalGitTransportClaimed": false,
+    "pr08EvidenceFound": false,
+    "forbiddenIdentityViolations": 0,
+    "hostedPlatformProductionViolations": 0,
+    "fakeLiveClaimsFound": 0,
+    "secretLeakFindings": 0
+  },
+  "transportDecision": {
+    "type": "gitcaster.git-transport.decision.v1",
+    "status": "blocked",
+    "packMode": {
+      "status": "blocked",
+      "working": false,
+      "reason": "Full Git pack push and fetch are not implemented in PR-09.",
+      "nextPr": "PR-22"
+    },
+    "pushLocal": {
+      "status": "blocked",
+      "working": false,
+      "evidence": "launch/evidence/pr-08-push-local.json"
+    },
+    "refList": {
+      "status": "blocked",
+      "working": false,
+      "reason": "GITCASTER_NODE or CASTER_NODE_URL is required for ref listing."
+    },
+    "normalGitPushClaimed": false,
+    "normalGitCloneClaimed": false,
+    "qstorageClaimed": false,
+    "castercloudClaimed": false,
+    "multiNodeReplicationClaimed": false
+  },
+  "urlParsing": {
+    "accepted": [
+      "gitcaster://did:caster:zExample/hello-gitcaster",
+      "gitcaster://did:caster:zExample/hello-gitcaster.git",
+      "gitcaster://node.gitcaster.casterchain/did:caster:zExample/hello-gitcaster"
+    ],
+    "rejected": [
+      "gitlawb://did:gitlawb:zExample/hello",
+      "gitcaster://did:gitlawb:zExample/hello",
+      "gitcaster://did:caster:zExample/../bad"
+    ]
+  },
+  "releaseQuality": {
+    "releaseLevel": "public-alpha",
+    "qaRequired": true,
+    "unitTests": "passed",
+    "integrationTests": "passed",
+    "securityGate": "not-applicable",
+    "secretScan": "passed",
+    "fakeClaimScan": "passed",
+    "productionBlockers": [
+      "Full Git pack push/fetch is deferred to PR-22.",
+      "The public remote-helper source is public-alpha only.",
+      "MCP server is deferred to PR-11.",
+      "Web status UI is deferred to PR-12.",
+      "QStorage/CasterCloud endpoint proof is deferred to PR-23.",
+      "Public node federation proof is deferred to PR-24.",
+      "Production launch gate is deferred to PR-32."
+    ],
+    "canShipProduction": false
+  },
+  "forbiddenReferenceFindings": [],
+  "hostedPlatformFindings": [],
+  "secretFindings": [],
+  "publicClaimsAdded": [],
+  "publicClaimsRemoved": [],
+  "noFakeProgressChecks": {
+    "gitlawbPublicBranding": false,
+    "hostedPlatformProductionDependency": false,
+    "fakeLiveClaim": false,
+    "secretExposed": false,
+    "sensitiveAgentStatePublic": false
+  },
+  "nextPrHandoff": {
+    "nextPr": "PR-10",
+    "title": "Issues and PRs as signed records",
+    "requiredInputs": [
+      "packages/repo-records/src/event-log.ts",
+      "packages/repo-records/src/signed-record.ts",
+      "apps/node/src/services/local-alpha-store.ts",
+      "apps/node/src/services/repo-service.ts",
+      "launch/evidence/pr-09-git-remote-helper.json"
+    ],
+    "knownRisks": [
+      "PR-09 creates a Git remote helper scaffold only.",
+      "PR-09 does not prove normal Git push/fetch/clone.",
+      "PR-09 does not publish objects to QStorage or CasterCloud.",
+      "PR-09 does not prove federation."
+    ],
+    "recommendedCommands": [
+      "pnpm --filter @gitcaster/git-remote-gitcaster build",
+      "pnpm --filter @gitcaster/git-remote-gitcaster test",
+      "node scripts/git/check-git-transport-beta.cjs"
+    ]
+  }
+}

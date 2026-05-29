@@ -15,6 +15,7 @@
     "miniapp-templates:check": "pnpm --filter @gitcaster/playground-templates check",
     "sdk:check": "pnpm --filter @gitcaster/sdk check",
     "cli:check": "pnpm --filter @gitcaster/cli check",
+    "git-remote:check": "pnpm --filter @gitcaster/git-remote-gitcaster check && node scripts/git/check-git-transport-beta.cjs && node scripts/git/check-pr09-git-remote-helper.cjs",
     "secret-scan": "node scripts/public-secret-scan.cjs"
   },
   "devDependencies": {

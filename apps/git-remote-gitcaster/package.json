@@ -9,16 +9,18 @@
   },
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "node ../../src/node_modules/typescript/bin/tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json",
     "test": "node --test dist/git-remote-gitcaster.test.js",
     "lint": "node ../../scripts/git/check-pr09-git-remote-helper.cjs --package-only",
-    "typecheck": "node ../../src/node_modules/typescript/bin/tsc -p tsconfig.json"
+    "check": "pnpm run build && pnpm run test",
+    "typecheck": "tsc -p tsconfig.json"
   },
   "dependencies": {
     "@gitcaster/protocol": "workspace:*",
     "@gitcaster/repo-records": "workspace:*"
   },
   "devDependencies": {
+    "@types/node": "24.12.4",
     "typescript": "^5.9.3"
   }
 }

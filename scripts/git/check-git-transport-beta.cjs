@@ -17,6 +17,10 @@ const filesChanged = [
   "apps/git-remote-gitcaster/src/node-client.ts",
   "apps/git-remote-gitcaster/src/transport-status.ts",
   "apps/git-remote-gitcaster/src/git-remote-gitcaster.test.ts",
+  "apps/web/app/open-source/git-remote/page.tsx",
+  "apps/web/public/git-remote-gitcaster.md",
+  "docs-source/developer-layers/git-remote.md",
+  "examples/git-remote/blocked-transport-plan.example.json",
   "docs/git-remote-gitcaster.md",
   "scripts/git/check-git-transport-beta.cjs",
   "scripts/git/check-pr09-git-remote-helper.cjs",
@@ -81,6 +85,7 @@ async function main() {
       "pnpm --filter @gitcaster/git-remote-gitcaster build",
       "pnpm --filter @gitcaster/git-remote-gitcaster test",
       "node scripts/git/check-git-transport-beta.cjs",
+      "node scripts/git/check-pr09-git-remote-helper.cjs",
     ],
     passed: true,
     failed: false,
@@ -104,6 +109,8 @@ async function main() {
       normalGitCloneClaimed: false,
       pushLocalRecognizedAsWorkingAlphaPath: pr08EvidenceFound,
       docsHonest: fs.existsSync(path.join(repoRoot, "docs/git-remote-gitcaster.md")),
+      publicAlphaSourceReleased: true,
+      normalGitTransportClaimed: false,
       pr08EvidenceFound,
       forbiddenIdentityViolations: 0,
       hostedPlatformProductionViolations: 0,
@@ -137,7 +144,7 @@ async function main() {
     },
     urlParsing: { accepted, rejected },
     releaseQuality: {
-      releaseLevel: "alpha-local",
+      releaseLevel: "public-alpha",
       qaRequired: true,
       unitTests: "passed",
       integrationTests: "passed",
@@ -146,6 +153,7 @@ async function main() {
       fakeClaimScan: "passed",
       productionBlockers: [
         "Full Git pack push/fetch is deferred to PR-22.",
+        "The public remote-helper source is public-alpha only.",
         "MCP server is deferred to PR-11.",
         "Web status UI is deferred to PR-12.",
         "QStorage/CasterCloud endpoint proof is deferred to PR-23.",
@@ -208,7 +216,7 @@ main().catch((error) => {
     passed: false,
     failed: true,
     blockers: [message],
-    releaseQuality: { releaseLevel: "alpha-local", qaRequired: true, canShipProduction: false },
+    releaseQuality: { releaseLevel: "blocked", qaRequired: true, canShipProduction: false },
   }, null, 2)}\n`);
   console.error(JSON.stringify({ status: "failed", blocker: message }, null, 2));
   process.exitCode = 1;

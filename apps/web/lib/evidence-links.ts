@@ -35,6 +35,8 @@ export const evidenceLinks: EvidenceLink[] = [
   { label: "SDK local client example", path: "examples/sdk/public-alpha-client.example.ts", status: "public-alpha" },
   { label: "CLI source", path: "apps/cli", status: "public-alpha" },
   { label: "CLI local command plan", path: "examples/cli/local-command-plan.example.json", status: "public-alpha" },
+  { label: "Git remote helper source", path: "apps/git-remote-gitcaster", status: "public-alpha" },
+  { label: "Git remote blocked transport plan", path: "examples/git-remote/blocked-transport-plan.example.json", status: "public-alpha" },
   { label: "PR-12 web truth UI", path: "launch/evidence/pr-12-web-status-proof-ui.json", status: "alpha-local" },
   { label: "MCP source", path: "apps/mcp", status: "alpha-local" },
   { label: "Canonical ecosystem preview", path: "docs/gitcaster-ecosystem.canonical.json", status: "preview" },

@@ -16,6 +16,7 @@ This public repository is intentionally scoped for contribution and website visi
 - `packages/playground-templates` and `examples/miniapps`: local miniapp shell templates, manifests, and blocked-runtime proof fixtures.
 - `packages/sdk-typescript` and `examples/sdk`: public-alpha TypeScript client helpers with proof-gated runtime methods.
 - `apps/cli` and `examples/cli`: public-alpha local command helpers for payload building and MCP serve planning.
+- `apps/git-remote-gitcaster` and `examples/git-remote`: public-alpha remote-helper source and blocked transport fixtures.
 
 ## Open-core boundary
 
@@ -51,6 +52,7 @@ pnpm run api-tutorials:check
 pnpm run miniapp-templates:check
 pnpm run sdk:check
 pnpm run cli:check
+pnpm run git-remote:check
 pnpm run simulator:check
 pnpm run ros:check
 pnpm run build:web

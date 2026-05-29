@@ -2,7 +2,7 @@
   "type": "gitcaster.pr.evidence.v1",
   "pr": "PR-12",
   "title": "Web status and proof UI",
-  "createdAt": "2026-05-29T18:05:39.904Z",
+  "createdAt": "2026-05-29T18:24:02.871Z",
   "repoRoot": "D:\\user\\xxxcrypto-vercel-clean\\.quilibrium\\gitcaster-public-github-release\\gitcaster-public-repo",
   "filesChanged": [
     "apps/web/package.json",
@@ -26,6 +26,7 @@
     "apps/web/app/open-source/miniapp-templates/page.tsx",
     "apps/web/app/open-source/typescript-sdk/page.tsx",
     "apps/web/app/open-source/cli/page.tsx",
+    "apps/web/app/open-source/git-remote/page.tsx",
     "apps/web/components/TruthStatusPill.tsx",
     "apps/web/components/TruthTable.tsx",
     "apps/web/components/ProofPanel.tsx",
@@ -94,6 +95,17 @@
     "apps/cli/src/commands/pr.ts",
     "apps/cli/src/commands/mcp.ts",
     "apps/cli/src/cli.test.ts",
+    "apps/git-remote-gitcaster/package.json",
+    "apps/git-remote-gitcaster/tsconfig.json",
+    "apps/git-remote-gitcaster/src/index.ts",
+    "apps/git-remote-gitcaster/src/protocol.ts",
+    "apps/git-remote-gitcaster/src/refs.ts",
+    "apps/git-remote-gitcaster/src/push.ts",
+    "apps/git-remote-gitcaster/src/fetch.ts",
+    "apps/git-remote-gitcaster/src/node-client.ts",
+    "apps/git-remote-gitcaster/src/transport-status.ts",
+    "apps/git-remote-gitcaster/src/git-remote-gitcaster.test.ts",
+    "apps/web/public/git-remote-gitcaster.md",
     "examples/worlds/local-agent-grid.world.json",
     "examples/ros/local-agent-bridge.launch.json",
     "examples/ros/local-agent-bridge.messages.json",
@@ -103,12 +115,14 @@
     "examples/sdk/public-alpha-client.example.ts",
     "examples/sdk/public-alpha-client.example.json",
     "examples/cli/local-command-plan.example.json",
+    "examples/git-remote/blocked-transport-plan.example.json",
     "docs-source/developer-layers/simulator.md",
     "docs-source/developer-layers/ros-adapters.md",
     "docs-source/developer-layers/api-sdk-tutorials.md",
     "docs-source/developer-layers/miniapp-templates.md",
     "docs-source/developer-layers/typescript-sdk.md",
     "docs-source/developer-layers/cli.md",
+    "docs-source/developer-layers/git-remote.md",
     "launch/evidence/pr-12-web-status-proof-ui.json"
   ],
   "commandsRun": [
@@ -116,6 +130,7 @@
     "pnpm run miniapp-templates:check",
     "pnpm run sdk:check",
     "pnpm run cli:check",
+    "pnpm run git-remote:check",
     "pnpm run simulator:check",
     "pnpm run ros:check",
     "node scripts/web/check-web-truth-table.cjs"
@@ -182,7 +197,7 @@
     },
     {
       "path": "apps/web/app/open-source/page.tsx",
-      "sha256": "9bfcf507a0496358b1878c87afc25dae8e7731379b4188a5686eab20fe058c9c"
+      "sha256": "bb21458f668a5027319c3c358b5a85bb7f36c4b4f79f68b732f4afdb1d50762f"
     },
     {
       "path": "apps/web/app/open-source/simulator/page.tsx",
@@ -207,6 +222,10 @@
     {
       "path": "apps/web/app/open-source/cli/page.tsx",
       "sha256": "bb23c4bd4e19bbaaf4452078321bbaa59ae2bdb510bee069ae4f354cb25a96a5"
+    },
+    {
+      "path": "apps/web/app/open-source/git-remote/page.tsx",
+      "sha256": "8b6339fd4120b7333b8e238a69f0c248d101cd48d023560d80ea3f38b3a19ea8"
     },
     {
       "path": "apps/web/components/TruthStatusPill.tsx",
@@ -270,7 +289,7 @@
     },
     {
       "path": "apps/web/lib/status-truth.ts",
-      "sha256": "de9a1d8ada63152eb368384e306425b8606bc22e3eb60da6269b2effbd6655a4"
+      "sha256": "1564a358f5fef92cf26d4a98e532b2dd5e0ddf8a02f1575ab23cc01e4daf1aed"
     },
     {
       "path": "apps/web/lib/preview-data.ts",
@@ -278,7 +297,7 @@
     },
     {
       "path": "apps/web/lib/evidence-links.ts",
-      "sha256": "5259bcda6fa6119a2c25ca879d2b133746ec2ace2dd142ec118d5ad1909200fd"
+      "sha256": "73cb72dd32cf2bb65d8224a8ef11c42a05ebdbe0493b5bb634de3baaac15691d"
     },
     {
       "path": "apps/web/lib/caster-copy.ts",
@@ -318,11 +337,11 @@
     },
     {
       "path": "scripts/web/check-web-truth-table.cjs",
-      "sha256": "0e314f05bfe1d4f1de6c51f8439a2cb5250c330e9f63b034ddd6c58ec086c5b2"
+      "sha256": "9fc0f2958203c00b8db8264269d7c746b3a13e4447d7f5a19c1379d286ecc595"
     },
     {
       "path": "scripts/web/check-pr12-web-ui.cjs",
-      "sha256": "74b886136d82201826234cfc78d024cf13b0a914ad0d4210e7a5670b69163740"
+      "sha256": "c1c7e5465a2016787d82632692248de4700da4cf93eb7942862950065c4b0035"
     },
     {
       "path": "LICENSE",
@@ -481,6 +500,50 @@
       "sha256": "71e5cc1a9c20a6642a93256abf50b8669b879b85a7687722c4fb38e44156bda1"
     },
     {
+      "path": "apps/git-remote-gitcaster/package.json",
+      "sha256": "cc7afb0aebd3840a338ce2f9bbcdef30f527011f0d6909af6bf7794e093fbd46"
+    },
+    {
+      "path": "apps/git-remote-gitcaster/tsconfig.json",
+      "sha256": "8cfa53f6951951bf88b534bce268499a6144b05c18be19a40f83fd5cb62362e2"
+    },
+    {
+      "path": "apps/git-remote-gitcaster/src/index.ts",
+      "sha256": "d63afdca0681e361c9387102c113488cd83eb000d25a0207ba7a0e883aba38f3"
+    },
+    {
+      "path": "apps/git-remote-gitcaster/src/protocol.ts",
+      "sha256": "c67bc9b426c732e5235c13e293ce51b70c4a4baf8d7b00e5b9b97ef51b0534fe"
+    },
+    {
+      "path": "apps/git-remote-gitcaster/src/refs.ts",
+      "sha256": "aa9e57eb432cb85630bed8e5ba824b5f1cd37d0b6ef48ffad759b47588e064f3"
+    },
+    {
+      "path": "apps/git-remote-gitcaster/src/push.ts",
+      "sha256": "1cdeb17e00ac39c2b04314d74d7d5361ecd5e4801607934f4450eee4df8c4df4"
+    },
+    {
+      "path": "apps/git-remote-gitcaster/src/fetch.ts",
+      "sha256": "cae7734d95a692048b35e872d2739bc7ece95aff1cf9d045f092d6adf3227e7a"
+    },
+    {
+      "path": "apps/git-remote-gitcaster/src/node-client.ts",
+      "sha256": "a0c77e8e3dbb466519fa57c56bba093b53070ae7ba28911d4ac51114dd5cc266"
+    },
+    {
+      "path": "apps/git-remote-gitcaster/src/transport-status.ts",
+      "sha256": "1f9f2f65e72be494b5bd362b16a1283d0b380937134400eca2c30717d4e0dac5"
+    },
+    {
+      "path": "apps/git-remote-gitcaster/src/git-remote-gitcaster.test.ts",
+      "sha256": "d5b64f0a14cc5939928b7da13eba1021c5bf2f142f2885abe13fd16c89da2210"
+    },
+    {
+      "path": "apps/web/public/git-remote-gitcaster.md",
+      "sha256": "694c11be73b8ce2e008fd701af710f3ca1e070afea0ffcd5a40176f27cdf5bde"
+    },
+    {
       "path": "examples/worlds/local-agent-grid.world.json",
       "sha256": "825d90a5b04ffc658af864a3ba254becb2386c27879626f22907e5198ae930bd"
     },
@@ -517,6 +580,10 @@
       "sha256": "857c2c5566d9073a9338f0f39634127511a2c3ba4c00f75cc9683991a2c5cdc9"
     },
     {
+      "path": "examples/git-remote/blocked-transport-plan.example.json",
+      "sha256": "eea7ceef30942ed7dd991800fcb420b227914524adcd37893dbdef1311de9e58"
+    },
+    {
       "path": "docs-source/developer-layers/simulator.md",
       "sha256": "9babfe9f4e303107382c150ae657bfe0c4b77b72396183244a0c4761a8beae31"
     },
@@ -539,6 +606,10 @@
     {
       "path": "docs-source/developer-layers/cli.md",
       "sha256": "a93ad50ec4ffa9cbbf5a2235d4f0a6a53b2916f799e04bf8f33fffc9e4175fda"
+    },
+    {
+      "path": "docs-source/developer-layers/git-remote.md",
+      "sha256": "7a476a29fbab735f7f451d5c4f07125a01287e5eeb6942b897afd3a027c52dea"
     }
   ],
   "summary": {
@@ -561,6 +632,7 @@
     "miniappTemplatesPageCreated": true,
     "typeScriptSdkPageCreated": true,
     "cliPageCreated": true,
+    "gitRemotePageCreated": true,
     "truthTableCreated": true,
     "previewDataLabeled": true,
     "liveClaimsWithoutEvidence": 0,
@@ -682,6 +754,7 @@
       "Miniapp templates are local public-alpha only until runtime endpoint, storage publish, and native domain proof exist.",
       "TypeScript SDK source is public-alpha only until package release, endpoint, custody, registry, and contract utility proof exist.",
       "CLI source is public-alpha only until installer release, node mutation, custody, storage, and domain proof exist.",
+      "Git remote helper source is public-alpha only until pack transport, node mutation, storage, and rollback proof exist.",
       "CasterAgents runtime state remains closed until safety-lock and redaction proof exists.",
       "QStorage and CasterCloud runtime endpoints still require operator proof.",
       ".caster registry and public node federation still require signed live evidence.",

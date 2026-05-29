@@ -56,6 +56,15 @@ export default function OpenSourcePage() {
         </div>
         <div className="grid">
           <div className="card">
+            <h3>Git remote helper</h3>
+            <p>Remote-helper source, URL parsing, ref-list diagnostics, and blocked transport decisions are now public.</p>
+            <div className="mini-list">
+              <a href={sitePath("/open-source/git-remote")}>Website page</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/apps/git-remote-gitcaster">Source</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/examples/git-remote">Fixture</a>
+            </div>
+          </div>
+          <div className="card">
             <h3>CLI source</h3>
             <p>Local command helpers for push payloads, issues, pull requests, and MCP serve planning are now public.</p>
             <div className="mini-list">

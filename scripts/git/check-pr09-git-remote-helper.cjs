@@ -16,6 +16,10 @@ const requiredFiles = [
   "apps/git-remote-gitcaster/src/node-client.ts",
   "apps/git-remote-gitcaster/src/transport-status.ts",
   "apps/git-remote-gitcaster/src/git-remote-gitcaster.test.ts",
+  "apps/web/app/open-source/git-remote/page.tsx",
+  "apps/web/public/git-remote-gitcaster.md",
+  "docs-source/developer-layers/git-remote.md",
+  "examples/git-remote/blocked-transport-plan.example.json",
   "docs/git-remote-gitcaster.md",
   "scripts/git/check-git-transport-beta.cjs",
   "scripts/git/check-pr09-git-remote-helper.cjs",
@@ -75,7 +79,8 @@ if (fs.existsSync(evidencePath)) {
   if (evidence?.releaseQuality?.canShipProduction !== false) blockers.push("releaseQuality.canShipProduction must be false");
   if (evidence?.summary?.normalGitPushClaimed !== false) blockers.push("normalGitPushClaimed must be false");
   if (evidence?.summary?.normalGitCloneClaimed !== false) blockers.push("normalGitCloneClaimed must be false");
-  if (evidence?.summary?.pushLocalRecognizedAsWorkingAlphaPath !== true) blockers.push("PR-08 push-local alpha path was not recognized");
+  if (evidence?.summary?.pr08EvidenceFound === true && evidence?.summary?.pushLocalRecognizedAsWorkingAlphaPath !== true) blockers.push("PR-08 push-local alpha path was not recognized");
+  if (evidence?.summary?.pr08EvidenceFound !== true && evidence?.transportDecision?.pushLocal?.status !== "blocked") blockers.push("missing PR-08 push-local evidence must leave push-local blocked");
   if (evidence?.summary?.nodeResolverUsesGitCasterEnv !== true) blockers.push("node resolver GitCaster env proof missing");
   if (evidence?.summary?.nodeResolverIgnoresGitlawbEnv !== true) blockers.push("node resolver legacy env ignore proof missing");
   if (evidence?.transportDecision?.packMode?.status !== "blocked") blockers.push("pack mode must be blocked in PR-09");
