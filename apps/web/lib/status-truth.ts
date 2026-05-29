@@ -162,7 +162,7 @@ export function truthTableRows(): TruthTableRow[] {
     { surface: "local node API source", status: "alpha-local", evidence: "apps/node", nextProof: "Signed public node health proof" },
     { surface: "local alpha workflow", status: "alpha-local", evidence: "apps/web/app/start/page.tsx", nextProof: "End-to-end local install smoke" },
     { surface: "ecosystem manifest", status: "preview", evidence: "docs/gitcaster-ecosystem.canonical.json", nextProof: "GO-gated import proof for each public app" },
-    { surface: "Claim Miniapp template", status: "alpha-local", evidence: "packages/playground-templates/src/caster-claim-miniapp.ts", nextProof: "Dedicated miniapp migration evidence" },
+    { surface: "Claim Miniapp template", status: "public-alpha", evidence: "packages/playground-templates/src/caster-claim-miniapp.ts", nextProof: "Runtime endpoint, storage publish, and native domain proof" },
     { surface: "Caster Punks index", status: "preview", evidence: "docs/caster-punks-index.json", nextProof: "Rights-reviewed public index-only proof" },
     { surface: "CasterAgents", status: "blocked", blocker: "Runtime state remains protected; only safe interfaces can be imported after review.", nextProof: "Safety-lock and redaction evidence" },
     { surface: "$GITCASTER token address", status: "proof-only", evidence: "apps/web/app/token/page.tsx", nextProof: "Contract, governance, and audit evidence" },

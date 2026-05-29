@@ -13,6 +13,7 @@ This public repository is intentionally scoped for contribution and website visi
 - `packages/simulator` and `examples/worlds`: local deterministic simulator, example world, and digital twin export helpers.
 - `packages/ros-adapters` and `examples/ros`: local ROS-style launch, topic, and message bridge helpers.
 - `packages/api-tutorials` and `examples/api`: local API and SDK request-shape tutorials with placeholder-only auth examples.
+- `packages/playground-templates` and `examples/miniapps`: local miniapp shell templates, manifests, and blocked-runtime proof fixtures.
 
 ## Open-core boundary
 
@@ -45,6 +46,7 @@ Every public GitCaster push should first post a Casterchain app update from `@ca
 ```bash
 pnpm install
 pnpm run api-tutorials:check
+pnpm run miniapp-templates:check
 pnpm run simulator:check
 pnpm run ros:check
 pnpm run build:web

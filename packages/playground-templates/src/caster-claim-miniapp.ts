@@ -1,7 +1,22 @@
 export type GitCasterMiniappImportStatus =
   | "alpha-local"
+  | "public-alpha"
   | "blocked_external"
   | "legacy-reference";
+
+export type GitCasterMiniappReleaseBundle = {
+  format: "gitcaster.miniapp-template-release.v1";
+  templateId: string;
+  status: "public-alpha";
+  publicArtifacts: string[];
+  blockedRuntimeClaims: string[];
+  safety: {
+    noSecretsRequired: true;
+    noNetworkCalls: true;
+    noManagedRuntimeClaim: true;
+    legacyHostIsReferenceOnly: true;
+  };
+};
 
 export type GitCasterMiniappTemplate = {
   type: "gitcaster.playground-template.v1";
@@ -14,6 +29,7 @@ export type GitCasterMiniappTemplate = {
   metadataPath: string;
   requiredAssets: string[];
   requiredVendorFiles: string[];
+  publicArtifacts: string[];
   runtimeApiStatus: "blocked_external";
   qstorageStatus: "blocked_external";
   castercloudStatus: "blocked_external";
@@ -32,7 +48,7 @@ export const casterClaimMiniappTemplate: GitCasterMiniappTemplate = {
   name: "Caster Claim Miniapp",
   sourcePath: "caster-claim-miniapp",
   category: "Miniapps",
-  status: "alpha-local",
+  status: "public-alpha",
   staticEntry: "caster-claim-miniapp/index.html",
   metadataPath: "caster-claim-miniapp/.well-known/farcaster.json",
   requiredAssets: [
@@ -46,6 +62,12 @@ export const casterClaimMiniappTemplate: GitCasterMiniappTemplate = {
   requiredVendorFiles: [
     "vendor/farcaster-miniapp-sdk-0.3.0.esm.js",
     "vendor/farcaster-miniapp-sdk-0.3.0.min.js"
+  ],
+  publicArtifacts: [
+    "packages/playground-templates/src/caster-claim-miniapp.ts",
+    "examples/miniapps/caster-claim-miniapp.local-shell.json",
+    "apps/web/app/open-source/miniapp-templates/page.tsx",
+    "docs-source/developer-layers/miniapp-templates.md"
   ],
   runtimeApiStatus: "blocked_external",
   qstorageStatus: "blocked_external",
@@ -66,3 +88,26 @@ export const casterClaimMiniappTemplate: GitCasterMiniappTemplate = {
     "Farcaster account association uses legacy source metadata until domain proof is replaced."
   ]
 };
+
+export function buildCasterClaimMiniappReleaseBundle(
+  template: GitCasterMiniappTemplate = casterClaimMiniappTemplate
+): GitCasterMiniappReleaseBundle {
+  return {
+    format: "gitcaster.miniapp-template-release.v1",
+    templateId: template.id,
+    status: "public-alpha",
+    publicArtifacts: template.publicArtifacts,
+    blockedRuntimeClaims: [
+      "runtime API production endpoint",
+      "QStorage publish proof",
+      "native domain deployment proof",
+      "managed account custody"
+    ],
+    safety: {
+      noSecretsRequired: true,
+      noNetworkCalls: true,
+      noManagedRuntimeClaim: true,
+      legacyHostIsReferenceOnly: true
+    }
+  };
+}

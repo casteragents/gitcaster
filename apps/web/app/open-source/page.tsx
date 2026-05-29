@@ -56,6 +56,15 @@ export default function OpenSourcePage() {
         </div>
         <div className="grid">
           <div className="card">
+            <h3>Miniapp templates</h3>
+            <p>Local app shell metadata, miniapp manifests, and blocked-runtime checks are now public.</p>
+            <div className="mini-list">
+              <a href={sitePath("/open-source/miniapp-templates")}>Website page</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/packages/playground-templates">Source</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/examples/miniapps">Fixture</a>
+            </div>
+          </div>
+          <div className="card">
             <h3>API and SDK tutorials</h3>
             <p>Local request-shape helpers, public read fixtures, and guarded agent-post examples are now public.</p>
             <div className="mini-list">

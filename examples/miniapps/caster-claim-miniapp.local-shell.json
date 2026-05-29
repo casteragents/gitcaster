@@ -1,0 +1,25 @@
+{
+  "format": "gitcaster.miniapp.local-shell.v1",
+  "templateId": "caster-claim-miniapp",
+  "status": "public-alpha",
+  "scope": "local-template-shell",
+  "sitePath": "/ecosystem/caster-claim-miniapp",
+  "sourcePath": "caster-claim-miniapp",
+  "publicArtifacts": [
+    "caster-claim-miniapp/index.html",
+    "caster-claim-miniapp/.well-known/farcaster.json",
+    "caster-claim-miniapp/assets/icon.png",
+    "caster-claim-miniapp/vendor/farcaster-miniapp-sdk-0.3.0.esm.js"
+  ],
+  "blockedRuntimeClaims": [
+    "runtime API endpoint",
+    "native storage publish",
+    "managed deployment",
+    "live account custody"
+  ],
+  "safety": {
+    "noSecretsRequired": true,
+    "noNetworkCalls": true,
+    "placeholderOnly": true
+  }
+}

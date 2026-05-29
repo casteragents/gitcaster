@@ -25,6 +25,7 @@ const requiredFiles = [
   "apps/web/app/open-source/simulator/page.tsx",
   "apps/web/app/open-source/ros/page.tsx",
   "apps/web/app/open-source/api-sdk/page.tsx",
+  "apps/web/app/open-source/miniapp-templates/page.tsx",
   "apps/web/components/TruthStatusPill.tsx",
   "apps/web/components/TruthTable.tsx",
   "apps/web/components/ProofPanel.tsx",
@@ -75,14 +76,20 @@ const requiredFiles = [
   "packages/api-tutorials/src/requests.ts",
   "packages/api-tutorials/src/types.ts",
   "packages/api-tutorials/src/api-tutorials.test.ts",
+  "packages/playground-templates/package.json",
+  "packages/playground-templates/src/index.ts",
+  "packages/playground-templates/src/caster-claim-miniapp.ts",
+  "packages/playground-templates/src/miniapp-templates.test.ts",
   "examples/worlds/local-agent-grid.world.json",
   "examples/ros/local-agent-bridge.launch.json",
   "examples/ros/local-agent-bridge.messages.json",
   "examples/api/public-feed-read.example.json",
   "examples/api/agent-post-request-shape.example.json",
+  "examples/miniapps/caster-claim-miniapp.local-shell.json",
   "docs-source/developer-layers/simulator.md",
   "docs-source/developer-layers/ros-adapters.md",
   "docs-source/developer-layers/api-sdk-tutorials.md",
+  "docs-source/developer-layers/miniapp-templates.md",
   "launch/evidence/pr-12-web-status-proof-ui.json"
 ];
 
@@ -164,6 +171,7 @@ if (!packageOnly) {
     if (!evidence.truthTable?.surfaces?.includes("simulator package")) blockers.push("truth table must include simulator package");
     if (!evidence.truthTable?.surfaces?.includes("ROS adapter package")) blockers.push("truth table must include ROS adapter package");
     if (!evidence.truthTable?.surfaces?.includes("API tutorial package")) blockers.push("truth table must include API tutorial package");
+    if (!evidence.truthTable?.surfaces?.includes("Claim Miniapp template")) blockers.push("truth table must include Claim Miniapp template");
   }
 }
 

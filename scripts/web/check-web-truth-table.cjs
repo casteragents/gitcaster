@@ -25,6 +25,7 @@ const filesChanged = [
   "apps/web/app/open-source/simulator/page.tsx",
   "apps/web/app/open-source/ros/page.tsx",
   "apps/web/app/open-source/api-sdk/page.tsx",
+  "apps/web/app/open-source/miniapp-templates/page.tsx",
   "apps/web/components/TruthStatusPill.tsx",
   "apps/web/components/TruthTable.tsx",
   "apps/web/components/ProofPanel.tsx",
@@ -75,14 +76,20 @@ const filesChanged = [
   "packages/api-tutorials/src/requests.ts",
   "packages/api-tutorials/src/types.ts",
   "packages/api-tutorials/src/api-tutorials.test.ts",
+  "packages/playground-templates/package.json",
+  "packages/playground-templates/src/index.ts",
+  "packages/playground-templates/src/caster-claim-miniapp.ts",
+  "packages/playground-templates/src/miniapp-templates.test.ts",
   "examples/worlds/local-agent-grid.world.json",
   "examples/ros/local-agent-bridge.launch.json",
   "examples/ros/local-agent-bridge.messages.json",
   "examples/api/public-feed-read.example.json",
   "examples/api/agent-post-request-shape.example.json",
+  "examples/miniapps/caster-claim-miniapp.local-shell.json",
   "docs-source/developer-layers/simulator.md",
   "docs-source/developer-layers/ros-adapters.md",
   "docs-source/developer-layers/api-sdk-tutorials.md",
+  "docs-source/developer-layers/miniapp-templates.md",
   "launch/evidence/pr-12-web-status-proof-ui.json",
 ];
 
@@ -175,6 +182,7 @@ if (!statusTruth.includes("GitHub Pages website") || !statusTruth.includes("OPEN
 if (!statusTruth.includes("packages/simulator") || !statusTruth.includes("examples/worlds/local-agent-grid.world.json")) blockers.push("status truth must include simulator package and example world evidence");
 if (!statusTruth.includes("packages/ros-adapters") || !statusTruth.includes("examples/ros/local-agent-bridge.launch.json")) blockers.push("status truth must include ROS adapter package and bridge fixture evidence");
 if (!statusTruth.includes("packages/api-tutorials") || !statusTruth.includes("examples/api/public-feed-read.example.json")) blockers.push("status truth must include API tutorial package and public read fixture evidence");
+if (!statusTruth.includes("packages/playground-templates")) blockers.push("status truth must include miniapp template package evidence");
 if (!startText.includes("gc identity new") || !startText.includes("gitcaster://did:caster:z.../hello-gitcaster")) blockers.push("start page must use GitCaster commands");
 if (!configText.includes('output: "export"')) blockers.push("next config must use static export");
 if (!exists("apps/web/out")) blockers.push("static export output apps/web/out missing");
@@ -198,7 +206,7 @@ const evidence = {
   createdAt: new Date().toISOString(),
   repoRoot,
   filesChanged,
-  commandsRun: ["pnpm run api-tutorials:check", "pnpm run simulator:check", "pnpm run ros:check", "node scripts/web/check-web-truth-table.cjs"],
+  commandsRun: ["pnpm run api-tutorials:check", "pnpm run miniapp-templates:check", "pnpm run simulator:check", "pnpm run ros:check", "node scripts/web/check-web-truth-table.cjs"],
   passed: blockers.length === 0,
   failed: blockers.length > 0,
   blockers,
@@ -219,6 +227,7 @@ const evidence = {
     deployPageCreated: exists("apps/web/app/deploy/page.tsx"),
     tokenPageCreated: exists("apps/web/app/token/page.tsx"),
     domainsPageCreated: exists("apps/web/app/domains/page.tsx"),
+    miniappTemplatesPageCreated: exists("apps/web/app/open-source/miniapp-templates/page.tsx"),
     truthTableCreated: truthSurfaces.every((surface) => statusTruth.includes(surface)),
     previewDataLabeled: true,
     liveClaimsWithoutEvidence: 0,
@@ -280,6 +289,7 @@ const evidence = {
       "Simulator and digital twin exports are local public-alpha only until package release and viewer smoke proof exist.",
       "ROS adapters and bridge fixtures are local public-alpha only until package release and downstream adapter smoke proof exist.",
       "API and SDK tutorials are local public-alpha only until endpoint, custody, rate-limit, and rollback proof exist.",
+      "Miniapp templates are local public-alpha only until runtime endpoint, storage publish, and native domain proof exist.",
       "CasterAgents runtime state remains closed until safety-lock and redaction proof exists.",
       "QStorage and CasterCloud runtime endpoints still require operator proof.",
       ".caster registry and public node federation still require signed live evidence.",
