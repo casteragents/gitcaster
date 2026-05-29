@@ -12,11 +12,17 @@ const patterns = [
   ['hardcoded-secret-literal', /\b(apiKey|secret|password|privateKey|walletKey|mnemonic|seedPhrase)\b\s*[:=]\s*['\"]([^'\"]{24,}|0x[a-fA-F0-9]{64})['\"]/g]
 ];
 const findings = [];
+const skippedDirs = new Set(['.git','node_modules','.next','dist','out']);
 function rel(p){ return path.relative(root,p).replaceAll('\\','/'); }
 function walk(dir){
   for (const e of fs.readdirSync(dir,{withFileTypes:true})){
     const full = path.join(dir,e.name);
-    if (e.isDirectory()) { if (['.git','node_modules'].includes(e.name)) continue; walk(full); continue; }
+    if (e.isDirectory()) {
+      if (skippedDirs.has(e.name)) continue;
+      if (e.name === '_next' && /(?:^|[\\/])docs(?:[\\/]|$)/.test(full)) continue;
+      walk(full);
+      continue;
+    }
     if (!e.isFile() || !/\.(cjs|css|html|js|json|jsx|md|mjs|ts|tsx|txt|yml|yaml|gitignore)$/i.test(e.name)) continue;
     const text = fs.readFileSync(full,'utf8');
     for (const [rule, rx] of patterns){

@@ -24,6 +24,7 @@ const filesChanged = [
   "apps/web/app/open-source/page.tsx",
   "apps/web/app/open-source/simulator/page.tsx",
   "apps/web/app/open-source/ros/page.tsx",
+  "apps/web/app/open-source/api-sdk/page.tsx",
   "apps/web/components/TruthStatusPill.tsx",
   "apps/web/components/TruthTable.tsx",
   "apps/web/components/ProofPanel.tsx",
@@ -68,11 +69,20 @@ const filesChanged = [
   "packages/ros-adapters/src/launch.ts",
   "packages/ros-adapters/src/messages.ts",
   "packages/ros-adapters/src/ros-adapters.test.ts",
+  "packages/api-tutorials/package.json",
+  "packages/api-tutorials/README.md",
+  "packages/api-tutorials/src/index.ts",
+  "packages/api-tutorials/src/requests.ts",
+  "packages/api-tutorials/src/types.ts",
+  "packages/api-tutorials/src/api-tutorials.test.ts",
   "examples/worlds/local-agent-grid.world.json",
   "examples/ros/local-agent-bridge.launch.json",
   "examples/ros/local-agent-bridge.messages.json",
+  "examples/api/public-feed-read.example.json",
+  "examples/api/agent-post-request-shape.example.json",
   "docs-source/developer-layers/simulator.md",
   "docs-source/developer-layers/ros-adapters.md",
+  "docs-source/developer-layers/api-sdk-tutorials.md",
   "launch/evidence/pr-12-web-status-proof-ui.json",
 ];
 
@@ -91,6 +101,9 @@ const truthSurfaces = [
   "ROS adapter package",
   "ROS bridge fixture",
   "robot message schema",
+  "API tutorial package",
+  "public API read fixture",
+  "agent post request fixture",
   "protocol package",
   "identity package",
   "capabilities package",
@@ -161,6 +174,7 @@ if (!publicHomeText.includes("Public update feed")) blockers.push("homepage publ
 if (!statusTruth.includes("GitHub Pages website") || !statusTruth.includes("OPEN_CORE_BOUNDARY.md")) blockers.push("status truth must include public website and open-core evidence");
 if (!statusTruth.includes("packages/simulator") || !statusTruth.includes("examples/worlds/local-agent-grid.world.json")) blockers.push("status truth must include simulator package and example world evidence");
 if (!statusTruth.includes("packages/ros-adapters") || !statusTruth.includes("examples/ros/local-agent-bridge.launch.json")) blockers.push("status truth must include ROS adapter package and bridge fixture evidence");
+if (!statusTruth.includes("packages/api-tutorials") || !statusTruth.includes("examples/api/public-feed-read.example.json")) blockers.push("status truth must include API tutorial package and public read fixture evidence");
 if (!startText.includes("gc identity new") || !startText.includes("gitcaster://did:caster:z.../hello-gitcaster")) blockers.push("start page must use GitCaster commands");
 if (!configText.includes('output: "export"')) blockers.push("next config must use static export");
 if (!exists("apps/web/out")) blockers.push("static export output apps/web/out missing");
@@ -184,7 +198,7 @@ const evidence = {
   createdAt: new Date().toISOString(),
   repoRoot,
   filesChanged,
-  commandsRun: ["pnpm run simulator:check", "pnpm run ros:check", "node scripts/web/check-web-truth-table.cjs"],
+  commandsRun: ["pnpm run api-tutorials:check", "pnpm run simulator:check", "pnpm run ros:check", "node scripts/web/check-web-truth-table.cjs"],
   passed: blockers.length === 0,
   failed: blockers.length > 0,
   blockers,
@@ -265,6 +279,7 @@ const evidence = {
       "GO-gated app and miniapp imports must be reviewed one slice at a time.",
       "Simulator and digital twin exports are local public-alpha only until package release and viewer smoke proof exist.",
       "ROS adapters and bridge fixtures are local public-alpha only until package release and downstream adapter smoke proof exist.",
+      "API and SDK tutorials are local public-alpha only until endpoint, custody, rate-limit, and rollback proof exist.",
       "CasterAgents runtime state remains closed until safety-lock and redaction proof exists.",
       "QStorage and CasterCloud runtime endpoints still require operator proof.",
       ".caster registry and public node federation still require signed live evidence.",
@@ -297,7 +312,7 @@ const evidence = {
       "Only GO-gated public layers should be imported.",
       "Sensitive runtime state and operator secrets must remain excluded.",
       "Generated public statuses must match current evidence.",
-      "Social announcements must include the repo and website and mirror only the X link on Farcaster."
+      "Social announcements must include Casterchain, X, and Farcaster receipts with repo and website links."
     ],
     recommendedCommands: [
       "pnpm --filter @gitcaster/web build",

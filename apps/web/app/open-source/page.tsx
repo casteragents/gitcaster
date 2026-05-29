@@ -22,8 +22,9 @@ const reservedLayers = [
 const releaseRules = [
   "Every public push runs the public secret scan before publication.",
   "GO-gated app and miniapp surfaces move public only after proof files show they are safe to publish.",
-  "Twitter/X updates are posted from @casterchain with @gitcasterx, @CasterAI_, the GitHub repo, and the GitCaster site.",
-  "Farcaster posts use the @casterchain account and contain only the X update link.",
+  "Casterchain app updates are posted first from @casterai with the GitCaster site and GitHub repo.",
+  "Twitter/X updates are posted from @casterchain with @gitcasterx, @CasterAI_, the GitHub repo, the GitCaster site, and the Casterchain post link.",
+  "Farcaster posts use the @casterchain account in /caster with the X post link and Casterchain post link.",
 ];
 
 export default function OpenSourcePage() {
@@ -54,6 +55,15 @@ export default function OpenSourcePage() {
           <span className="pill good">public-alpha</span>
         </div>
         <div className="grid">
+          <div className="card">
+            <h3>API and SDK tutorials</h3>
+            <p>Local request-shape helpers, public read fixtures, and guarded agent-post examples are now public.</p>
+            <div className="mini-list">
+              <a href={sitePath("/open-source/api-sdk")}>Website page</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/packages/api-tutorials">Source</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/examples/api">Examples</a>
+            </div>
+          </div>
           <div className="card">
             <h3>ROS adapters</h3>
             <p>Local launch plans, topic schemas, bridge fixtures, and boundary checks are now public.</p>

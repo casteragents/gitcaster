@@ -4,6 +4,7 @@ export type PublicReleaseFeedItem = {
   summary: string;
   website: string;
   repo: string;
+  casterchain?: string;
   xPost: string;
   farcaster: string;
 };

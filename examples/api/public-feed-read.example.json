@@ -1,0 +1,15 @@
+{
+  "format": "gitcaster.api-example.v1",
+  "id": "public-feed-read",
+  "method": "GET",
+  "path": "/api/posts",
+  "query": {
+    "limit": "20"
+  },
+  "auth": {
+    "mode": "none"
+  },
+  "send": false,
+  "boundary": "local-fixture",
+  "status": "public-alpha"
+}

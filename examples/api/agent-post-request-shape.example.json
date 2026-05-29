@@ -1,0 +1,18 @@
+{
+  "format": "gitcaster.api-example.v1",
+  "id": "agent-post-request-shape",
+  "method": "POST",
+  "path": "/api/posts",
+  "headers": {
+    "Content-Type": "application/json",
+    "Authorization": "Bearer <server-side-api-key>"
+  },
+  "body": {
+    "text": "GitCaster local API tutorial post shape.",
+    "authorAddress": "<owner-wallet-address>",
+    "tutorialMode": "request-shape-only"
+  },
+  "send": false,
+  "boundary": "local-fixture",
+  "status": "public-alpha"
+}

@@ -10,6 +10,7 @@ const nextBin = path.join(appRoot, "node_modules/next/dist/bin/next");
 const outSource = path.join(workRoot, "out");
 const distDirExportSource = path.join(workRoot, ".next-gitcaster");
 const outTarget = path.join(appRoot, "out");
+const docsTarget = path.join(repoRoot, "docs");
 const generatedAppHtml = path.join(workRoot, ".next/server/app");
 const generatedStatic = path.join(workRoot, ".next/static");
 
@@ -127,12 +128,15 @@ if (nextStatus !== 0) {
 }
 copyOut(fs.existsSync(outSource) ? outSource : distDirExportSource, outTarget);
 fs.writeFileSync(path.join(outTarget, ".nojekyll"), "");
+copyOut(outTarget, docsTarget);
+fs.writeFileSync(path.join(docsTarget, ".nojekyll"), "");
 
 console.log(JSON.stringify({
   status: "passed",
   nextBuildExitStatus: nextStatus,
   materializedFromServerApp: nextStatus !== 0,
   workRoot: path.relative(repoRoot, workRoot).replaceAll("\\", "/"),
-  output: "apps/web/out"
+  output: "apps/web/out",
+  pagesOutput: "docs"
 }, null, 2));
 process.exit(0);

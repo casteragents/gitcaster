@@ -47,7 +47,7 @@ export default function HomePage() {
           </div>
           <div className="card">
             <h3>Transparent release notes</h3>
-            <p>Each public GitCaster push is announced from @casterchain with the GitHub repo, this website, @gitcasterx, and @CasterAI_.</p>
+            <p>Each public GitCaster push is announced on Casterchain, X, and Farcaster with the GitHub repo, this website, and linked receipts.</p>
           </div>
         </div>
         <div className="actions">
@@ -65,7 +65,7 @@ export default function HomePage() {
         <div className="section-heading">
           <div>
             <h2>Public update feed</h2>
-            <p>Every public push links the website, GitHub repo, X update, and Farcaster mirror.</p>
+            <p>Every public push links the website, GitHub repo, Casterchain update, X update, and Farcaster mirror.</p>
           </div>
           <span className="pill good">transparent</span>
         </div>

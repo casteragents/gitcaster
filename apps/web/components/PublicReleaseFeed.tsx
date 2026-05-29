@@ -11,6 +11,7 @@ export function PublicReleaseFeed() {
           <div className="mini-list">
             <a href={item.website}>Website</a>
             <a href={item.repo}>GitHub</a>
+            {item.casterchain ? <a href={item.casterchain}>Casterchain</a> : null}
             <a href={item.xPost}>X update</a>
             <a href={item.farcaster}>Farcaster mirror</a>
           </div>

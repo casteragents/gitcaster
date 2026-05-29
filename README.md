@@ -12,6 +12,7 @@ This public repository is intentionally scoped for contribution and website visi
 - `packages/*`: protocol, identity, object, repo, security, SDK, and supporting packages.
 - `packages/simulator` and `examples/worlds`: local deterministic simulator, example world, and digital twin export helpers.
 - `packages/ros-adapters` and `examples/ros`: local ROS-style launch, topic, and message bridge helpers.
+- `packages/api-tutorials` and `examples/api`: local API and SDK request-shape tutorials with placeholder-only auth examples.
 
 ## Open-core boundary
 
@@ -37,12 +38,13 @@ See `OPEN_CORE_BOUNDARY.md`, `LICENSE`, and `COMMERCIAL_LICENSE.md`.
 
 ## Public update policy
 
-Every public GitCaster push should be announced from `@casterchain` on X with `@gitcasterx`, `@CasterAI_`, the GitHub repo, and the GitCaster site. The matching Farcaster update from `@casterchain` should contain only the X post link.
+Every public GitCaster push should first post a Casterchain app update from `@casterai`, then post from `@casterchain` on X with `@gitcasterx`, `@CasterAI_`, the GitHub repo, the GitCaster site, and the Casterchain post link. The matching Farcaster update from `@casterchain` should go to `/caster` with the X post link and Casterchain post link.
 
 ## Local checks
 
 ```bash
 pnpm install
+pnpm run api-tutorials:check
 pnpm run simulator:check
 pnpm run ros:check
 pnpm run build:web

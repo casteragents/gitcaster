@@ -2,7 +2,7 @@
   "type": "gitcaster.pr.evidence.v1",
   "pr": "PR-12",
   "title": "Web status and proof UI",
-  "createdAt": "2026-05-29T13:05:19.508Z",
+  "createdAt": "2026-05-29T13:50:18.033Z",
   "repoRoot": "D:\\user\\xxxcrypto-vercel-clean\\.quilibrium\\gitcaster-public-github-release\\gitcaster-public-repo",
   "filesChanged": [
     "apps/web/package.json",
@@ -22,6 +22,7 @@
     "apps/web/app/open-source/page.tsx",
     "apps/web/app/open-source/simulator/page.tsx",
     "apps/web/app/open-source/ros/page.tsx",
+    "apps/web/app/open-source/api-sdk/page.tsx",
     "apps/web/components/TruthStatusPill.tsx",
     "apps/web/components/TruthTable.tsx",
     "apps/web/components/ProofPanel.tsx",
@@ -66,17 +67,28 @@
     "packages/ros-adapters/src/launch.ts",
     "packages/ros-adapters/src/messages.ts",
     "packages/ros-adapters/src/ros-adapters.test.ts",
+    "packages/api-tutorials/package.json",
+    "packages/api-tutorials/README.md",
+    "packages/api-tutorials/src/index.ts",
+    "packages/api-tutorials/src/requests.ts",
+    "packages/api-tutorials/src/types.ts",
+    "packages/api-tutorials/src/api-tutorials.test.ts",
     "examples/worlds/local-agent-grid.world.json",
     "examples/ros/local-agent-bridge.launch.json",
     "examples/ros/local-agent-bridge.messages.json",
+    "examples/api/public-feed-read.example.json",
+    "examples/api/agent-post-request-shape.example.json",
     "docs-source/developer-layers/simulator.md",
     "docs-source/developer-layers/ros-adapters.md",
+    "docs-source/developer-layers/api-sdk-tutorials.md",
     "launch/evidence/pr-12-web-status-proof-ui.json"
   ],
   "commandsRun": [
+    "pnpm run api-tutorials:check",
     "pnpm run simulator:check",
     "pnpm run ros:check",
-    "node scripts/web/check-web-truth-table.cjs"
+    "node scripts/web/check-web-truth-table.cjs",
+    "node scripts/web/check-pr12-web-ui.cjs"
   ],
   "passed": true,
   "failed": false,
@@ -100,7 +112,7 @@
     },
     {
       "path": "apps/web/app/page.tsx",
-      "sha256": "cac04ebf1e8abdc9102ede753ac92e9ab7ea65389555f3d2bc97388db43fc4ba"
+      "sha256": "e696b5ca8c786af41f42fd6c3e26860bcbc87079b93ca63362a557f1861df532"
     },
     {
       "path": "apps/web/app/start/page.tsx",
@@ -140,7 +152,7 @@
     },
     {
       "path": "apps/web/app/open-source/page.tsx",
-      "sha256": "d8dcab8580bc81ec8367b0299744ca00a2e8220f391b9c179daca2d5333e88db"
+      "sha256": "a637ac929661c65a57ced06a82f2e33d211778391ba8888346fce3f18b2f65c3"
     },
     {
       "path": "apps/web/app/open-source/simulator/page.tsx",
@@ -149,6 +161,10 @@
     {
       "path": "apps/web/app/open-source/ros/page.tsx",
       "sha256": "368963661667b47c537acdec09e68d1cfda23aaf5b15087d056425325218c464"
+    },
+    {
+      "path": "apps/web/app/open-source/api-sdk/page.tsx",
+      "sha256": "e936346fcc940e471f1b832c27e1a284e7c4416ecad1a8cc20be62ccd086bbcf"
     },
     {
       "path": "apps/web/components/TruthStatusPill.tsx",
@@ -168,7 +184,7 @@
     },
     {
       "path": "apps/web/components/PublicReleaseFeed.tsx",
-      "sha256": "cf337d7930409fcf04e5894edcb8895f4ebfbad8414f4954d431647a9c2461d4"
+      "sha256": "f5eb064fe1b6a88d26a622c055e5f0e477db43458c4ef70b2b1ffc8e0ab19db8"
     },
     {
       "path": "apps/web/components/CasterShell.tsx",
@@ -212,7 +228,7 @@
     },
     {
       "path": "apps/web/lib/status-truth.ts",
-      "sha256": "fb8c4fb132b2f7f7d4a6ed24b83c8f3b1c087546081983bde38bbe694885e0b9"
+      "sha256": "baed04e382a33beae193996b8a885464e410c0416c8e1a0f0bd79f050a3ae846"
     },
     {
       "path": "apps/web/lib/preview-data.ts",
@@ -220,7 +236,7 @@
     },
     {
       "path": "apps/web/lib/evidence-links.ts",
-      "sha256": "bda31cf492cf27f6f75bfdacff9a9023c58aba829c151fe8abc996a4e232c035"
+      "sha256": "fcacf1a1ddd24d928781d7f45a1d87983e313298dda340030398ca42cad5d46b"
     },
     {
       "path": "apps/web/lib/caster-copy.ts",
@@ -228,7 +244,7 @@
     },
     {
       "path": "apps/web/lib/public-release-feed.ts",
-      "sha256": "3769ff1184575daf67ea1d0f30e63ae8fadb92a1eb4626a233d928ca82ba26d7"
+      "sha256": "0b02870943d2521fa42113952634319bef1b6cd0bf5b457bc1454e92e86d0b8f"
     },
     {
       "path": "apps/web/styles/caster-theme.css",
@@ -260,11 +276,11 @@
     },
     {
       "path": "scripts/web/check-web-truth-table.cjs",
-      "sha256": "5d3f6c01608e65eb10c2db3b07f8d28aaed983133bdf03ff9bee700b9be7c898"
+      "sha256": "01496dd49812ef914cc3d4ccc1e1ba04e4dd6d81aad203afc4bcde5e57ffe4a7"
     },
     {
       "path": "scripts/web/check-pr12-web-ui.cjs",
-      "sha256": "631d5c40ea270ffedac8683967fe8a2b507c23b500e4cc103c752a6d48f947cd"
+      "sha256": "59788ccd2d00d6b4dbd0c0ccd9efa191fef681b52ac795c24df41bdf4dcc6105"
     },
     {
       "path": "LICENSE",
@@ -327,6 +343,30 @@
       "sha256": "ca073b94eceb0027b6521870bfff51c3119b486bb1c0d9d2dfb8be6df273ff32"
     },
     {
+      "path": "packages/api-tutorials/package.json",
+      "sha256": "3b36ad43d8493f522e10bc8f8046cdae3b43a2ebb743a5012e897bab87e05e39"
+    },
+    {
+      "path": "packages/api-tutorials/README.md",
+      "sha256": "5a6370fc290551bf3523674a715fde35477bacb293ddad7ea9fea01477caaca2"
+    },
+    {
+      "path": "packages/api-tutorials/src/index.ts",
+      "sha256": "b5a17bdac33908f956e0785c07ae968403c3a98161d8a654b5dc8a7ec6a946d0"
+    },
+    {
+      "path": "packages/api-tutorials/src/requests.ts",
+      "sha256": "aa0ab4c515836c613401ee7576aa39324e59a7c383dba8af2a48fed940853617"
+    },
+    {
+      "path": "packages/api-tutorials/src/types.ts",
+      "sha256": "80af5dd63935d39ba4cc2ea9c6c62d7df32f75d5a34994472386f5c932487534"
+    },
+    {
+      "path": "packages/api-tutorials/src/api-tutorials.test.ts",
+      "sha256": "b141584474e0eec3720f9eeea6eaa0370dd41fc2d3c2deeaa29b2e19df3af2ad"
+    },
+    {
       "path": "examples/worlds/local-agent-grid.world.json",
       "sha256": "825d90a5b04ffc658af864a3ba254becb2386c27879626f22907e5198ae930bd"
     },
@@ -339,12 +379,24 @@
       "sha256": "b9460c91aa4876b2dc3d6f93f9e00bc75a3d3c70d019fafa04b5ca537f81965b"
     },
     {
+      "path": "examples/api/public-feed-read.example.json",
+      "sha256": "b1d0d58d5746bde9b0e038e5585d3bf9fb1283b3e337b233122ff67c44688c1b"
+    },
+    {
+      "path": "examples/api/agent-post-request-shape.example.json",
+      "sha256": "47cbd243315aa9352fe618fad3a278d3317dd8f9d117b0bd3755a926beec8b83"
+    },
+    {
       "path": "docs-source/developer-layers/simulator.md",
       "sha256": "9babfe9f4e303107382c150ae657bfe0c4b77b72396183244a0c4761a8beae31"
     },
     {
       "path": "docs-source/developer-layers/ros-adapters.md",
       "sha256": "5d4f07624b4ad4ffbc8376669d004e8a4ca6bc281ab99b1164ac631de5a574d4"
+    },
+    {
+      "path": "docs-source/developer-layers/api-sdk-tutorials.md",
+      "sha256": "0746d5432322fdcf34dca0f85bf8844fa5d4be9f453286cbddedcc127e5678db"
     }
   ],
   "summary": {
@@ -400,6 +452,9 @@
       "ROS adapter package",
       "ROS bridge fixture",
       "robot message schema",
+      "API tutorial package",
+      "public API read fixture",
+      "agent post request fixture",
       "protocol package",
       "identity package",
       "capabilities package",
@@ -477,6 +532,7 @@
       "GO-gated app and miniapp imports must be reviewed one slice at a time.",
       "Simulator and digital twin exports are local public-alpha only until package release and viewer smoke proof exist.",
       "ROS adapters and bridge fixtures are local public-alpha only until package release and downstream adapter smoke proof exist.",
+      "API and SDK tutorials are local public-alpha only until endpoint, custody, rate-limit, and rollback proof exist.",
       "CasterAgents runtime state remains closed until safety-lock and redaction proof exists.",
       "QStorage and CasterCloud runtime endpoints still require operator proof.",
       ".caster registry and public node federation still require signed live evidence.",
@@ -509,7 +565,7 @@
       "Only GO-gated public layers should be imported.",
       "Sensitive runtime state and operator secrets must remain excluded.",
       "Generated public statuses must match current evidence.",
-      "Social announcements must include the repo and website and mirror only the X link on Farcaster."
+      "Social announcements must include Casterchain, X, and Farcaster receipts with repo and website links."
     ],
     "recommendedCommands": [
       "pnpm --filter @gitcaster/web build",

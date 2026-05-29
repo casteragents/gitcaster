@@ -1,0 +1,17 @@
+{
+  "name": "@gitcaster/api-tutorials",
+  "version": "0.1.0-alpha",
+  "private": true,
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node dist/api-tutorials.test.js",
+    "check": "pnpm run build && pnpm run test",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
