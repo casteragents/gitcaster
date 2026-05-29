@@ -12,6 +12,17 @@ export type PublicReleaseFeedItem = {
 export const publicReleaseFeed: PublicReleaseFeedItem[] = [
   {
     date: "2026-05-30",
+    title: "Repo records and issue/PR workflow",
+    summary:
+      "GitCaster now includes public repo-record source, DID-based repo IDs, append-only event helpers, local issue and pull-request records, reviews, record-only merge proof, and unsigned mutation blockers for public-alpha contribution work.",
+    website: "https://casteragents.github.io/gitcaster/open-source/repo-records/",
+    repo: "https://github.com/casteragents/gitcaster",
+    casterchain: "https://casterchain.online/post/5287",
+    xPost: "https://x.com/casterchain/status/2060467675630121243",
+    farcaster: "https://warpcast.com/casterchain/c9fc00f2ba"
+  },
+  {
+    date: "2026-05-30",
     title: "Local node API source layer",
     summary:
       "GitCaster now includes public local node API source, loopback health/status routes, mutation blockers, endpoint-gated storage/deploy/domain routes, and alpha-local smoke evidence for public-alpha contribution work.",
