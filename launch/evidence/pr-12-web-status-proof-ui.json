@@ -2,7 +2,7 @@
   "type": "gitcaster.pr.evidence.v1",
   "pr": "PR-12",
   "title": "Web status and proof UI",
-  "createdAt": "2026-05-29T16:03:30.740Z",
+  "createdAt": "2026-05-29T16:29:23.668Z",
   "repoRoot": "D:\\user\\xxxcrypto-vercel-clean\\.quilibrium\\gitcaster-public-github-release\\gitcaster-public-repo",
   "filesChanged": [
     "apps/web/package.json",
@@ -24,6 +24,7 @@
     "apps/web/app/open-source/ros/page.tsx",
     "apps/web/app/open-source/api-sdk/page.tsx",
     "apps/web/app/open-source/miniapp-templates/page.tsx",
+    "apps/web/app/open-source/typescript-sdk/page.tsx",
     "apps/web/components/TruthStatusPill.tsx",
     "apps/web/components/TruthTable.tsx",
     "apps/web/components/ProofPanel.tsx",
@@ -78,25 +79,34 @@
     "packages/playground-templates/src/index.ts",
     "packages/playground-templates/src/caster-claim-miniapp.ts",
     "packages/playground-templates/src/miniapp-templates.test.ts",
+    "packages/sdk-typescript/package.json",
+    "packages/sdk-typescript/README.md",
+    "packages/sdk-typescript/src/index.ts",
+    "packages/sdk-typescript/src/client.ts",
+    "packages/sdk-typescript/src/types.ts",
+    "packages/sdk-typescript/src/sdk-typescript.test.ts",
     "examples/worlds/local-agent-grid.world.json",
     "examples/ros/local-agent-bridge.launch.json",
     "examples/ros/local-agent-bridge.messages.json",
     "examples/api/public-feed-read.example.json",
     "examples/api/agent-post-request-shape.example.json",
     "examples/miniapps/caster-claim-miniapp.local-shell.json",
+    "examples/sdk/public-alpha-client.example.ts",
+    "examples/sdk/public-alpha-client.example.json",
     "docs-source/developer-layers/simulator.md",
     "docs-source/developer-layers/ros-adapters.md",
     "docs-source/developer-layers/api-sdk-tutorials.md",
     "docs-source/developer-layers/miniapp-templates.md",
+    "docs-source/developer-layers/typescript-sdk.md",
     "launch/evidence/pr-12-web-status-proof-ui.json"
   ],
   "commandsRun": [
     "pnpm run api-tutorials:check",
     "pnpm run miniapp-templates:check",
+    "pnpm run sdk:check",
     "pnpm run simulator:check",
     "pnpm run ros:check",
-    "node scripts/web/check-web-truth-table.cjs",
-    "node scripts/web/check-pr12-web-ui.cjs"
+    "node scripts/web/check-web-truth-table.cjs"
   ],
   "passed": true,
   "failed": false,
@@ -160,7 +170,7 @@
     },
     {
       "path": "apps/web/app/open-source/page.tsx",
-      "sha256": "a179597c54ff24db810dc5f69e9d2d980d12ea99fb6583a521135f982293fe8a"
+      "sha256": "db1dd61d9835b5bfa28e1092172fc524bc7b31475c4d8806740de42b178ffaa4"
     },
     {
       "path": "apps/web/app/open-source/simulator/page.tsx",
@@ -177,6 +187,10 @@
     {
       "path": "apps/web/app/open-source/miniapp-templates/page.tsx",
       "sha256": "577d003831034ad078c626626ef54c8baf45de81aa5e04e115cc2c8b0cc31600"
+    },
+    {
+      "path": "apps/web/app/open-source/typescript-sdk/page.tsx",
+      "sha256": "9fe6c022193f8401bf28079349e8613478fa31fc3f1eb80a4302248af035f178"
     },
     {
       "path": "apps/web/components/TruthStatusPill.tsx",
@@ -240,7 +254,7 @@
     },
     {
       "path": "apps/web/lib/status-truth.ts",
-      "sha256": "0c7a1224c47feff895b8a766524e597049193be86edac01e44ebd49f5ec570cb"
+      "sha256": "ff8eb8d7664d8701da28ccd92b96a6fad679d2daccd0b6465f6069c294ec642c"
     },
     {
       "path": "apps/web/lib/preview-data.ts",
@@ -248,7 +262,7 @@
     },
     {
       "path": "apps/web/lib/evidence-links.ts",
-      "sha256": "6dc19517b2d5a061f2c2e3b80aaaaeb3ac14325566b71fac1530e14ec9e8b36b"
+      "sha256": "9a50d75ffda9ace9a3220b3306873b255ecdc60e0e10c419528ef803e4b98606"
     },
     {
       "path": "apps/web/lib/caster-copy.ts",
@@ -288,11 +302,11 @@
     },
     {
       "path": "scripts/web/check-web-truth-table.cjs",
-      "sha256": "2ebea1362a2148b708515dbc7fd3c1d4204c985b72170b596c548598acd963bf"
+      "sha256": "87d5c6c14b6648604716fd9ad12d9eb5f36dd244c1aabde5edd8b7698bc201ed"
     },
     {
       "path": "scripts/web/check-pr12-web-ui.cjs",
-      "sha256": "76351a5b81076a57a311eb03e94abc171e38e705a161e19ae8096f2a65b43202"
+      "sha256": "31bf6b90e5064dabe12f9104f16235721e0a60aa0227857b0ebaae67b3216efe"
     },
     {
       "path": "LICENSE",
@@ -395,6 +409,30 @@
       "sha256": "b944d15142d71fa87a609b7bbf8b39a1353916cbead2c0b35eb7e69b51c07af8"
     },
     {
+      "path": "packages/sdk-typescript/package.json",
+      "sha256": "05f0fd3e460920f2dff3d94fac8dc56de1ddd7ef80fa2c68489e384299b0d8bd"
+    },
+    {
+      "path": "packages/sdk-typescript/README.md",
+      "sha256": "82eca496f126bcb5ff295c6a02a6347d2ade2bbbc3bb9c6eafd6155a7a80b532"
+    },
+    {
+      "path": "packages/sdk-typescript/src/index.ts",
+      "sha256": "c0c5b63e7caa86b144d52247e38fae5a8a0e66ee44e12766da913772abaef550"
+    },
+    {
+      "path": "packages/sdk-typescript/src/client.ts",
+      "sha256": "014bc573e2c53a0dc58636e91e07305d9b9a88532b92aa81f62e5d3ac896ad06"
+    },
+    {
+      "path": "packages/sdk-typescript/src/types.ts",
+      "sha256": "a5bb62d4c582df7c9be51ec84ec5661b62a10198ed55d431552ca400380c9c96"
+    },
+    {
+      "path": "packages/sdk-typescript/src/sdk-typescript.test.ts",
+      "sha256": "1854eb76fdcf676baa54bcb3dd441bb2599b8b7d7caea49f92519ff1a56b066d"
+    },
+    {
       "path": "examples/worlds/local-agent-grid.world.json",
       "sha256": "825d90a5b04ffc658af864a3ba254becb2386c27879626f22907e5198ae930bd"
     },
@@ -419,6 +457,14 @@
       "sha256": "a374eb8f0153f2c8172372d0e53c569c0744f2679eb3b5901782f64c3e8e5726"
     },
     {
+      "path": "examples/sdk/public-alpha-client.example.ts",
+      "sha256": "34d0fca861e5078fa4f0a3c1e506b8f2a746e8b76bc958c77711109fd0fbd5f7"
+    },
+    {
+      "path": "examples/sdk/public-alpha-client.example.json",
+      "sha256": "5924f4a720c190b5b95aa4999226864cd0ac7a3cd54d01bc3df1b3d5868dbd02"
+    },
+    {
       "path": "docs-source/developer-layers/simulator.md",
       "sha256": "9babfe9f4e303107382c150ae657bfe0c4b77b72396183244a0c4761a8beae31"
     },
@@ -433,6 +479,10 @@
     {
       "path": "docs-source/developer-layers/miniapp-templates.md",
       "sha256": "4e0d74d5ad0cab9a6efe845a0b91378c5e70159edaea7de85c8d9f3ecffae454"
+    },
+    {
+      "path": "docs-source/developer-layers/typescript-sdk.md",
+      "sha256": "d0def0d472bd5c3c0e1ee69e0db926d84dab6affdf54478750725dcbe204002e"
     }
   ],
   "summary": {
@@ -452,6 +502,7 @@
     "tokenPageCreated": true,
     "domainsPageCreated": true,
     "miniappTemplatesPageCreated": true,
+    "typeScriptSdkPageCreated": true,
     "truthTableCreated": true,
     "previewDataLabeled": true,
     "liveClaimsWithoutEvidence": 0,
@@ -571,6 +622,7 @@
       "ROS adapters and bridge fixtures are local public-alpha only until package release and downstream adapter smoke proof exist.",
       "API and SDK tutorials are local public-alpha only until endpoint, custody, rate-limit, and rollback proof exist.",
       "Miniapp templates are local public-alpha only until runtime endpoint, storage publish, and native domain proof exist.",
+      "TypeScript SDK source is public-alpha only until package release, endpoint, custody, registry, and contract utility proof exist.",
       "CasterAgents runtime state remains closed until safety-lock and redaction proof exists.",
       "QStorage and CasterCloud runtime endpoints still require operator proof.",
       ".caster registry and public node federation still require signed live evidence.",

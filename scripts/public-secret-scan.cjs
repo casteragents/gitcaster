@@ -19,6 +19,7 @@ function walk(dir){
     const full = path.join(dir,e.name);
     if (e.isDirectory()) {
       if (skippedDirs.has(e.name)) continue;
+      if (e.name.startsWith('.next-codex-web-build-')) continue;
       if (e.name === '_next' && /(?:^|[\\/])docs(?:[\\/]|$)/.test(full)) continue;
       walk(full);
       continue;

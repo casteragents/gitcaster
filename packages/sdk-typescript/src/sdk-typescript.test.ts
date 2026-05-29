@@ -1,105 +1,101 @@
-import assert from "node:assert/strict";
-import test from "node:test";
 import { createGitCasterClient, redactGitCasterValue } from "./index.js";
 
 const legacyProtocol = "git" + "lawb://";
 const legacyDid = "did:" + "gitlawb";
 const legacyToken = "$" + "GITLAWB";
+const runtime = globalThis as typeof globalThis & { process?: { env?: Record<string, string | undefined> } };
 
-test("client without node blocks nodeHealth", async () => {
-  const result = await createGitCasterClient().nodeHealth();
-  assert.equal(result.ok, false);
-  assert.equal(result.status, "requires-node");
-});
+function assert(condition: boolean, message: string): void {
+  if (!condition) {
+    throw new Error(message);
+  }
+}
 
-test("client uses provided node URL for nodeHealth", async () => {
+function assertEqual<T>(actual: T, expected: T, message: string): void {
+  if (actual !== expected) {
+    throw new Error(`${message}: expected ${String(expected)}, got ${String(actual)}`);
+  }
+}
+
+async function run(): Promise<void> {
+  const missingNode = await createGitCasterClient().nodeHealth();
+  assertEqual(missingNode.ok, false, "client without node should block nodeHealth");
+  assertEqual(missingNode.status, "requires-node", "nodeHealth should require node");
+
   const urls: string[] = [];
-  const client = createGitCasterClient({
+  const clientWithFetch = createGitCasterClient({
     nodeUrl: "http://127.0.0.1:8787",
     fetchImpl: async (url) => {
       urls.push(url);
       return { ok: true, status: 200, json: async () => ({ ok: true }) };
     },
   });
-  const result = await client.nodeHealth();
-  assert.equal(result.ok, true);
-  assert.equal(urls[0], "http://127.0.0.1:8787/health");
-});
+  const health = await clientWithFetch.nodeHealth();
+  assertEqual(health.ok, true, "client should use provided node URL");
+  assertEqual(urls[0], "http://127.0.0.1:8787/health", "nodeHealth should call health path");
 
-test("client never reads legacy node env", async () => {
-  const before = process.env["GIT" + "LAWB_NODE"];
-  process.env["GIT" + "LAWB_NODE"] = "http://legacy.invalid";
+  const env = runtime.process?.env;
+  const key = "GIT" + "LAWB_NODE";
+  const before = env?.[key];
+  if (env) env[key] = "http://legacy.invalid";
   try {
-    const result = await createGitCasterClient().repoList();
-    assert.equal(result.ok, false);
-    assert.equal(result.status, "requires-node");
+    const repoList = await createGitCasterClient().repoList();
+    assertEqual(repoList.ok, false, "client should ignore legacy node env");
+    assertEqual(repoList.status, "requires-node", "repoList should still require GitCaster node");
   } finally {
-    if (before === undefined) delete process.env["GIT" + "LAWB_NODE"];
-    else process.env["GIT" + "LAWB_NODE"] = before;
+    if (env) {
+      if (before === undefined) delete env[key];
+      else env[key] = before;
+    }
   }
-});
 
-test("repoList blocks without node URL", async () => {
-  const result = await createGitCasterClient().repoList();
-  assert.equal(result.ok, false);
-  assert.equal(result.status, "requires-node");
-});
-
-test("mutating methods block without signer", async () => {
   const client = createGitCasterClient({ nodeUrl: "http://127.0.0.1:8787" });
-  assert.equal((await client.repoCreate({ name: "demo" })).status, "requires-signing-key");
-  assert.equal((await client.issueCreate("caster", "demo", { title: "Issue" })).status, "requires-signing-key");
-  assert.equal((await client.prCreate("caster", "demo", { title: "PR" })).status, "requires-signing-key");
-});
+  assertEqual((await client.repoCreate({ name: "demo" })).status, "requires-signing-key", "repoCreate should require signer");
+  assertEqual((await client.issueCreate("caster", "demo", { title: "Issue" })).status, "requires-signing-key", "issueCreate should require signer");
+  assertEqual((await client.prCreate("caster", "demo", { title: "PR" })).status, "requires-signing-key", "prCreate should require signer");
 
-test("proof methods do not claim live verification", () => {
-  const client = createGitCasterClient();
-  assert.equal(client.qstorageStatus().status, "requires-verification-proof");
-  assert.equal(client.castercloudStatus().status, "requires-verification-proof");
-  assert.equal(client.publicNodeStatus().status, "requires-federation-proof");
-});
+  const proofClient = createGitCasterClient();
+  assertEqual(proofClient.qstorageStatus().status, "requires-verification-proof", "qstorage must remain proof-gated");
+  assertEqual(proofClient.castercloudStatus().status, "requires-verification-proof", "castercloud must remain proof-gated");
+  assertEqual(proofClient.publicNodeStatus().status, "requires-federation-proof", "public node status must remain proof-gated");
 
-test("token and domain helpers stay proof-gated", () => {
-  const client = createGitCasterClient();
-  const token = client.tokenInfo();
-  assert.equal(token.ok, true);
-  assert.equal(token.status, "proof-only");
-  assert.equal(token.value.symbol, "$CASTER");
-  assert.equal(token.value.staking, "requires-contract");
-  assert.equal(client.domainStatus("caster").status, "requires-registry");
-});
+  const token = proofClient.tokenInfo();
+  assertEqual(token.ok, true, "token helper should return proof-only info");
+  assertEqual(token.status, "proof-only", "token helper should remain proof-only");
+  assert(token.ok && token.value.symbol === "$GITCASTER", "token symbol should be $GITCASTER");
+  assert(token.ok && token.value.address === "0x764697544F09921c3c8bA89F1Fb6388C4127fB07", "token address should match current public address");
+  assert(token.ok && token.value.staking === "requires-contract", "staking should require contract proof");
+  assertEqual(proofClient.domainStatus("caster").status, "requires-registry", "domain status should require registry");
 
-test("clone URL helper uses GitCaster protocol only", () => {
-  const result = createGitCasterClient().repoCloneUrl("alice", "demo");
-  assert.equal(result.ok, true);
-  assert.equal(result.value.cloneUrl, "gitcaster://alice/demo");
-  const generated = JSON.stringify(result);
-  assert.equal(generated.includes(legacyProtocol), false);
-  assert.equal(generated.includes(legacyDid), false);
-  assert.equal(generated.includes(legacyToken), false);
-});
+  const clone = proofClient.repoCloneUrl("alice", "demo");
+  assertEqual(clone.ok, true, "clone URL helper should be local");
+  assert(clone.ok && clone.value.cloneUrl === "gitcaster://alice/demo", "clone URL helper should use GitCaster protocol");
+  const generated = JSON.stringify(clone);
+  assert(!generated.includes(legacyProtocol), "generated clone URL should not include legacy protocol");
+  assert(!generated.includes(legacyDid), "generated clone URL should not include legacy DID");
+  assert(!generated.includes(legacyToken), "generated clone URL should not include legacy token");
 
-test("redaction removes secret-looking values", () => {
   const redacted = redactGitCasterValue("Authorization: " + "Bearer abcdef123456 token=abcdef1234567890");
-  assert.equal(redacted.includes("abcdef123456"), false);
-  assert.match(redacted, /\[redacted\]/);
-});
+  assert(!redacted.includes("abcdef123456"), "redaction should remove token text");
+  assert(redacted.includes("[redacted]"), "redaction should include redacted marker");
 
-test("no method returns a production status", async () => {
-  const client = createGitCasterClient();
   const results = [
-    await client.nodeHealth(),
-    await client.repoList(),
-    await client.repoCreate({ name: "demo" }),
-    client.qstorageStatus(),
-    client.castercloudStatus(),
-    client.tokenInfo(),
-    client.domainStatus("caster"),
+    await proofClient.nodeHealth(),
+    await proofClient.repoList(),
+    await proofClient.repoCreate({ name: "demo" }),
+    proofClient.qstorageStatus(),
+    proofClient.castercloudStatus(),
+    proofClient.tokenInfo(),
+    proofClient.domainStatus("caster"),
   ];
   for (const result of results) {
-    assert.notEqual(result.status, "production");
-    assert.notEqual(result.status, "production-ready");
-    assert.notEqual(result.status, "deployed");
-    assert.notEqual(result.status, "verified");
+    const status = String(result.status);
+    assert(status !== "production", "SDK must not return production status");
+    assert(status !== "production-ready", "SDK must not return production-ready status");
+    assert(status !== "deployed", "SDK must not return deployed status");
+    assert(status !== "verified", "SDK must not return verified status");
   }
-});
+}
+
+await run();
+console.log(JSON.stringify({ status: "passed", package: "@gitcaster/sdk", runtimeClaims: "proof-gated" }));

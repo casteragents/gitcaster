@@ -6,10 +6,11 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "node ../../src/node_modules/typescript/bin/tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json",
     "test": "node dist/sdk-typescript.test.js",
     "lint": "node ../../scripts/release/check-pr26-tooling-sdk.cjs --package-only",
-    "typecheck": "node ../../src/node_modules/typescript/bin/tsc -p tsconfig.json"
+    "check": "pnpm run build && pnpm run test",
+    "typecheck": "tsc -p tsconfig.json"
   },
   "dependencies": {
     "@gitcaster/protocol": "workspace:*"

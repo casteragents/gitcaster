@@ -101,7 +101,7 @@ export interface GitCasterPullRequest {
 }
 
 export interface GitCasterTokenInfo {
-  symbol: "$CASTER";
+  symbol: "$GITCASTER";
   address: string;
   staking: "requires-contract";
   rewards: "requires-contract";

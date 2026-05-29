@@ -1,0 +1,19 @@
+{
+  "format": "gitcaster.sdk.public-alpha-example.v1",
+  "package": "@gitcaster/sdk",
+  "status": "public-alpha",
+  "scope": "local-client-shape",
+  "exampleSource": "examples/sdk/public-alpha-client.example.ts",
+  "blockedRuntimeClaims": [
+    "public node health proof",
+    "native storage verification",
+    "native domain registry proof",
+    "managed signing custody",
+    "contract utility activation"
+  ],
+  "safety": {
+    "noSecretsRequired": true,
+    "noDefaultNetworkMutation": true,
+    "placeholderOnly": true
+  }
+}

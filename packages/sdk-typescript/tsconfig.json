@@ -8,9 +8,9 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "lib": ["ES2022"],
-    "types": ["node"],
-    "typeRoots": ["../../src/node_modules/@types"],
+    "lib": ["ES2022", "DOM"],
+    "types": [],
+    "typeRoots": [],
     "rootDir": "src",
     "outDir": "dist"
   },

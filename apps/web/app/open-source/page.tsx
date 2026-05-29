@@ -56,6 +56,15 @@ export default function OpenSourcePage() {
         </div>
         <div className="grid">
           <div className="card">
+            <h3>TypeScript SDK</h3>
+            <p>Typed client helpers, local examples, redaction, and proof-gated runtime methods are now public.</p>
+            <div className="mini-list">
+              <a href={sitePath("/open-source/typescript-sdk")}>Website page</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/packages/sdk-typescript">Source</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/examples/sdk">Examples</a>
+            </div>
+          </div>
+          <div className="card">
             <h3>Miniapp templates</h3>
             <p>Local app shell metadata, miniapp manifests, and blocked-runtime checks are now public.</p>
             <div className="mini-list">

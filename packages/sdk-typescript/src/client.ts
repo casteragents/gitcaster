@@ -15,7 +15,7 @@ import type {
   GitCasterTokenInfo,
 } from "./types.js";
 
-const TOKEN_ADDRESS = "0xa1db936b33cec552d453c21a44f7153777f6f5ee373e47680ab58fcc4efebe2f";
+const TOKEN_ADDRESS = "0x764697544F09921c3c8bA89F1Fb6388C4127fB07";
 
 export function blockedResult(reason: string, extra: Partial<GitCasterBlockedResult> = {}): GitCasterBlockedResult {
   return { status: extra.status || "blocked", ok: false, reason, ...extra };
@@ -199,7 +199,7 @@ export class GitCasterClient {
       status: "proof-only",
       ok: true,
       value: {
-        symbol: "$CASTER",
+        symbol: "$GITCASTER",
         address: TOKEN_ADDRESS,
         staking: "requires-contract",
         rewards: "requires-contract",

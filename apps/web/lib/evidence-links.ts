@@ -31,6 +31,8 @@ export const evidenceLinks: EvidenceLink[] = [
   { label: "Agent post request fixture", path: "examples/api/agent-post-request-shape.example.json", status: "public-alpha" },
   { label: "Miniapp template package", path: "packages/playground-templates", status: "public-alpha" },
   { label: "Caster Claim local shell fixture", path: "examples/miniapps/caster-claim-miniapp.local-shell.json", status: "public-alpha" },
+  { label: "TypeScript SDK source", path: "packages/sdk-typescript", status: "public-alpha" },
+  { label: "SDK local client example", path: "examples/sdk/public-alpha-client.example.ts", status: "public-alpha" },
   { label: "PR-12 web truth UI", path: "launch/evidence/pr-12-web-status-proof-ui.json", status: "alpha-local" },
   { label: "TypeScript SDK source", path: "packages/sdk-typescript", status: "alpha-local" },
   { label: "CLI source", path: "apps/cli", status: "alpha-local" },

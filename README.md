@@ -14,6 +14,7 @@ This public repository is intentionally scoped for contribution and website visi
 - `packages/ros-adapters` and `examples/ros`: local ROS-style launch, topic, and message bridge helpers.
 - `packages/api-tutorials` and `examples/api`: local API and SDK request-shape tutorials with placeholder-only auth examples.
 - `packages/playground-templates` and `examples/miniapps`: local miniapp shell templates, manifests, and blocked-runtime proof fixtures.
+- `packages/sdk-typescript` and `examples/sdk`: public-alpha TypeScript client helpers with proof-gated runtime methods.
 
 ## Open-core boundary
 
@@ -47,6 +48,7 @@ Every public GitCaster push should first post a Casterchain app update from `@ca
 pnpm install
 pnpm run api-tutorials:check
 pnpm run miniapp-templates:check
+pnpm run sdk:check
 pnpm run simulator:check
 pnpm run ros:check
 pnpm run build:web

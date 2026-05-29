@@ -13,6 +13,7 @@
     "ros:check": "pnpm --filter @gitcaster/ros-adapters check",
     "api-tutorials:check": "pnpm --filter @gitcaster/api-tutorials check",
     "miniapp-templates:check": "pnpm --filter @gitcaster/playground-templates check",
+    "sdk:check": "pnpm --filter @gitcaster/sdk check",
     "secret-scan": "node scripts/public-secret-scan.cjs"
   },
   "devDependencies": {
