@@ -48,6 +48,27 @@ export default function OpenSourcePage() {
       <section className="section">
         <div className="section-heading">
           <div>
+            <h2>Latest public layer</h2>
+            <p>The simulator layer gives contributors a local proof surface without exposing managed infrastructure.</p>
+          </div>
+          <span className="pill good">public-alpha</span>
+        </div>
+        <div className="grid">
+          <div className="card">
+            <h3>Local simulator</h3>
+            <p>Deterministic world stepping, an example agent/app/robot world, and digital twin JSON exports are now public.</p>
+            <div className="mini-list">
+              <a href={sitePath("/open-source/simulator")}>Website page</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/packages/simulator">Source</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/examples/worlds">World fixture</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="section-heading">
+          <div>
             <h2>Open developer layers</h2>
             <p>These are the public contribution tracks intended for builders.</p>
           </div>

@@ -9,6 +9,7 @@
   "scripts": {
     "build:web": "pnpm --filter @gitcaster/web build",
     "test:web": "node scripts/web/check-web-truth-table.cjs",
+    "simulator:check": "pnpm --filter @gitcaster/simulator check",
     "secret-scan": "node scripts/public-secret-scan.cjs"
   },
   "devDependencies": {

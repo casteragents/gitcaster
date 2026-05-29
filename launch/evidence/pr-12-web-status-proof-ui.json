@@ -2,7 +2,7 @@
   "type": "gitcaster.pr.evidence.v1",
   "pr": "PR-12",
   "title": "Web status and proof UI",
-  "createdAt": "2026-05-29T11:07:49.137Z",
+  "createdAt": "2026-05-29T11:45:33.800Z",
   "repoRoot": "D:\\user\\xxxcrypto-vercel-clean\\.quilibrium\\gitcaster-public-github-release\\gitcaster-public-repo",
   "filesChanged": [
     "apps/web/package.json",
@@ -20,6 +20,7 @@
     "apps/web/app/token/page.tsx",
     "apps/web/app/domains/page.tsx",
     "apps/web/app/open-source/page.tsx",
+    "apps/web/app/open-source/simulator/page.tsx",
     "apps/web/components/TruthStatusPill.tsx",
     "apps/web/components/TruthTable.tsx",
     "apps/web/components/ProofPanel.tsx",
@@ -53,9 +54,17 @@
     "NOTICE",
     "OPEN_CORE_BOUNDARY.md",
     "COMMERCIAL_LICENSE.md",
+    "packages/simulator/package.json",
+    "packages/simulator/README.md",
+    "packages/simulator/src/index.ts",
+    "packages/simulator/src/simulator.ts",
+    "packages/simulator/src/simulator.test.ts",
+    "examples/worlds/local-agent-grid.world.json",
+    "docs-source/developer-layers/simulator.md",
     "launch/evidence/pr-12-web-status-proof-ui.json"
   ],
   "commandsRun": [
+    "pnpm run simulator:check",
     "node scripts/web/check-web-truth-table.cjs"
   ],
   "passed": true,
@@ -120,7 +129,11 @@
     },
     {
       "path": "apps/web/app/open-source/page.tsx",
-      "sha256": "abe722517612147d8adb31ad3b1b2d0a4778522e7444f3861d6b5a0a4913492d"
+      "sha256": "ace9f279ef5a8b818d6324900d935b7c10fc2a014fc6b0dc5373bf5bdc45aded"
+    },
+    {
+      "path": "apps/web/app/open-source/simulator/page.tsx",
+      "sha256": "cb35f501664fe8979829a483d4c137ae7af0b50a8909f33485a38ae2400e9716"
     },
     {
       "path": "apps/web/components/TruthStatusPill.tsx",
@@ -184,7 +197,7 @@
     },
     {
       "path": "apps/web/lib/status-truth.ts",
-      "sha256": "fe1b1855e435fcee014908ccb48b50c0e9928c5dabd97cdd486c9d2d7c8d8aa2"
+      "sha256": "7d8ca19b6b9cb5b212722a5b22cc1fad29db1dab061e7ab8dade8551eb4119e5"
     },
     {
       "path": "apps/web/lib/preview-data.ts",
@@ -192,7 +205,7 @@
     },
     {
       "path": "apps/web/lib/evidence-links.ts",
-      "sha256": "5b0751bb9ee7953ff23ba766a72f5f413e0e49c43b21348848248a5402ce5c6c"
+      "sha256": "cb478e1afa10e9ba962d24c16499d14293c67ed64d458dceeafc61db27d1c488"
     },
     {
       "path": "apps/web/lib/caster-copy.ts",
@@ -200,7 +213,7 @@
     },
     {
       "path": "apps/web/lib/public-release-feed.ts",
-      "sha256": "20d80a60d2a5b379eed2b32cbdfa86e745ccd13bc0db952844508dcef5e85416"
+      "sha256": "5b848d9798f8f015b1dc9c270766191e275e4bbca0fb430547e3b6e16c6b9bd4"
     },
     {
       "path": "apps/web/styles/caster-theme.css",
@@ -232,11 +245,11 @@
     },
     {
       "path": "scripts/web/check-web-truth-table.cjs",
-      "sha256": "ff658edf4176104ee57e3a3b4ccf3ea11578f0d03cc79ed69531cbbafcc81c03"
+      "sha256": "1ac1d4cb460dc78ff210d483629fc1f83aad1b92b0788cd98960206b233fdf57"
     },
     {
       "path": "scripts/web/check-pr12-web-ui.cjs",
-      "sha256": "da53b90db675169000188e97a40812440a6522d88dcd9f938834fe089026806e"
+      "sha256": "109a5252b52cf6f61ad4980c3dd0e5860527854862ccacc3ebbdda637e382e66"
     },
     {
       "path": "LICENSE",
@@ -253,6 +266,34 @@
     {
       "path": "COMMERCIAL_LICENSE.md",
       "sha256": "f793bd03e3598e17223f3b5883969bbeb6222010ea947a18b58202bf3880858c"
+    },
+    {
+      "path": "packages/simulator/package.json",
+      "sha256": "76624ae2c22f7e4a9ee5d9971b7c870b70414ffb6f1539995a945acfb2fb5bfe"
+    },
+    {
+      "path": "packages/simulator/README.md",
+      "sha256": "589f0abd4377d8bb5505255f85ced4317a08addeb8cd7fe73df45c3a7f460618"
+    },
+    {
+      "path": "packages/simulator/src/index.ts",
+      "sha256": "84db47291abe14269d3a37bd325a62946a0a945bf8af7f9bee693a67620121d3"
+    },
+    {
+      "path": "packages/simulator/src/simulator.ts",
+      "sha256": "0d932ad536e5cc965ef9138bafc6eb9496d738ddcc77a088ef13445ec7b3b238"
+    },
+    {
+      "path": "packages/simulator/src/simulator.test.ts",
+      "sha256": "0b59791c722cb58098ae7afa825818e88a6aee50022fa2ea6173e40ea22d57e3"
+    },
+    {
+      "path": "examples/worlds/local-agent-grid.world.json",
+      "sha256": "825d90a5b04ffc658af864a3ba254becb2386c27879626f22907e5198ae930bd"
+    },
+    {
+      "path": "docs-source/developer-layers/simulator.md",
+      "sha256": "9babfe9f4e303107382c150ae657bfe0c4b77b72396183244a0c4761a8beae31"
     }
   ],
   "summary": {
@@ -302,6 +343,9 @@
       "public update policy",
       "website static build",
       "developer package workspace",
+      "simulator package",
+      "example world fixture",
+      "digital twin exporter",
       "protocol package",
       "identity package",
       "capabilities package",
@@ -377,6 +421,7 @@
     "performanceReview": "manual-required",
     "productionBlockers": [
       "GO-gated app and miniapp imports must be reviewed one slice at a time.",
+      "Simulator and digital twin exports are local public-alpha only until package release and viewer smoke proof exist.",
       "CasterAgents runtime state remains closed until safety-lock and redaction proof exists.",
       "QStorage and CasterCloud runtime endpoints still require operator proof.",
       ".caster registry and public node federation still require signed live evidence.",
