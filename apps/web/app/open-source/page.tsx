@@ -56,6 +56,15 @@ export default function OpenSourcePage() {
         </div>
         <div className="grid">
           <div className="card">
+            <h3>Push-local object manifests</h3>
+            <p>Local bundle hashing, object manifests, safety scanning, ref certificate records, and blocked endpoint proofs are now public.</p>
+            <div className="mini-list">
+              <a href={sitePath("/open-source/push-local-object-store")}>Website page</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/packages/object-store">Source</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/examples/push-local">Fixture</a>
+            </div>
+          </div>
+          <div className="card">
             <h3>Repo records and issue/PR workflow</h3>
             <p>Repo IDs, append-only events, issue records, PR reviews, record-only merges, and mutation blockers are now public.</p>
             <div className="mini-list">

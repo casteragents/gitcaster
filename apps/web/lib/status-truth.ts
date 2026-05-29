@@ -150,7 +150,7 @@ export function truthTableRows(): TruthTableRow[] {
     { surface: "identity package", status: "alpha-local", evidence: "packages/identity", nextProof: "Published package artifact and key custody review" },
     { surface: "capabilities package", status: "alpha-local", evidence: "packages/capabilities", nextProof: "Capability abuse test evidence" },
     { surface: "repo records package", status: "public-alpha", evidence: "packages/repo-records; examples/repo-records/local-issue-pr-workflow.example.json; launch/evidence/repo-records-issue-pr-source.json", nextProof: "Remote Caster event-log durability, public collaboration, normal git transport, storage, and rollback proof" },
-    { surface: "object store package", status: "alpha-local", evidence: "packages/object-store", nextProof: "QStorage object verification proof" },
+    { surface: "object store package", status: "public-alpha", evidence: "packages/object-store; examples/push-local/local-object-manifest.example.json; launch/evidence/push-local-object-store-source.json", nextProof: "QStorage publication, normal git transport, remote ref durability, public object hosting, and rollback proof" },
     { surface: "ref consensus package", status: "alpha-local", evidence: "packages/ref-consensus", nextProof: "Remote ref consensus proof" },
     { surface: "security package", status: "alpha-local", evidence: "packages/security", nextProof: "External audit evidence" },
     { surface: "audit package", status: "alpha-local", evidence: "packages/audit", nextProof: "License and data-rights review evidence" },

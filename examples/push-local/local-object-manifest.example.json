@@ -1,0 +1,48 @@
+{
+  "type": "gitcaster.push-local.object-manifest.example.v1",
+  "status": "public-alpha",
+  "runtimeStatus": "alpha-local",
+  "description": "Local-only push fixture showing object manifest, local ref certificate, blocked QStorage, and blocked CasterCloud states.",
+  "repo": {
+    "owner": "did:caster:zPublicAlphaOwner",
+    "name": "push-local-object-store",
+    "repoId": "gitcaster://did:caster:zPublicAlphaOwner/push-local-object-store"
+  },
+  "pushLocalPayload": {
+    "type": "gitcaster.repo.push-local.payload.v1",
+    "branch": "main",
+    "rootPath": "<local-fixture-path>",
+    "message": "local alpha object manifest"
+  },
+  "objectManifest": {
+    "type": "gitcaster.object.manifest.v1",
+    "storageMode": "local-alpha",
+    "storageStatus": "alpha-local",
+    "rootHashPrefix": "sha256:",
+    "objectHashPrefix": "sha256:",
+    "publicObjectHostingClaimed": false
+  },
+  "refCertificate": {
+    "type": "gitcaster.ref.update.v1",
+    "status": "alpha-local",
+    "remoteDurabilityClaimed": false
+  },
+  "blockedProofs": {
+    "qstorage": {
+      "status": "requires-endpoint",
+      "verified": false
+    },
+    "castercloud": {
+      "status": "requires-endpoint",
+      "verified": false
+    }
+  },
+  "blockedClaims": {
+    "normalGitPushTransport": false,
+    "qstoragePublication": false,
+    "remoteRefDurability": false,
+    "publicObjectHosting": false,
+    "productionRuntime": false
+  },
+  "check": "pnpm run push-local-object-store:check"
+}

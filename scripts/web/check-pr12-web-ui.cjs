@@ -32,6 +32,7 @@ const requiredFiles = [
   "apps/web/app/open-source/mcp-source/page.tsx",
   "apps/web/app/open-source/local-node-api/page.tsx",
   "apps/web/app/open-source/repo-records/page.tsx",
+  "apps/web/app/open-source/push-local-object-store/page.tsx",
   "apps/web/components/TruthStatusPill.tsx",
   "apps/web/components/TruthTable.tsx",
   "apps/web/components/ProofPanel.tsx",
@@ -127,6 +128,7 @@ const requiredFiles = [
   "apps/web/public/gitcaster-mcp-source.md",
   "apps/web/public/gitcaster-local-node-api.md",
   "apps/web/public/gitcaster-repo-records.md",
+  "apps/web/public/gitcaster-push-local-object-store.md",
   "examples/worlds/local-agent-grid.world.json",
   "examples/ros/local-agent-bridge.launch.json",
   "examples/ros/local-agent-bridge.messages.json",
@@ -140,6 +142,7 @@ const requiredFiles = [
   "examples/mcp/local-tool-plan.example.json",
   "examples/node/local-api-smoke.example.json",
   "examples/repo-records/local-issue-pr-workflow.example.json",
+  "examples/push-local/local-object-manifest.example.json",
   "docs-source/developer-layers/simulator.md",
   "docs-source/developer-layers/ros-adapters.md",
   "docs-source/developer-layers/api-sdk-tutorials.md",
@@ -150,10 +153,13 @@ const requiredFiles = [
   "docs-source/developer-layers/mcp-source.md",
   "docs-source/developer-layers/local-node-api.md",
   "docs-source/developer-layers/repo-records.md",
+  "docs-source/developer-layers/push-local-object-store.md",
   "scripts/node/check-local-node-api-source.cjs",
   "scripts/repo-records/check-repo-records-public-alpha.cjs",
+  "scripts/push-local/check-push-local-object-store-public-alpha.cjs",
   "launch/evidence/local-node-api-source.json",
   "launch/evidence/repo-records-issue-pr-source.json",
+  "launch/evidence/push-local-object-store-source.json",
   "launch/evidence/pr-12-web-status-proof-ui.json"
 ];
 
