@@ -2,7 +2,7 @@
   "type": "gitcaster.public-release.evidence.v1",
   "slice": "push-local-object-store-source",
   "status": "passed",
-  "createdAt": "2026-05-29T21:56:32.049Z",
+  "createdAt": "2026-05-29T22:23:59.717Z",
   "filesChanged": [
     "packages/object-store/package.json",
     "packages/object-store/tsconfig.json",
