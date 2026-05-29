@@ -1,3 +1,4 @@
+import { PublicReleaseFeed } from "../../components/PublicReleaseFeed";
 import { sitePath } from "../../lib/site-url";
 
 const openLayers = [
@@ -95,6 +96,17 @@ export default function OpenSourcePage() {
             </div>
           ))}
         </div>
+      </section>
+
+      <section className="section">
+        <div className="section-heading">
+          <div>
+            <h2>Public update feed</h2>
+            <p>Each update keeps the repo, website, X post, and Farcaster mirror tied together.</p>
+          </div>
+          <span className="pill good">current</span>
+        </div>
+        <PublicReleaseFeed />
       </section>
     </div>
   );

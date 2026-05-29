@@ -2,7 +2,7 @@
   "type": "gitcaster.pr.evidence.v1",
   "pr": "PR-12",
   "title": "Web status and proof UI",
-  "createdAt": "2026-05-29T10:11:22.781Z",
+  "createdAt": "2026-05-29T11:07:49.137Z",
   "repoRoot": "D:\\user\\xxxcrypto-vercel-clean\\.quilibrium\\gitcaster-public-github-release\\gitcaster-public-repo",
   "filesChanged": [
     "apps/web/package.json",
@@ -19,10 +19,12 @@
     "apps/web/app/deploy/page.tsx",
     "apps/web/app/token/page.tsx",
     "apps/web/app/domains/page.tsx",
+    "apps/web/app/open-source/page.tsx",
     "apps/web/components/TruthStatusPill.tsx",
     "apps/web/components/TruthTable.tsx",
     "apps/web/components/ProofPanel.tsx",
     "apps/web/components/ExternalBlockerPanel.tsx",
+    "apps/web/components/PublicReleaseFeed.tsx",
     "apps/web/components/CasterShell.tsx",
     "apps/web/components/CasterNav.tsx",
     "apps/web/components/CasterFooter.tsx",
@@ -37,6 +39,7 @@
     "apps/web/lib/preview-data.ts",
     "apps/web/lib/evidence-links.ts",
     "apps/web/lib/caster-copy.ts",
+    "apps/web/lib/public-release-feed.ts",
     "apps/web/styles/caster-theme.css",
     "apps/web/public/gitcaster-preview-node.json",
     "apps/web/public/gitcaster-preview-evidence.json",
@@ -46,6 +49,10 @@
     "apps/web/public/robots.txt",
     "scripts/web/check-web-truth-table.cjs",
     "scripts/web/check-pr12-web-ui.cjs",
+    "LICENSE",
+    "NOTICE",
+    "OPEN_CORE_BOUNDARY.md",
+    "COMMERCIAL_LICENSE.md",
     "launch/evidence/pr-12-web-status-proof-ui.json"
   ],
   "commandsRun": [
@@ -73,7 +80,7 @@
     },
     {
       "path": "apps/web/app/page.tsx",
-      "sha256": "41f50d75cabd06c84cb3fa7a7ec9cd60f6587515a65f71c9cf0c1aca62c86a37"
+      "sha256": "cac04ebf1e8abdc9102ede753ac92e9ab7ea65389555f3d2bc97388db43fc4ba"
     },
     {
       "path": "apps/web/app/start/page.tsx",
@@ -81,7 +88,7 @@
     },
     {
       "path": "apps/web/app/status/page.tsx",
-      "sha256": "1dfeab85cd5f1bcd61e266941dc7ba1db78e00767bfdad0b3e91bd14730a0ef8"
+      "sha256": "cf22b35f2c34f74781cfeb730576ab3331f5c3951cb6f6ea2d2cce04c6115116"
     },
     {
       "path": "apps/web/app/node/page.tsx",
@@ -112,6 +119,10 @@
       "sha256": "c743b1263ea6debddb802070a08e4bcf9297932ac9d958baa0c702c97534b960"
     },
     {
+      "path": "apps/web/app/open-source/page.tsx",
+      "sha256": "abe722517612147d8adb31ad3b1b2d0a4778522e7444f3861d6b5a0a4913492d"
+    },
+    {
       "path": "apps/web/components/TruthStatusPill.tsx",
       "sha256": "13c2a6d51689fbb5a943c339e9f5950deb25fd8c47f9695b11a2ceadb2a897bf"
     },
@@ -121,11 +132,15 @@
     },
     {
       "path": "apps/web/components/ProofPanel.tsx",
-      "sha256": "ee7e3fe229a82b4a7b9e1c28eb479a846731f694a260732173d7d0238c8caaed"
+      "sha256": "dcfd690cf50edcd029d698ebdc3dc9e2d77238e02ad56b445b6697048978d12a"
     },
     {
       "path": "apps/web/components/ExternalBlockerPanel.tsx",
-      "sha256": "392c2d479a5302bb57af83c41913559ecdd6f521b8ab1f34021fbacbaa8ec2ae"
+      "sha256": "2d91807b604e753cddcc16d3df94b1d74cbdf0049e4fdb6be802f6e22a90a73e"
+    },
+    {
+      "path": "apps/web/components/PublicReleaseFeed.tsx",
+      "sha256": "cf337d7930409fcf04e5894edcb8895f4ebfbad8414f4954d431647a9c2461d4"
     },
     {
       "path": "apps/web/components/CasterShell.tsx",
@@ -169,7 +184,7 @@
     },
     {
       "path": "apps/web/lib/status-truth.ts",
-      "sha256": "6be978453d57725f88ff513b5bbb235680b621cbe1da9c1716196a7ff09b5017"
+      "sha256": "fe1b1855e435fcee014908ccb48b50c0e9928c5dabd97cdd486c9d2d7c8d8aa2"
     },
     {
       "path": "apps/web/lib/preview-data.ts",
@@ -177,15 +192,19 @@
     },
     {
       "path": "apps/web/lib/evidence-links.ts",
-      "sha256": "4413277cae38f2d27d4560902f18e88b8592463560fa11fe44f7ab3eca63dea2"
+      "sha256": "5b0751bb9ee7953ff23ba766a72f5f413e0e49c43b21348848248a5402ce5c6c"
     },
     {
       "path": "apps/web/lib/caster-copy.ts",
       "sha256": "f52d5fa329d14c764a28628a5f596c469a7493e38f2e4cdf21d429b6c2112155"
     },
     {
+      "path": "apps/web/lib/public-release-feed.ts",
+      "sha256": "20d80a60d2a5b379eed2b32cbdfa86e745ccd13bc0db952844508dcef5e85416"
+    },
+    {
       "path": "apps/web/styles/caster-theme.css",
-      "sha256": "fb286ce9bb619e50b3721b88fd342b6346d2da48f514e451994552e1b828edb4"
+      "sha256": "97600546a69a903261d2661f09e696ce20afed147b9b47b1fab875e5d09ac8bb"
     },
     {
       "path": "apps/web/public/gitcaster-preview-node.json",
@@ -213,11 +232,27 @@
     },
     {
       "path": "scripts/web/check-web-truth-table.cjs",
-      "sha256": "4265258864c0e969733319cfc6f615758b934e9431f351646b748f0c96d73d4e"
+      "sha256": "ff658edf4176104ee57e3a3b4ccf3ea11578f0d03cc79ed69531cbbafcc81c03"
     },
     {
       "path": "scripts/web/check-pr12-web-ui.cjs",
-      "sha256": "151df3027d36d2fd9a9e30d4ec9a87fbd256fa7c0f2cf961f13b12e7aec627c1"
+      "sha256": "da53b90db675169000188e97a40812440a6522d88dcd9f938834fe089026806e"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "946213b5d05a1b995266f5fa204ff7146d27b60a5db6fbed5dcbfb22e024540a"
+    },
+    {
+      "path": "NOTICE",
+      "sha256": "bc7447b83d21ca74d1a51f3d8d413b09bb568056f82df23d0db7d347f7f9de5e"
+    },
+    {
+      "path": "OPEN_CORE_BOUNDARY.md",
+      "sha256": "1a93b8c50f96ea4e84eabfa503ae301fcb217bab4a4bccb9cc260bd8808b47e7"
+    },
+    {
+      "path": "COMMERCIAL_LICENSE.md",
+      "sha256": "f793bd03e3598e17223f3b5883969bbeb6222010ea947a18b58202bf3880858c"
     }
   ],
   "summary": {
@@ -259,30 +294,41 @@
   },
   "truthTable": {
     "surfaces": [
+      "GitHub repo",
+      "GitHub Pages website",
+      "open-core boundary",
+      "Apache 2.0 license",
+      "commercial boundary notice",
+      "public update policy",
       "website static build",
+      "developer package workspace",
+      "protocol package",
+      "identity package",
+      "capabilities package",
+      "repo records package",
+      "object store package",
+      "ref consensus package",
+      "security package",
+      "audit package",
+      "observability package",
+      "TypeScript SDK source",
+      "CLI source",
+      "git-remote-gitcaster source",
+      "MCP source",
+      "local node API source",
+      "local alpha workflow",
+      "ecosystem manifest",
+      "Claim Miniapp template",
+      "Caster Punks index",
+      "CasterAgents",
+      "$GITCASTER token address",
+      "$GITCASTER utility",
       "QStorage publish",
       "CasterCloud deploy",
-      "local alpha node",
-      "node.gitcaster.casterchain",
-      "node2.gitcaster.casterchain",
-      "node3.gitcaster.casterchain",
-      "CLI",
-      "git-remote-gitcaster",
-      "push-local",
-      "ref certificates",
-      "object store",
-      "MCP",
-      "SDK TS",
-      "SDK Python",
-      "ecosystem manifest",
-      "Claim Miniapp",
-      "Caster Punks",
-      "CasterAgents",
-      "token utility",
-      "token contracts",
-      "domains",
-      "installer",
-      "security gate",
+      ".caster domains",
+      "public node federation",
+      "hosted installer",
+      "security audit",
       "production QA",
       "production launch gate"
     ],
@@ -290,9 +336,9 @@
     "previewRowsLabeled": true
   },
   "web": {
-    "status": "alpha-local",
+    "status": "live",
     "staticExport": "ready",
-    "publicDeploymentClaimed": false,
+    "publicDeploymentClaimed": true,
     "productionClaimed": false
   },
   "externalServices": {
@@ -330,14 +376,12 @@
     "accessibilityReview": "manual-required",
     "performanceReview": "manual-required",
     "productionBlockers": [
-      "Canonical ecosystem import is not implemented until PR-13.",
-      "Miniapp import is not implemented until PR-14.",
-      "Caster Punks index is not implemented until PR-15.",
-      "CasterAgents safety lock is not implemented until PR-16.",
-      "Deploy pipeline is not implemented until PR-17/PR-23.",
-      "Security gate is not implemented until PR-18/PR-27.",
-      "Full Git transport is not release-candidate until PR-22.",
-      "Production launch gate is not evaluated until PR-32."
+      "GO-gated app and miniapp imports must be reviewed one slice at a time.",
+      "CasterAgents runtime state remains closed until safety-lock and redaction proof exists.",
+      "QStorage and CasterCloud runtime endpoints still require operator proof.",
+      ".caster registry and public node federation still require signed live evidence.",
+      "$GITCASTER utility remains proof-only until contract, governance, and audit evidence exist.",
+      "Production launch still requires release-candidate, audit, deployment, rollback, and public-node evidence."
     ],
     "canShipProduction": false
   },
@@ -354,19 +398,18 @@
     "sensitiveAgentStatePublic": false
   },
   "nextPrHandoff": {
-    "nextPr": "PR-13",
-    "title": "Canonical ecosystem manifest",
+    "nextPr": "open-core-go-gated-layer",
+    "title": "GO-gated public app or developer package import",
     "requiredInputs": [
-      "apps/web/app/ecosystem/page.tsx",
-      "apps/web/public/gitcaster-preview-ecosystem.json",
+      "OPEN_CORE_BOUNDARY.md",
+      "apps/web/app/status/page.tsx",
       "launch/evidence/pr-12-web-status-proof-ui.json"
     ],
     "knownRisks": [
-      "PR-12 creates ecosystem preview only.",
-      "PR-12 does not import CasterAgents state.",
-      "PR-12 does not index Caster Punks.",
-      "PR-12 does not migrate the Claim Miniapp.",
-      "PR-12 does not deploy to CasterCloud/QStorage."
+      "Only GO-gated public layers should be imported.",
+      "Sensitive runtime state and operator secrets must remain excluded.",
+      "Generated public statuses must match current evidence.",
+      "Social announcements must include the repo and website and mirror only the X link on Farcaster."
     ],
     "recommendedCommands": [
       "pnpm --filter @gitcaster/web build",

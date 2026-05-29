@@ -381,7 +381,8 @@ p {
 }
 
 .mini-list strong,
-.mini-list span {
+.mini-list span,
+.mini-list a {
   min-height: 1.6rem;
   padding: 0.22rem 0.45rem;
   border: 1px solid rgba(154, 176, 196, 0.16);
@@ -392,6 +393,10 @@ p {
 
 .mini-list strong {
   color: var(--text);
+}
+
+.mini-list a {
+  color: #c8ffef;
 }
 
 .mini-list.blockers span {

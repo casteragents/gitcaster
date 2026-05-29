@@ -1,5 +1,6 @@
 import { ExternalBlockerPanel } from "../../components/ExternalBlockerPanel";
 import { ProofPanel } from "../../components/ProofPanel";
+import { PublicReleaseFeed } from "../../components/PublicReleaseFeed";
 import { TruthTable } from "../../components/TruthTable";
 
 export default function StatusPage() {
@@ -8,9 +9,13 @@ export default function StatusPage() {
       <div>
         <div className="eyebrow">Truth table</div>
         <h1>Status and proof</h1>
-        <p className="lede">Every row has evidence or a blocker. Production launch gate remains blocked until PR-32.</p>
+        <p className="lede">Every row has evidence or a blocker. Public repo and website surfaces are live; native runtime, .caster, and production claims still require proof.</p>
       </div>
       <TruthTable />
+      <section className="section">
+        <h2>Public update feed</h2>
+        <PublicReleaseFeed />
+      </section>
       <section className="section">
         <h2>Evidence</h2>
         <ProofPanel />

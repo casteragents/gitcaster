@@ -21,10 +21,12 @@ const requiredFiles = [
   "apps/web/app/deploy/page.tsx",
   "apps/web/app/token/page.tsx",
   "apps/web/app/domains/page.tsx",
+  "apps/web/app/open-source/page.tsx",
   "apps/web/components/TruthStatusPill.tsx",
   "apps/web/components/TruthTable.tsx",
   "apps/web/components/ProofPanel.tsx",
   "apps/web/components/ExternalBlockerPanel.tsx",
+  "apps/web/components/PublicReleaseFeed.tsx",
   "apps/web/components/CasterShell.tsx",
   "apps/web/components/CasterNav.tsx",
   "apps/web/components/CasterFooter.tsx",
@@ -39,6 +41,7 @@ const requiredFiles = [
   "apps/web/lib/preview-data.ts",
   "apps/web/lib/evidence-links.ts",
   "apps/web/lib/caster-copy.ts",
+  "apps/web/lib/public-release-feed.ts",
   "apps/web/styles/caster-theme.css",
   "apps/web/public/gitcaster-preview-node.json",
   "apps/web/public/gitcaster-preview-evidence.json",
@@ -48,6 +51,10 @@ const requiredFiles = [
   "apps/web/public/robots.txt",
   "scripts/web/check-web-truth-table.cjs",
   "scripts/web/check-pr12-web-ui.cjs",
+  "LICENSE",
+  "NOTICE",
+  "OPEN_CORE_BOUNDARY.md",
+  "COMMERCIAL_LICENSE.md",
   "launch/evidence/pr-12-web-status-proof-ui.json"
 ];
 
@@ -123,7 +130,9 @@ if (!packageOnly) {
     if (evidence.summary?.publicNodesOnlineClaimed !== false) blockers.push("publicNodesOnlineClaimed must be false");
     if (evidence.summary?.multiNodeReplicationClaimed !== false) blockers.push("multiNodeReplicationClaimed must be false");
     if (evidence.summary?.unhackableClaimed !== false) blockers.push("unhackableClaimed must be false");
-    if (!Array.isArray(evidence.truthTable?.surfaces) || evidence.truthTable.surfaces.length !== 26) blockers.push("truth table must include 26 surfaces");
+    if (!Array.isArray(evidence.truthTable?.surfaces) || evidence.truthTable.surfaces.length !== 37) blockers.push("truth table must include 37 current surfaces");
+    if (!evidence.truthTable?.surfaces?.includes("GitHub Pages website")) blockers.push("truth table must include GitHub Pages website");
+    if (!evidence.truthTable?.surfaces?.includes("open-core boundary")) blockers.push("truth table must include open-core boundary");
   }
 }
 

@@ -21,10 +21,12 @@ const filesChanged = [
   "apps/web/app/deploy/page.tsx",
   "apps/web/app/token/page.tsx",
   "apps/web/app/domains/page.tsx",
+  "apps/web/app/open-source/page.tsx",
   "apps/web/components/TruthStatusPill.tsx",
   "apps/web/components/TruthTable.tsx",
   "apps/web/components/ProofPanel.tsx",
   "apps/web/components/ExternalBlockerPanel.tsx",
+  "apps/web/components/PublicReleaseFeed.tsx",
   "apps/web/components/CasterShell.tsx",
   "apps/web/components/CasterNav.tsx",
   "apps/web/components/CasterFooter.tsx",
@@ -39,6 +41,7 @@ const filesChanged = [
   "apps/web/lib/preview-data.ts",
   "apps/web/lib/evidence-links.ts",
   "apps/web/lib/caster-copy.ts",
+  "apps/web/lib/public-release-feed.ts",
   "apps/web/styles/caster-theme.css",
   "apps/web/public/gitcaster-preview-node.json",
   "apps/web/public/gitcaster-preview-evidence.json",
@@ -48,34 +51,49 @@ const filesChanged = [
   "apps/web/public/robots.txt",
   "scripts/web/check-web-truth-table.cjs",
   "scripts/web/check-pr12-web-ui.cjs",
+  "LICENSE",
+  "NOTICE",
+  "OPEN_CORE_BOUNDARY.md",
+  "COMMERCIAL_LICENSE.md",
   "launch/evidence/pr-12-web-status-proof-ui.json",
 ];
 
 const truthSurfaces = [
+  "GitHub repo",
+  "GitHub Pages website",
+  "open-core boundary",
+  "Apache 2.0 license",
+  "commercial boundary notice",
+  "public update policy",
   "website static build",
+  "developer package workspace",
+  "protocol package",
+  "identity package",
+  "capabilities package",
+  "repo records package",
+  "object store package",
+  "ref consensus package",
+  "security package",
+  "audit package",
+  "observability package",
+  "TypeScript SDK source",
+  "CLI source",
+  "git-remote-gitcaster source",
+  "MCP source",
+  "local node API source",
+  "local alpha workflow",
+  "ecosystem manifest",
+  "Claim Miniapp template",
+  "Caster Punks index",
+  "CasterAgents",
+  "$GITCASTER token address",
+  "$GITCASTER utility",
   "QStorage publish",
   "CasterCloud deploy",
-  "local alpha node",
-  "node.gitcaster.casterchain",
-  "node2.gitcaster.casterchain",
-  "node3.gitcaster.casterchain",
-  "CLI",
-  "git-remote-gitcaster",
-  "push-local",
-  "ref certificates",
-  "object store",
-  "MCP",
-  "SDK TS",
-  "SDK Python",
-  "ecosystem manifest",
-  "Claim Miniapp",
-  "Caster Punks",
-  "CasterAgents",
-  "token utility",
-  "token contracts",
-  "domains",
-  "installer",
-  "security gate",
+  ".caster domains",
+  "public node federation",
+  "hosted installer",
+  "security audit",
   "production QA",
   "production launch gate",
 ];
@@ -115,6 +133,8 @@ if (!statusTruth.includes("nextProof")) blockers.push("truth table rows must inc
 if (!statusTruth.includes("evidence") || !statusTruth.includes("blocker")) blockers.push("truth table rows must include evidence or blocker fields");
 if (!publicHomeText.includes("Build apps. Run agents. Own the repo.")) blockers.push("homepage product line missing");
 if (!publicHomeText.includes("GitCaster is the CasterChain-native repo, agent, miniapp, and CasterCloud deployment network.")) blockers.push("homepage CasterChain copy missing");
+if (!publicHomeText.includes("Public update feed")) blockers.push("homepage public update feed missing");
+if (!statusTruth.includes("GitHub Pages website") || !statusTruth.includes("OPEN_CORE_BOUNDARY.md")) blockers.push("status truth must include public website and open-core evidence");
 if (!startText.includes("gc identity new") || !startText.includes("gitcaster://did:caster:z.../hello-gitcaster")) blockers.push("start page must use GitCaster commands");
 if (!configText.includes('output: "export"')) blockers.push("next config must use static export");
 if (!exists("apps/web/out")) blockers.push("static export output apps/web/out missing");
@@ -186,9 +206,9 @@ const evidence = {
     previewRowsLabeled: true
   },
   web: {
-    status: "alpha-local",
+    status: "live",
     staticExport: exists("apps/web/out") ? "ready" : "blocked",
-    publicDeploymentClaimed: false,
+    publicDeploymentClaimed: true,
     productionClaimed: false
   },
   externalServices: {
@@ -216,14 +236,12 @@ const evidence = {
     accessibilityReview: "manual-required",
     performanceReview: "manual-required",
     productionBlockers: [
-      "Canonical ecosystem import is not implemented until PR-13.",
-      "Miniapp import is not implemented until PR-14.",
-      "Caster Punks index is not implemented until PR-15.",
-      "CasterAgents safety lock is not implemented until PR-16.",
-      "Deploy pipeline is not implemented until PR-17/PR-23.",
-      "Security gate is not implemented until PR-18/PR-27.",
-      "Full Git transport is not release-candidate until PR-22.",
-      "Production launch gate is not evaluated until PR-32."
+      "GO-gated app and miniapp imports must be reviewed one slice at a time.",
+      "CasterAgents runtime state remains closed until safety-lock and redaction proof exists.",
+      "QStorage and CasterCloud runtime endpoints still require operator proof.",
+      ".caster registry and public node federation still require signed live evidence.",
+      "$GITCASTER utility remains proof-only until contract, governance, and audit evidence exist.",
+      "Production launch still requires release-candidate, audit, deployment, rollback, and public-node evidence."
     ],
     canShipProduction: false
   },
@@ -240,19 +258,18 @@ const evidence = {
     sensitiveAgentStatePublic: false
   },
   nextPrHandoff: {
-    nextPr: "PR-13",
-    title: "Canonical ecosystem manifest",
+    nextPr: "open-core-go-gated-layer",
+    title: "GO-gated public app or developer package import",
     requiredInputs: [
-      "apps/web/app/ecosystem/page.tsx",
-      "apps/web/public/gitcaster-preview-ecosystem.json",
+      "OPEN_CORE_BOUNDARY.md",
+      "apps/web/app/status/page.tsx",
       "launch/evidence/pr-12-web-status-proof-ui.json"
     ],
     knownRisks: [
-      "PR-12 creates ecosystem preview only.",
-      "PR-12 does not import CasterAgents state.",
-      "PR-12 does not index Caster Punks.",
-      "PR-12 does not migrate the Claim Miniapp.",
-      "PR-12 does not deploy to CasterCloud/QStorage."
+      "Only GO-gated public layers should be imported.",
+      "Sensitive runtime state and operator secrets must remain excluded.",
+      "Generated public statuses must match current evidence.",
+      "Social announcements must include the repo and website and mirror only the X link on Farcaster."
     ],
     recommendedCommands: [
       "pnpm --filter @gitcaster/web build",

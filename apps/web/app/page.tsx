@@ -1,6 +1,7 @@
 import { CasterTerminal } from "../components/CasterTerminal";
 import { NodePreviewPanel } from "../components/NodePreviewPanel";
 import { ProofPanel } from "../components/ProofPanel";
+import { PublicReleaseFeed } from "../components/PublicReleaseFeed";
 import { SecurityPosturePanel } from "../components/SecurityPosturePanel";
 import { TruthTable } from "../components/TruthTable";
 import { PRODUCT, PROOF_STRIP } from "../lib/caster-copy";
@@ -58,6 +59,17 @@ export default function HomePage() {
       <section className="section">
         <h2>Status preview</h2>
         <TruthTable compact />
+      </section>
+
+      <section className="section">
+        <div className="section-heading">
+          <div>
+            <h2>Public update feed</h2>
+            <p>Every public push links the website, GitHub repo, X update, and Farcaster mirror.</p>
+          </div>
+          <span className="pill good">transparent</span>
+        </div>
+        <PublicReleaseFeed />
       </section>
 
       <section className="section">
