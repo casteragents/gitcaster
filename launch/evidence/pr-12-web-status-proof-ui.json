@@ -2,7 +2,7 @@
   "type": "gitcaster.pr.evidence.v1",
   "pr": "PR-12",
   "title": "Web status and proof UI",
-  "createdAt": "2026-05-29T18:47:36.386Z",
+  "createdAt": "2026-05-29T19:19:52.078Z",
   "repoRoot": "D:\\user\\xxxcrypto-vercel-clean\\.quilibrium\\gitcaster-public-github-release\\gitcaster-public-repo",
   "filesChanged": [
     "apps/web/package.json",
@@ -27,6 +27,7 @@
     "apps/web/app/open-source/typescript-sdk/page.tsx",
     "apps/web/app/open-source/cli/page.tsx",
     "apps/web/app/open-source/git-remote/page.tsx",
+    "apps/web/app/open-source/mcp-source/page.tsx",
     "apps/web/components/TruthStatusPill.tsx",
     "apps/web/components/TruthTable.tsx",
     "apps/web/components/ProofPanel.tsx",
@@ -106,6 +107,7 @@
     "apps/git-remote-gitcaster/src/transport-status.ts",
     "apps/git-remote-gitcaster/src/git-remote-gitcaster.test.ts",
     "apps/web/public/git-remote-gitcaster.md",
+    "apps/web/public/gitcaster-mcp-source.md",
     "examples/worlds/local-agent-grid.world.json",
     "examples/ros/local-agent-bridge.launch.json",
     "examples/ros/local-agent-bridge.messages.json",
@@ -116,6 +118,7 @@
     "examples/sdk/public-alpha-client.example.json",
     "examples/cli/local-command-plan.example.json",
     "examples/git-remote/blocked-transport-plan.example.json",
+    "examples/mcp/local-tool-plan.example.json",
     "docs-source/developer-layers/simulator.md",
     "docs-source/developer-layers/ros-adapters.md",
     "docs-source/developer-layers/api-sdk-tutorials.md",
@@ -123,6 +126,7 @@
     "docs-source/developer-layers/typescript-sdk.md",
     "docs-source/developer-layers/cli.md",
     "docs-source/developer-layers/git-remote.md",
+    "docs-source/developer-layers/mcp-source.md",
     "launch/evidence/pr-12-web-status-proof-ui.json"
   ],
   "commandsRun": [
@@ -131,6 +135,7 @@
     "pnpm run sdk:check",
     "pnpm run cli:check",
     "pnpm run git-remote:check",
+    "pnpm run mcp:check",
     "pnpm run simulator:check",
     "pnpm run ros:check",
     "node scripts/web/check-web-truth-table.cjs"
@@ -197,7 +202,7 @@
     },
     {
       "path": "apps/web/app/open-source/page.tsx",
-      "sha256": "bb21458f668a5027319c3c358b5a85bb7f36c4b4f79f68b732f4afdb1d50762f"
+      "sha256": "839ea587bba97a25c7aacd8db2c345b93255f47157bc7ae4c1235d634d185a08"
     },
     {
       "path": "apps/web/app/open-source/simulator/page.tsx",
@@ -226,6 +231,10 @@
     {
       "path": "apps/web/app/open-source/git-remote/page.tsx",
       "sha256": "8b6339fd4120b7333b8e238a69f0c248d101cd48d023560d80ea3f38b3a19ea8"
+    },
+    {
+      "path": "apps/web/app/open-source/mcp-source/page.tsx",
+      "sha256": "ffea4aa74f1318d7d7ca2e5305b46ba42a1600171b1762ebb36228c6096205ac"
     },
     {
       "path": "apps/web/components/TruthStatusPill.tsx",
@@ -289,7 +298,7 @@
     },
     {
       "path": "apps/web/lib/status-truth.ts",
-      "sha256": "1564a358f5fef92cf26d4a98e532b2dd5e0ddf8a02f1575ab23cc01e4daf1aed"
+      "sha256": "2be4acb10848c81a4abef8ed383ce13c9078fe15214665d41210f713743bf764"
     },
     {
       "path": "apps/web/lib/preview-data.ts",
@@ -297,7 +306,7 @@
     },
     {
       "path": "apps/web/lib/evidence-links.ts",
-      "sha256": "73cb72dd32cf2bb65d8224a8ef11c42a05ebdbe0493b5bb634de3baaac15691d"
+      "sha256": "a18340ec4eaf9a160e7aa1591300213ec1fd24e2bad09aeda7bff982c2872536"
     },
     {
       "path": "apps/web/lib/caster-copy.ts",
@@ -337,11 +346,11 @@
     },
     {
       "path": "scripts/web/check-web-truth-table.cjs",
-      "sha256": "9fc0f2958203c00b8db8264269d7c746b3a13e4447d7f5a19c1379d286ecc595"
+      "sha256": "a06a15585e24109195e1da957d69cdc22bf7d68e5915ddd87f420b6d153e7b0d"
     },
     {
       "path": "scripts/web/check-pr12-web-ui.cjs",
-      "sha256": "c1c7e5465a2016787d82632692248de4700da4cf93eb7942862950065c4b0035"
+      "sha256": "f3061ccb5ffa8a921b6b531754d77905d0a363a7b22bab24c928fd59067eeba4"
     },
     {
       "path": "LICENSE",
@@ -544,6 +553,10 @@
       "sha256": "694c11be73b8ce2e008fd701af710f3ca1e070afea0ffcd5a40176f27cdf5bde"
     },
     {
+      "path": "apps/web/public/gitcaster-mcp-source.md",
+      "sha256": "df01e82cb507792e9fbb5bdf7c146101513a7cfc203554f8f9892ad370146695"
+    },
+    {
       "path": "examples/worlds/local-agent-grid.world.json",
       "sha256": "825d90a5b04ffc658af864a3ba254becb2386c27879626f22907e5198ae930bd"
     },
@@ -584,6 +597,10 @@
       "sha256": "eea7ceef30942ed7dd991800fcb420b227914524adcd37893dbdef1311de9e58"
     },
     {
+      "path": "examples/mcp/local-tool-plan.example.json",
+      "sha256": "c5b49793004887426c8c8f48afb1d10f3b9f1b758a8dd61b8d891ddf5196d799"
+    },
+    {
       "path": "docs-source/developer-layers/simulator.md",
       "sha256": "9babfe9f4e303107382c150ae657bfe0c4b77b72396183244a0c4761a8beae31"
     },
@@ -610,6 +627,10 @@
     {
       "path": "docs-source/developer-layers/git-remote.md",
       "sha256": "7a476a29fbab735f7f451d5c4f07125a01287e5eeb6942b897afd3a027c52dea"
+    },
+    {
+      "path": "docs-source/developer-layers/mcp-source.md",
+      "sha256": "4be6030a26193eb8ff34da43a7c5d039f62900f17b56280c647d25c3fe966e5c"
     }
   ],
   "summary": {
@@ -633,6 +654,7 @@
     "typeScriptSdkPageCreated": true,
     "cliPageCreated": true,
     "gitRemotePageCreated": true,
+    "mcpSourcePageCreated": true,
     "truthTableCreated": true,
     "previewDataLabeled": true,
     "liveClaimsWithoutEvidence": 0,
@@ -648,7 +670,7 @@
     "unhackableClaimed": false,
     "docsUseGitCasterCommands": true,
     "docsUseGitlawbCommands": false,
-    "pr11EvidenceFound": false,
+    "pr11EvidenceFound": true,
     "forbiddenIdentityViolations": 0,
     "hostedPlatformProductionViolations": 0,
     "fakeLiveClaimsFound": 0,
@@ -755,6 +777,7 @@
       "TypeScript SDK source is public-alpha only until package release, endpoint, custody, registry, and contract utility proof exist.",
       "CLI source is public-alpha only until installer release, node mutation, custody, storage, and domain proof exist.",
       "Git remote helper source is public-alpha only until pack transport, node mutation, storage, and rollback proof exist.",
+      "MCP source is public-alpha only until public gateway, custody, node mutation, storage, and domain proof exist.",
       "CasterAgents runtime state remains closed until safety-lock and redaction proof exists.",
       "QStorage and CasterCloud runtime endpoints still require operator proof.",
       ".caster registry and public node federation still require signed live evidence.",

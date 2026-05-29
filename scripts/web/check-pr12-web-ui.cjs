@@ -29,6 +29,7 @@ const requiredFiles = [
   "apps/web/app/open-source/typescript-sdk/page.tsx",
   "apps/web/app/open-source/cli/page.tsx",
   "apps/web/app/open-source/git-remote/page.tsx",
+  "apps/web/app/open-source/mcp-source/page.tsx",
   "apps/web/components/TruthStatusPill.tsx",
   "apps/web/components/TruthTable.tsx",
   "apps/web/components/ProofPanel.tsx",
@@ -108,6 +109,7 @@ const requiredFiles = [
   "apps/git-remote-gitcaster/src/transport-status.ts",
   "apps/git-remote-gitcaster/src/git-remote-gitcaster.test.ts",
   "apps/web/public/git-remote-gitcaster.md",
+  "apps/web/public/gitcaster-mcp-source.md",
   "examples/worlds/local-agent-grid.world.json",
   "examples/ros/local-agent-bridge.launch.json",
   "examples/ros/local-agent-bridge.messages.json",
@@ -118,6 +120,7 @@ const requiredFiles = [
   "examples/sdk/public-alpha-client.example.json",
   "examples/cli/local-command-plan.example.json",
   "examples/git-remote/blocked-transport-plan.example.json",
+  "examples/mcp/local-tool-plan.example.json",
   "docs-source/developer-layers/simulator.md",
   "docs-source/developer-layers/ros-adapters.md",
   "docs-source/developer-layers/api-sdk-tutorials.md",
@@ -125,6 +128,7 @@ const requiredFiles = [
   "docs-source/developer-layers/typescript-sdk.md",
   "docs-source/developer-layers/cli.md",
   "docs-source/developer-layers/git-remote.md",
+  "docs-source/developer-layers/mcp-source.md",
   "launch/evidence/pr-12-web-status-proof-ui.json"
 ];
 

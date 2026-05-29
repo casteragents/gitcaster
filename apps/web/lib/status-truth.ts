@@ -158,7 +158,7 @@ export function truthTableRows(): TruthTableRow[] {
     { surface: "TypeScript SDK source", status: "public-alpha", evidence: "packages/sdk-typescript", nextProof: "Package release, endpoint, custody, and registry proof" },
     { surface: "CLI source", status: "public-alpha", evidence: "apps/cli; examples/cli/local-command-plan.example.json", nextProof: "Installer, node mutation, custody, storage, and domain proof" },
     { surface: "git-remote-gitcaster source", status: "public-alpha", evidence: "apps/git-remote-gitcaster; examples/git-remote/blocked-transport-plan.example.json", nextProof: "Git transport RC evidence" },
-    { surface: "MCP source", status: "alpha-local", evidence: "apps/mcp", nextProof: "Public MCP gateway proof" },
+    { surface: "MCP source", status: "public-alpha", evidence: "apps/mcp; examples/mcp/local-tool-plan.example.json; launch/evidence/pr-11-mcp-tools.json", nextProof: "Public MCP gateway, custody, node mutation, storage, and domain proof" },
     { surface: "local node API source", status: "alpha-local", evidence: "apps/node", nextProof: "Signed public node health proof" },
     { surface: "local alpha workflow", status: "alpha-local", evidence: "apps/web/app/start/page.tsx", nextProof: "End-to-end local install smoke" },
     { surface: "ecosystem manifest", status: "preview", evidence: "docs/gitcaster-ecosystem.canonical.json", nextProof: "GO-gated import proof for each public app" },

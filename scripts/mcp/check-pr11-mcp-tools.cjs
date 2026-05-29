@@ -33,6 +33,10 @@ const requiredFiles = [
   "apps/cli/src/index.ts",
   "docs/mcp.md",
   "docs/agent-skills.md",
+  "apps/web/app/open-source/mcp-source/page.tsx",
+  "apps/web/public/gitcaster-mcp-source.md",
+  "docs-source/developer-layers/mcp-source.md",
+  "examples/mcp/local-tool-plan.example.json",
   "scripts/mcp/check-mcp-beta-tools.cjs",
   "scripts/mcp/check-pr11-mcp-tools.cjs",
   "launch/evidence/pr-11-mcp-tools.json",
@@ -108,7 +112,9 @@ if (!fs.existsSync(evidencePath)) {
     "identityShowDoesNotReturnPrivateKey",
     "tokenInfoUsesCaster",
     "docsUseGitCasterConfig",
-    "pr10EvidenceFound",
+    "publicAlphaSourceReleased",
+    "publicDocsFound",
+    "localToolPlanFixtureFound",
   ]) {
     if (evidence.summary?.[key] !== true) blockers.push(`evidence summary ${key} must be true`);
   }
@@ -116,6 +122,7 @@ if (!fs.existsSync(evidencePath)) {
   if (evidence.summary?.qstorageVerifyStatus !== "requires-endpoint") blockers.push("qstorageVerifyStatus must be requires-endpoint");
   if (evidence.summary?.castercloudVerifyStatus !== "requires-endpoint") blockers.push("castercloudVerifyStatus must be requires-endpoint");
   if (evidence.summary?.domainStatus !== "requires-registry") blockers.push("domainStatus must be requires-registry");
+  if (evidence.summary?.pr10EvidenceFound === true && !fs.existsSync(path.join(repoRoot, "launch/evidence/pr-10-issues-prs.json"))) blockers.push("pr10EvidenceFound cannot be true without PR-10 evidence");
   if (evidence.releaseQuality?.canShipProduction !== false) blockers.push("releaseQuality.canShipProduction must be false");
   if (evidence.mcp?.publicNetworkClaimed !== false || evidence.mcp?.productionGatewayClaimed !== false) blockers.push("MCP public network and production gateway claims must be false");
   if (evidence.token?.stakingLiveClaimed !== false || evidence.token?.rewardsPaidClaimed !== false || evidence.token?.governanceLiveClaimed !== false) blockers.push("token active utility claims must be false");

@@ -1,0 +1,26 @@
+{
+  "format": "gitcaster.mcp.public-alpha-plan.v1",
+  "package": "@gitcaster/mcp",
+  "status": "public-alpha",
+  "toolRuntime": "alpha-local",
+  "publicGatewayClaimed": false,
+  "productionGatewayClaimed": false,
+  "safeContributionScope": [
+    "tool schema review",
+    "local JSON-RPC stdio request fixtures",
+    "structured blocker handling",
+    "redaction behavior",
+    "node endpoint resolver tests"
+  ],
+  "exampleCommands": [
+    "gc mcp serve",
+    "pnpm run mcp:check"
+  ],
+  "blockedUntilProof": [
+    "public MCP gateway endpoint proof",
+    "managed signing custody proof",
+    "node mutation proof",
+    "QStorage publication proof",
+    "native domain and rollback proof"
+  ]
+}

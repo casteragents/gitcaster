@@ -16,6 +16,7 @@
     "sdk:check": "pnpm --filter @gitcaster/sdk check",
     "cli:check": "pnpm --filter @gitcaster/cli check",
     "git-remote:check": "pnpm --filter @gitcaster/git-remote-gitcaster check && node scripts/git/check-git-transport-beta.cjs && node scripts/git/check-pr09-git-remote-helper.cjs",
+    "mcp:check": "pnpm --filter @gitcaster/mcp check && node scripts/mcp/check-mcp-beta-tools.cjs && node scripts/mcp/check-pr11-mcp-tools.cjs",
     "secret-scan": "node scripts/public-secret-scan.cjs"
   },
   "devDependencies": {

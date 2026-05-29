@@ -56,6 +56,15 @@ export default function OpenSourcePage() {
         </div>
         <div className="grid">
           <div className="card">
+            <h3>MCP source</h3>
+            <p>JSON-RPC stdio server source, beta tool schemas, structured blockers, and redaction checks are now public.</p>
+            <div className="mini-list">
+              <a href={sitePath("/open-source/mcp-source")}>Website page</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/apps/mcp">Source</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/examples/mcp">Fixture</a>
+            </div>
+          </div>
+          <div className="card">
             <h3>Git remote helper</h3>
             <p>Remote-helper source, URL parsing, ref-list diagnostics, and blocked transport decisions are now public.</p>
             <div className="mini-list">
