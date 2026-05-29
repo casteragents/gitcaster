@@ -12,6 +12,17 @@ export type PublicReleaseFeedItem = {
 export const publicReleaseFeed: PublicReleaseFeedItem[] = [
   {
     date: "2026-05-30",
+    title: "Local node API source layer",
+    summary:
+      "GitCaster now includes public local node API source, loopback health/status routes, mutation blockers, endpoint-gated storage/deploy/domain routes, and alpha-local smoke evidence for public-alpha contribution work.",
+    website: "https://casteragents.github.io/gitcaster/open-source/local-node-api/",
+    repo: "https://github.com/casteragents/gitcaster",
+    casterchain: "https://casterchain.online/post/5286",
+    xPost: "https://x.com/casterchain/status/2060456352632484332",
+    farcaster: "https://warpcast.com/casterchain/4b7cdee753"
+  },
+  {
+    date: "2026-05-30",
     title: "MCP source layer",
     summary:
       "GitCaster now includes public MCP server source, JSON-RPC stdio tools, beta schemas, structured blockers, and redaction checks for public-alpha contribution work.",

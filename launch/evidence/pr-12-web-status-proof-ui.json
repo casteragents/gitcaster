@@ -2,7 +2,7 @@
   "type": "gitcaster.pr.evidence.v1",
   "pr": "PR-12",
   "title": "Web status and proof UI",
-  "createdAt": "2026-05-29T20:11:43.181Z",
+  "createdAt": "2026-05-29T20:41:36.070Z",
   "repoRoot": "D:\\user\\xxxcrypto-vercel-clean\\.quilibrium\\gitcaster-public-github-release\\gitcaster-public-repo",
   "filesChanged": [
     "apps/web/package.json",
@@ -158,7 +158,8 @@
     "pnpm run node-api:check",
     "pnpm run simulator:check",
     "pnpm run ros:check",
-    "node scripts/web/check-web-truth-table.cjs"
+    "node scripts/web/check-web-truth-table.cjs",
+    "node scripts/web/check-pr12-web-ui.cjs"
   ],
   "passed": true,
   "failed": false,
@@ -338,7 +339,7 @@
     },
     {
       "path": "apps/web/lib/public-release-feed.ts",
-      "sha256": "d0e88efbafb5ac01d6a9110fac2bf8ce92e638d4e650f718d48690a7e7f60ada"
+      "sha256": "0e9b35d3928b06b3fe09672529f4fdc5e8f19e0d559c624954053a43ce99ded4"
     },
     {
       "path": "apps/web/styles/caster-theme.css",
@@ -726,7 +727,7 @@
     },
     {
       "path": "launch/evidence/local-node-api-source.json",
-      "sha256": "a1e89e08e3059e9a08adf7f91b0d40caa17dfe525ac4da3bcfdc528475328bba"
+      "sha256": "dcdab14154d0a00dc9f2ba3a668e811307d24ae5ec571388d798ee45516e5818"
     }
   ],
   "summary": {

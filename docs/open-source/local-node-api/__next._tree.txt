@@ -1,2 +1,2 @@
 :HL["/gitcaster/_next/static/css/7c380ed0c8168a17.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"open-source","param":null,"prefetchHints":0,"slots":{"children":{"name":"local-node-api","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"cP-p3V26JwM0k-12G4Pcj"}
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"open-source","param":null,"prefetchHints":0,"slots":{"children":{"name":"local-node-api","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"eUOaRo4NNTKt8ufFzAf_w"}
