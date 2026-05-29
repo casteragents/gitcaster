@@ -27,6 +27,7 @@ const filesChanged = [
   "apps/web/app/open-source/api-sdk/page.tsx",
   "apps/web/app/open-source/miniapp-templates/page.tsx",
   "apps/web/app/open-source/typescript-sdk/page.tsx",
+  "apps/web/app/open-source/cli/page.tsx",
   "apps/web/components/TruthStatusPill.tsx",
   "apps/web/components/TruthTable.tsx",
   "apps/web/components/ProofPanel.tsx",
@@ -87,6 +88,14 @@ const filesChanged = [
   "packages/sdk-typescript/src/client.ts",
   "packages/sdk-typescript/src/types.ts",
   "packages/sdk-typescript/src/sdk-typescript.test.ts",
+  "apps/cli/package.json",
+  "apps/cli/README.md",
+  "apps/cli/src/index.ts",
+  "apps/cli/src/commands/push-local.ts",
+  "apps/cli/src/commands/issue.ts",
+  "apps/cli/src/commands/pr.ts",
+  "apps/cli/src/commands/mcp.ts",
+  "apps/cli/src/cli.test.ts",
   "examples/worlds/local-agent-grid.world.json",
   "examples/ros/local-agent-bridge.launch.json",
   "examples/ros/local-agent-bridge.messages.json",
@@ -95,11 +104,13 @@ const filesChanged = [
   "examples/miniapps/caster-claim-miniapp.local-shell.json",
   "examples/sdk/public-alpha-client.example.ts",
   "examples/sdk/public-alpha-client.example.json",
+  "examples/cli/local-command-plan.example.json",
   "docs-source/developer-layers/simulator.md",
   "docs-source/developer-layers/ros-adapters.md",
   "docs-source/developer-layers/api-sdk-tutorials.md",
   "docs-source/developer-layers/miniapp-templates.md",
   "docs-source/developer-layers/typescript-sdk.md",
+  "docs-source/developer-layers/cli.md",
   "launch/evidence/pr-12-web-status-proof-ui.json",
 ];
 
@@ -194,6 +205,7 @@ if (!statusTruth.includes("packages/ros-adapters") || !statusTruth.includes("exa
 if (!statusTruth.includes("packages/api-tutorials") || !statusTruth.includes("examples/api/public-feed-read.example.json")) blockers.push("status truth must include API tutorial package and public read fixture evidence");
 if (!statusTruth.includes("packages/playground-templates")) blockers.push("status truth must include miniapp template package evidence");
 if (!statusTruth.includes("packages/sdk-typescript")) blockers.push("status truth must include TypeScript SDK package evidence");
+if (!statusTruth.includes("apps/cli") || !statusTruth.includes("examples/cli/local-command-plan.example.json")) blockers.push("status truth must include CLI source and local command plan evidence");
 if (!startText.includes("gc identity new") || !startText.includes("gitcaster://did:caster:z.../hello-gitcaster")) blockers.push("start page must use GitCaster commands");
 if (!configText.includes('output: "export"')) blockers.push("next config must use static export");
 if (!exists("apps/web/out")) blockers.push("static export output apps/web/out missing");
@@ -217,7 +229,7 @@ const evidence = {
   createdAt: new Date().toISOString(),
   repoRoot,
   filesChanged,
-  commandsRun: ["pnpm run api-tutorials:check", "pnpm run miniapp-templates:check", "pnpm run sdk:check", "pnpm run simulator:check", "pnpm run ros:check", "node scripts/web/check-web-truth-table.cjs"],
+  commandsRun: ["pnpm run api-tutorials:check", "pnpm run miniapp-templates:check", "pnpm run sdk:check", "pnpm run cli:check", "pnpm run simulator:check", "pnpm run ros:check", "node scripts/web/check-web-truth-table.cjs"],
   passed: blockers.length === 0,
   failed: blockers.length > 0,
   blockers,
@@ -240,6 +252,7 @@ const evidence = {
     domainsPageCreated: exists("apps/web/app/domains/page.tsx"),
     miniappTemplatesPageCreated: exists("apps/web/app/open-source/miniapp-templates/page.tsx"),
     typeScriptSdkPageCreated: exists("apps/web/app/open-source/typescript-sdk/page.tsx"),
+    cliPageCreated: exists("apps/web/app/open-source/cli/page.tsx"),
     truthTableCreated: truthSurfaces.every((surface) => statusTruth.includes(surface)),
     previewDataLabeled: true,
     liveClaimsWithoutEvidence: 0,
@@ -303,6 +316,7 @@ const evidence = {
       "API and SDK tutorials are local public-alpha only until endpoint, custody, rate-limit, and rollback proof exist.",
       "Miniapp templates are local public-alpha only until runtime endpoint, storage publish, and native domain proof exist.",
       "TypeScript SDK source is public-alpha only until package release, endpoint, custody, registry, and contract utility proof exist.",
+      "CLI source is public-alpha only until installer release, node mutation, custody, storage, and domain proof exist.",
       "CasterAgents runtime state remains closed until safety-lock and redaction proof exists.",
       "QStorage and CasterCloud runtime endpoints still require operator proof.",
       ".caster registry and public node federation still require signed live evidence.",

@@ -56,6 +56,15 @@ export default function OpenSourcePage() {
         </div>
         <div className="grid">
           <div className="card">
+            <h3>CLI source</h3>
+            <p>Local command helpers for push payloads, issues, pull requests, and MCP serve planning are now public.</p>
+            <div className="mini-list">
+              <a href={sitePath("/open-source/cli")}>Website page</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/apps/cli">Source</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/examples/cli">Fixture</a>
+            </div>
+          </div>
+          <div className="card">
             <h3>TypeScript SDK</h3>
             <p>Typed client helpers, local examples, redaction, and proof-gated runtime methods are now public.</p>
             <div className="mini-list">

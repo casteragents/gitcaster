@@ -156,7 +156,7 @@ export function truthTableRows(): TruthTableRow[] {
     { surface: "audit package", status: "alpha-local", evidence: "packages/audit", nextProof: "License and data-rights review evidence" },
     { surface: "observability package", status: "alpha-local", evidence: "packages/observability", nextProof: "Live incident drill evidence" },
     { surface: "TypeScript SDK source", status: "public-alpha", evidence: "packages/sdk-typescript", nextProof: "Package release, endpoint, custody, and registry proof" },
-    { surface: "CLI source", status: "alpha-local", evidence: "apps/cli", nextProof: "Installer release evidence" },
+    { surface: "CLI source", status: "public-alpha", evidence: "apps/cli; examples/cli/local-command-plan.example.json", nextProof: "Installer, node mutation, custody, storage, and domain proof" },
     { surface: "git-remote-gitcaster source", status: "alpha-local", evidence: "apps/git-remote-gitcaster", nextProof: "Git transport RC evidence" },
     { surface: "MCP source", status: "alpha-local", evidence: "apps/mcp", nextProof: "Public MCP gateway proof" },
     { surface: "local node API source", status: "alpha-local", evidence: "apps/node", nextProof: "Signed public node health proof" },

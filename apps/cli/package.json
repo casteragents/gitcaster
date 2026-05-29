@@ -9,8 +9,10 @@
     "gc": "dist/index.js"
   },
   "scripts": {
-    "build": "node ../../src/node_modules/typescript/bin/tsc -p tsconfig.json",
-    "typecheck": "node ../../src/node_modules/typescript/bin/tsc -p tsconfig.json"
+    "build": "tsc -p tsconfig.json",
+    "test": "node dist/cli.test.js",
+    "check": "pnpm run build && pnpm run test",
+    "typecheck": "tsc -p tsconfig.json"
   },
   "dependencies": {
     "@gitcaster/protocol": "workspace:*"

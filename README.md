@@ -15,6 +15,7 @@ This public repository is intentionally scoped for contribution and website visi
 - `packages/api-tutorials` and `examples/api`: local API and SDK request-shape tutorials with placeholder-only auth examples.
 - `packages/playground-templates` and `examples/miniapps`: local miniapp shell templates, manifests, and blocked-runtime proof fixtures.
 - `packages/sdk-typescript` and `examples/sdk`: public-alpha TypeScript client helpers with proof-gated runtime methods.
+- `apps/cli` and `examples/cli`: public-alpha local command helpers for payload building and MCP serve planning.
 
 ## Open-core boundary
 
@@ -49,6 +50,7 @@ pnpm install
 pnpm run api-tutorials:check
 pnpm run miniapp-templates:check
 pnpm run sdk:check
+pnpm run cli:check
 pnpm run simulator:check
 pnpm run ros:check
 pnpm run build:web

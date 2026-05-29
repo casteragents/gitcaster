@@ -1,0 +1,39 @@
+{
+  "format": "gitcaster.cli.public-alpha-plan.v1",
+  "package": "@gitcaster/cli",
+  "status": "public-alpha",
+  "commands": [
+    {
+      "name": "repo push-local",
+      "example": "gc repo push-local gitcaster://did:caster:z6MkwExample/demo --path examples/app --branch main",
+      "scope": "local payload builder"
+    },
+    {
+      "name": "issue create",
+      "example": "gc issue create gitcaster://did:caster:z6MkwExample/demo --title \"Docs task\"",
+      "scope": "local payload builder"
+    },
+    {
+      "name": "pr create",
+      "example": "gc pr create gitcaster://did:caster:z6MkwExample/demo --head feature/demo --base main --title \"Demo\"",
+      "scope": "local payload builder"
+    },
+    {
+      "name": "mcp serve",
+      "example": "gc mcp serve",
+      "scope": "local command plan"
+    }
+  ],
+  "blockedRuntimeClaims": [
+    "global installer release",
+    "public node mutation",
+    "managed signing custody",
+    "native storage publication",
+    "native domain deployment"
+  ],
+  "safety": {
+    "noSecretsRequired": true,
+    "noDefaultNetworkMutation": true,
+    "placeholderOnly": true
+  }
+}

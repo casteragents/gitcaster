@@ -1,10 +1,19 @@
-import type { SignedMutationEnvelope } from "../../../../packages/protocol/dist/types.js";
+export interface SignedMutationEnvelope {
+  type: "gitcaster.signed-mutation.v1";
+  actor: string;
+  payload: Record<string, unknown>;
+  payloadHash: string;
+  timestamp: string;
+  nonce: string;
+  signature: string;
+  status: "alpha-local" | "proof-only" | "blocked" | "requires-signing-key" | "requires-endpoint";
+}
 
 export const PUSH_LOCAL_COMMAND_HELP = [
   "gc repo push-local <gitcaster://did:caster:z.../repo> --path <local-app> --branch main",
   "Uses local identity material from ~/.gitcaster.",
   "Creates a signed local-alpha push payload for a did:caster actor.",
-  "This module does not install a global CLI in PR-08.",
+  "This public-alpha module does not install a hosted or production CLI.",
 ].join("\n");
 
 export interface BuildPushLocalPayloadArgs {
