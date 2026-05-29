@@ -6,18 +6,19 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "node ../../src/node_modules/typescript/bin/tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json",
     "test": "node --test dist/repo-records.test.js",
     "lint": "node ../../scripts/repo-records/check-pr05-repo-records.cjs --package-only",
-    "typecheck": "node ../../src/node_modules/typescript/bin/tsc -p tsconfig.json"
+    "typecheck": "tsc -p tsconfig.json"
   },
   "dependencies": {
-    "@gitcaster/protocol": "workspace:*",
-    "@gitcaster/identity": "workspace:*",
     "@gitcaster/capabilities": "workspace:*",
+    "@gitcaster/identity": "workspace:*",
+    "@gitcaster/protocol": "workspace:*",
     "@gitcaster/security": "workspace:*"
   },
   "devDependencies": {
+    "@types/node": "24.12.4",
     "typescript": "^5.9.3"
   }
 }

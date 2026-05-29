@@ -6,22 +6,24 @@
   "main": "dist/server.js",
   "types": "dist/server.d.ts",
   "scripts": {
-    "build": "node ../../src/node_modules/typescript/bin/tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json",
     "start": "node dist/server.js",
-    "test": "node ../../scripts/node/check-alpha-node-routes.cjs",
-    "lint": "node ../../scripts/node/check-pr04-node.cjs --package-only",
-    "typecheck": "node ../../src/node_modules/typescript/bin/tsc -p tsconfig.json"
+    "test": "node ../../scripts/node/check-local-node-api-source.cjs --runtime-only",
+    "check": "pnpm run build && pnpm run test",
+    "lint": "node ../../scripts/node/check-local-node-api-source.cjs --package-only",
+    "typecheck": "tsc -p tsconfig.json"
   },
   "dependencies": {
-    "@gitcaster/protocol": "workspace:*",
-    "@gitcaster/identity": "workspace:*",
     "@gitcaster/capabilities": "workspace:*",
-    "@gitcaster/security": "workspace:*",
-    "@gitcaster/repo-records": "workspace:*",
+    "@gitcaster/identity": "workspace:*",
     "@gitcaster/object-store": "workspace:*",
-    "@gitcaster/ref-consensus": "workspace:*"
+    "@gitcaster/protocol": "workspace:*",
+    "@gitcaster/ref-consensus": "workspace:*",
+    "@gitcaster/repo-records": "workspace:*",
+    "@gitcaster/security": "workspace:*"
   },
   "devDependencies": {
+    "@types/node": "24.12.4",
     "typescript": "^5.9.3"
   }
 }

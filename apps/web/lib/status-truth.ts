@@ -159,7 +159,7 @@ export function truthTableRows(): TruthTableRow[] {
     { surface: "CLI source", status: "public-alpha", evidence: "apps/cli; examples/cli/local-command-plan.example.json", nextProof: "Installer, node mutation, custody, storage, and domain proof" },
     { surface: "git-remote-gitcaster source", status: "public-alpha", evidence: "apps/git-remote-gitcaster; examples/git-remote/blocked-transport-plan.example.json", nextProof: "Git transport RC evidence" },
     { surface: "MCP source", status: "public-alpha", evidence: "apps/mcp; examples/mcp/local-tool-plan.example.json; launch/evidence/pr-11-mcp-tools.json", nextProof: "Public MCP gateway, custody, node mutation, storage, and domain proof" },
-    { surface: "local node API source", status: "alpha-local", evidence: "apps/node", nextProof: "Signed public node health proof" },
+    { surface: "local node API source", status: "public-alpha", evidence: "apps/node; examples/node/local-api-smoke.example.json; launch/evidence/local-node-api-source.json", nextProof: "Signed public node federation, storage, deploy, domain, and rollback proof" },
     { surface: "local alpha workflow", status: "alpha-local", evidence: "apps/web/app/start/page.tsx", nextProof: "End-to-end local install smoke" },
     { surface: "ecosystem manifest", status: "preview", evidence: "docs/gitcaster-ecosystem.canonical.json", nextProof: "GO-gated import proof for each public app" },
     { surface: "Claim Miniapp template", status: "public-alpha", evidence: "packages/playground-templates/src/caster-claim-miniapp.ts", nextProof: "Runtime endpoint, storage publish, and native domain proof" },

@@ -1,0 +1,37 @@
+{
+  "format": "gitcaster.local-node-api.public-alpha-smoke.v1",
+  "package": "@gitcaster/node",
+  "status": "public-alpha",
+  "runtime": "alpha-local",
+  "publicNodeFederationClaimed": false,
+  "productionNodeHealthClaimed": false,
+  "managedRuntimeClaimed": false,
+  "localSmokeRoutes": [
+    "GET /health",
+    "GET /node/status",
+    "GET /node/registry",
+    "GET /repos",
+    "GET /qstorage/status",
+    "GET /castercloud/status",
+    "GET /domains",
+    "POST /repos without signed envelope"
+  ],
+  "expectedBlockedStates": [
+    "planned registry nodes have no publicUrl",
+    "unsigned mutations return blocked",
+    "qstorage remains requires-endpoint",
+    "castercloud remains requires-endpoint",
+    "domains remain requires-registry"
+  ],
+  "exampleCommands": [
+    "pnpm run node-api:check",
+    "pnpm --filter @gitcaster/node start"
+  ],
+  "blockedUntilProof": [
+    "signed public multi-node health proof",
+    "public node federation proof",
+    "QStorage endpoint and rollback proof",
+    "CasterCloud ingress and rollback proof",
+    "managed runtime operations proof"
+  ]
+}

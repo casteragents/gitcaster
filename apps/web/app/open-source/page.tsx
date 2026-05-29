@@ -56,6 +56,15 @@ export default function OpenSourcePage() {
         </div>
         <div className="grid">
           <div className="card">
+            <h3>Local node API source</h3>
+            <p>Loopback HTTP routes, local health/status, mutation blockers, and endpoint-gated storage/deploy/domain routes are now public.</p>
+            <div className="mini-list">
+              <a href={sitePath("/open-source/local-node-api")}>Website page</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/apps/node">Source</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/examples/node">Fixture</a>
+            </div>
+          </div>
+          <div className="card">
             <h3>MCP source</h3>
             <p>JSON-RPC stdio server source, beta tool schemas, structured blockers, and redaction checks are now public.</p>
             <div className="mini-list">

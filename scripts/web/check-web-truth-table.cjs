@@ -30,6 +30,7 @@ const filesChanged = [
   "apps/web/app/open-source/cli/page.tsx",
   "apps/web/app/open-source/git-remote/page.tsx",
   "apps/web/app/open-source/mcp-source/page.tsx",
+  "apps/web/app/open-source/local-node-api/page.tsx",
   "apps/web/components/TruthStatusPill.tsx",
   "apps/web/components/TruthTable.tsx",
   "apps/web/components/ProofPanel.tsx",
@@ -108,8 +109,22 @@ const filesChanged = [
   "apps/git-remote-gitcaster/src/node-client.ts",
   "apps/git-remote-gitcaster/src/transport-status.ts",
   "apps/git-remote-gitcaster/src/git-remote-gitcaster.test.ts",
+  "apps/node/package.json",
+  "apps/node/tsconfig.json",
+  "apps/node/src/server.ts",
+  "apps/node/src/config.ts",
+  "apps/node/src/routes/health.ts",
+  "apps/node/src/routes/node.ts",
+  "apps/node/src/routes/repos.ts",
+  "apps/node/src/routes/qstorage.ts",
+  "apps/node/src/routes/castercloud.ts",
+  "apps/node/src/routes/domains.ts",
+  "apps/node/src/services/route-registry.ts",
+  "apps/node/src/services/mutation-verify.ts",
+  "apps/node/src/services/redact.ts",
   "apps/web/public/git-remote-gitcaster.md",
   "apps/web/public/gitcaster-mcp-source.md",
+  "apps/web/public/gitcaster-local-node-api.md",
   "examples/worlds/local-agent-grid.world.json",
   "examples/ros/local-agent-bridge.launch.json",
   "examples/ros/local-agent-bridge.messages.json",
@@ -121,6 +136,7 @@ const filesChanged = [
   "examples/cli/local-command-plan.example.json",
   "examples/git-remote/blocked-transport-plan.example.json",
   "examples/mcp/local-tool-plan.example.json",
+  "examples/node/local-api-smoke.example.json",
   "docs-source/developer-layers/simulator.md",
   "docs-source/developer-layers/ros-adapters.md",
   "docs-source/developer-layers/api-sdk-tutorials.md",
@@ -129,6 +145,9 @@ const filesChanged = [
   "docs-source/developer-layers/cli.md",
   "docs-source/developer-layers/git-remote.md",
   "docs-source/developer-layers/mcp-source.md",
+  "docs-source/developer-layers/local-node-api.md",
+  "scripts/node/check-local-node-api-source.cjs",
+  "launch/evidence/local-node-api-source.json",
   "launch/evidence/pr-12-web-status-proof-ui.json",
 ];
 
@@ -227,6 +246,7 @@ if (!statusTruth.includes("packages/sdk-typescript")) blockers.push("status trut
 if (!statusTruth.includes("apps/cli") || !statusTruth.includes("examples/cli/local-command-plan.example.json")) blockers.push("status truth must include CLI source and local command plan evidence");
 if (!statusTruth.includes("apps/git-remote-gitcaster") || !statusTruth.includes("examples/git-remote/blocked-transport-plan.example.json")) blockers.push("status truth must include Git remote helper source and blocked transport plan evidence");
 if (!statusTruth.includes("apps/mcp") || !statusTruth.includes("examples/mcp/local-tool-plan.example.json") || !statusTruth.includes("launch/evidence/pr-11-mcp-tools.json")) blockers.push("status truth must include MCP source, local tool plan, and PR-11 evidence");
+if (!statusTruth.includes("apps/node") || !statusTruth.includes("examples/node/local-api-smoke.example.json") || !statusTruth.includes("launch/evidence/local-node-api-source.json")) blockers.push("status truth must include local node API source, smoke fixture, and evidence");
 if (!startText.includes("gc identity new") || !startText.includes("gitcaster://did:caster:z.../hello-gitcaster")) blockers.push("start page must use GitCaster commands");
 if (!configText.includes('output: "export"')) blockers.push("next config must use static export");
 if (!exists("apps/web/out")) blockers.push("static export output apps/web/out missing");
@@ -252,7 +272,7 @@ const evidence = {
   createdAt: new Date().toISOString(),
   repoRoot,
   filesChanged,
-  commandsRun: ["pnpm run api-tutorials:check", "pnpm run miniapp-templates:check", "pnpm run sdk:check", "pnpm run cli:check", "pnpm run git-remote:check", "pnpm run mcp:check", "pnpm run simulator:check", "pnpm run ros:check", "node scripts/web/check-web-truth-table.cjs"],
+  commandsRun: ["pnpm run api-tutorials:check", "pnpm run miniapp-templates:check", "pnpm run sdk:check", "pnpm run cli:check", "pnpm run git-remote:check", "pnpm run mcp:check", "pnpm run node-api:check", "pnpm run simulator:check", "pnpm run ros:check", "node scripts/web/check-web-truth-table.cjs"],
   passed: blockers.length === 0,
   failed: blockers.length > 0,
   blockers,
@@ -279,6 +299,7 @@ const evidence = {
     cliPageCreated: exists("apps/web/app/open-source/cli/page.tsx"),
     gitRemotePageCreated: exists("apps/web/app/open-source/git-remote/page.tsx"),
     mcpSourcePageCreated: exists("apps/web/app/open-source/mcp-source/page.tsx"),
+    localNodeApiPageCreated: exists("apps/web/app/open-source/local-node-api/page.tsx"),
     truthTableCreated: truthSurfaces.every((surface) => statusTruth.includes(surface)),
     previewDataLabeled: true,
     liveClaimsWithoutEvidence: 0,
@@ -345,6 +366,7 @@ const evidence = {
       "CLI source is public-alpha only until installer release, node mutation, custody, storage, and domain proof exist.",
       "Git remote helper source is public-alpha only until pack transport, node mutation, storage, and rollback proof exist.",
       "MCP source is public-alpha only until public gateway, custody, node mutation, storage, and domain proof exist.",
+      "Local node API source is public-alpha only until public federation, production node health, storage, deploy, domain, and rollback proof exist.",
       "CasterAgents runtime state remains closed until safety-lock and redaction proof exists.",
       "QStorage and CasterCloud runtime endpoints still require operator proof.",
       ".caster registry and public node federation still require signed live evidence.",
