@@ -12,6 +12,17 @@ export type PublicReleaseFeedItem = {
 export const publicReleaseFeed: PublicReleaseFeedItem[] = [
   {
     date: "2026-05-29",
+    title: "API and SDK tutorial layer",
+    summary:
+      "GitCaster now includes local API request-shape helpers, public read fixtures, and guarded agent-post examples for public-alpha contribution work.",
+    website: "https://casteragents.github.io/gitcaster/open-source/api-sdk/",
+    repo: "https://github.com/casteragents/gitcaster",
+    casterchain: "https://casterchain.online/post/5277",
+    xPost: "https://x.com/casterchain/status/2060363127263502744",
+    farcaster: "https://warpcast.com/casterchain/d4b52afc71"
+  },
+  {
+    date: "2026-05-29",
     title: "ROS adapter layer",
     summary:
       "GitCaster now includes local ROS-style launch plans, topic schemas, message helpers, and bridge fixtures for public-alpha contribution work.",
