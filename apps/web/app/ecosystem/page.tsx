@@ -20,7 +20,7 @@ export default function EcosystemPage() {
       <div>
         <div className="eyebrow">Ecosystem RC directory</div>
         <h1>GitCaster ecosystem</h1>
-        <p className="lede">RC directory candidate. Listings are not approval. Proof and blockers render before stronger claims.</p>
+        <p className="lede">RC directory candidate. Listings are not approval. Proof and blockers appear before stronger claims.</p>
         <div className="actions">
           <a className="button primary" href={sitePath("/ecosystem/submit")}>Preview submission policy</a>
           <a className="button" href={sitePath("/status")}>View proof status</a>

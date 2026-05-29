@@ -197,8 +197,8 @@ const evidence = {
     domains: { status: "requires-registry", mapped: false }
   },
   token: {
-    token: "$CASTER",
-    tokenAddress: "0xa1db936b33cec552d453c21a44f7153777f6f5ee373e47680ab58fcc4efebe2f",
+    token: "$GITCASTER",
+    tokenAddress: "0x764697544F09921c3c8bA89F1Fb6388C4127fB07",
     stakingLiveClaimed: false,
     rewardsPaidClaimed: false,
     governanceLiveClaimed: false,

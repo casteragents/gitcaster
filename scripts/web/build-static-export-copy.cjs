@@ -38,7 +38,12 @@ function copyOut(source, target) {
   if (!fs.existsSync(source)) {
     throw new Error(`static export output missing: ${source}`);
   }
-  fs.rmSync(target, { recursive: true, force: true });
+  try {
+    fs.rmSync(target, { recursive: true, force: true, maxRetries: 10, retryDelay: 250 });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    console.warn(`warning: could not fully clear ${path.relative(repoRoot, target)} before copy; overlaying static export: ${message}`);
+  }
   fs.mkdirSync(target, { recursive: true });
   fs.cpSync(source, target, { recursive: true, force: true });
 }

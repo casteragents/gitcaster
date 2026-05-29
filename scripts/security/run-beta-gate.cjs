@@ -272,7 +272,7 @@ function checkTokenClaimFreeze() {
     fs.readFileSync(tokenPage, "utf8"),
     fs.existsSync(tokenPanel) ? fs.readFileSync(tokenPanel, "utf8") : "",
   ].join("\n");
-  const required = ["$CASTER", "requires-contract", "requires-governance", "requires-audit"];
+  const required = ["PRODUCT.token", "requires-contract", "requires-governance", "requires-audit"];
   required.forEach((needle) => {
     if (!text.includes(needle)) {
       addFinding(report.findings, {

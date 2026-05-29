@@ -49,7 +49,7 @@ export function EcosystemDirectory({
     <div className="stack">
       <div className="card">
         <h2>RC directory</h2>
-        <p>Listings are proof-aware and never automatic approval. Stronger labels require evidence before they render as claims.</p>
+        <p>Listings are proof-aware and never automatic approval. Stronger labels require evidence before they appear as claims.</p>
         {summary ? (
           <div className="truth-grid">
             <span>Entries: {String(summary.entriesTotal ?? entries.length)}</span>

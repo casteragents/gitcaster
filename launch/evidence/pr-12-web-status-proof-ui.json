@@ -2,7 +2,7 @@
   "type": "gitcaster.pr.evidence.v1",
   "pr": "PR-12",
   "title": "Web status and proof UI",
-  "createdAt": "2026-05-27T02:41:09.673Z",
+  "createdAt": "2026-05-29T09:35:19.981Z",
   "repoRoot": "D:\\user\\xxxcrypto-vercel-clean\\.quilibrium\\gitcaster-public-github-release\\gitcaster-public-repo",
   "filesChanged": [
     "apps/web/package.json",
@@ -93,7 +93,7 @@
     },
     {
       "path": "apps/web/app/ecosystem/page.tsx",
-      "sha256": "7e82b5df34dcc7e19b77824f378216a56abf5a6c4539af53f8a3ff9f96bcb6f8"
+      "sha256": "7668e6d025f736935699019a874b8b18296d2db60eb0beb0bd2272aeb7cf2454"
     },
     {
       "path": "apps/web/app/security/page.tsx",
@@ -213,7 +213,7 @@
     },
     {
       "path": "scripts/web/check-web-truth-table.cjs",
-      "sha256": "4f26d68027c71b4838b99e4c897f07cd8e52f616c474b47a76244489faf62d9c"
+      "sha256": "4265258864c0e969733319cfc6f615758b934e9431f351646b748f0c96d73d4e"
     },
     {
       "path": "scripts/web/check-pr12-web-ui.cjs",
@@ -311,8 +311,8 @@
     }
   },
   "token": {
-    "token": "$CASTER",
-    "tokenAddress": "0xa1db936b33cec552d453c21a44f7153777f6f5ee373e47680ab58fcc4efebe2f",
+    "token": "$GITCASTER",
+    "tokenAddress": "0x764697544F09921c3c8bA89F1Fb6388C4127fB07",
     "stakingLiveClaimed": false,
     "rewardsPaidClaimed": false,
     "governanceLiveClaimed": false,

@@ -4,15 +4,15 @@ import type { GitCasterMcpTool } from "../tool-registry.js";
 export const tokenTools: GitCasterMcpTool[] = [
   {
     name: "caster_token_info",
-    description: "Return proof-only $CASTER metadata.",
+    description: "Return proof-only $GITCASTER metadata.",
     inputSchema: TOOL_SCHEMAS.caster_token_info,
     call: () => ({
       status: "proof-only",
       tool: "caster_token_info",
       result: {
         status: "proof-only",
-        token: "$CASTER",
-        tokenAddress: "0xa1db936b33cec552d453c21a44f7153777f6f5ee373e47680ab58fcc4efebe2f",
+        token: "$GITCASTER",
+        tokenAddress: "0x764697544F09921c3c8bA89F1Fb6388C4127fB07",
         utilities: [
           { name: "node staking", status: "requires-contract" },
           { name: "builder rewards", status: "proof-only" },

@@ -50,7 +50,7 @@ export function redactToolResult(value: unknown): unknown {
   if (value && typeof value === "object") {
     return Object.fromEntries(
       Object.entries(value as Record<string, unknown>).map(([key, item]) => {
-        const isPublicCasterToken = (key === "token" && item === "$CASTER") || key === "tokenAddress";
+        const isPublicCasterToken = (key === "token" && item === "$GITCASTER") || key === "tokenAddress";
         return [
           key,
           /private|secret|token|authorization/i.test(key) && !isPublicCasterToken ? "[redacted]" : redactToolResult(item),

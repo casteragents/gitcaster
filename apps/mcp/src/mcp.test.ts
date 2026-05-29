@@ -45,8 +45,8 @@ test("endpoint and registry tools return honest blockers", async () => {
 test("token info uses caster token and avoids active utility claims", async () => {
   const result = await callTool("caster_token_info", {}, context);
   const payload = result.result as { token: string; tokenAddress: string; stakingLiveClaimed: boolean };
-  assert.equal(payload.token, "$CASTER");
-  assert.equal(payload.tokenAddress, "0xa1db936b33cec552d453c21a44f7153777f6f5ee373e47680ab58fcc4efebe2f");
+  assert.equal(payload.token, "$GITCASTER");
+  assert.equal(payload.tokenAddress, "0x764697544F09921c3c8bA89F1Fb6388C4127fB07");
   assert.equal(payload.stakingLiveClaimed, false);
 });
 
