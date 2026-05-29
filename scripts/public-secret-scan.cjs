@@ -32,3 +32,4 @@ function walk(dir){
 walk(root);
 if (findings.length){ console.error(JSON.stringify({status:'failed', findings}, null, 2)); process.exit(1); }
 console.log(JSON.stringify({status:'passed', findings:0}, null, 2));
+process.exit(0);

@@ -135,3 +135,4 @@ console.log(JSON.stringify({
   workRoot: path.relative(repoRoot, workRoot).replaceAll("\\", "/"),
   output: "apps/web/out"
 }, null, 2));
+process.exit(0);

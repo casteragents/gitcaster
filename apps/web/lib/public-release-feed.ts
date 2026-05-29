@@ -11,6 +11,16 @@ export type PublicReleaseFeedItem = {
 export const publicReleaseFeed: PublicReleaseFeedItem[] = [
   {
     date: "2026-05-29",
+    title: "ROS adapter layer",
+    summary:
+      "GitCaster now includes local ROS-style launch plans, topic schemas, message helpers, and bridge fixtures for public-alpha contribution work.",
+    website: "https://casteragents.github.io/gitcaster/open-source/ros/",
+    repo: "https://github.com/casteragents/gitcaster",
+    xPost: "https://x.com/casterchain/status/2060344037824168276",
+    farcaster: "https://warpcast.com/casterchain/71e38c9bb5"
+  },
+  {
+    date: "2026-05-29",
     title: "Public simulator layer",
     summary:
       "GitCaster now includes a deterministic local simulator, an example world, and digital twin JSON exports for public-alpha contribution work.",
