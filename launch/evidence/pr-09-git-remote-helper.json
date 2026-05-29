@@ -2,7 +2,7 @@
   "type": "gitcaster.pr.evidence.v1",
   "pr": "PR-09",
   "title": "Git remote helper scaffold with honest mode",
-  "createdAt": "2026-05-29T18:24:08.981Z",
+  "createdAt": "2026-05-29T18:47:44.269Z",
   "repoRoot": "D:\\user\\xxxcrypto-vercel-clean\\.quilibrium\\gitcaster-public-github-release\\gitcaster-public-repo",
   "filesChanged": [
     "apps/git-remote-gitcaster/package.json",

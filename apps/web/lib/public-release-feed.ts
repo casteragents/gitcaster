@@ -12,6 +12,17 @@ export type PublicReleaseFeedItem = {
 export const publicReleaseFeed: PublicReleaseFeedItem[] = [
   {
     date: "2026-05-30",
+    title: "Git remote helper layer",
+    summary:
+      "GitCaster now includes public git-remote-gitcaster source, URL parsing, ref-list diagnostics, and blocked transport proof planning for public-alpha contribution work.",
+    website: "https://casteragents.github.io/gitcaster/open-source/git-remote/",
+    repo: "https://github.com/casteragents/gitcaster",
+    casterchain: "https://casterchain.online/post/5284",
+    xPost: "https://x.com/casterchain/status/2060428991354507751",
+    farcaster: "https://warpcast.com/casterchain/53cc9bbcee"
+  },
+  {
+    date: "2026-05-30",
     title: "CLI layer",
     summary:
       "GitCaster now includes public CLI source for local push payloads, issue and pull request helpers, and MCP serve planning for public-alpha contribution work.",
