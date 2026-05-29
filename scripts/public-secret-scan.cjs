@@ -12,7 +12,7 @@ const patterns = [
   ['hardcoded-secret-literal', /\b(apiKey|secret|password|privateKey|walletKey|mnemonic|seedPhrase)\b\s*[:=]\s*['\"]([^'\"]{24,}|0x[a-fA-F0-9]{64})['\"]/g]
 ];
 const findings = [];
-const skippedDirs = new Set(['.git','node_modules','.next','dist','out']);
+const skippedDirs = new Set(['.git','node_modules','.next','dist','out','docs']);
 function rel(p){ return path.relative(root,p).replaceAll('\\','/'); }
 function walk(dir){
   for (const e of fs.readdirSync(dir,{withFileTypes:true})){

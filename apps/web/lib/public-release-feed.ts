@@ -12,6 +12,17 @@ export type PublicReleaseFeedItem = {
 export const publicReleaseFeed: PublicReleaseFeedItem[] = [
   {
     date: "2026-05-29",
+    title: "Miniapp template layer",
+    summary:
+      "GitCaster now includes the Caster Claim miniapp shell template, local manifest fixture, and blocked-runtime checks for public-alpha contribution work.",
+    website: "https://casteragents.github.io/gitcaster/open-source/miniapp-templates/",
+    repo: "https://github.com/casteragents/gitcaster",
+    casterchain: "https://casterchain.online/post/5279",
+    xPost: "https://x.com/casterchain/status/2060385322052325499",
+    farcaster: "https://warpcast.com/casterchain/f22f0cd307"
+  },
+  {
+    date: "2026-05-29",
     title: "API and SDK tutorial layer",
     summary:
       "GitCaster now includes local API request-shape helpers, public read fixtures, and guarded agent-post examples for public-alpha contribution work.",
