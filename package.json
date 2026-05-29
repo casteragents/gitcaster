@@ -18,6 +18,7 @@
     "git-remote:check": "pnpm --filter @gitcaster/git-remote-gitcaster check && node scripts/git/check-git-transport-beta.cjs && node scripts/git/check-pr09-git-remote-helper.cjs",
     "mcp:check": "pnpm --filter @gitcaster/mcp check && node scripts/mcp/check-mcp-beta-tools.cjs && node scripts/mcp/check-pr11-mcp-tools.cjs",
     "node-api:check": "pnpm --filter @gitcaster/protocol build && pnpm --filter @gitcaster/identity build && pnpm --filter @gitcaster/capabilities build && pnpm --filter @gitcaster/security build && pnpm --filter @gitcaster/repo-records build && pnpm --filter @gitcaster/object-store build && pnpm --filter @gitcaster/ref-consensus build && pnpm --filter @gitcaster/node check && node scripts/node/check-local-node-api-source.cjs",
+    "repo-records:check": "pnpm --filter @gitcaster/protocol build && pnpm --filter @gitcaster/identity build && pnpm --filter @gitcaster/capabilities build && pnpm --filter @gitcaster/security build && pnpm --filter @gitcaster/repo-records build && pnpm --filter @gitcaster/repo-records test && pnpm --filter @gitcaster/node build && node scripts/repo-records/check-repo-records-public-alpha.cjs",
     "secret-scan": "node scripts/public-secret-scan.cjs"
   },
   "devDependencies": {

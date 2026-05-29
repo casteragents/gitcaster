@@ -1,0 +1,113 @@
+{
+  "type": "gitcaster.public-release.evidence.v1",
+  "slice": "repo-records-issue-pr-source",
+  "status": "passed",
+  "createdAt": "2026-05-29T20:59:36.820Z",
+  "filesChanged": [
+    "packages/repo-records/package.json",
+    "packages/repo-records/tsconfig.json",
+    "packages/repo-records/src/index.ts",
+    "packages/repo-records/src/repo.ts",
+    "packages/repo-records/src/event-log.ts",
+    "packages/repo-records/src/signed-record.ts",
+    "packages/repo-records/src/issue.ts",
+    "packages/repo-records/src/pr.ts",
+    "packages/repo-records/src/review.ts",
+    "packages/repo-records/src/repo-records.test.ts",
+    "apps/node/src/routes/issues.ts",
+    "apps/node/src/routes/prs.ts",
+    "apps/node/src/services/issue-service.ts",
+    "apps/node/src/services/pr-service.ts",
+    "apps/node/src/services/local-alpha-store.ts",
+    "apps/web/app/open-source/repo-records/page.tsx",
+    "apps/web/public/gitcaster-repo-records.md",
+    "docs-source/developer-layers/repo-records.md",
+    "examples/repo-records/local-issue-pr-workflow.example.json",
+    "scripts/repo-records/check-repo-records-public-alpha.cjs"
+  ],
+  "commandsRun": [
+    "pnpm run repo-records:check",
+    "pnpm run test:web",
+    "node scripts/web/check-pr12-web-ui.cjs",
+    "pnpm run secret-scan",
+    "node scripts/web/build-static-export-copy.cjs"
+  ],
+  "summary": {
+    "publicAlphaSourceReleased": true,
+    "repoRecordsPackageFound": true,
+    "packageWorkflowPassed": true,
+    "nodeServiceWorkflowPassed": true,
+    "appendOnlyEventLogProven": true,
+    "issueRecordCreated": true,
+    "pullRequestRecordCreated": true,
+    "reviewRecordCreated": true,
+    "recordOnlyMergeProven": true,
+    "httpIssueUnsignedBlocked": true,
+    "httpPrUnsignedBlocked": true,
+    "publicCollaborationClaimed": false,
+    "remoteEventLogDurabilityClaimed": false,
+    "normalGitTransportClaimed": false,
+    "productionRuntimeClaimed": false,
+    "qstorageVerifiedClaimed": false,
+    "castercloudDeployedClaimed": false,
+    "publicNetworkClaimed": false,
+    "multiNodeReplicationClaimed": false,
+    "secretLeakFindings": 0,
+    "fakeLiveClaimsFound": 0,
+    "forbiddenIdentityViolations": 0,
+    "hostedPlatformProductionViolations": 0
+  },
+  "packageWorkflow": {
+    "repoId": "gitcaster://did:caster:zPublicAlphaOwner/repo-records-public-alpha",
+    "issueId": "issue-1",
+    "prId": "pr-1",
+    "reviewId": "review-1",
+    "events": [
+      "gitcaster.repo.created.v1",
+      "gitcaster.issue.opened.v1",
+      "gitcaster.issue.updated.v1",
+      "gitcaster.pr.opened.v1",
+      "gitcaster.pr.reviewed.v1",
+      "gitcaster.pr.merged.v1"
+    ],
+    "refsChanged": false,
+    "appendOnly": true
+  },
+  "nodeServiceWorkflow": {
+    "repoStatus": "alpha-local",
+    "issueStatus": "alpha-local",
+    "prStatus": "alpha-local",
+    "reviewStatus": "alpha-local",
+    "mergeStatus": "alpha-local",
+    "refsChanged": false,
+    "events": 6
+  },
+  "httpBlockers": {
+    "issueUnsignedStatusCode": 401,
+    "issueUnsignedStatus": "blocked",
+    "issueUnsignedScope": "issue:write",
+    "prUnsignedStatusCode": 401,
+    "prUnsignedStatus": "blocked",
+    "prUnsignedScope": "pr:write"
+  },
+  "releaseQuality": {
+    "releaseLevel": "public-alpha",
+    "canShipProduction": false,
+    "productionBlockers": [
+      "Repo records and issue/PR workflows are public-alpha local source only.",
+      "Public collaboration is blocked until signed multi-node event-log proof exists.",
+      "Remote event-log durability is blocked until append-only Caster event-log proof exists.",
+      "Normal git transport is blocked until pack transport, node mutation, storage, and rollback proof exist.",
+      "QStorage publication and CasterCloud deployment remain blocked until endpoint, custody, deploy, and rollback proof exists.",
+      "Managed runtime, billing, custody, and production operations remain closed."
+    ]
+  },
+  "findings": {
+    "missingFiles": [],
+    "forbiddenReferenceFindings": [],
+    "hostedPlatformFindings": [],
+    "secretFindings": [],
+    "fakeClaimFindings": []
+  },
+  "blockers": []
+}

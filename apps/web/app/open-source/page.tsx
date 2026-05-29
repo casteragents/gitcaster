@@ -56,6 +56,15 @@ export default function OpenSourcePage() {
         </div>
         <div className="grid">
           <div className="card">
+            <h3>Repo records and issue/PR workflow</h3>
+            <p>Repo IDs, append-only events, issue records, PR reviews, record-only merges, and mutation blockers are now public.</p>
+            <div className="mini-list">
+              <a href={sitePath("/open-source/repo-records")}>Website page</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/packages/repo-records">Source</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/examples/repo-records">Fixture</a>
+            </div>
+          </div>
+          <div className="card">
             <h3>Local node API source</h3>
             <p>Loopback HTTP routes, local health/status, mutation blockers, and endpoint-gated storage/deploy/domain routes are now public.</p>
             <div className="mini-list">

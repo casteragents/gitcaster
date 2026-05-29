@@ -2,7 +2,7 @@
   "type": "gitcaster.pr.evidence.v1",
   "pr": "PR-12",
   "title": "Web status and proof UI",
-  "createdAt": "2026-05-29T20:41:36.070Z",
+  "createdAt": "2026-05-29T21:00:23.782Z",
   "repoRoot": "D:\\user\\xxxcrypto-vercel-clean\\.quilibrium\\gitcaster-public-github-release\\gitcaster-public-repo",
   "filesChanged": [
     "apps/web/package.json",
@@ -29,6 +29,7 @@
     "apps/web/app/open-source/git-remote/page.tsx",
     "apps/web/app/open-source/mcp-source/page.tsx",
     "apps/web/app/open-source/local-node-api/page.tsx",
+    "apps/web/app/open-source/repo-records/page.tsx",
     "apps/web/components/TruthStatusPill.tsx",
     "apps/web/components/TruthTable.tsx",
     "apps/web/components/ProofPanel.tsx",
@@ -123,6 +124,7 @@
     "apps/web/public/git-remote-gitcaster.md",
     "apps/web/public/gitcaster-mcp-source.md",
     "apps/web/public/gitcaster-local-node-api.md",
+    "apps/web/public/gitcaster-repo-records.md",
     "examples/worlds/local-agent-grid.world.json",
     "examples/ros/local-agent-bridge.launch.json",
     "examples/ros/local-agent-bridge.messages.json",
@@ -135,6 +137,7 @@
     "examples/git-remote/blocked-transport-plan.example.json",
     "examples/mcp/local-tool-plan.example.json",
     "examples/node/local-api-smoke.example.json",
+    "examples/repo-records/local-issue-pr-workflow.example.json",
     "docs-source/developer-layers/simulator.md",
     "docs-source/developer-layers/ros-adapters.md",
     "docs-source/developer-layers/api-sdk-tutorials.md",
@@ -144,8 +147,11 @@
     "docs-source/developer-layers/git-remote.md",
     "docs-source/developer-layers/mcp-source.md",
     "docs-source/developer-layers/local-node-api.md",
+    "docs-source/developer-layers/repo-records.md",
     "scripts/node/check-local-node-api-source.cjs",
+    "scripts/repo-records/check-repo-records-public-alpha.cjs",
     "launch/evidence/local-node-api-source.json",
+    "launch/evidence/repo-records-issue-pr-source.json",
     "launch/evidence/pr-12-web-status-proof-ui.json"
   ],
   "commandsRun": [
@@ -156,6 +162,7 @@
     "pnpm run git-remote:check",
     "pnpm run mcp:check",
     "pnpm run node-api:check",
+    "pnpm run repo-records:check",
     "pnpm run simulator:check",
     "pnpm run ros:check",
     "node scripts/web/check-web-truth-table.cjs",
@@ -223,7 +230,7 @@
     },
     {
       "path": "apps/web/app/open-source/page.tsx",
-      "sha256": "777288f492f8676ed573161720526fbfc76270cf826dce18ce9d16bdaa2a0ff7"
+      "sha256": "48bbd12a298a5726cba5be6ce13a2c304146e415db6ab430cc20023ad8abafe5"
     },
     {
       "path": "apps/web/app/open-source/simulator/page.tsx",
@@ -260,6 +267,10 @@
     {
       "path": "apps/web/app/open-source/local-node-api/page.tsx",
       "sha256": "562efe785aa1336703cba60ac7b43ecd645bcad9e38dcccfaeaa5a9037011700"
+    },
+    {
+      "path": "apps/web/app/open-source/repo-records/page.tsx",
+      "sha256": "4632b4fdafacc9fe247ebac78e4f34126bb0421dd158bd48d14a8f6a1ced9d26"
     },
     {
       "path": "apps/web/components/TruthStatusPill.tsx",
@@ -323,7 +334,7 @@
     },
     {
       "path": "apps/web/lib/status-truth.ts",
-      "sha256": "244b8a391c4b6d66a66f48b0a7d25eecddc0f7bab65458bfc0318a67f1964f55"
+      "sha256": "98a3aeff900e350a721beee604966315abba4405d80764b580da6b2581930449"
     },
     {
       "path": "apps/web/lib/preview-data.ts",
@@ -331,7 +342,7 @@
     },
     {
       "path": "apps/web/lib/evidence-links.ts",
-      "sha256": "4e6999893ef6ec59d926d905b2decc13092ad4b8a427ea82741659acaaafb71a"
+      "sha256": "9fbf144840c398039fadf4b9d60a883abfca9a5dbf1e1b6bb3b33a3cdae6776e"
     },
     {
       "path": "apps/web/lib/caster-copy.ts",
@@ -371,11 +382,11 @@
     },
     {
       "path": "scripts/web/check-web-truth-table.cjs",
-      "sha256": "a492b7722dd6b9fc36978c0fd5397a36f92861f483862e8997b3764dd8dd16d1"
+      "sha256": "e3b34ecfbf4f47d9be2becb7c6b18f9fedf939fcdf249198a3da1592ddbe4ade"
     },
     {
       "path": "scripts/web/check-pr12-web-ui.cjs",
-      "sha256": "b3c449bcd09153328efcec7c56022470d8603c3b8d6efac9c4f5583dcb4d9400"
+      "sha256": "e81b4b498127d27d21305ba9ae57e40b7c876a901927259736f8fae616a718de"
     },
     {
       "path": "LICENSE",
@@ -638,6 +649,10 @@
       "sha256": "b7409f418b982cec0c8699e22f82e9cdbe77a7c0bf2aa1b87897258ef4e85b7e"
     },
     {
+      "path": "apps/web/public/gitcaster-repo-records.md",
+      "sha256": "69dea2a12ebcde2973aa1b8600b630ec59cd2374a16dabe335f55d18fce6a08a"
+    },
+    {
       "path": "examples/worlds/local-agent-grid.world.json",
       "sha256": "825d90a5b04ffc658af864a3ba254becb2386c27879626f22907e5198ae930bd"
     },
@@ -686,6 +701,10 @@
       "sha256": "ea51d0d0c4634a71e50094dd9dc9e1bb77417764c5ac706ac80c9de21de67829"
     },
     {
+      "path": "examples/repo-records/local-issue-pr-workflow.example.json",
+      "sha256": "dda44994a234a57958b225437b8178fad90d4bc32d1643a52d094c82525b952c"
+    },
+    {
       "path": "docs-source/developer-layers/simulator.md",
       "sha256": "9babfe9f4e303107382c150ae657bfe0c4b77b72396183244a0c4761a8beae31"
     },
@@ -722,12 +741,24 @@
       "sha256": "56661a0326a071224e6555abd8ff0c0ac5b763723471fde3afc22ace6d5a431d"
     },
     {
+      "path": "docs-source/developer-layers/repo-records.md",
+      "sha256": "109d04fa01fce5b7249522ed0378a25a4d72ca5fcdbc882192db81bceae8d1b8"
+    },
+    {
       "path": "scripts/node/check-local-node-api-source.cjs",
       "sha256": "d99ff5eed577923682a21602a78d03e8a8f1c375196e8cb6acc63f8fb09b57dd"
     },
     {
+      "path": "scripts/repo-records/check-repo-records-public-alpha.cjs",
+      "sha256": "ff6a09d8ddd67fb33f3e1e648e49b3168bc6a81fd43ba22893e6da28a8a5a635"
+    },
+    {
       "path": "launch/evidence/local-node-api-source.json",
-      "sha256": "dcdab14154d0a00dc9f2ba3a668e811307d24ae5ec571388d798ee45516e5818"
+      "sha256": "8b51390ac9da188e1578162439ae9f2fbb7019225f2deb387a1d34c2e5a2485b"
+    },
+    {
+      "path": "launch/evidence/repo-records-issue-pr-source.json",
+      "sha256": "370b4fd8873b70cc85e5fb72d48dad6e462ce4a9396e39806dd46be5cf80f5be"
     }
   ],
   "summary": {
@@ -753,6 +784,7 @@
     "gitRemotePageCreated": true,
     "mcpSourcePageCreated": true,
     "localNodeApiPageCreated": true,
+    "repoRecordsPageCreated": true,
     "truthTableCreated": true,
     "previewDataLabeled": true,
     "liveClaimsWithoutEvidence": 0,
@@ -877,6 +909,7 @@
       "Git remote helper source is public-alpha only until pack transport, node mutation, storage, and rollback proof exist.",
       "MCP source is public-alpha only until public gateway, custody, node mutation, storage, and domain proof exist.",
       "Local node API source is public-alpha only until public federation, production node health, storage, deploy, domain, and rollback proof exist.",
+      "Repo records and issue/PR workflows are public-alpha only until public collaboration, remote event-log durability, normal git transport, storage, and rollback proof exist.",
       "CasterAgents runtime state remains closed until safety-lock and redaction proof exists.",
       "QStorage and CasterCloud runtime endpoints still require operator proof.",
       ".caster registry and public node federation still require signed live evidence.",

@@ -1,0 +1,47 @@
+{
+  "type": "gitcaster.repo-records.local-workflow.example.v1",
+  "status": "public-alpha",
+  "runtimeStatus": "alpha-local",
+  "description": "Local-only repo, issue, pull request, review, and record-only merge flow for public GitCaster contributors.",
+  "repo": {
+    "owner": "did:caster:zPublicAlphaOwner",
+    "name": "repo-records-public-alpha",
+    "repoId": "gitcaster://did:caster:zPublicAlphaOwner/repo-records-public-alpha",
+    "defaultBranch": "main"
+  },
+  "issue": {
+    "createPayloadType": "gitcaster.issue.create.payload.v1",
+    "updatePayloadType": "gitcaster.issue.update.payload.v1",
+    "route": "/repos/did:caster:zPublicAlphaOwner/repo-records-public-alpha/issues",
+    "unsignedHttpMutation": "blocked"
+  },
+  "pullRequest": {
+    "createPayloadType": "gitcaster.pr.create.payload.v1",
+    "reviewPayloadType": "gitcaster.pr.review.payload.v1",
+    "mergePayloadType": "gitcaster.pr.merge.payload.v1",
+    "mergeMode": "record-only",
+    "refsChanged": false,
+    "unsignedHttpMutation": "blocked"
+  },
+  "eventLog": {
+    "events": [
+      "gitcaster.repo.created.v1",
+      "gitcaster.issue.opened.v1",
+      "gitcaster.issue.updated.v1",
+      "gitcaster.pr.opened.v1",
+      "gitcaster.pr.reviewed.v1",
+      "gitcaster.pr.merged.v1"
+    ],
+    "appendOnly": true,
+    "remoteDurabilityClaimed": false
+  },
+  "blockedClaims": {
+    "publicCollaboration": false,
+    "remoteEventLogDurability": false,
+    "normalGitTransport": false,
+    "productionRuntime": false,
+    "qstorageVerified": false,
+    "castercloudDeployed": false
+  },
+  "check": "pnpm run repo-records:check"
+}
