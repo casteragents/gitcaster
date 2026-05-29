@@ -23,6 +23,7 @@ const requiredFiles = [
   "apps/web/app/domains/page.tsx",
   "apps/web/app/open-source/page.tsx",
   "apps/web/app/open-source/simulator/page.tsx",
+  "apps/web/app/open-source/ros/page.tsx",
   "apps/web/components/TruthStatusPill.tsx",
   "apps/web/components/TruthTable.tsx",
   "apps/web/components/ProofPanel.tsx",
@@ -61,8 +62,17 @@ const requiredFiles = [
   "packages/simulator/src/index.ts",
   "packages/simulator/src/simulator.ts",
   "packages/simulator/src/simulator.test.ts",
+  "packages/ros-adapters/package.json",
+  "packages/ros-adapters/README.md",
+  "packages/ros-adapters/src/index.ts",
+  "packages/ros-adapters/src/launch.ts",
+  "packages/ros-adapters/src/messages.ts",
+  "packages/ros-adapters/src/ros-adapters.test.ts",
   "examples/worlds/local-agent-grid.world.json",
+  "examples/ros/local-agent-bridge.launch.json",
+  "examples/ros/local-agent-bridge.messages.json",
   "docs-source/developer-layers/simulator.md",
+  "docs-source/developer-layers/ros-adapters.md",
   "launch/evidence/pr-12-web-status-proof-ui.json"
 ];
 
@@ -138,10 +148,11 @@ if (!packageOnly) {
     if (evidence.summary?.publicNodesOnlineClaimed !== false) blockers.push("publicNodesOnlineClaimed must be false");
     if (evidence.summary?.multiNodeReplicationClaimed !== false) blockers.push("multiNodeReplicationClaimed must be false");
     if (evidence.summary?.unhackableClaimed !== false) blockers.push("unhackableClaimed must be false");
-    if (!Array.isArray(evidence.truthTable?.surfaces) || evidence.truthTable.surfaces.length !== 40) blockers.push("truth table must include 40 current surfaces");
+    if (!Array.isArray(evidence.truthTable?.surfaces) || evidence.truthTable.surfaces.length !== 43) blockers.push("truth table must include 43 current surfaces");
     if (!evidence.truthTable?.surfaces?.includes("GitHub Pages website")) blockers.push("truth table must include GitHub Pages website");
     if (!evidence.truthTable?.surfaces?.includes("open-core boundary")) blockers.push("truth table must include open-core boundary");
     if (!evidence.truthTable?.surfaces?.includes("simulator package")) blockers.push("truth table must include simulator package");
+    if (!evidence.truthTable?.surfaces?.includes("ROS adapter package")) blockers.push("truth table must include ROS adapter package");
   }
 }
 

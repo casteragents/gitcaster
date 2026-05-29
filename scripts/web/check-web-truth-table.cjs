@@ -23,6 +23,7 @@ const filesChanged = [
   "apps/web/app/domains/page.tsx",
   "apps/web/app/open-source/page.tsx",
   "apps/web/app/open-source/simulator/page.tsx",
+  "apps/web/app/open-source/ros/page.tsx",
   "apps/web/components/TruthStatusPill.tsx",
   "apps/web/components/TruthTable.tsx",
   "apps/web/components/ProofPanel.tsx",
@@ -61,8 +62,17 @@ const filesChanged = [
   "packages/simulator/src/index.ts",
   "packages/simulator/src/simulator.ts",
   "packages/simulator/src/simulator.test.ts",
+  "packages/ros-adapters/package.json",
+  "packages/ros-adapters/README.md",
+  "packages/ros-adapters/src/index.ts",
+  "packages/ros-adapters/src/launch.ts",
+  "packages/ros-adapters/src/messages.ts",
+  "packages/ros-adapters/src/ros-adapters.test.ts",
   "examples/worlds/local-agent-grid.world.json",
+  "examples/ros/local-agent-bridge.launch.json",
+  "examples/ros/local-agent-bridge.messages.json",
   "docs-source/developer-layers/simulator.md",
+  "docs-source/developer-layers/ros-adapters.md",
   "launch/evidence/pr-12-web-status-proof-ui.json",
 ];
 
@@ -78,6 +88,9 @@ const truthSurfaces = [
   "simulator package",
   "example world fixture",
   "digital twin exporter",
+  "ROS adapter package",
+  "ROS bridge fixture",
+  "robot message schema",
   "protocol package",
   "identity package",
   "capabilities package",
@@ -147,6 +160,7 @@ if (!publicHomeText.includes("GitCaster is the CasterChain-native repo, agent, m
 if (!publicHomeText.includes("Public update feed")) blockers.push("homepage public update feed missing");
 if (!statusTruth.includes("GitHub Pages website") || !statusTruth.includes("OPEN_CORE_BOUNDARY.md")) blockers.push("status truth must include public website and open-core evidence");
 if (!statusTruth.includes("packages/simulator") || !statusTruth.includes("examples/worlds/local-agent-grid.world.json")) blockers.push("status truth must include simulator package and example world evidence");
+if (!statusTruth.includes("packages/ros-adapters") || !statusTruth.includes("examples/ros/local-agent-bridge.launch.json")) blockers.push("status truth must include ROS adapter package and bridge fixture evidence");
 if (!startText.includes("gc identity new") || !startText.includes("gitcaster://did:caster:z.../hello-gitcaster")) blockers.push("start page must use GitCaster commands");
 if (!configText.includes('output: "export"')) blockers.push("next config must use static export");
 if (!exists("apps/web/out")) blockers.push("static export output apps/web/out missing");
@@ -170,7 +184,7 @@ const evidence = {
   createdAt: new Date().toISOString(),
   repoRoot,
   filesChanged,
-  commandsRun: ["pnpm run simulator:check", "node scripts/web/check-web-truth-table.cjs"],
+  commandsRun: ["pnpm run simulator:check", "pnpm run ros:check", "node scripts/web/check-web-truth-table.cjs"],
   passed: blockers.length === 0,
   failed: blockers.length > 0,
   blockers,
@@ -250,6 +264,7 @@ const evidence = {
     productionBlockers: [
       "GO-gated app and miniapp imports must be reviewed one slice at a time.",
       "Simulator and digital twin exports are local public-alpha only until package release and viewer smoke proof exist.",
+      "ROS adapters and bridge fixtures are local public-alpha only until package release and downstream adapter smoke proof exist.",
       "CasterAgents runtime state remains closed until safety-lock and redaction proof exists.",
       "QStorage and CasterCloud runtime endpoints still require operator proof.",
       ".caster registry and public node federation still require signed live evidence.",

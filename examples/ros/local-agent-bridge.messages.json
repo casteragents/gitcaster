@@ -1,0 +1,38 @@
+{
+  "format": "gitcaster.ros-message-set.v1",
+  "launchId": "local-agent-bridge",
+  "messages": [
+    {
+      "format": "gitcaster.ros-message.v1",
+      "topic": "/gitcaster/local/pose",
+      "kind": "pose",
+      "createdAt": "1970-01-01T00:00:00.000Z",
+      "payload": {
+        "frameId": "map",
+        "x": 1,
+        "y": 2,
+        "z": 0,
+        "yaw": 0.25
+      }
+    },
+    {
+      "format": "gitcaster.ros-message.v1",
+      "topic": "/gitcaster/local/status",
+      "kind": "status",
+      "createdAt": "1970-01-01T00:00:00.000Z",
+      "payload": {
+        "status": "ready"
+      }
+    },
+    {
+      "format": "gitcaster.ros-message.v1",
+      "topic": "/gitcaster/local/task",
+      "kind": "task",
+      "createdAt": "1970-01-01T00:00:00.000Z",
+      "payload": {
+        "taskId": "task-001",
+        "instruction": "inspect local fixture"
+      }
+    }
+  ]
+}

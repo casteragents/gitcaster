@@ -11,6 +11,16 @@ export type PublicReleaseFeedItem = {
 export const publicReleaseFeed: PublicReleaseFeedItem[] = [
   {
     date: "2026-05-29",
+    title: "Public simulator layer",
+    summary:
+      "GitCaster now includes a deterministic local simulator, an example world, and digital twin JSON exports for public-alpha contribution work.",
+    website: "https://casteragents.github.io/gitcaster/open-source/simulator/",
+    repo: "https://github.com/casteragents/gitcaster",
+    xPost: "https://x.com/casterchain/status/2060328909510697126",
+    farcaster: "https://warpcast.com/casterchain/4a1bb7b162"
+  },
+  {
+    date: "2026-05-29",
     title: "Evidence-backed status table",
     summary:
       "GitCaster status now distinguishes live public surfaces, public-alpha source, proof-only token utility, and runtime blockers.",

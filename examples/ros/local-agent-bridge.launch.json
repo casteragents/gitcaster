@@ -1,0 +1,50 @@
+{
+  "format": "gitcaster.ros-launch.v1",
+  "id": "local-agent-bridge",
+  "label": "Local agent bridge",
+  "mode": "local-only",
+  "nodes": [
+    {
+      "id": "agent-state-publisher",
+      "packageName": "@gitcaster/ros-adapters",
+      "executable": "publish-agent-state",
+      "args": ["--fixture", "local-agent-grid"],
+      "mode": "local-only",
+      "network": "disabled",
+      "topics": [
+        {
+          "topic": "/gitcaster/local/pose",
+          "direction": "publish",
+          "kind": "pose",
+          "schema": "gitcaster.ros.pose.v1"
+        },
+        {
+          "topic": "/gitcaster/local/status",
+          "direction": "publish",
+          "kind": "status",
+          "schema": "gitcaster.ros.status.v1"
+        }
+      ]
+    },
+    {
+      "id": "app-task-subscriber",
+      "packageName": "@gitcaster/ros-adapters",
+      "executable": "read-app-task",
+      "args": ["--fixture", "local-agent-grid"],
+      "mode": "local-only",
+      "network": "disabled",
+      "topics": [
+        {
+          "topic": "/gitcaster/local/task",
+          "direction": "subscribe",
+          "kind": "task",
+          "schema": "gitcaster.ros.task.v1"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "Public alpha fixture for local developer bridge tests.",
+    "Network access is disabled and managed platform operations are out of scope."
+  ]
+}

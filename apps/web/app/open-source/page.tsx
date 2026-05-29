@@ -48,12 +48,21 @@ export default function OpenSourcePage() {
       <section className="section">
         <div className="section-heading">
           <div>
-            <h2>Latest public layer</h2>
-            <p>The simulator layer gives contributors a local proof surface without exposing managed infrastructure.</p>
+            <h2>Latest public layers</h2>
+            <p>New developer layers give contributors local proof surfaces without exposing managed infrastructure.</p>
           </div>
           <span className="pill good">public-alpha</span>
         </div>
         <div className="grid">
+          <div className="card">
+            <h3>ROS adapters</h3>
+            <p>Local launch plans, topic schemas, bridge fixtures, and boundary checks are now public.</p>
+            <div className="mini-list">
+              <a href={sitePath("/open-source/ros")}>Website page</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/packages/ros-adapters">Source</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/examples/ros">Fixtures</a>
+            </div>
+          </div>
           <div className="card">
             <h3>Local simulator</h3>
             <p>Deterministic world stepping, an example agent/app/robot world, and digital twin JSON exports are now public.</p>

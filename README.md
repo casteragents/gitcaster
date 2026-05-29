@@ -11,6 +11,7 @@ This public repository is intentionally scoped for contribution and website visi
 - `apps/cli`, `apps/node`, `apps/mcp`, and `apps/git-remote-gitcaster`: alpha GitCaster app surfaces.
 - `packages/*`: protocol, identity, object, repo, security, SDK, and supporting packages.
 - `packages/simulator` and `examples/worlds`: local deterministic simulator, example world, and digital twin export helpers.
+- `packages/ros-adapters` and `examples/ros`: local ROS-style launch, topic, and message bridge helpers.
 
 ## Open-core boundary
 
@@ -43,6 +44,7 @@ Every public GitCaster push should be announced from `@casterchain` on X with `@
 ```bash
 pnpm install
 pnpm run simulator:check
+pnpm run ros:check
 pnpm run build:web
 pnpm run test:web
 pnpm run secret-scan

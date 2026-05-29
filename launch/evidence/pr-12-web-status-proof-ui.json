@@ -2,7 +2,7 @@
   "type": "gitcaster.pr.evidence.v1",
   "pr": "PR-12",
   "title": "Web status and proof UI",
-  "createdAt": "2026-05-29T11:45:33.800Z",
+  "createdAt": "2026-05-29T12:37:27.251Z",
   "repoRoot": "D:\\user\\xxxcrypto-vercel-clean\\.quilibrium\\gitcaster-public-github-release\\gitcaster-public-repo",
   "filesChanged": [
     "apps/web/package.json",
@@ -21,6 +21,7 @@
     "apps/web/app/domains/page.tsx",
     "apps/web/app/open-source/page.tsx",
     "apps/web/app/open-source/simulator/page.tsx",
+    "apps/web/app/open-source/ros/page.tsx",
     "apps/web/components/TruthStatusPill.tsx",
     "apps/web/components/TruthTable.tsx",
     "apps/web/components/ProofPanel.tsx",
@@ -59,12 +60,22 @@
     "packages/simulator/src/index.ts",
     "packages/simulator/src/simulator.ts",
     "packages/simulator/src/simulator.test.ts",
+    "packages/ros-adapters/package.json",
+    "packages/ros-adapters/README.md",
+    "packages/ros-adapters/src/index.ts",
+    "packages/ros-adapters/src/launch.ts",
+    "packages/ros-adapters/src/messages.ts",
+    "packages/ros-adapters/src/ros-adapters.test.ts",
     "examples/worlds/local-agent-grid.world.json",
+    "examples/ros/local-agent-bridge.launch.json",
+    "examples/ros/local-agent-bridge.messages.json",
     "docs-source/developer-layers/simulator.md",
+    "docs-source/developer-layers/ros-adapters.md",
     "launch/evidence/pr-12-web-status-proof-ui.json"
   ],
   "commandsRun": [
     "pnpm run simulator:check",
+    "pnpm run ros:check",
     "node scripts/web/check-web-truth-table.cjs"
   ],
   "passed": true,
@@ -129,11 +140,15 @@
     },
     {
       "path": "apps/web/app/open-source/page.tsx",
-      "sha256": "ace9f279ef5a8b818d6324900d935b7c10fc2a014fc6b0dc5373bf5bdc45aded"
+      "sha256": "d8dcab8580bc81ec8367b0299744ca00a2e8220f391b9c179daca2d5333e88db"
     },
     {
       "path": "apps/web/app/open-source/simulator/page.tsx",
       "sha256": "cb35f501664fe8979829a483d4c137ae7af0b50a8909f33485a38ae2400e9716"
+    },
+    {
+      "path": "apps/web/app/open-source/ros/page.tsx",
+      "sha256": "368963661667b47c537acdec09e68d1cfda23aaf5b15087d056425325218c464"
     },
     {
       "path": "apps/web/components/TruthStatusPill.tsx",
@@ -197,7 +212,7 @@
     },
     {
       "path": "apps/web/lib/status-truth.ts",
-      "sha256": "7d8ca19b6b9cb5b212722a5b22cc1fad29db1dab061e7ab8dade8551eb4119e5"
+      "sha256": "fb8c4fb132b2f7f7d4a6ed24b83c8f3b1c087546081983bde38bbe694885e0b9"
     },
     {
       "path": "apps/web/lib/preview-data.ts",
@@ -205,7 +220,7 @@
     },
     {
       "path": "apps/web/lib/evidence-links.ts",
-      "sha256": "cb478e1afa10e9ba962d24c16499d14293c67ed64d458dceeafc61db27d1c488"
+      "sha256": "bda31cf492cf27f6f75bfdacff9a9023c58aba829c151fe8abc996a4e232c035"
     },
     {
       "path": "apps/web/lib/caster-copy.ts",
@@ -213,7 +228,7 @@
     },
     {
       "path": "apps/web/lib/public-release-feed.ts",
-      "sha256": "5b848d9798f8f015b1dc9c270766191e275e4bbca0fb430547e3b6e16c6b9bd4"
+      "sha256": "da84b9d918b3450db97caa06e5c0a1eb447a8addff6af85c52a8a42df08ce0b2"
     },
     {
       "path": "apps/web/styles/caster-theme.css",
@@ -245,11 +260,11 @@
     },
     {
       "path": "scripts/web/check-web-truth-table.cjs",
-      "sha256": "1ac1d4cb460dc78ff210d483629fc1f83aad1b92b0788cd98960206b233fdf57"
+      "sha256": "5d3f6c01608e65eb10c2db3b07f8d28aaed983133bdf03ff9bee700b9be7c898"
     },
     {
       "path": "scripts/web/check-pr12-web-ui.cjs",
-      "sha256": "109a5252b52cf6f61ad4980c3dd0e5860527854862ccacc3ebbdda637e382e66"
+      "sha256": "631d5c40ea270ffedac8683967fe8a2b507c23b500e4cc103c752a6d48f947cd"
     },
     {
       "path": "LICENSE",
@@ -288,12 +303,48 @@
       "sha256": "0b59791c722cb58098ae7afa825818e88a6aee50022fa2ea6173e40ea22d57e3"
     },
     {
+      "path": "packages/ros-adapters/package.json",
+      "sha256": "6d375d31f33a5b3fa63be372919e716e01481de3fc7b4399608f5adc9ac1c911"
+    },
+    {
+      "path": "packages/ros-adapters/README.md",
+      "sha256": "214ba4099dbe7333c356e2a4fb12a65fee509e14bb2a818e6b24831c7c01427b"
+    },
+    {
+      "path": "packages/ros-adapters/src/index.ts",
+      "sha256": "c64bd9272e0193b69a84368a6a3c1fa2296312795620b3d64969c7ffa6ec8d1d"
+    },
+    {
+      "path": "packages/ros-adapters/src/launch.ts",
+      "sha256": "e635d29644ff36f823c5204f100706e95324f20dedc82a19b4d605cc61110fa7"
+    },
+    {
+      "path": "packages/ros-adapters/src/messages.ts",
+      "sha256": "9000fb4a0f52622dfda6fca40fc20625921ffbc892e37cc2bc7ed1d41441cc08"
+    },
+    {
+      "path": "packages/ros-adapters/src/ros-adapters.test.ts",
+      "sha256": "ca073b94eceb0027b6521870bfff51c3119b486bb1c0d9d2dfb8be6df273ff32"
+    },
+    {
       "path": "examples/worlds/local-agent-grid.world.json",
       "sha256": "825d90a5b04ffc658af864a3ba254becb2386c27879626f22907e5198ae930bd"
     },
     {
+      "path": "examples/ros/local-agent-bridge.launch.json",
+      "sha256": "02c110328f97aa9b02934b41bf328235fefba8106245ee7670f764abd35e638d"
+    },
+    {
+      "path": "examples/ros/local-agent-bridge.messages.json",
+      "sha256": "b9460c91aa4876b2dc3d6f93f9e00bc75a3d3c70d019fafa04b5ca537f81965b"
+    },
+    {
       "path": "docs-source/developer-layers/simulator.md",
       "sha256": "9babfe9f4e303107382c150ae657bfe0c4b77b72396183244a0c4761a8beae31"
+    },
+    {
+      "path": "docs-source/developer-layers/ros-adapters.md",
+      "sha256": "5d4f07624b4ad4ffbc8376669d004e8a4ca6bc281ab99b1164ac631de5a574d4"
     }
   ],
   "summary": {
@@ -346,6 +397,9 @@
       "simulator package",
       "example world fixture",
       "digital twin exporter",
+      "ROS adapter package",
+      "ROS bridge fixture",
+      "robot message schema",
       "protocol package",
       "identity package",
       "capabilities package",
@@ -422,6 +476,7 @@
     "productionBlockers": [
       "GO-gated app and miniapp imports must be reviewed one slice at a time.",
       "Simulator and digital twin exports are local public-alpha only until package release and viewer smoke proof exist.",
+      "ROS adapters and bridge fixtures are local public-alpha only until package release and downstream adapter smoke proof exist.",
       "CasterAgents runtime state remains closed until safety-lock and redaction proof exists.",
       "QStorage and CasterCloud runtime endpoints still require operator proof.",
       ".caster registry and public node federation still require signed live evidence.",
