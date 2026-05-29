@@ -2,7 +2,7 @@
   "type": "gitcaster.pr.evidence.v1",
   "pr": "PR-11",
   "title": "MCP tools call local alpha node",
-  "createdAt": "2026-05-29T19:20:06.663Z",
+  "createdAt": "2026-05-29T19:48:42.891Z",
   "repoRoot": "D:\\user\\xxxcrypto-vercel-clean\\.quilibrium\\gitcaster-public-github-release\\gitcaster-public-repo",
   "filesChanged": [
     "apps/mcp/package.json",

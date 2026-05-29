@@ -12,6 +12,17 @@ export type PublicReleaseFeedItem = {
 export const publicReleaseFeed: PublicReleaseFeedItem[] = [
   {
     date: "2026-05-30",
+    title: "MCP source layer",
+    summary:
+      "GitCaster now includes public MCP server source, JSON-RPC stdio tools, beta schemas, structured blockers, and redaction checks for public-alpha contribution work.",
+    website: "https://casteragents.github.io/gitcaster/open-source/mcp-source/",
+    repo: "https://github.com/casteragents/gitcaster",
+    casterchain: "https://casterchain.online/post/5285",
+    xPost: "https://x.com/casterchain/status/2060444502238896147",
+    farcaster: "https://warpcast.com/casterchain/1a86cb5cc4"
+  },
+  {
+    date: "2026-05-30",
     title: "Git remote helper layer",
     summary:
       "GitCaster now includes public git-remote-gitcaster source, URL parsing, ref-list diagnostics, and blocked transport proof planning for public-alpha contribution work.",
