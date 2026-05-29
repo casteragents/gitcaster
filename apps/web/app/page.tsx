@@ -19,6 +19,7 @@ export default function HomePage() {
             <a className="button" href={sitePath("/status")}>View status</a>
             <a className="button" href={sitePath("/node")}>Explore node preview</a>
             <a className="button" href={sitePath("/console")}>Open CasterCloud console</a>
+            <a className="button" href={sitePath("/open-source")}>Open-core boundary</a>
             <a className="button" href={sitePath("/security")}>Read MCP docs</a>
           </div>
         </div>
@@ -29,6 +30,28 @@ export default function HomePage() {
         <h2>Proof strip</h2>
         <div className="grid">
           {PROOF_STRIP.map((item) => <div className="card" key={item}>{item}</div>)}
+        </div>
+      </section>
+
+      <section className="section">
+        <h2>Open-core boundary</h2>
+        <div className="grid">
+          <div className="card">
+            <h3>Apache 2.0 developer layers</h3>
+            <p>Protocol packages, SDKs, APIs, local node surfaces, adapters, simulators, example worlds, and digital twin exporters are the public contribution track.</p>
+          </div>
+          <div className="card">
+            <h3>Reserved managed platform</h3>
+            <p>Hosted orchestration, large simulation capacity, proprietary schedulers, enterprise controls, billing, and the managed fleet dashboard stay commercial.</p>
+          </div>
+          <div className="card">
+            <h3>Transparent release notes</h3>
+            <p>Each public GitCaster push is announced from @casterchain with the GitHub repo, this website, @gitcasterx, and @CasterAI_.</p>
+          </div>
+        </div>
+        <div className="actions">
+          <a className="button primary" href={sitePath("/open-source")}>Read open-core plan</a>
+          <a className="button" href="https://github.com/casteragents/gitcaster">GitHub repo</a>
         </div>
       </section>
 

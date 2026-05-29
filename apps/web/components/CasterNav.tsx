@@ -9,6 +9,7 @@ const links = [
   ["/agents", "Agents"],
   ["/mcp", "MCP"],
   ["/ecosystem", "Ecosystem"],
+  ["/open-source", "Open Core"],
   ["/playground", "Playground"],
   ["/security", "Security"],
   ["/console", "Console"],

@@ -2,7 +2,7 @@
   "type": "gitcaster.pr.evidence.v1",
   "pr": "PR-12",
   "title": "Web status and proof UI",
-  "createdAt": "2026-05-29T09:35:19.981Z",
+  "createdAt": "2026-05-29T10:11:22.781Z",
   "repoRoot": "D:\\user\\xxxcrypto-vercel-clean\\.quilibrium\\gitcaster-public-github-release\\gitcaster-public-repo",
   "filesChanged": [
     "apps/web/package.json",
@@ -73,7 +73,7 @@
     },
     {
       "path": "apps/web/app/page.tsx",
-      "sha256": "4bc4d5f81acf434f890f29087563c23f07408ac7cc1e1b7ba52100bae87379eb"
+      "sha256": "41f50d75cabd06c84cb3fa7a7ec9cd60f6587515a65f71c9cf0c1aca62c86a37"
     },
     {
       "path": "apps/web/app/start/page.tsx",
@@ -133,7 +133,7 @@
     },
     {
       "path": "apps/web/components/CasterNav.tsx",
-      "sha256": "d60ef1481bc60bc5e0dac60537b82b8ce025d1b03c2a1a23766f0b264fd6b63e"
+      "sha256": "debbd7f5514b425fa14c18bb86d3ffb33de46044f0df3b32d9fe5074ebb1bf37"
     },
     {
       "path": "apps/web/components/CasterFooter.tsx",
