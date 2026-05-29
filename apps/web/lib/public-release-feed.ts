@@ -12,6 +12,17 @@ export type PublicReleaseFeedItem = {
 export const publicReleaseFeed: PublicReleaseFeedItem[] = [
   {
     date: "2026-05-30",
+    title: "Ref-consensus local certificates",
+    summary:
+      "GitCaster now includes public ref-consensus source, signed ref update certificates, append-only local ledgers, conflict evidence, double-sign detection, and unsigned ref mutation blockers for public-alpha contribution work.",
+    website: "https://casteragents.github.io/gitcaster/open-source/ref-consensus/",
+    repo: "https://github.com/casteragents/gitcaster",
+    casterchain: "https://casterchain.online/post/5290",
+    xPost: "https://x.com/casterchain/status/2060498987464225213",
+    farcaster: "https://warpcast.com/casterchain/09c7e1a835"
+  },
+  {
+    date: "2026-05-30",
     title: "Push-local object manifests",
     summary:
       "GitCaster now includes public object-store source, local bundle hashes, safety scans, local ref certificate records, blocked QStorage/CasterCloud proofs, and unsigned push-local mutation blockers for public-alpha contribution work.",

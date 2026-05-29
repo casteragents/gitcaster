@@ -2,7 +2,7 @@
   "type": "gitcaster.public-release.evidence.v1",
   "slice": "ref-consensus-local-certificate-source",
   "status": "passed",
-  "createdAt": "2026-05-29T22:59:02.463Z",
+  "createdAt": "2026-05-29T23:21:54.761Z",
   "filesChanged": [
     "packages/ref-consensus/package.json",
     "packages/ref-consensus/tsconfig.json",
@@ -59,7 +59,7 @@
   "refConsensus": {
     "repo": "gitcaster://did:caster:zPublicAlphaOwner/ref-consensus-local",
     "ref": "refs/heads/main",
-    "actor": "did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ",
+    "actor": "did:caster:z2APX2iJ2eQGdSPEjz5Dt55DcbLzPnRyWgNqhneouzk9C",
     "node": "did:caster:zLocalAlphaRefNode",
     "first": {
       "status": "alpha-local",
@@ -72,14 +72,14 @@
         "objectCids": [
           "casterobj:first"
         ],
-        "actor": "did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ",
+        "actor": "did:caster:z2APX2iJ2eQGdSPEjz5Dt55DcbLzPnRyWgNqhneouzk9C",
         "node": "did:caster:zLocalAlphaRefNode",
-        "timestamp": "2026-05-29T22:59:02.168Z",
+        "timestamp": "2026-05-29T23:21:54.617Z",
         "nonce": "first",
         "capability": {
           "type": "gitcaster.capability.v1",
-          "issuer": "did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ",
-          "subject": "did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ",
+          "issuer": "did:caster:z2APX2iJ2eQGdSPEjz5Dt55DcbLzPnRyWgNqhneouzk9C",
+          "subject": "did:caster:z2APX2iJ2eQGdSPEjz5Dt55DcbLzPnRyWgNqhneouzk9C",
           "scope": "repo:admin",
           "resource": "gitcaster://did:caster:zPublicAlphaOwner/ref-consensus-local",
           "expiresAt": "2099-01-01T00:00:00.000Z",
@@ -87,19 +87,19 @@
           "signature": "[redacted-signature]",
           "status": "alpha-local"
         },
-        "payloadHash": "sha256:5df2c69b2965594166a9c0c2a63ab9e19f46769887bc56315ea517e6e342ed21",
+        "payloadHash": "sha256:870884541bb3b40445402b177da116e05a51f3f3edf2421d94bc9aaf7a51209b",
         "signatures": [
           {
-            "signer": "did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ",
+            "signer": "did:caster:z2APX2iJ2eQGdSPEjz5Dt55DcbLzPnRyWgNqhneouzk9C",
             "alg": "ed25519",
             "sig": "[redacted-signature]",
-            "signedAt": "2026-05-29T22:59:02.168Z"
+            "signedAt": "2026-05-29T23:21:54.617Z"
           },
           {
             "signer": "did:caster:zLocalAlphaRefNode",
             "alg": "ed25519",
             "sig": "[redacted-signature]",
-            "signedAt": "2026-05-29T22:59:02.168Z"
+            "signedAt": "2026-05-29T23:21:54.617Z"
           }
         ],
         "status": "alpha-local"
@@ -117,14 +117,14 @@
         "objectCids": [
           "casterobj:second"
         ],
-        "actor": "did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ",
+        "actor": "did:caster:z2APX2iJ2eQGdSPEjz5Dt55DcbLzPnRyWgNqhneouzk9C",
         "node": "did:caster:zLocalAlphaRefNode",
-        "timestamp": "2026-05-29T22:59:02.168Z",
+        "timestamp": "2026-05-29T23:21:54.617Z",
         "nonce": "second",
         "capability": {
           "type": "gitcaster.capability.v1",
-          "issuer": "did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ",
-          "subject": "did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ",
+          "issuer": "did:caster:z2APX2iJ2eQGdSPEjz5Dt55DcbLzPnRyWgNqhneouzk9C",
+          "subject": "did:caster:z2APX2iJ2eQGdSPEjz5Dt55DcbLzPnRyWgNqhneouzk9C",
           "scope": "repo:admin",
           "resource": "gitcaster://did:caster:zPublicAlphaOwner/ref-consensus-local",
           "expiresAt": "2099-01-01T00:00:00.000Z",
@@ -132,19 +132,19 @@
           "signature": "[redacted-signature]",
           "status": "alpha-local"
         },
-        "payloadHash": "sha256:8588fc4fe6400b3fd6007a1833bfaf2be3f006fef7ef4c55d9a99a256716f7b5",
+        "payloadHash": "sha256:74727af8a21dd8b524c2bc5f78af1a00fd03c1a04074de20415b2413000eec7e",
         "signatures": [
           {
-            "signer": "did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ",
+            "signer": "did:caster:z2APX2iJ2eQGdSPEjz5Dt55DcbLzPnRyWgNqhneouzk9C",
             "alg": "ed25519",
             "sig": "[redacted-signature]",
-            "signedAt": "2026-05-29T22:59:02.168Z"
+            "signedAt": "2026-05-29T23:21:54.617Z"
           },
           {
             "signer": "did:caster:zLocalAlphaRefNode",
             "alg": "ed25519",
             "sig": "[redacted-signature]",
-            "signedAt": "2026-05-29T22:59:02.168Z"
+            "signedAt": "2026-05-29T23:21:54.617Z"
           }
         ],
         "status": "alpha-local"
@@ -162,8 +162,8 @@
         "expectedFrom": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
         "attemptedFrom": null,
         "attemptedTo": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
-        "actor": "did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ",
-        "createdAt": "2026-05-29T22:59:02.188Z",
+        "actor": "did:caster:z2APX2iJ2eQGdSPEjz5Dt55DcbLzPnRyWgNqhneouzk9C",
+        "createdAt": "2026-05-29T23:21:54.630Z",
         "resolution": "manual-review-required"
       }
     },
@@ -183,9 +183,9 @@
         "ref": "refs/heads/main",
         "node": "did:caster:zLocalAlphaRefNode",
         "height": 1,
-        "certificateA": "sha256:e71baf5b09ee6a9f809aa6c147a1a0851ed060daaaa4c507c82f07fe36d5cc0d",
-        "certificateB": "sha256:dd5f3bf380ab399ac8d1b37301d34c1063e1ef3e9f295ab1c27f494b03b7fa8d",
-        "createdAt": "2026-05-29T22:59:02.188Z",
+        "certificateA": "sha256:4c08e087c9fb96c5989f7627727fbf2292a783eddb16b05729e35bf744c49a9a",
+        "certificateB": "sha256:ccb8828fb8b6f03538aa3aa6712392cc55326cbdcc93776ccb09c0214a727101",
+        "createdAt": "2026-05-29T23:21:54.630Z",
         "resolution": "node-adjudication-required"
       }
     },
@@ -213,7 +213,7 @@
       ]
     },
     "route": {
-      "repo": "gitcaster://did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ/ref-consensus-local",
+      "repo": "gitcaster://did:caster:z2APX2iJ2eQGdSPEjz5Dt55DcbLzPnRyWgNqhneouzk9C/ref-consensus-local",
       "updateStatusCode": 200,
       "updateStatus": "alpha-local",
       "listedStatusCode": 200,
@@ -223,41 +223,41 @@
       "productionConsensusClaimed": false,
       "certificate": {
         "type": "gitcaster.ref.update.v1",
-        "repo": "gitcaster://did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ/ref-consensus-local",
+        "repo": "gitcaster://did:caster:z2APX2iJ2eQGdSPEjz5Dt55DcbLzPnRyWgNqhneouzk9C/ref-consensus-local",
         "ref": "refs/heads/main",
         "from": null,
         "to": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
         "objectCids": [
           "casterobj:route-one"
         ],
-        "actor": "did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ",
+        "actor": "did:caster:z2APX2iJ2eQGdSPEjz5Dt55DcbLzPnRyWgNqhneouzk9C",
         "node": "did:caster:zLocalAlphaNode",
-        "timestamp": "2026-05-29T22:59:02.168Z",
+        "timestamp": "2026-05-29T23:21:54.617Z",
         "nonce": "cert-route-ref-one",
         "capability": {
           "type": "gitcaster.capability.v1",
-          "issuer": "did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ",
-          "subject": "did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ",
+          "issuer": "did:caster:z2APX2iJ2eQGdSPEjz5Dt55DcbLzPnRyWgNqhneouzk9C",
+          "subject": "did:caster:z2APX2iJ2eQGdSPEjz5Dt55DcbLzPnRyWgNqhneouzk9C",
           "scope": "ref:update",
-          "resource": "gitcaster://did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ/ref-consensus-local#refs/heads/main",
+          "resource": "gitcaster://did:caster:z2APX2iJ2eQGdSPEjz5Dt55DcbLzPnRyWgNqhneouzk9C/ref-consensus-local#refs/heads/main",
           "expiresAt": "2099-01-01T00:00:00.000Z",
           "nonce": "cap-route-ref-consensus-public-alpha",
           "signature": "[redacted-signature]",
           "status": "alpha-local"
         },
-        "payloadHash": "sha256:1fdbe2a9fdba28241939f9e64723ff24913bc675c2557e56b92ad671a2644b90",
+        "payloadHash": "sha256:a3ae994ec99da2f23a045a7ce08a59b55702ce385c39c42dc323f7f36e9a4034",
         "signatures": [
           {
-            "signer": "did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ",
+            "signer": "did:caster:z2APX2iJ2eQGdSPEjz5Dt55DcbLzPnRyWgNqhneouzk9C",
             "alg": "ed25519",
             "sig": "[redacted-signature]",
-            "signedAt": "2026-05-29T22:59:02.168Z"
+            "signedAt": "2026-05-29T23:21:54.617Z"
           },
           {
             "signer": "did:caster:zLocalAlphaNode",
             "alg": "ed25519",
             "sig": "[redacted-signature]",
-            "signedAt": "2026-05-29T22:59:02.168Z"
+            "signedAt": "2026-05-29T23:21:54.617Z"
           }
         ],
         "status": "alpha-local"
@@ -265,7 +265,7 @@
     }
   },
   "httpBlockers": {
-    "baseUrl": "http://127.0.0.1:58484",
+    "baseUrl": "http://127.0.0.1:51403",
     "unsignedStatusCode": 401,
     "unsignedStatus": "blocked",
     "unsignedScope": "ref:update"
