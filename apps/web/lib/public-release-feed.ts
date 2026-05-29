@@ -11,6 +11,17 @@ export type PublicReleaseFeedItem = {
 
 export const publicReleaseFeed: PublicReleaseFeedItem[] = [
   {
+    date: "2026-05-30",
+    title: "TypeScript SDK layer",
+    summary:
+      "GitCaster now includes typed client helpers, local SDK examples, redaction checks, and proof-gated runtime methods for public-alpha contribution work.",
+    website: "https://casteragents.github.io/gitcaster/open-source/typescript-sdk/",
+    repo: "https://github.com/casteragents/gitcaster",
+    casterchain: "https://casterchain.online/post/5282",
+    xPost: "https://x.com/casterchain/status/2060402954419785747",
+    farcaster: "https://warpcast.com/casterchain/1e2c4f2e3e"
+  },
+  {
     date: "2026-05-29",
     title: "Miniapp template layer",
     summary:
