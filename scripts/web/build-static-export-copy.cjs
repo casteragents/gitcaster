@@ -57,7 +57,9 @@ function runNextBuild() {
     cwd: workRoot,
     env: {
       ...process.env,
-      NEXT_TELEMETRY_DISABLED: "1"
+      NEXT_TELEMETRY_DISABLED: "1",
+      GITCASTER_PAGES_BASE_PATH: process.env.GITCASTER_PAGES_BASE_PATH || "/gitcaster",
+      NEXT_PUBLIC_GITCASTER_BASE_PATH: process.env.NEXT_PUBLIC_GITCASTER_BASE_PATH || "/gitcaster"
     },
     stdio: "inherit",
     timeout: 600000

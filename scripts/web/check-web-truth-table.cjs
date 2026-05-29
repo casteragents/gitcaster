@@ -189,6 +189,7 @@ const pageText = exists("apps/web/app/page.tsx") ? read("apps/web/app/page.tsx")
 const copyText = exists("apps/web/lib/caster-copy.ts") ? read("apps/web/lib/caster-copy.ts") : "";
 const startText = exists("apps/web/app/start/page.tsx") ? read("apps/web/app/start/page.tsx") : "";
 const configText = exists("apps/web/next.config.mjs") ? read("apps/web/next.config.mjs") : "";
+const cliPagesHtml = exists("docs/open-source/cli/index.html") ? read("docs/open-source/cli/index.html") : "";
 const publicHomeText = `${pageText}\n${copyText}`;
 
 for (const surface of truthSurfaces) {
@@ -209,6 +210,8 @@ if (!statusTruth.includes("apps/cli") || !statusTruth.includes("examples/cli/loc
 if (!startText.includes("gc identity new") || !startText.includes("gitcaster://did:caster:z.../hello-gitcaster")) blockers.push("start page must use GitCaster commands");
 if (!configText.includes('output: "export"')) blockers.push("next config must use static export");
 if (!exists("apps/web/out")) blockers.push("static export output apps/web/out missing");
+if (exists("docs/open-source/cli/index.html") && !cliPagesHtml.includes("/gitcaster/_next/static/css/")) blockers.push("GitHub Pages CLI route must reference /gitcaster asset paths");
+if (exists("docs/open-source/cli/index.html") && cliPagesHtml.includes('href="/_next/static/css/')) blockers.push("GitHub Pages CLI route must not reference root /_next CSS assets");
 
 for (const rel of [
   "apps/web/public/gitcaster-preview-node.json",
@@ -239,6 +242,7 @@ const evidence = {
     webBuildPassed: exists("apps/web/out"),
     staticExportReady: configText.includes('output: "export"'),
     outDirProduced: exists("apps/web/out"),
+    pagesBasePathReady: exists("docs/open-source/cli/index.html") && cliPagesHtml.includes("/gitcaster/_next/static/css/") && !cliPagesHtml.includes('href="/_next/static/css/'),
     serverRuntimeRequired: false,
     homepageCreated: exists("apps/web/app/page.tsx"),
     startPageCreated: exists("apps/web/app/start/page.tsx"),
