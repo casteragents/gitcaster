@@ -1,0 +1,293 @@
+{
+  "type": "gitcaster.public-release.evidence.v1",
+  "slice": "ref-consensus-local-certificate-source",
+  "status": "passed",
+  "createdAt": "2026-05-29T22:59:02.463Z",
+  "filesChanged": [
+    "packages/ref-consensus/package.json",
+    "packages/ref-consensus/tsconfig.json",
+    "packages/ref-consensus/src/index.ts",
+    "packages/ref-consensus/src/ref-certificate.ts",
+    "packages/ref-consensus/src/ref-ledger.ts",
+    "packages/ref-consensus/src/ref-policy.ts",
+    "packages/ref-consensus/src/ref-adjudicator.ts",
+    "packages/ref-consensus/src/verify.ts",
+    "packages/ref-consensus/src/conflict-resolution.ts",
+    "packages/ref-consensus/src/double-sign-detect.ts",
+    "packages/ref-consensus/src/ref-consensus.test.ts",
+    "apps/node/src/routes/refs.ts",
+    "apps/node/src/services/local-alpha-store.ts",
+    "apps/node/src/services/mutation-verify.ts",
+    "scripts/security/test-ref-certificate-redteam.cjs",
+    "apps/web/app/open-source/ref-consensus/page.tsx",
+    "apps/web/public/gitcaster-ref-consensus.md",
+    "docs-source/developer-layers/ref-consensus.md",
+    "examples/refs/local-ref-certificate-workflow.example.json",
+    "scripts/refs/check-ref-consensus-public-alpha.cjs"
+  ],
+  "commandsRun": [
+    "pnpm run ref-consensus:check",
+    "pnpm run test:web",
+    "node scripts/web/check-pr12-web-ui.cjs",
+    "pnpm run secret-scan",
+    "node scripts/web/build-static-export-copy.cjs"
+  ],
+  "summary": {
+    "publicAlphaSourceReleased": true,
+    "firstCertificateIssued": true,
+    "secondCertificateIssued": true,
+    "ledgerVerified": true,
+    "conflictEvidenceWritten": true,
+    "deletionBlocked": true,
+    "doubleSignDetected": true,
+    "missingNodeSignatureBlocked": true,
+    "forbiddenStatusBlocked": true,
+    "protectedOverrideChecked": true,
+    "nonceReplayBlocked": true,
+    "routeUpdateChecked": true,
+    "routeLedgerListed": true,
+    "unsignedHttpRefUpdateBlocked": true,
+    "publicConsensusClaimed": false,
+    "remoteRefDurabilityClaimed": false,
+    "normalGitTransportClaimed": false,
+    "productionRuntimeClaimed": false,
+    "secretLeakFindings": 0,
+    "fakeLiveClaimsFound": 0,
+    "hostedPlatformProductionViolations": 0,
+    "forbiddenIdentityViolations": 0
+  },
+  "refConsensus": {
+    "repo": "gitcaster://did:caster:zPublicAlphaOwner/ref-consensus-local",
+    "ref": "refs/heads/main",
+    "actor": "did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ",
+    "node": "did:caster:zLocalAlphaRefNode",
+    "first": {
+      "status": "alpha-local",
+      "certificate": {
+        "type": "gitcaster.ref.update.v1",
+        "repo": "gitcaster://did:caster:zPublicAlphaOwner/ref-consensus-local",
+        "ref": "refs/heads/main",
+        "from": null,
+        "to": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "objectCids": [
+          "casterobj:first"
+        ],
+        "actor": "did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ",
+        "node": "did:caster:zLocalAlphaRefNode",
+        "timestamp": "2026-05-29T22:59:02.168Z",
+        "nonce": "first",
+        "capability": {
+          "type": "gitcaster.capability.v1",
+          "issuer": "did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ",
+          "subject": "did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ",
+          "scope": "repo:admin",
+          "resource": "gitcaster://did:caster:zPublicAlphaOwner/ref-consensus-local",
+          "expiresAt": "2099-01-01T00:00:00.000Z",
+          "nonce": "cap-ref-consensus-admin-public-alpha",
+          "signature": "[redacted-signature]",
+          "status": "alpha-local"
+        },
+        "payloadHash": "sha256:5df2c69b2965594166a9c0c2a63ab9e19f46769887bc56315ea517e6e342ed21",
+        "signatures": [
+          {
+            "signer": "did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ",
+            "alg": "ed25519",
+            "sig": "[redacted-signature]",
+            "signedAt": "2026-05-29T22:59:02.168Z"
+          },
+          {
+            "signer": "did:caster:zLocalAlphaRefNode",
+            "alg": "ed25519",
+            "sig": "[redacted-signature]",
+            "signedAt": "2026-05-29T22:59:02.168Z"
+          }
+        ],
+        "status": "alpha-local"
+      },
+      "currentHead": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "second": {
+      "status": "alpha-local",
+      "certificate": {
+        "type": "gitcaster.ref.update.v1",
+        "repo": "gitcaster://did:caster:zPublicAlphaOwner/ref-consensus-local",
+        "ref": "refs/heads/main",
+        "from": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "to": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+        "objectCids": [
+          "casterobj:second"
+        ],
+        "actor": "did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ",
+        "node": "did:caster:zLocalAlphaRefNode",
+        "timestamp": "2026-05-29T22:59:02.168Z",
+        "nonce": "second",
+        "capability": {
+          "type": "gitcaster.capability.v1",
+          "issuer": "did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ",
+          "subject": "did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ",
+          "scope": "repo:admin",
+          "resource": "gitcaster://did:caster:zPublicAlphaOwner/ref-consensus-local",
+          "expiresAt": "2099-01-01T00:00:00.000Z",
+          "nonce": "cap-ref-consensus-admin-public-alpha",
+          "signature": "[redacted-signature]",
+          "status": "alpha-local"
+        },
+        "payloadHash": "sha256:8588fc4fe6400b3fd6007a1833bfaf2be3f006fef7ef4c55d9a99a256716f7b5",
+        "signatures": [
+          {
+            "signer": "did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ",
+            "alg": "ed25519",
+            "sig": "[redacted-signature]",
+            "signedAt": "2026-05-29T22:59:02.168Z"
+          },
+          {
+            "signer": "did:caster:zLocalAlphaRefNode",
+            "alg": "ed25519",
+            "sig": "[redacted-signature]",
+            "signedAt": "2026-05-29T22:59:02.168Z"
+          }
+        ],
+        "status": "alpha-local"
+      },
+      "ledgerHeight": 2,
+      "ledgerVerified": true
+    },
+    "conflict": {
+      "status": "blocked",
+      "evidence": {
+        "type": "gitcaster.ref.conflict.v1",
+        "status": "blocked",
+        "repo": "gitcaster://did:caster:zPublicAlphaOwner/ref-consensus-local",
+        "ref": "refs/heads/main",
+        "expectedFrom": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "attemptedFrom": null,
+        "attemptedTo": "sha256:cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+        "actor": "did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ",
+        "createdAt": "2026-05-29T22:59:02.188Z",
+        "resolution": "manual-review-required"
+      }
+    },
+    "deletion": {
+      "status": "blocked",
+      "errors": [
+        "branch deletion disabled in PR-07",
+        "branch deletion disabled in PR-07"
+      ]
+    },
+    "doubleSign": {
+      "detected": true,
+      "evidence": {
+        "type": "gitcaster.ref.double-sign.v1",
+        "status": "blocked",
+        "repo": "gitcaster://did:caster:zPublicAlphaOwner/ref-consensus-local",
+        "ref": "refs/heads/main",
+        "node": "did:caster:zLocalAlphaRefNode",
+        "height": 1,
+        "certificateA": "sha256:e71baf5b09ee6a9f809aa6c147a1a0851ed060daaaa4c507c82f07fe36d5cc0d",
+        "certificateB": "sha256:dd5f3bf380ab399ac8d1b37301d34c1063e1ef3e9f295ab1c27f494b03b7fa8d",
+        "createdAt": "2026-05-29T22:59:02.188Z",
+        "resolution": "node-adjudication-required"
+      }
+    },
+    "missingNodeSignature": {
+      "status": "blocked",
+      "errors": [
+        "node signature missing",
+        "node signature required"
+      ]
+    },
+    "forbiddenStatus": {
+      "status": "blocked",
+      "errors": [
+        "forbidden live status without proof"
+      ]
+    },
+    "protectedOverride": {
+      "status": "alpha-local"
+    },
+    "nonceReplay": {
+      "firstStatus": "alpha-local",
+      "secondStatus": "blocked",
+      "secondErrors": [
+        "nonce replayed"
+      ]
+    },
+    "route": {
+      "repo": "gitcaster://did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ/ref-consensus-local",
+      "updateStatusCode": 200,
+      "updateStatus": "alpha-local",
+      "listedStatusCode": 200,
+      "listedStatus": "alpha-local",
+      "ledgerEntries": 1,
+      "publicConsensusClaimed": false,
+      "productionConsensusClaimed": false,
+      "certificate": {
+        "type": "gitcaster.ref.update.v1",
+        "repo": "gitcaster://did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ/ref-consensus-local",
+        "ref": "refs/heads/main",
+        "from": null,
+        "to": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+        "objectCids": [
+          "casterobj:route-one"
+        ],
+        "actor": "did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ",
+        "node": "did:caster:zLocalAlphaNode",
+        "timestamp": "2026-05-29T22:59:02.168Z",
+        "nonce": "cert-route-ref-one",
+        "capability": {
+          "type": "gitcaster.capability.v1",
+          "issuer": "did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ",
+          "subject": "did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ",
+          "scope": "ref:update",
+          "resource": "gitcaster://did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ/ref-consensus-local#refs/heads/main",
+          "expiresAt": "2099-01-01T00:00:00.000Z",
+          "nonce": "cap-route-ref-consensus-public-alpha",
+          "signature": "[redacted-signature]",
+          "status": "alpha-local"
+        },
+        "payloadHash": "sha256:1fdbe2a9fdba28241939f9e64723ff24913bc675c2557e56b92ad671a2644b90",
+        "signatures": [
+          {
+            "signer": "did:caster:z4drEWWJjhdanxe6dQoDFkqsFJ5BpC9S4yumZjCPpRiAJ",
+            "alg": "ed25519",
+            "sig": "[redacted-signature]",
+            "signedAt": "2026-05-29T22:59:02.168Z"
+          },
+          {
+            "signer": "did:caster:zLocalAlphaNode",
+            "alg": "ed25519",
+            "sig": "[redacted-signature]",
+            "signedAt": "2026-05-29T22:59:02.168Z"
+          }
+        ],
+        "status": "alpha-local"
+      }
+    }
+  },
+  "httpBlockers": {
+    "baseUrl": "http://127.0.0.1:58484",
+    "unsignedStatusCode": 401,
+    "unsignedStatus": "blocked",
+    "unsignedScope": "ref:update"
+  },
+  "releaseQuality": {
+    "releaseLevel": "public-alpha",
+    "canShipProduction": false,
+    "productionBlockers": [
+      "Ref-consensus local certificates are public-alpha only.",
+      "Public consensus is blocked until signed multi-node ref proof exists.",
+      "Remote ref durability is blocked until append-only remote ledger burn-in proof exists.",
+      "Normal git transport is blocked until pack transport, storage, and rollback proof exist.",
+      "Production runtime remains closed until managed ingress, audit, deployment, and rollback evidence exist."
+    ]
+  },
+  "findings": {
+    "missingFiles": [],
+    "forbiddenReferenceFindings": [],
+    "hostedPlatformFindings": [],
+    "secretFindings": [],
+    "fakeClaimFindings": [],
+    "sensitiveStateFindings": []
+  },
+  "blockers": []
+}

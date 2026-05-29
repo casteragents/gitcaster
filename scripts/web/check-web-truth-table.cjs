@@ -33,6 +33,7 @@ const filesChanged = [
   "apps/web/app/open-source/local-node-api/page.tsx",
   "apps/web/app/open-source/repo-records/page.tsx",
   "apps/web/app/open-source/push-local-object-store/page.tsx",
+  "apps/web/app/open-source/ref-consensus/page.tsx",
   "apps/web/components/TruthStatusPill.tsx",
   "apps/web/components/TruthTable.tsx",
   "apps/web/components/ProofPanel.tsx",
@@ -129,6 +130,7 @@ const filesChanged = [
   "apps/web/public/gitcaster-local-node-api.md",
   "apps/web/public/gitcaster-repo-records.md",
   "apps/web/public/gitcaster-push-local-object-store.md",
+  "apps/web/public/gitcaster-ref-consensus.md",
   "examples/worlds/local-agent-grid.world.json",
   "examples/ros/local-agent-bridge.launch.json",
   "examples/ros/local-agent-bridge.messages.json",
@@ -143,6 +145,7 @@ const filesChanged = [
   "examples/node/local-api-smoke.example.json",
   "examples/repo-records/local-issue-pr-workflow.example.json",
   "examples/push-local/local-object-manifest.example.json",
+  "examples/refs/local-ref-certificate-workflow.example.json",
   "docs-source/developer-layers/simulator.md",
   "docs-source/developer-layers/ros-adapters.md",
   "docs-source/developer-layers/api-sdk-tutorials.md",
@@ -154,12 +157,15 @@ const filesChanged = [
   "docs-source/developer-layers/local-node-api.md",
   "docs-source/developer-layers/repo-records.md",
   "docs-source/developer-layers/push-local-object-store.md",
+  "docs-source/developer-layers/ref-consensus.md",
   "scripts/node/check-local-node-api-source.cjs",
   "scripts/repo-records/check-repo-records-public-alpha.cjs",
   "scripts/push-local/check-push-local-object-store-public-alpha.cjs",
+  "scripts/refs/check-ref-consensus-public-alpha.cjs",
   "launch/evidence/local-node-api-source.json",
   "launch/evidence/repo-records-issue-pr-source.json",
   "launch/evidence/push-local-object-store-source.json",
+  "launch/evidence/ref-consensus-local-certificate-source.json",
   "launch/evidence/pr-12-web-status-proof-ui.json",
 ];
 
@@ -255,6 +261,7 @@ if (!statusTruth.includes("packages/ros-adapters") || !statusTruth.includes("exa
 if (!statusTruth.includes("packages/api-tutorials") || !statusTruth.includes("examples/api/public-feed-read.example.json")) blockers.push("status truth must include API tutorial package and public read fixture evidence");
 if (!statusTruth.includes("packages/repo-records") || !statusTruth.includes("examples/repo-records/local-issue-pr-workflow.example.json") || !statusTruth.includes("launch/evidence/repo-records-issue-pr-source.json")) blockers.push("status truth must include repo records source, workflow fixture, and evidence");
 if (!statusTruth.includes("packages/object-store") || !statusTruth.includes("examples/push-local/local-object-manifest.example.json") || !statusTruth.includes("launch/evidence/push-local-object-store-source.json")) blockers.push("status truth must include object store source, push-local fixture, and evidence");
+if (!statusTruth.includes("packages/ref-consensus") || !statusTruth.includes("examples/refs/local-ref-certificate-workflow.example.json") || !statusTruth.includes("launch/evidence/ref-consensus-local-certificate-source.json")) blockers.push("status truth must include ref consensus source, local certificate fixture, and evidence");
 if (!statusTruth.includes("packages/playground-templates")) blockers.push("status truth must include miniapp template package evidence");
 if (!statusTruth.includes("packages/sdk-typescript")) blockers.push("status truth must include TypeScript SDK package evidence");
 if (!statusTruth.includes("apps/cli") || !statusTruth.includes("examples/cli/local-command-plan.example.json")) blockers.push("status truth must include CLI source and local command plan evidence");
@@ -286,7 +293,7 @@ const evidence = {
   createdAt: new Date().toISOString(),
   repoRoot,
   filesChanged,
-  commandsRun: ["pnpm run api-tutorials:check", "pnpm run miniapp-templates:check", "pnpm run sdk:check", "pnpm run cli:check", "pnpm run git-remote:check", "pnpm run mcp:check", "pnpm run node-api:check", "pnpm run repo-records:check", "pnpm run push-local-object-store:check", "pnpm run simulator:check", "pnpm run ros:check", "node scripts/web/check-web-truth-table.cjs"],
+  commandsRun: ["pnpm run api-tutorials:check", "pnpm run miniapp-templates:check", "pnpm run sdk:check", "pnpm run cli:check", "pnpm run git-remote:check", "pnpm run mcp:check", "pnpm run node-api:check", "pnpm run repo-records:check", "pnpm run push-local-object-store:check", "pnpm run ref-consensus:check", "pnpm run simulator:check", "pnpm run ros:check", "node scripts/web/check-web-truth-table.cjs"],
   passed: blockers.length === 0,
   failed: blockers.length > 0,
   blockers,
@@ -316,6 +323,7 @@ const evidence = {
     localNodeApiPageCreated: exists("apps/web/app/open-source/local-node-api/page.tsx"),
     repoRecordsPageCreated: exists("apps/web/app/open-source/repo-records/page.tsx"),
     pushLocalObjectStorePageCreated: exists("apps/web/app/open-source/push-local-object-store/page.tsx"),
+    refConsensusPageCreated: exists("apps/web/app/open-source/ref-consensus/page.tsx"),
     truthTableCreated: truthSurfaces.every((surface) => statusTruth.includes(surface)),
     previewDataLabeled: true,
     liveClaimsWithoutEvidence: 0,
@@ -385,6 +393,7 @@ const evidence = {
       "Local node API source is public-alpha only until public federation, production node health, storage, deploy, domain, and rollback proof exist.",
       "Repo records and issue/PR workflows are public-alpha only until public collaboration, remote event-log durability, normal git transport, storage, and rollback proof exist.",
       "Push-local object manifests are public-alpha only until QStorage publication, normal git transport, remote ref durability, public object hosting, and rollback proof exist.",
+      "Ref-consensus local certificates are public-alpha only until public consensus, remote ref durability, normal git transport, storage, and rollback proof exist.",
       "CasterAgents runtime state remains closed until safety-lock and redaction proof exists.",
       "QStorage and CasterCloud runtime endpoints still require operator proof.",
       ".caster registry and public node federation still require signed live evidence.",

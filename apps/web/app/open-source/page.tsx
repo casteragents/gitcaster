@@ -56,6 +56,15 @@ export default function OpenSourcePage() {
         </div>
         <div className="grid">
           <div className="card">
+            <h3>Ref-consensus local certificates</h3>
+            <p>Signed ref updates, append-only local ledgers, conflict evidence, double-sign detection, and blocked public consensus proofs are now public.</p>
+            <div className="mini-list">
+              <a href={sitePath("/open-source/ref-consensus")}>Website page</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/packages/ref-consensus">Source</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/examples/refs">Fixture</a>
+            </div>
+          </div>
+          <div className="card">
             <h3>Push-local object manifests</h3>
             <p>Local bundle hashing, object manifests, safety scanning, ref certificate records, and blocked endpoint proofs are now public.</p>
             <div className="mini-list">

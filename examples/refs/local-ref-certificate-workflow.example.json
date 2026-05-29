@@ -1,0 +1,69 @@
+{
+  "type": "gitcaster.ref-consensus.local-certificate.example.v1",
+  "status": "public-alpha",
+  "runtime": "alpha-local",
+  "repo": "gitcaster://did:caster:zPublicAlphaOwner/ref-consensus-local",
+  "ref": "refs/heads/main",
+  "whatIsPublic": [
+    "local ref certificate payload shape",
+    "append-only local ledger shape",
+    "conflict evidence shape",
+    "double-sign evidence shape",
+    "blocked public consensus proof shape"
+  ],
+  "certificate": {
+    "type": "gitcaster.ref.update.v1",
+    "from": null,
+    "to": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "objectCids": [
+      "casterobj:local-ref-certificate-fixture"
+    ],
+    "status": "alpha-local",
+    "signatures": [
+      {
+        "signer": "did:caster:zPublicAlphaOwner",
+        "alg": "ed25519",
+        "sig": "[redacted-signature]"
+      },
+      {
+        "signer": "did:caster:zLocalAlphaNode",
+        "alg": "ed25519",
+        "sig": "[redacted-signature]"
+      }
+    ]
+  },
+  "conflictEvidence": {
+    "type": "gitcaster.ref.conflict.v1",
+    "status": "blocked",
+    "expectedFrom": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "attemptedFrom": null,
+    "resolution": "manual-review-required"
+  },
+  "doubleSignEvidence": {
+    "type": "gitcaster.ref.double-sign.v1",
+    "status": "blocked",
+    "resolution": "node-adjudication-required"
+  },
+  "blockedClaims": {
+    "publicConsensus": {
+      "status": "blocked",
+      "verified": false,
+      "reason": "No signed multi-node ref consensus proof is included."
+    },
+    "remoteRefDurability": {
+      "status": "blocked",
+      "verified": false,
+      "reason": "No remote append-only ledger burn-in proof is included."
+    },
+    "normalGitTransport": {
+      "status": "blocked",
+      "verified": false,
+      "reason": "No pack transport, storage, and rollback proof is included."
+    },
+    "productionRuntime": {
+      "status": "blocked",
+      "verified": false,
+      "reason": "Managed runtime evidence remains outside the public repo."
+    }
+  }
+}
