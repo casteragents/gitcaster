@@ -1,11 +1,34 @@
 {
   "type": "gitcaster.casterdid-identity.public-smoke.v1",
-  "status": "blocked_external",
+  "status": "passed",
   "publicDeliveryOnly": true,
   "managedRuntimeClaimed": false,
-  "createdAt": "2026-05-30T18:55:22.159Z",
-  "results": [],
-  "blockers": [
-    "Public delivery smoke must run after publication"
-  ]
+  "createdAt": "2026-05-30T19:07:54.255Z",
+  "results": [
+    {
+      "url": "https://casteragents.github.io/gitcaster/open-source/casterdid-identity/?v=1780168073104",
+      "statusCode": 200,
+      "ok": true,
+      "expectedText": "CasterDID identity for local GitCaster builders",
+      "containsExpectedText": true,
+      "bodySample": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/gitcaster/_next/stati"
+    },
+    {
+      "url": "https://casteragents.github.io/gitcaster/gitcaster-casterdid-identity.json?v=1780168073104",
+      "statusCode": 200,
+      "ok": true,
+      "expectedText": "gitcaster.casterdid-identity.public-alpha.v1",
+      "containsExpectedText": true,
+      "bodySample": "{\n  \"type\": \"gitcaster.casterdid-identity.public-alpha.v1\",\n  \"status\": \"passed\",\n  \"createdAt\": \"2026-05-30T18:55:22.157Z\",\n  \"localIdentityInspectionOnly\": true,\n  \"publicAlphaOn"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/casteragents/gitcaster/main/launch/evidence/casterdid-identity-public-alpha.json?v=1780168073104",
+      "statusCode": 200,
+      "ok": true,
+      "expectedText": "gitcaster.casterdid-identity.evidence.v1",
+      "containsExpectedText": true,
+      "bodySample": "{\n  \"type\": \"gitcaster.casterdid-identity.evidence.v1\",\n  \"title\": \"CasterDID identity public-alpha layer\",\n  \"createdAt\": \"2026-05-30T19:02:18.173Z\",\n  \"status\": \"passed\",\n  \"repo"
+    }
+  ],
+  "blockers": []
 }
