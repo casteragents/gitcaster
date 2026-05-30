@@ -12,6 +12,17 @@ export type PublicReleaseFeedItem = {
 export const publicReleaseFeed: PublicReleaseFeedItem[] = [
   {
     date: "2026-05-31",
+    title: "Protocol types layer",
+    summary:
+      "GitCaster now includes public-alpha protocol types for identities, capabilities, repo records, events, statuses, content types, error codes, fixture names, and placeholder-only envelope examples.",
+    website: "https://casteragents.github.io/gitcaster/open-source/protocol-types/",
+    repo: "https://github.com/casteragents/gitcaster",
+    casterchain: "https://casterchain.online/post/5365",
+    xPost: "https://x.com/casterchain/status/2060786312194740657",
+    farcaster: "https://warpcast.com/casterchain/0577cba89f"
+  },
+  {
+    date: "2026-05-31",
     title: "Agent skills notes",
     summary:
       "GitCaster now includes public-alpha agent-facing MCP skill notes for local tool names, schemas, structured blockers, placeholder-only plans, and public delivery smoke proof.",

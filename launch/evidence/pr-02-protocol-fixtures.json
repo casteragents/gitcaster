@@ -2,7 +2,7 @@
   "type": "gitcaster.pr.evidence.v1",
   "pr": "PR-02",
   "title": "Protocol types and fixtures",
-  "createdAt": "2026-05-30T18:02:36.632Z",
+  "createdAt": "2026-05-30T18:19:06.742Z",
   "repoRoot": "D:\\user\\xxxcrypto-vercel-clean\\.quilibrium\\gitcaster-public-github-release\\gitcaster-public-repo",
   "filesChanged": [
     "packages/protocol/package.json",
@@ -25,7 +25,7 @@
   "commandsRun": [
     {
       "command": "node scripts/protocol/check-fixtures.cjs",
-      "checkedAt": "2026-05-30T18:02:36.634Z",
+      "checkedAt": "2026-05-30T18:19:06.744Z",
       "status": "passed"
     }
   ],
