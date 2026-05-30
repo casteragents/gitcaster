@@ -94,7 +94,11 @@ function runNextBuild() {
   if (!fs.existsSync(nextBin)) {
     throw new Error(`Next.js CLI missing: ${nextBin}`);
   }
-  const result = cp.spawnSync(process.execPath, [nextBin, "build", "--webpack"], {
+  const args = [nextBin, "build", "--webpack"];
+  if (process.env.GITCASTER_WEB_BUILD_DEBUG === "1") {
+    args.push("--debug");
+  }
+  const result = cp.spawnSync(process.execPath, args, {
     cwd: workRoot,
     env: {
       ...process.env,
