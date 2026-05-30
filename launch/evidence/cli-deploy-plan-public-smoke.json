@@ -1,0 +1,65 @@
+{
+  "type": "gitcaster.cli-deploy-plan.public-smoke.v1",
+  "createdAt": "2026-05-30T12:25:05.580Z",
+  "commitSha": "1ea51bbf189cb3559af02cc7d2c9bf3f0dbc21fa",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "cli-deploy-plan-page",
+      "url": "https://casteragents.github.io/gitcaster/open-source/cli-deploy-plan/?v=1ea51bbf189cb3559af02cc7d2c9bf3f0dbc21fa",
+      "required": [
+        "CLI deploy plan dry-run",
+        "gc deploy plan",
+        "blocked_external"
+      ],
+      "status": "passed",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "ok": true,
+          "bytes": 22090,
+          "missing": []
+        }
+      ]
+    },
+    {
+      "name": "cli-deploy-plan-json",
+      "url": "https://casteragents.github.io/gitcaster/gitcaster-cli-deploy-plan.json?v=1ea51bbf189cb3559af02cc7d2c9bf3f0dbc21fa",
+      "required": [
+        "gitcaster.cli-deploy-plan.public-alpha.v1",
+        "managed-runtime",
+        "productionReady"
+      ],
+      "status": "passed",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "ok": true,
+          "bytes": 1505,
+          "missing": []
+        }
+      ]
+    },
+    {
+      "name": "open-source-index",
+      "url": "https://casteragents.github.io/gitcaster/open-source/?v=1ea51bbf189cb3559af02cc7d2c9bf3f0dbc21fa",
+      "required": [
+        "CLI deploy plan dry-run",
+        "Public update feed"
+      ],
+      "status": "passed",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": 200,
+          "ok": true,
+          "bytes": 72460,
+          "missing": []
+        }
+      ]
+    }
+  ],
+  "blockers": []
+}
