@@ -15,6 +15,7 @@
     "typecheck": "tsc -p tsconfig.json"
   },
   "dependencies": {
+    "@gitcaster/deploy-manifests": "workspace:*",
     "@gitcaster/protocol": "workspace:*"
   },
   "devDependencies": {

@@ -56,6 +56,15 @@ export default function OpenSourcePage() {
         </div>
         <div className="grid">
           <div className="card">
+            <h3>CLI deploy plan dry-run</h3>
+            <p>The CLI can now read local deploy manifests, write redacted plan evidence, and keep runtime, custody, billing, storage, domain, rollback, and release promotion blocked.</p>
+            <div className="mini-list">
+              <a href={sitePath("/open-source/cli-deploy-plan")}>Website page</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/apps/cli">Source</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/launch/evidence/cli-deploy-plan-public-alpha.json">Evidence</a>
+            </div>
+          </div>
+          <div className="card">
             <h3>Deploy manifest intake</h3>
             <p>Safe local deployment manifests, retired dependency markers, proof blockers, and production-claim rejection are now public-alpha.</p>
             <div className="mini-list">

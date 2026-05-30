@@ -2,7 +2,7 @@
   "type": "gitcaster.pr.evidence.v1",
   "pr": "PR-12",
   "title": "Web status and proof UI",
-  "createdAt": "2026-05-30T11:59:22.186Z",
+  "createdAt": "2026-05-30T12:21:04.315Z",
   "repoRoot": "D:\\user\\xxxcrypto-vercel-clean\\.quilibrium\\gitcaster-public-github-release\\gitcaster-public-repo",
   "filesChanged": [
     "apps/web/package.json",
@@ -26,6 +26,7 @@
     "apps/web/app/open-source/miniapp-templates/page.tsx",
     "apps/web/app/open-source/typescript-sdk/page.tsx",
     "apps/web/app/open-source/cli/page.tsx",
+    "apps/web/app/open-source/cli-deploy-plan/page.tsx",
     "apps/web/app/open-source/git-remote/page.tsx",
     "apps/web/app/open-source/mcp-source/page.tsx",
     "apps/web/app/open-source/local-node-api/page.tsx",
@@ -106,6 +107,8 @@
     "apps/cli/package.json",
     "apps/cli/README.md",
     "apps/cli/src/index.ts",
+    "apps/cli/src/commands/deploy.ts",
+    "apps/cli/src/node-shims.d.ts",
     "apps/cli/src/commands/push-local.ts",
     "apps/cli/src/commands/issue.ts",
     "apps/cli/src/commands/pr.ts",
@@ -142,6 +145,8 @@
     "apps/web/public/gitcaster-ref-consensus.md",
     "apps/web/public/gitcaster-security-redteam.md",
     "apps/web/public/gitcaster-deploy-manifest-intake.md",
+    "apps/web/public/gitcaster-cli-deploy-plan.md",
+    "apps/web/public/gitcaster-cli-deploy-plan.json",
     "examples/worlds/local-agent-grid.world.json",
     "examples/ros/local-agent-bridge.launch.json",
     "examples/ros/local-agent-bridge.messages.json",
@@ -166,6 +171,7 @@
     "docs-source/developer-layers/miniapp-templates.md",
     "docs-source/developer-layers/typescript-sdk.md",
     "docs-source/developer-layers/cli.md",
+    "docs-source/developer-layers/cli-deploy-plan.md",
     "docs-source/developer-layers/git-remote.md",
     "docs-source/developer-layers/mcp-source.md",
     "docs-source/developer-layers/local-node-api.md",
@@ -185,6 +191,7 @@
     "scripts/ecosystem/check-pr28-ecosystem-rc.cjs",
     "scripts/ecosystem/check-app-shell-catalog-public-alpha.cjs",
     "scripts/deploy/check-deploy-manifest-intake-public-alpha.cjs",
+    "scripts/cli/check-cli-deploy-plan-public-alpha.cjs",
     "scripts/security/run-beta-gate.cjs",
     "scripts/security/redteam/run-redteam-suite.cjs",
     "scripts/security/redteam/check-crypto-invariants.cjs",
@@ -200,6 +207,8 @@
     "launch/evidence/pr-28-ecosystem-rc-import.json",
     "launch/evidence/app-shell-catalog-public-hardening-source.json",
     "launch/evidence/deploy-manifest-intake-public-alpha.json",
+    "launch/evidence/cli-deploy-plan-local-dry-run.json",
+    "launch/evidence/cli-deploy-plan-public-alpha.json",
     "launch/evidence/pr-17-castercloud-qstorage-pipeline.json",
     "launch/evidence/pr-18-security-gate.json",
     "launch/evidence/pr-27-security-redteam-crypto-audit.json",
@@ -219,6 +228,7 @@
     "pnpm run deploy-manifest:check",
     "pnpm run sdk:check",
     "pnpm run cli:check",
+    "pnpm run cli-deploy-plan:check",
     "pnpm run git-remote:check",
     "pnpm run mcp:check",
     "pnpm run node-api:check",
@@ -228,8 +238,7 @@
     "pnpm run security-redteam:check",
     "pnpm run simulator:check",
     "pnpm run ros:check",
-    "node scripts/web/check-web-truth-table.cjs",
-    "node scripts/web/check-pr12-web-ui.cjs"
+    "node scripts/web/check-web-truth-table.cjs"
   ],
   "passed": true,
   "failed": false,
@@ -293,7 +302,7 @@
     },
     {
       "path": "apps/web/app/open-source/page.tsx",
-      "sha256": "3ec6b4008bc16a1ab3bad34ce358f8d6403c6b8a65d1bd242f0019fd712200ea"
+      "sha256": "137f30a0aa7ad501be97f320965a6445a6ea21db9aaf98a11e70abc045124e31"
     },
     {
       "path": "apps/web/app/open-source/simulator/page.tsx",
@@ -317,7 +326,11 @@
     },
     {
       "path": "apps/web/app/open-source/cli/page.tsx",
-      "sha256": "bb23c4bd4e19bbaaf4452078321bbaa59ae2bdb510bee069ae4f354cb25a96a5"
+      "sha256": "111248f8847c545efda83dcd1b27b5deb767e0d7b7d034cfd5e2175734bda672"
+    },
+    {
+      "path": "apps/web/app/open-source/cli-deploy-plan/page.tsx",
+      "sha256": "2c025bc4a1824458fd51657c0cc4296c37685f153fe6b3f10a7131866a4ffdc8"
     },
     {
       "path": "apps/web/app/open-source/git-remote/page.tsx",
@@ -417,7 +430,7 @@
     },
     {
       "path": "apps/web/lib/status-truth.ts",
-      "sha256": "b50d5f380ff79d4395ca124f1578c6b8b195494ec518800a47e90fff71445ef1"
+      "sha256": "fcf6b30cdb7ae743a1ad138f7f1da041944c1143b9e99e7cdc041285b18a963d"
     },
     {
       "path": "apps/web/lib/preview-data.ts",
@@ -425,7 +438,7 @@
     },
     {
       "path": "apps/web/lib/evidence-links.ts",
-      "sha256": "0dc1ba81a720d99d6d4a9f2bc71cf6d57f366179e057027e9fccacad0f2382f9"
+      "sha256": "b94f3633cc03663cfdfa362b74fbf5002227b214ed2a34e959ff4816b67d04d8"
     },
     {
       "path": "apps/web/lib/caster-copy.ts",
@@ -433,7 +446,7 @@
     },
     {
       "path": "apps/web/lib/public-release-feed.ts",
-      "sha256": "592ecd5cc8144bc4cbde70b230bb7ec5dd90913af65f861511ac6819d09ccfd7"
+      "sha256": "e4e2e8a8325e70412deeaf269a688aa6e06aa28e08fcf9da2931933d5663d9b7"
     },
     {
       "path": "apps/web/styles/caster-theme.css",
@@ -465,11 +478,11 @@
     },
     {
       "path": "scripts/web/check-web-truth-table.cjs",
-      "sha256": "da8e4559b83789b526e8c3b1a9f96a0a677d082160174a956722bc5d90b7d1cf"
+      "sha256": "7cc9d423e8f180e419141ab9e5293e08740bf7d0b69b0cb44d2780c3e05650cb"
     },
     {
       "path": "scripts/web/check-pr12-web-ui.cjs",
-      "sha256": "e86d195c2bb8796322ae7cc74f98766f7261510f61648b35271728a8b5501c12"
+      "sha256": "0382f17757d6c1e09081a91f7add5638a60d0984cce408e728a7dd5008937170"
     },
     {
       "path": "LICENSE",
@@ -629,7 +642,7 @@
     },
     {
       "path": "apps/cli/package.json",
-      "sha256": "7618167ebf3b62455e2da4b4aaeadd833cbe6373611436364751f720238b47b9"
+      "sha256": "f17a0d65d9d4f290ae7c8d55a0d4dc4a1edaa4adf2673c9cabe0b754f9e8dc51"
     },
     {
       "path": "apps/cli/README.md",
@@ -637,7 +650,15 @@
     },
     {
       "path": "apps/cli/src/index.ts",
-      "sha256": "f32f2243a61d2ba28c27943de19d37881bb0584d9249e635ec40c57c167da6db"
+      "sha256": "ac95d14fde85260d4d2e3ce4a4abf0faa93b3a0b2dc4fa5cc05e862c9f3581ca"
+    },
+    {
+      "path": "apps/cli/src/commands/deploy.ts",
+      "sha256": "218b15d53762aa4bf364d47a26ad78389bf63a2a593a6e0253ad841bd936bb3b"
+    },
+    {
+      "path": "apps/cli/src/node-shims.d.ts",
+      "sha256": "89bc410d9e7289e7767bdc086476072e3e3e842cda89586a557b7d892b9213ed"
     },
     {
       "path": "apps/cli/src/commands/push-local.ts",
@@ -657,7 +678,7 @@
     },
     {
       "path": "apps/cli/src/cli.test.ts",
-      "sha256": "71e5cc1a9c20a6642a93256abf50b8669b879b85a7687722c4fb38e44156bda1"
+      "sha256": "dda6f61c2781fb0050b087018ddb91e5c8924a905ce082e2115487009683cf8a"
     },
     {
       "path": "apps/git-remote-gitcaster/package.json",
@@ -784,6 +805,14 @@
       "sha256": "7fd2f8c7f821ba638460d0a2888c901289672bb6c3f13d501cfc33841f9a226d"
     },
     {
+      "path": "apps/web/public/gitcaster-cli-deploy-plan.md",
+      "sha256": "5f44c8ec7b16975c33274c17f0c938568e39f0148a1d5802a89cc6e6f94cdaeb"
+    },
+    {
+      "path": "apps/web/public/gitcaster-cli-deploy-plan.json",
+      "sha256": "fce9bce1cf63a80b6757faaf4ea6b5a2d880a0e0c52df9eda45097bd564a20ea"
+    },
+    {
       "path": "examples/worlds/local-agent-grid.world.json",
       "sha256": "825d90a5b04ffc658af864a3ba254becb2386c27879626f22907e5198ae930bd"
     },
@@ -877,7 +906,11 @@
     },
     {
       "path": "docs-source/developer-layers/cli.md",
-      "sha256": "a93ad50ec4ffa9cbbf5a2235d4f0a6a53b2916f799e04bf8f33fffc9e4175fda"
+      "sha256": "f409749877a6906fddeaeeada8480840def89cf4e65b32cceb89bafa745ffa32"
+    },
+    {
+      "path": "docs-source/developer-layers/cli-deploy-plan.md",
+      "sha256": "84b57061b63aadc61569eb3c204aaf2b69f186dc9e5f8dece37206c72e5ad7cd"
     },
     {
       "path": "docs-source/developer-layers/git-remote.md",
@@ -956,6 +989,10 @@
       "sha256": "b445c4741a78f04026cd79782a569d52caf1287c4d8553e6920db381fc8bbae6"
     },
     {
+      "path": "scripts/cli/check-cli-deploy-plan-public-alpha.cjs",
+      "sha256": "85a344396d5e3573117f06afeec0139ec77edc0ed805a9bd1430b5f516b9cf42"
+    },
+    {
       "path": "scripts/security/run-beta-gate.cjs",
       "sha256": "acb4006a420f28a195ac01397e8e143ff2714cef666b1f567762fea40af2f32c"
     },
@@ -1013,7 +1050,15 @@
     },
     {
       "path": "launch/evidence/deploy-manifest-intake-public-alpha.json",
-      "sha256": "19e342d6202e931f5cdd18fab70360a0849461734b29981300c880be2e6d587f"
+      "sha256": "0311273a777e03273b5bfb1fa458b95b8af7e85c5ab1792af9dec63c5ae272cd"
+    },
+    {
+      "path": "launch/evidence/cli-deploy-plan-local-dry-run.json",
+      "sha256": "24db95a30416359ec3280674382b286009088f86cdca353e7568582d561827ef"
+    },
+    {
+      "path": "launch/evidence/cli-deploy-plan-public-alpha.json",
+      "sha256": "8fbe2f83ba02cbce731cea4e8c0307419b594ede8eb4db1906948c984babdce4"
     },
     {
       "path": "launch/evidence/pr-17-castercloud-qstorage-pipeline.json",
@@ -1076,6 +1121,8 @@
     "miniappTemplatesPageCreated": true,
     "typeScriptSdkPageCreated": true,
     "cliPageCreated": true,
+    "cliDeployPlanPageCreated": true,
+    "cliDeployPlanEvidenceFound": true,
     "gitRemotePageCreated": true,
     "mcpSourcePageCreated": true,
     "localNodeApiPageCreated": true,
@@ -1142,6 +1189,9 @@
       "observability package",
       "TypeScript SDK source",
       "CLI source",
+      "CLI deploy plan dry-run",
+      "CLI deploy plan evidence",
+      "CLI deploy plan blockers",
       "git-remote-gitcaster source",
       "MCP source",
       "local node API source",
@@ -1215,6 +1265,7 @@
       "Miniapp templates are local public-alpha only until runtime endpoint, storage publish, and native domain proof exist.",
       "TypeScript SDK source is public-alpha only until package release, endpoint, custody, registry, and contract utility proof exist.",
       "CLI source is public-alpha only until installer release, node mutation, custody, storage, and domain proof exist.",
+      "CLI deploy plan dry-run is public-alpha only until installer, managed runtime, native storage, native domain, custody, billing, rollback, audit, and release-candidate proof exist.",
       "Git remote helper source is public-alpha only until pack transport, node mutation, storage, and rollback proof exist.",
       "MCP source is public-alpha only until public gateway, custody, node mutation, storage, and domain proof exist.",
       "Local node API source is public-alpha only until public federation, production node health, storage, deploy, domain, and rollback proof exist.",

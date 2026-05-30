@@ -1,0 +1,73 @@
+{
+  "type": "gitcaster.cli-deploy-plan.public-alpha.v1",
+  "status": "passed",
+  "command": "gc deploy plan",
+  "localEvidence": "launch/evidence/cli-deploy-plan-local-dry-run.json",
+  "localDryRunOnly": true,
+  "productionReadiness": "blocked_external",
+  "claims": {
+    "managedRuntimeAvailable": false,
+    "nativeStoragePublished": false,
+    "nativeDomainMapped": false,
+    "custodyProvisioned": false,
+    "billingEnabled": false,
+    "rollbackVerified": false,
+    "productionReady": false
+  },
+  "blockedCapabilities": [
+    {
+      "id": "managed-runtime",
+      "status": "blocked_external"
+    },
+    {
+      "id": "native-storage",
+      "status": "blocked_external"
+    },
+    {
+      "id": "native-domain",
+      "status": "blocked_external"
+    },
+    {
+      "id": "custody",
+      "status": "blocked_external"
+    },
+    {
+      "id": "billing",
+      "status": "blocked_external"
+    },
+    {
+      "id": "rollback",
+      "status": "blocked_external"
+    },
+    {
+      "id": "production-readiness",
+      "status": "blocked_external"
+    }
+  ],
+  "retiredRuntimeDependencies": [
+    {
+      "id": "vercel",
+      "requiredRuntime": false
+    },
+    {
+      "id": "cloudflare",
+      "requiredRuntime": false
+    },
+    {
+      "id": "supabase",
+      "requiredRuntime": false
+    },
+    {
+      "id": "redis",
+      "requiredRuntime": false
+    },
+    {
+      "id": "r2",
+      "requiredRuntime": false
+    },
+    {
+      "id": "qconsole",
+      "requiredRuntime": false
+    }
+  ]
+}

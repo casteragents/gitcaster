@@ -12,6 +12,17 @@ export type PublicReleaseFeedItem = {
 export const publicReleaseFeed: PublicReleaseFeedItem[] = [
   {
     date: "2026-05-30",
+    title: "CLI deploy plan dry-run",
+    summary:
+      "GitCaster now includes gc deploy plan for local manifest validation, redacted dry-run evidence, explicit promotion blockers, and false runtime/custody/billing/domain claims.",
+    website: "https://casteragents.github.io/gitcaster/open-source/cli-deploy-plan/",
+    repo: "https://github.com/casteragents/gitcaster",
+    casterchain: "pending",
+    xPost: "pending",
+    farcaster: "pending"
+  },
+  {
+    date: "2026-05-30",
     title: "Deploy manifest intake",
     summary:
       "GitCaster now includes public-alpha deploy manifest intake for local dry-run release plans, retired dependency markers, proof blockers, and production-claim rejection.",

@@ -28,6 +28,7 @@ const filesChanged = [
   "apps/web/app/open-source/miniapp-templates/page.tsx",
   "apps/web/app/open-source/typescript-sdk/page.tsx",
   "apps/web/app/open-source/cli/page.tsx",
+  "apps/web/app/open-source/cli-deploy-plan/page.tsx",
   "apps/web/app/open-source/git-remote/page.tsx",
   "apps/web/app/open-source/mcp-source/page.tsx",
   "apps/web/app/open-source/local-node-api/page.tsx",
@@ -108,6 +109,8 @@ const filesChanged = [
   "apps/cli/package.json",
   "apps/cli/README.md",
   "apps/cli/src/index.ts",
+  "apps/cli/src/commands/deploy.ts",
+  "apps/cli/src/node-shims.d.ts",
   "apps/cli/src/commands/push-local.ts",
   "apps/cli/src/commands/issue.ts",
   "apps/cli/src/commands/pr.ts",
@@ -144,6 +147,8 @@ const filesChanged = [
   "apps/web/public/gitcaster-ref-consensus.md",
   "apps/web/public/gitcaster-security-redteam.md",
   "apps/web/public/gitcaster-deploy-manifest-intake.md",
+  "apps/web/public/gitcaster-cli-deploy-plan.md",
+  "apps/web/public/gitcaster-cli-deploy-plan.json",
   "examples/worlds/local-agent-grid.world.json",
   "examples/ros/local-agent-bridge.launch.json",
   "examples/ros/local-agent-bridge.messages.json",
@@ -168,6 +173,7 @@ const filesChanged = [
   "docs-source/developer-layers/miniapp-templates.md",
   "docs-source/developer-layers/typescript-sdk.md",
   "docs-source/developer-layers/cli.md",
+  "docs-source/developer-layers/cli-deploy-plan.md",
   "docs-source/developer-layers/git-remote.md",
   "docs-source/developer-layers/mcp-source.md",
   "docs-source/developer-layers/local-node-api.md",
@@ -187,6 +193,7 @@ const filesChanged = [
   "scripts/ecosystem/check-pr28-ecosystem-rc.cjs",
   "scripts/ecosystem/check-app-shell-catalog-public-alpha.cjs",
   "scripts/deploy/check-deploy-manifest-intake-public-alpha.cjs",
+  "scripts/cli/check-cli-deploy-plan-public-alpha.cjs",
   "scripts/security/run-beta-gate.cjs",
   "scripts/security/redteam/run-redteam-suite.cjs",
   "scripts/security/redteam/check-crypto-invariants.cjs",
@@ -202,6 +209,8 @@ const filesChanged = [
   "launch/evidence/pr-28-ecosystem-rc-import.json",
   "launch/evidence/app-shell-catalog-public-hardening-source.json",
   "launch/evidence/deploy-manifest-intake-public-alpha.json",
+  "launch/evidence/cli-deploy-plan-local-dry-run.json",
+  "launch/evidence/cli-deploy-plan-public-alpha.json",
   "launch/evidence/pr-17-castercloud-qstorage-pipeline.json",
   "launch/evidence/pr-18-security-gate.json",
   "launch/evidence/pr-27-security-redteam-crypto-audit.json",
@@ -248,6 +257,9 @@ const truthSurfaces = [
   "observability package",
   "TypeScript SDK source",
   "CLI source",
+  "CLI deploy plan dry-run",
+  "CLI deploy plan evidence",
+  "CLI deploy plan blockers",
   "git-remote-gitcaster source",
   "MCP source",
   "local node API source",
@@ -325,6 +337,9 @@ if (!exists("apps/web/app/open-source/deploy-manifest-intake/page.tsx")) blocker
 if (!exists("apps/web/public/gitcaster-deploy-manifest-intake.json")) blockers.push("generated deploy manifest intake JSON missing");
 if (!statusTruth.includes("packages/sdk-typescript")) blockers.push("status truth must include TypeScript SDK package evidence");
 if (!statusTruth.includes("apps/cli") || !statusTruth.includes("examples/cli/local-command-plan.example.json")) blockers.push("status truth must include CLI source and local command plan evidence");
+if (!statusTruth.includes("apps/cli/src/commands/deploy.ts") || !statusTruth.includes("launch/evidence/cli-deploy-plan-public-alpha.json") || !statusTruth.includes("scripts/cli/check-cli-deploy-plan-public-alpha.cjs")) blockers.push("status truth must include CLI deploy plan command, evidence, and checker");
+if (!exists("apps/web/app/open-source/cli-deploy-plan/page.tsx")) blockers.push("CLI deploy plan open-source page missing");
+if (!exists("apps/web/public/gitcaster-cli-deploy-plan.json")) blockers.push("generated CLI deploy plan JSON missing");
 if (!statusTruth.includes("apps/git-remote-gitcaster") || !statusTruth.includes("examples/git-remote/blocked-transport-plan.example.json")) blockers.push("status truth must include Git remote helper source and blocked transport plan evidence");
 if (!statusTruth.includes("apps/mcp") || !statusTruth.includes("examples/mcp/local-tool-plan.example.json") || !statusTruth.includes("launch/evidence/pr-11-mcp-tools.json")) blockers.push("status truth must include MCP source, local tool plan, and PR-11 evidence");
 if (!statusTruth.includes("apps/node") || !statusTruth.includes("examples/node/local-api-smoke.example.json") || !statusTruth.includes("launch/evidence/local-node-api-source.json")) blockers.push("status truth must include local node API source, smoke fixture, and evidence");
@@ -353,7 +368,7 @@ const evidence = {
   createdAt: new Date().toISOString(),
   repoRoot,
   filesChanged,
-  commandsRun: ["pnpm run api-tutorials:check", "pnpm run miniapp-templates:check", "pnpm run app-shell-catalog:check", "pnpm run deploy-manifest:check", "pnpm run sdk:check", "pnpm run cli:check", "pnpm run git-remote:check", "pnpm run mcp:check", "pnpm run node-api:check", "pnpm run repo-records:check", "pnpm run push-local-object-store:check", "pnpm run ref-consensus:check", "pnpm run security-redteam:check", "pnpm run simulator:check", "pnpm run ros:check", "node scripts/web/check-web-truth-table.cjs"],
+  commandsRun: ["pnpm run api-tutorials:check", "pnpm run miniapp-templates:check", "pnpm run app-shell-catalog:check", "pnpm run deploy-manifest:check", "pnpm run sdk:check", "pnpm run cli:check", "pnpm run cli-deploy-plan:check", "pnpm run git-remote:check", "pnpm run mcp:check", "pnpm run node-api:check", "pnpm run repo-records:check", "pnpm run push-local-object-store:check", "pnpm run ref-consensus:check", "pnpm run security-redteam:check", "pnpm run simulator:check", "pnpm run ros:check", "node scripts/web/check-web-truth-table.cjs"],
   passed: blockers.length === 0,
   failed: blockers.length > 0,
   blockers,
@@ -378,6 +393,8 @@ const evidence = {
     miniappTemplatesPageCreated: exists("apps/web/app/open-source/miniapp-templates/page.tsx"),
     typeScriptSdkPageCreated: exists("apps/web/app/open-source/typescript-sdk/page.tsx"),
     cliPageCreated: exists("apps/web/app/open-source/cli/page.tsx"),
+    cliDeployPlanPageCreated: exists("apps/web/app/open-source/cli-deploy-plan/page.tsx"),
+    cliDeployPlanEvidenceFound: exists("launch/evidence/cli-deploy-plan-public-alpha.json"),
     gitRemotePageCreated: exists("apps/web/app/open-source/git-remote/page.tsx"),
     mcpSourcePageCreated: exists("apps/web/app/open-source/mcp-source/page.tsx"),
     localNodeApiPageCreated: exists("apps/web/app/open-source/local-node-api/page.tsx"),
@@ -453,6 +470,7 @@ const evidence = {
       "Miniapp templates are local public-alpha only until runtime endpoint, storage publish, and native domain proof exist.",
       "TypeScript SDK source is public-alpha only until package release, endpoint, custody, registry, and contract utility proof exist.",
       "CLI source is public-alpha only until installer release, node mutation, custody, storage, and domain proof exist.",
+      "CLI deploy plan dry-run is public-alpha only until installer, managed runtime, native storage, native domain, custody, billing, rollback, audit, and release-candidate proof exist.",
       "Git remote helper source is public-alpha only until pack transport, node mutation, storage, and rollback proof exist.",
       "MCP source is public-alpha only until public gateway, custody, node mutation, storage, and domain proof exist.",
       "Local node API source is public-alpha only until public federation, production node health, storage, deploy, domain, and rollback proof exist.",

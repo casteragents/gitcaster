@@ -1,13 +1,16 @@
 import { sitePath } from "../../../lib/site-url";
 
 const publicArtifacts = [
-  ["CLI source", "apps/cli", "Local command helpers for push payloads, issues, pull requests, and MCP serve planning."],
+  ["CLI source", "apps/cli", "Local command helpers for push payloads, issues, pull requests, MCP serve planning, and deploy-plan evidence."],
+  ["Deploy plan command", "apps/cli/src/commands/deploy.ts", "A local dry-run command that reads a deploy manifest and writes redacted proof material."],
   ["Command plan fixture", "examples/cli/local-command-plan.example.json", "A placeholder-only command catalog with runtime claims blocked."],
+  ["Deploy manifest fixture", "examples/deploy/local-deploy-manifest.example.json", "A safe local manifest used by the deploy-plan checker."],
   ["CLI docs", "docs-source/developer-layers/cli.md", "Contribution notes for local checks and reserved managed layers."]
 ];
 
 const workflow = [
   ["Inspect commands", "Review command helpers and payload shapes before wiring a runtime."],
+  ["Plan deploys locally", "Run gc deploy plan against a local manifest to generate redacted evidence for review."],
   ["Keep mutation gated", "Node writes, signing custody, storage publish, and domain deploy remain blocked until proof exists."],
   ["Run local checks", "Use the CLI check and public secret scan before opening changes."]
 ];
@@ -29,13 +32,14 @@ export default function CliOpenSourcePage() {
         <p className="lede">
           GitCaster now publishes its CLI source as a public-alpha local command
           surface. Builders can inspect command helpers for local push payloads,
-          issues, pull requests, and MCP serve planning while installer,
+          issues, pull requests, MCP serve planning, and deploy-plan evidence while installer,
           production node, signing custody, storage, and domain claims remain
           blocked.
         </p>
         <div className="actions">
           <a className="button primary" href="https://github.com/casteragents/gitcaster/tree/main/apps/cli">CLI source</a>
           <a className="button" href="https://github.com/casteragents/gitcaster/tree/main/examples/cli">Command fixture</a>
+          <a className="button" href={sitePath("/open-source/cli-deploy-plan")}>Deploy plan</a>
           <a className="button" href={sitePath("/status")}>Status proof</a>
         </div>
       </section>

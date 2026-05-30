@@ -2,13 +2,16 @@ import {
   buildIssueCreatePayload,
   buildIssueUpdatePayload,
   buildMcpServeCommand,
+  buildDeployPlanEvidence,
   buildPRCreatePayload,
   buildPRMergePayload,
   buildPRReviewPayload,
   buildPushLocalPayload,
   gitCasterCliHelp,
+  parseDeployPlanArgs,
   printPushLocalResult,
 } from "./index.js";
+import { createLocalDeployManifest } from "@gitcaster/deploy-manifests";
 
 function assert(condition: boolean, message: string): void {
   if (!condition) {
@@ -62,12 +65,31 @@ const mcp = buildMcpServeCommand();
 assertEqual(mcp.command, "gc", "MCP serve command should use gc");
 assertEqual(mcp.args.join(" "), "mcp serve", "MCP serve args should be stable");
 
+const deployArgs = parseDeployPlanArgs(["--manifest", "examples/deploy/local-deploy-manifest.example.json", "--out", "launch/evidence/cli-deploy-plan-local-dry-run.json"]);
+assertEqual(deployArgs.manifestPath, "examples/deploy/local-deploy-manifest.example.json", "deploy plan should read manifest path");
+const deployPlan = buildDeployPlanEvidence({
+  manifest: createLocalDeployManifest({
+    id: "cli-deploy-plan-fixture",
+    appId: "gitcaster-studio",
+    name: "GitCaster Studio",
+    layer: "app",
+    sourcePath: "apps/web"
+  }),
+  evidencePath: "launch/evidence/cli-deploy-plan-local-dry-run.json"
+});
+assertEqual(deployPlan.type, "gitcaster.deploy-plan.local-dry-run.v1", "deploy plan evidence type should be stable");
+assertEqual(deployPlan.status, "public-alpha", "deploy plan should remain public-alpha");
+assertEqual(deployPlan.claims.productionReady, false, "deploy plan should not claim production readiness");
+assert(deployPlan.blockedCapabilities.some((capability) => capability.id === "managed-runtime"), "deploy plan should block managed runtime");
+assert(deployPlan.retiredRuntimeDependencies.every((dependency) => dependency.requiredRuntime === false), "deploy plan should not require retired runtime dependencies");
+
 const help = gitCasterCliHelp();
 assert(help.includes("gc repo push-local"), "help should include push-local");
 assert(help.includes("gc issue create"), "help should include issue create");
 assert(help.includes("gc pr create"), "help should include PR create");
 assert(help.includes("gc mcp serve"), "help should include MCP serve");
+assert(help.includes("gc deploy plan"), "help should include deploy plan");
 assert(!/production-ready|deployed|verified|global install/i.test(help), "help should not claim production or installer status");
 assert(!/(api[_-]?key|secret|token|private[_-]?key)\s*[:=]/i.test(help), "help should not include secret literals");
 
-console.log(JSON.stringify({ status: "passed", package: "@gitcaster/cli", commands: ["repo push-local", "issue", "pr", "mcp"] }));
+console.log(JSON.stringify({ status: "passed", package: "@gitcaster/cli", commands: ["repo push-local", "issue", "pr", "mcp", "deploy plan"] }));

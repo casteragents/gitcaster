@@ -1,0 +1,108 @@
+{
+  "type": "gitcaster.cli-deploy-plan.evidence.v1",
+  "createdAt": "2026-05-30T12:16:25.197Z",
+  "status": "passed",
+  "command": "gc deploy plan",
+  "package": "@gitcaster/cli",
+  "manifestPackage": "@gitcaster/deploy-manifests",
+  "localEvidence": "launch/evidence/cli-deploy-plan-local-dry-run.json",
+  "publicJson": "apps/web/public/gitcaster-cli-deploy-plan.json",
+  "website": "apps/web/app/open-source/cli-deploy-plan/page.tsx",
+  "commandsRun": [
+    "pnpm run cli:check",
+    "node apps/cli/dist/index.js deploy plan --manifest examples/deploy/local-deploy-manifest.example.json --out launch/evidence/cli-deploy-plan-local-dry-run.json",
+    "node scripts/cli/check-cli-deploy-plan-public-alpha.cjs"
+  ],
+  "blockers": [],
+  "warnings": [],
+  "validation": {
+    "status": "passed",
+    "manifestId": "deploy-manifest-gitcaster-studio-local",
+    "appId": "gitcaster-studio",
+    "blockers": [],
+    "warnings": [],
+    "productionReadiness": "blocked_external",
+    "localDryRunAccepted": true,
+    "managedRuntimeRequired": false,
+    "requiredRuntimeDependencies": []
+  },
+  "artifacts": [
+    {
+      "path": "apps/cli/package.json",
+      "sha256": "f17a0d65d9d4f290ae7c8d55a0d4dc4a1edaa4adf2673c9cabe0b754f9e8dc51"
+    },
+    {
+      "path": "apps/cli/src/index.ts",
+      "sha256": "ac95d14fde85260d4d2e3ce4a4abf0faa93b3a0b2dc4fa5cc05e862c9f3581ca"
+    },
+    {
+      "path": "apps/cli/src/commands/deploy.ts",
+      "sha256": "218b15d53762aa4bf364d47a26ad78389bf63a2a593a6e0253ad841bd936bb3b"
+    },
+    {
+      "path": "apps/cli/src/node-shims.d.ts",
+      "sha256": "89bc410d9e7289e7767bdc086476072e3e3e842cda89586a557b7d892b9213ed"
+    },
+    {
+      "path": "apps/cli/src/cli.test.ts",
+      "sha256": "dda6f61c2781fb0050b087018ddb91e5c8924a905ce082e2115487009683cf8a"
+    },
+    {
+      "path": "packages/deploy-manifests/src/deploy-manifest.ts",
+      "sha256": "a61303663e3047ae40a7daf25690949f97048f3044f9971641f8232266140428"
+    },
+    {
+      "path": "examples/deploy/local-deploy-manifest.example.json",
+      "sha256": "b7e0d09828941b3c756f31146ba21bca98d50f92b07eda1453323f53370138c0"
+    },
+    {
+      "path": "docs-source/developer-layers/cli.md",
+      "sha256": "f409749877a6906fddeaeeada8480840def89cf4e65b32cceb89bafa745ffa32"
+    },
+    {
+      "path": "docs-source/developer-layers/cli-deploy-plan.md",
+      "sha256": "84b57061b63aadc61569eb3c204aaf2b69f186dc9e5f8dece37206c72e5ad7cd"
+    },
+    {
+      "path": "apps/web/app/open-source/cli/page.tsx",
+      "sha256": "111248f8847c545efda83dcd1b27b5deb767e0d7b7d034cfd5e2175734bda672"
+    },
+    {
+      "path": "apps/web/app/open-source/cli-deploy-plan/page.tsx",
+      "sha256": "2c025bc4a1824458fd51657c0cc4296c37685f153fe6b3f10a7131866a4ffdc8"
+    },
+    {
+      "path": "apps/web/public/gitcaster-cli-deploy-plan.md",
+      "sha256": "5f44c8ec7b16975c33274c17f0c938568e39f0148a1d5802a89cc6e6f94cdaeb"
+    },
+    {
+      "path": "scripts/cli/check-cli-deploy-plan-public-alpha.cjs",
+      "sha256": "85a344396d5e3573117f06afeec0139ec77edc0ed805a9bd1430b5f516b9cf42"
+    },
+    {
+      "path": "launch/evidence/cli-deploy-plan-local-dry-run.json",
+      "sha256": "24db95a30416359ec3280674382b286009088f86cdca353e7568582d561827ef"
+    },
+    {
+      "path": "apps/web/public/gitcaster-cli-deploy-plan.json",
+      "sha256": "fce9bce1cf63a80b6757faaf4ea6b5a2d880a0e0c52df9eda45097bd564a20ea"
+    }
+  ],
+  "claims": {
+    "managedRuntimeAvailable": false,
+    "nativeStoragePublished": false,
+    "nativeDomainMapped": false,
+    "custodyProvisioned": false,
+    "billingEnabled": false,
+    "rollbackVerified": false,
+    "productionReady": false
+  },
+  "nextProofRequired": [
+    "installer release receipt and user install smoke proof",
+    "managed runtime deploy receipt and rollback proof",
+    "native storage publish/read proof",
+    "native domain registry and browser smoke proof",
+    "custody signer reference with redacted receipt",
+    "billing policy, abuse-control proof, security audit, and release-candidate evidence"
+  ]
+}

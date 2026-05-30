@@ -28,6 +28,7 @@ const requiredFiles = [
   "apps/web/app/open-source/miniapp-templates/page.tsx",
   "apps/web/app/open-source/typescript-sdk/page.tsx",
   "apps/web/app/open-source/cli/page.tsx",
+  "apps/web/app/open-source/cli-deploy-plan/page.tsx",
   "apps/web/app/open-source/git-remote/page.tsx",
   "apps/web/app/open-source/mcp-source/page.tsx",
   "apps/web/app/open-source/local-node-api/page.tsx",
@@ -108,6 +109,8 @@ const requiredFiles = [
   "apps/cli/package.json",
   "apps/cli/README.md",
   "apps/cli/src/index.ts",
+  "apps/cli/src/commands/deploy.ts",
+  "apps/cli/src/node-shims.d.ts",
   "apps/cli/src/commands/push-local.ts",
   "apps/cli/src/commands/issue.ts",
   "apps/cli/src/commands/pr.ts",
@@ -144,6 +147,7 @@ const requiredFiles = [
   "apps/web/public/gitcaster-ref-consensus.md",
   "apps/web/public/gitcaster-security-redteam.md",
   "apps/web/public/gitcaster-deploy-manifest-intake.md",
+  "apps/web/public/gitcaster-cli-deploy-plan.md",
   "examples/worlds/local-agent-grid.world.json",
   "examples/ros/local-agent-bridge.launch.json",
   "examples/ros/local-agent-bridge.messages.json",
@@ -168,6 +172,7 @@ const requiredFiles = [
   "docs-source/developer-layers/miniapp-templates.md",
   "docs-source/developer-layers/typescript-sdk.md",
   "docs-source/developer-layers/cli.md",
+  "docs-source/developer-layers/cli-deploy-plan.md",
   "docs-source/developer-layers/git-remote.md",
   "docs-source/developer-layers/mcp-source.md",
   "docs-source/developer-layers/local-node-api.md",
@@ -187,6 +192,7 @@ const requiredFiles = [
   "scripts/ecosystem/check-pr28-ecosystem-rc.cjs",
   "scripts/ecosystem/check-app-shell-catalog-public-alpha.cjs",
   "scripts/deploy/check-deploy-manifest-intake-public-alpha.cjs",
+  "scripts/cli/check-cli-deploy-plan-public-alpha.cjs",
   "scripts/security/run-beta-gate.cjs",
   "scripts/security/redteam/run-redteam-suite.cjs",
   "scripts/security/redteam/check-crypto-invariants.cjs",
@@ -202,6 +208,8 @@ const requiredFiles = [
   "launch/evidence/pr-28-ecosystem-rc-import.json",
   "launch/evidence/app-shell-catalog-public-hardening-source.json",
   "launch/evidence/deploy-manifest-intake-public-alpha.json",
+  "launch/evidence/cli-deploy-plan-local-dry-run.json",
+  "launch/evidence/cli-deploy-plan-public-alpha.json",
   "launch/evidence/pr-17-castercloud-qstorage-pipeline.json",
   "launch/evidence/pr-18-security-gate.json",
   "launch/evidence/pr-27-security-redteam-crypto-audit.json",
@@ -287,7 +295,7 @@ if (!packageOnly) {
     if (evidence.summary?.publicNodesOnlineClaimed !== false) blockers.push("publicNodesOnlineClaimed must be false");
     if (evidence.summary?.multiNodeReplicationClaimed !== false) blockers.push("multiNodeReplicationClaimed must be false");
     if (evidence.summary?.unhackableClaimed !== false) blockers.push("unhackableClaimed must be false");
-    if (!Array.isArray(evidence.truthTable?.surfaces) || evidence.truthTable.surfaces.length !== 53) blockers.push("truth table must include 53 current surfaces");
+    if (!Array.isArray(evidence.truthTable?.surfaces) || evidence.truthTable.surfaces.length !== 56) blockers.push("truth table must include 56 current surfaces");
     if (!evidence.truthTable?.surfaces?.includes("GitHub Pages website")) blockers.push("truth table must include GitHub Pages website");
     if (!evidence.truthTable?.surfaces?.includes("open-core boundary")) blockers.push("truth table must include open-core boundary");
     if (!evidence.truthTable?.surfaces?.includes("simulator package")) blockers.push("truth table must include simulator package");
@@ -298,6 +306,9 @@ if (!packageOnly) {
     if (!evidence.truthTable?.surfaces?.includes("app shell dependency-risk labels")) blockers.push("truth table must include app shell dependency-risk labels");
     if (!evidence.truthTable?.surfaces?.includes("deploy manifest intake")) blockers.push("truth table must include deploy manifest intake");
     if (!evidence.truthTable?.surfaces?.includes("deploy manifest production blockers")) blockers.push("truth table must include deploy manifest production blockers");
+    if (!evidence.truthTable?.surfaces?.includes("CLI deploy plan dry-run")) blockers.push("truth table must include CLI deploy plan dry-run");
+    if (!evidence.truthTable?.surfaces?.includes("CLI deploy plan evidence")) blockers.push("truth table must include CLI deploy plan evidence");
+    if (!evidence.truthTable?.surfaces?.includes("CLI deploy plan blockers")) blockers.push("truth table must include CLI deploy plan blockers");
     if (!evidence.truthTable?.surfaces?.includes("security redteam tooling")) blockers.push("truth table must include security redteam tooling");
   }
 }
