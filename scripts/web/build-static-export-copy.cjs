@@ -49,6 +49,45 @@ function copyOut(source, target) {
   }
   fs.mkdirSync(target, { recursive: true });
   fs.cpSync(source, target, { recursive: true, force: true });
+  pruneTargetToSource(source, target);
+}
+
+function pruneTargetToSource(source, target) {
+  const targetRoot = path.resolve(target);
+  const sourceRoot = path.resolve(source);
+  if (!targetRoot.startsWith(repoRoot) || !sourceRoot.startsWith(repoRoot)) {
+    throw new Error(`refusing to prune outside repo: ${targetRoot}`);
+  }
+  const stack = [targetRoot];
+  while (stack.length) {
+    const current = stack.pop();
+    for (const entry of fs.readdirSync(current, { withFileTypes: true })) {
+      const targetEntry = path.join(current, entry.name);
+      const rel = path.relative(targetRoot, targetEntry);
+      if (rel === ".nojekyll") {
+        continue;
+      }
+      const sourceEntry = path.join(sourceRoot, rel);
+      if (entry.isDirectory()) {
+        if (fs.existsSync(sourceEntry)) {
+          stack.push(targetEntry);
+        } else {
+          removeStaleEntry(targetEntry, true);
+        }
+      } else if (!fs.existsSync(sourceEntry)) {
+        removeStaleEntry(targetEntry, false);
+      }
+    }
+  }
+}
+
+function removeStaleEntry(targetEntry, recursive) {
+  try {
+    fs.rmSync(targetEntry, { recursive, force: true, maxRetries: 10, retryDelay: 250 });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    console.warn(`warning: could not prune stale export entry ${path.relative(repoRoot, targetEntry)}: ${message}`);
+  }
 }
 
 function runNextBuild() {
@@ -144,15 +183,23 @@ if (!useInPlaceBuild) {
 }
 
 const nextStatus = process.env.GITCASTER_WEB_SKIP_NEXT_BUILD === "1" ? 0 : runNextBuild();
+const hasExportOutput = () => fs.existsSync(outSource) || fs.existsSync(distDirExportSource);
+let materializedServerApp = false;
 if (nextStatus !== 0) {
-  if (hasServerAppHtml()) {
+  if (hasExportOutput()) {
+    // Next can return a non-zero status on Windows after producing export output
+    // when its own cleanup hits a transient file lock. Use the completed export
+    // if it exists and let later smoke checks prove the artifact.
+  } else if (hasServerAppHtml()) {
     materializeFromServerApp();
+    materializedServerApp = true;
   } else {
     process.exit(nextStatus);
   }
 }
-if (hasServerAppHtml()) {
+if (!hasExportOutput() && hasServerAppHtml()) {
   materializeFromServerApp();
+  materializedServerApp = true;
 }
 copyOut(fs.existsSync(outSource) ? outSource : distDirExportSource, outTarget);
 fs.writeFileSync(path.join(outTarget, ".nojekyll"), "");
@@ -165,7 +212,7 @@ if (fs.existsSync(docsSourceSecurity)) {
 console.log(JSON.stringify({
   status: "passed",
   nextBuildExitStatus: nextStatus,
-  materializedFromServerApp: nextStatus !== 0,
+  materializedFromServerApp: materializedServerApp,
   workRoot: path.relative(repoRoot, workRoot).replaceAll("\\", "/"),
   output: "apps/web/out",
   pagesOutput: "docs"

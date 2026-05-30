@@ -1,0 +1,431 @@
+{
+  "type": "gitcaster.app-shell-catalog.v1",
+  "status": "public-alpha",
+  "product": "GitCaster",
+  "createdAt": "2026-05-21T21:37:23.348Z",
+  "entries": [
+    {
+      "type": "gitcaster.app-shell-catalog.entry.v1",
+      "id": "caster-intelligence",
+      "name": "Caster Intelligence",
+      "kind": "tool-shell",
+      "status": "preview",
+      "sourcePath": "caster intelligence",
+      "localPreviewPath": "/ecosystem#caster-intelligence",
+      "manifestPath": null,
+      "dependencyRisk": {
+        "runtimeApi": "blocked_external",
+        "nativeStorage": "blocked_external",
+        "nativeDomain": "blocked_external",
+        "managedRuntime": "blocked_external",
+        "legacyHostedPlatform": "none"
+      },
+      "proof": {
+        "localFixture": false,
+        "nativeDeployment": false,
+        "qstoragePublished": false,
+        "casterDomainMapped": false,
+        "runtimeEndpointLive": false,
+        "evidence": [
+          "caster intelligence"
+        ]
+      },
+      "publicClaims": [
+        "proof-aware catalog listing"
+      ],
+      "blockedClaims": [
+        "native .caster deployment",
+        "QStorage publication",
+        "managed runtime endpoint",
+        "production readiness"
+      ],
+      "redacted": true
+    },
+    {
+      "type": "gitcaster.app-shell-catalog.entry.v1",
+      "id": "caster-claim-miniapp",
+      "name": "Caster Claim Miniapp",
+      "kind": "miniapp-shell",
+      "status": "public-alpha",
+      "sourcePath": "caster-claim-miniapp",
+      "localPreviewPath": "/ecosystem/caster-claim-miniapp",
+      "manifestPath": "examples/miniapps/caster-claim-miniapp.local-shell.json",
+      "dependencyRisk": {
+        "runtimeApi": "local-fixture-only",
+        "nativeStorage": "blocked_external",
+        "nativeDomain": "blocked_external",
+        "managedRuntime": "blocked_external",
+        "legacyHostedPlatform": "none"
+      },
+      "proof": {
+        "localFixture": true,
+        "nativeDeployment": false,
+        "qstoragePublished": false,
+        "casterDomainMapped": false,
+        "runtimeEndpointLive": false,
+        "evidence": [
+          "examples/miniapps/caster-claim-miniapp.local-shell.json"
+        ]
+      },
+      "publicClaims": [
+        "local app shell fixture",
+        "manifest shape",
+        "blocked runtime labels"
+      ],
+      "blockedClaims": [
+        "native .caster deployment",
+        "QStorage publication",
+        "managed runtime endpoint",
+        "production readiness"
+      ],
+      "redacted": true
+    },
+    {
+      "type": "gitcaster.app-shell-catalog.entry.v1",
+      "id": "casteragents",
+      "name": "CasterAgents",
+      "kind": "agent-shell",
+      "status": "needs-review",
+      "sourcePath": "casteragents-projects",
+      "localPreviewPath": "/ecosystem#casteragents",
+      "manifestPath": null,
+      "dependencyRisk": {
+        "runtimeApi": "blocked_external",
+        "nativeStorage": "blocked_external",
+        "nativeDomain": "blocked_external",
+        "managedRuntime": "blocked_external",
+        "legacyHostedPlatform": "none"
+      },
+      "proof": {
+        "localFixture": false,
+        "nativeDeployment": false,
+        "qstoragePublished": false,
+        "casterDomainMapped": false,
+        "runtimeEndpointLive": false,
+        "evidence": [
+          "casteragents-projects"
+        ]
+      },
+      "publicClaims": [
+        "proof-aware catalog listing"
+      ],
+      "blockedClaims": [
+        "native .caster deployment",
+        "QStorage publication",
+        "managed runtime endpoint",
+        "production readiness"
+      ],
+      "redacted": true
+    },
+    {
+      "type": "gitcaster.app-shell-catalog.entry.v1",
+      "id": "casterai",
+      "name": "CasterAI",
+      "kind": "agent-shell",
+      "status": "needs-review",
+      "sourcePath": "casteragents-projects/.npm-cache-casterai",
+      "localPreviewPath": "/ecosystem#casterai",
+      "manifestPath": null,
+      "dependencyRisk": {
+        "runtimeApi": "blocked_external",
+        "nativeStorage": "blocked_external",
+        "nativeDomain": "blocked_external",
+        "managedRuntime": "blocked_external",
+        "legacyHostedPlatform": "none"
+      },
+      "proof": {
+        "localFixture": false,
+        "nativeDeployment": false,
+        "qstoragePublished": false,
+        "casterDomainMapped": false,
+        "runtimeEndpointLive": false,
+        "evidence": [
+          "casteragents-projects/.npm-cache-casterai"
+        ]
+      },
+      "publicClaims": [
+        "proof-aware catalog listing"
+      ],
+      "blockedClaims": [
+        "native .caster deployment",
+        "QStorage publication",
+        "managed runtime endpoint",
+        "production readiness"
+      ],
+      "redacted": true
+    },
+    {
+      "type": "gitcaster.app-shell-catalog.entry.v1",
+      "id": "casterapp",
+      "name": "CasterApp",
+      "kind": "agent-shell",
+      "status": "needs-review",
+      "sourcePath": "caster-a1/apps/desktop/src/lib/casterAppServerClient.ts",
+      "localPreviewPath": "/ecosystem#casterapp",
+      "manifestPath": null,
+      "dependencyRisk": {
+        "runtimeApi": "blocked_external",
+        "nativeStorage": "blocked_external",
+        "nativeDomain": "blocked_external",
+        "managedRuntime": "blocked_external",
+        "legacyHostedPlatform": "none"
+      },
+      "proof": {
+        "localFixture": false,
+        "nativeDeployment": false,
+        "qstoragePublished": false,
+        "casterDomainMapped": false,
+        "runtimeEndpointLive": false,
+        "evidence": [
+          "caster-a1/apps/desktop/src/lib/casterAppServerClient.ts"
+        ]
+      },
+      "publicClaims": [
+        "proof-aware catalog listing"
+      ],
+      "blockedClaims": [
+        "native .caster deployment",
+        "QStorage publication",
+        "managed runtime endpoint",
+        "production readiness"
+      ],
+      "redacted": true
+    },
+    {
+      "type": "gitcaster.app-shell-catalog.entry.v1",
+      "id": "tapcaster",
+      "name": "TapCaster",
+      "kind": "tool-shell",
+      "status": "needs-review",
+      "sourcePath": "casteragents-projects/.npm-cache-tapcaster",
+      "localPreviewPath": "/ecosystem#tapcaster",
+      "manifestPath": null,
+      "dependencyRisk": {
+        "runtimeApi": "blocked_external",
+        "nativeStorage": "blocked_external",
+        "nativeDomain": "blocked_external",
+        "managedRuntime": "blocked_external",
+        "legacyHostedPlatform": "none"
+      },
+      "proof": {
+        "localFixture": false,
+        "nativeDeployment": false,
+        "qstoragePublished": false,
+        "casterDomainMapped": false,
+        "runtimeEndpointLive": false,
+        "evidence": [
+          "casteragents-projects/.npm-cache-tapcaster"
+        ]
+      },
+      "publicClaims": [
+        "proof-aware catalog listing"
+      ],
+      "blockedClaims": [
+        "native .caster deployment",
+        "QStorage publication",
+        "managed runtime endpoint",
+        "production readiness"
+      ],
+      "redacted": true
+    },
+    {
+      "type": "gitcaster.app-shell-catalog.entry.v1",
+      "id": "casterchain-agents",
+      "name": "CasterChain Agents",
+      "kind": "agent-shell",
+      "status": "needs-review",
+      "sourcePath": "caster-a1/crates/caster-app-server/src/agents_md.rs",
+      "localPreviewPath": "/ecosystem#casterchain-agents",
+      "manifestPath": null,
+      "dependencyRisk": {
+        "runtimeApi": "blocked_external",
+        "nativeStorage": "blocked_external",
+        "nativeDomain": "blocked_external",
+        "managedRuntime": "blocked_external",
+        "legacyHostedPlatform": "none"
+      },
+      "proof": {
+        "localFixture": false,
+        "nativeDeployment": false,
+        "qstoragePublished": false,
+        "casterDomainMapped": false,
+        "runtimeEndpointLive": false,
+        "evidence": [
+          "caster-a1/crates/caster-app-server/src/agents_md.rs"
+        ]
+      },
+      "publicClaims": [
+        "proof-aware catalog listing"
+      ],
+      "blockedClaims": [
+        "native .caster deployment",
+        "QStorage publication",
+        "managed runtime endpoint",
+        "production readiness"
+      ],
+      "redacted": true
+    },
+    {
+      "type": "gitcaster.app-shell-catalog.entry.v1",
+      "id": "caster-punks",
+      "name": "Caster Punks",
+      "kind": "index-shell",
+      "status": "proof-only",
+      "sourcePath": "casteragents-projects/Caster Punks",
+      "localPreviewPath": "/ecosystem#caster-punks",
+      "manifestPath": null,
+      "dependencyRisk": {
+        "runtimeApi": "blocked_external",
+        "nativeStorage": "blocked_external",
+        "nativeDomain": "blocked_external",
+        "managedRuntime": "blocked_external",
+        "legacyHostedPlatform": "none"
+      },
+      "proof": {
+        "localFixture": false,
+        "nativeDeployment": false,
+        "qstoragePublished": false,
+        "casterDomainMapped": false,
+        "runtimeEndpointLive": false,
+        "evidence": [
+          "casteragents-projects/Caster Punks"
+        ]
+      },
+      "publicClaims": [
+        "proof-aware catalog listing"
+      ],
+      "blockedClaims": [
+        "native .caster deployment",
+        "QStorage publication",
+        "managed runtime endpoint",
+        "production readiness"
+      ],
+      "redacted": true
+    },
+    {
+      "type": "gitcaster.app-shell-catalog.entry.v1",
+      "id": "castergames-xgames",
+      "name": "CasterGames / xgames",
+      "kind": "app-shell",
+      "status": "preview",
+      "sourcePath": "not-found/castergames-xgames",
+      "localPreviewPath": "/ecosystem#castergames-xgames",
+      "manifestPath": null,
+      "dependencyRisk": {
+        "runtimeApi": "blocked_external",
+        "nativeStorage": "blocked_external",
+        "nativeDomain": "blocked_external",
+        "managedRuntime": "blocked_external",
+        "legacyHostedPlatform": "none"
+      },
+      "proof": {
+        "localFixture": false,
+        "nativeDeployment": false,
+        "qstoragePublished": false,
+        "casterDomainMapped": false,
+        "runtimeEndpointLive": false,
+        "evidence": []
+      },
+      "publicClaims": [
+        "proof-aware catalog listing"
+      ],
+      "blockedClaims": [
+        "native .caster deployment",
+        "QStorage publication",
+        "managed runtime endpoint",
+        "production readiness"
+      ],
+      "redacted": true
+    },
+    {
+      "type": "gitcaster.app-shell-catalog.entry.v1",
+      "id": "farcaster-miniapps",
+      "name": "Farcaster miniapps",
+      "kind": "miniapp-shell",
+      "status": "public-alpha",
+      "sourcePath": "caster-claim-miniapp/vendor/farcaster-miniapp-sdk-0.3.0.esm.js",
+      "localPreviewPath": "/ecosystem#farcaster-miniapps",
+      "manifestPath": "examples/miniapps/caster-claim-miniapp.local-shell.json",
+      "dependencyRisk": {
+        "runtimeApi": "local-fixture-only",
+        "nativeStorage": "blocked_external",
+        "nativeDomain": "blocked_external",
+        "managedRuntime": "blocked_external",
+        "legacyHostedPlatform": "none"
+      },
+      "proof": {
+        "localFixture": true,
+        "nativeDeployment": false,
+        "qstoragePublished": false,
+        "casterDomainMapped": false,
+        "runtimeEndpointLive": false,
+        "evidence": [
+          "examples/miniapps/caster-claim-miniapp.local-shell.json"
+        ]
+      },
+      "publicClaims": [
+        "local app shell fixture",
+        "manifest shape",
+        "blocked runtime labels"
+      ],
+      "blockedClaims": [
+        "native .caster deployment",
+        "QStorage publication",
+        "managed runtime endpoint",
+        "production readiness"
+      ],
+      "redacted": true
+    },
+    {
+      "type": "gitcaster.app-shell-catalog.entry.v1",
+      "id": "agent-workspace-skills",
+      "name": "Agent workspace/skills",
+      "kind": "agent-shell",
+      "status": "preview",
+      "sourcePath": "caster-a1/crates/caster-app-server/src/agents_md.rs",
+      "localPreviewPath": "/ecosystem#agent-workspace-skills",
+      "manifestPath": null,
+      "dependencyRisk": {
+        "runtimeApi": "blocked_external",
+        "nativeStorage": "blocked_external",
+        "nativeDomain": "blocked_external",
+        "managedRuntime": "blocked_external",
+        "legacyHostedPlatform": "none"
+      },
+      "proof": {
+        "localFixture": false,
+        "nativeDeployment": false,
+        "qstoragePublished": false,
+        "casterDomainMapped": false,
+        "runtimeEndpointLive": false,
+        "evidence": [
+          "caster-a1/crates/caster-app-server/src/agents_md.rs"
+        ]
+      },
+      "publicClaims": [
+        "proof-aware catalog listing"
+      ],
+      "blockedClaims": [
+        "native .caster deployment",
+        "QStorage publication",
+        "managed runtime endpoint",
+        "production readiness"
+      ],
+      "redacted": true
+    }
+  ],
+  "summary": {
+    "entriesTotal": 11,
+    "miniappShells": 2,
+    "localFixtures": 2,
+    "blockedNativeDeployments": 11,
+    "blockedManagedRuntimes": 11
+  },
+  "canShipProduction": false,
+  "notes": [
+    "App shell catalog is public-alpha and proof-aware.",
+    "Local previews are not deployment claims.",
+    "Native storage, native domain, and managed runtime claims stay blocked until proof exists."
+  ],
+  "rootHash": "sha256:e8dceb2f8b9e02fe840e25857a895318e0fde838fe26f81a1224c1710d2592cd"
+}

@@ -5,3 +5,4 @@ export * from "./legacy-platform-detect.js";
 export * from "./app-directory.js";
 export * from "./ecosystem-rc.js";
 export * from "./submission-policy.js";
+export * from "./app-shell-catalog.js";

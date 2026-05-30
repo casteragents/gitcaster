@@ -23,6 +23,7 @@ export default function EcosystemPage() {
         <p className="lede">RC directory candidate. Listings are not approval. Proof and blockers appear before stronger claims.</p>
         <div className="actions">
           <a className="button primary" href={sitePath("/ecosystem/submit")}>Preview submission policy</a>
+          <a className="button" href={sitePath("/open-source/app-shell-catalog")}>App shell catalog</a>
           <a className="button" href={sitePath("/status")}>View proof status</a>
         </div>
       </div>

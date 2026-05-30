@@ -35,6 +35,7 @@ const requiredFiles = [
   "apps/web/app/open-source/push-local-object-store/page.tsx",
   "apps/web/app/open-source/ref-consensus/page.tsx",
   "apps/web/app/open-source/security-redteam/page.tsx",
+  "apps/web/app/open-source/app-shell-catalog/page.tsx",
   "apps/web/components/TruthStatusPill.tsx",
   "apps/web/components/TruthTable.tsx",
   "apps/web/components/ProofPanel.tsx",
@@ -89,6 +90,8 @@ const requiredFiles = [
   "packages/playground-templates/src/index.ts",
   "packages/playground-templates/src/caster-claim-miniapp.ts",
   "packages/playground-templates/src/miniapp-templates.test.ts",
+  "packages/ecosystem/src/app-shell-catalog.ts",
+  "packages/ecosystem/src/app-directory.test.ts",
   "packages/sdk-typescript/package.json",
   "packages/sdk-typescript/README.md",
   "packages/sdk-typescript/src/index.ts",
@@ -139,6 +142,7 @@ const requiredFiles = [
   "examples/api/public-feed-read.example.json",
   "examples/api/agent-post-request-shape.example.json",
   "examples/miniapps/caster-claim-miniapp.local-shell.json",
+  "examples/app-shells/gitcaster-app-shell-catalog.local.json",
   "examples/sdk/public-alpha-client.example.ts",
   "examples/sdk/public-alpha-client.example.json",
   "examples/cli/local-command-plan.example.json",
@@ -162,6 +166,7 @@ const requiredFiles = [
   "docs-source/developer-layers/push-local-object-store.md",
   "docs-source/developer-layers/ref-consensus.md",
   "docs-source/developer-layers/security-redteam.md",
+  "docs-source/developer-layers/app-shell-catalog.md",
   "docs/security/redteam-plan.md",
   "docs/security/crypto-audit-rehearsal.md",
   "scripts/node/check-local-node-api-source.cjs",
@@ -169,6 +174,8 @@ const requiredFiles = [
   "scripts/push-local/check-push-local-object-store-public-alpha.cjs",
   "scripts/refs/check-ref-consensus-public-alpha.cjs",
   "scripts/security/check-security-redteam-public-alpha.cjs",
+  "scripts/ecosystem/check-pr28-ecosystem-rc.cjs",
+  "scripts/ecosystem/check-app-shell-catalog-public-alpha.cjs",
   "scripts/security/run-beta-gate.cjs",
   "scripts/security/redteam/run-redteam-suite.cjs",
   "scripts/security/redteam/check-crypto-invariants.cjs",
@@ -181,6 +188,8 @@ const requiredFiles = [
   "launch/evidence/push-local-object-store-source.json",
   "launch/evidence/ref-consensus-local-certificate-source.json",
   "launch/evidence/security-redteam-public-hardening-source.json",
+  "launch/evidence/pr-28-ecosystem-rc-import.json",
+  "launch/evidence/app-shell-catalog-public-hardening-source.json",
   "launch/evidence/pr-17-castercloud-qstorage-pipeline.json",
   "launch/evidence/pr-18-security-gate.json",
   "launch/evidence/pr-27-security-redteam-crypto-audit.json",
@@ -266,13 +275,15 @@ if (!packageOnly) {
     if (evidence.summary?.publicNodesOnlineClaimed !== false) blockers.push("publicNodesOnlineClaimed must be false");
     if (evidence.summary?.multiNodeReplicationClaimed !== false) blockers.push("multiNodeReplicationClaimed must be false");
     if (evidence.summary?.unhackableClaimed !== false) blockers.push("unhackableClaimed must be false");
-    if (!Array.isArray(evidence.truthTable?.surfaces) || evidence.truthTable.surfaces.length !== 47) blockers.push("truth table must include 47 current surfaces");
+    if (!Array.isArray(evidence.truthTable?.surfaces) || evidence.truthTable.surfaces.length !== 50) blockers.push("truth table must include 50 current surfaces");
     if (!evidence.truthTable?.surfaces?.includes("GitHub Pages website")) blockers.push("truth table must include GitHub Pages website");
     if (!evidence.truthTable?.surfaces?.includes("open-core boundary")) blockers.push("truth table must include open-core boundary");
     if (!evidence.truthTable?.surfaces?.includes("simulator package")) blockers.push("truth table must include simulator package");
     if (!evidence.truthTable?.surfaces?.includes("ROS adapter package")) blockers.push("truth table must include ROS adapter package");
     if (!evidence.truthTable?.surfaces?.includes("API tutorial package")) blockers.push("truth table must include API tutorial package");
     if (!evidence.truthTable?.surfaces?.includes("Claim Miniapp template")) blockers.push("truth table must include Claim Miniapp template");
+    if (!evidence.truthTable?.surfaces?.includes("app shell catalog")) blockers.push("truth table must include app shell catalog");
+    if (!evidence.truthTable?.surfaces?.includes("app shell dependency-risk labels")) blockers.push("truth table must include app shell dependency-risk labels");
     if (!evidence.truthTable?.surfaces?.includes("security redteam tooling")) blockers.push("truth table must include security redteam tooling");
   }
 }

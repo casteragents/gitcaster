@@ -1,0 +1,39 @@
+{
+  "type": "gitcaster.app-shell-catalog.fixture.v1",
+  "status": "public-alpha",
+  "scope": "local-preview-only",
+  "catalogPath": "apps/web/public/gitcaster-app-shell-catalog.json",
+  "sourceDirectoryPath": "apps/web/public/gitcaster-ecosystem.rc.json",
+  "localPreviewRoutes": [
+    "/ecosystem",
+    "/ecosystem/caster-claim-miniapp",
+    "/open-source/app-shell-catalog"
+  ],
+  "publicClaims": [
+    "proof-aware app shell catalog",
+    "local preview routing",
+    "dependency risk labels",
+    "blocked native deployment claims"
+  ],
+  "blockedClaims": [
+    "native .caster deployment",
+    "QStorage publication",
+    "managed runtime endpoint",
+    "production readiness",
+    "external audit completion"
+  ],
+  "dependencyRisk": {
+    "runtimeApi": "local-fixture-only",
+    "nativeStorage": "blocked_external",
+    "nativeDomain": "blocked_external",
+    "managedRuntime": "blocked_external",
+    "legacyHostedPlatform": "legacy-reference"
+  },
+  "safety": {
+    "noSecretsRequired": true,
+    "noNetworkCalls": true,
+    "runtimeStatePublic": false,
+    "canShipProduction": false
+  },
+  "canShipProduction": false
+}

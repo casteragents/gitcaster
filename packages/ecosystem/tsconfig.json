@@ -5,12 +5,8 @@
     "moduleResolution": "NodeNext",
     "declaration": true,
     "strict": true,
-    "types": [
-      "node"
-    ],
-    "typeRoots": [
-      "../../src/node_modules/@types"
-    ],
+    "types": [],
+    "typeRoots": [],
     "outDir": "dist",
     "rootDir": "src",
     "skipLibCheck": true

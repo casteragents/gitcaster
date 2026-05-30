@@ -6,11 +6,12 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "node ../../src/node_modules/typescript/bin/tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json",
     "test": "node dist/ecosystem.test.js && node dist/app-directory.test.js",
     "test:directory": "node dist/app-directory.test.js",
     "lint": "node ../../scripts/ecosystem/check-pr28-ecosystem-rc.cjs --package-only",
-    "typecheck": "node ../../src/node_modules/typescript/bin/tsc -p tsconfig.json"
+    "check": "pnpm run build && pnpm run test && node ../../scripts/ecosystem/check-pr28-ecosystem-rc.cjs && node ../../scripts/ecosystem/check-app-shell-catalog-public-alpha.cjs",
+    "typecheck": "tsc -p tsconfig.json"
   },
   "dependencies": {
     "@gitcaster/protocol": "workspace:*"

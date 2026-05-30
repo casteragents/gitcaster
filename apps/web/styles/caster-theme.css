@@ -309,6 +309,7 @@ p {
 }
 
 .panel-row,
+.row-between,
 .service-title,
 .section-heading,
 .endpoint-row {
@@ -321,6 +322,10 @@ p {
 .panel-row {
   min-height: 2.5rem;
   border-bottom: 1px solid rgba(154, 176, 196, 0.12);
+}
+
+.row-between {
+  align-items: flex-start;
 }
 
 .section-heading {

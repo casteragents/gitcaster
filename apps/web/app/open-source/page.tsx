@@ -56,6 +56,15 @@ export default function OpenSourcePage() {
         </div>
         <div className="grid">
           <div className="card">
+            <h3>App shell catalog hardening</h3>
+            <p>Proof-aware app and miniapp shell catalog, local preview routing, dependency-risk labels, and blocked native deployment claims are now public-alpha.</p>
+            <div className="mini-list">
+              <a href={sitePath("/open-source/app-shell-catalog")}>Website page</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/packages/ecosystem">Source</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/examples/app-shells">Fixture</a>
+            </div>
+          </div>
+          <div className="card">
             <h3>Security redteam hardening</h3>
             <p>Local redteam scripts, secret scans, fake-live claim blockers, hosted dependency checks, and audit rehearsal notes are now public-alpha.</p>
             <div className="mini-list">

@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { createCanonicalEcosystemManifest, createEcosystemEntry } from "./canonical-manifest.js";
 import { appDirectoryRootHash, createAppDirectory, createAppDirectoryEntry, validateAppDirectoryEntry } from "./app-directory.js";
+import { createAppShellCatalog, validateAppShellCatalog } from "./app-shell-catalog.js";
 import { deriveRcEntriesFromCanonicalManifest } from "./ecosystem-rc.js";
 import { classifySubmissionClaim, createSubmissionReview, redactSubmission, type GitCasterAppSubmission } from "./submission-policy.js";
 
@@ -147,6 +148,20 @@ test("submission redaction removes contact/private values where needed", () => {
 test("generated directory JSON does not set canShipProduction true", () => {
   const directory = createAppDirectory({ entries: [] });
   assert.equal(directory.canShipProduction, false);
+});
+
+test("app shell catalog derives local-only shell entries without native deployment claims", () => {
+  const entries = deriveRcEntriesFromCanonicalManifest(
+    createCanonicalEcosystemManifest({ entries: [fixtureEntry("Caster Claim Miniapp")] })
+  );
+  const catalog = createAppShellCatalog({ directory: createAppDirectory({ entries }) });
+  assert.equal(catalog.status, "public-alpha");
+  assert.equal(catalog.canShipProduction, false);
+  assert.equal(catalog.entries[0]?.kind, "miniapp-shell");
+  assert.equal(catalog.entries[0]?.localPreviewPath, "/ecosystem/caster-claim-miniapp");
+  assert.equal(catalog.entries[0]?.proof.nativeDeployment, false);
+  assert.equal(catalog.entries[0]?.dependencyRisk.nativeStorage, "blocked_external");
+  assert.deepEqual(validateAppShellCatalog(catalog), []);
 });
 
 test("submission review never accepts automatically", () => {

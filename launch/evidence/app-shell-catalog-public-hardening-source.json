@@ -1,0 +1,57 @@
+{
+  "type": "gitcaster.app-shell-catalog.public-hardening.evidence.v1",
+  "status": "passed",
+  "createdAt": "2026-05-30T01:55:20.866Z",
+  "title": "GitCaster app and miniapp shell catalog hardening",
+  "publicArtifacts": [
+    "packages/ecosystem/src/app-shell-catalog.ts",
+    "examples/app-shells/gitcaster-app-shell-catalog.local.json",
+    "apps/web/public/gitcaster-app-shell-catalog.json",
+    "apps/web/app/open-source/app-shell-catalog/page.tsx",
+    "docs-source/developer-layers/app-shell-catalog.md"
+  ],
+  "commandsRun": [
+    "pnpm --filter @gitcaster/ecosystem build",
+    "pnpm --filter @gitcaster/ecosystem test",
+    "node scripts/ecosystem/check-pr28-ecosystem-rc.cjs",
+    "node scripts/ecosystem/check-app-shell-catalog-public-alpha.cjs"
+  ],
+  "summary": {
+    "entriesTotal": 11,
+    "miniappShells": 2,
+    "localFixtures": 2,
+    "blockedNativeDeployments": 11,
+    "blockedManagedRuntimes": 11,
+    "noLiveRuntimeClaims": true,
+    "noNativeDeploymentClaims": true,
+    "noQStoragePublishClaims": true,
+    "canShipProduction": false
+  },
+  "dependencyRiskLabels": [
+    "blocked_external",
+    "local-fixture-only",
+    "none"
+  ],
+  "artifactHashes": [
+    {
+      "path": "apps/web/public/gitcaster-ecosystem.rc.json",
+      "sha256": "53870789f2c616bea647ebcec7c65db50d329435627b4ae88189b38d24d315f7"
+    },
+    {
+      "path": "examples/app-shells/gitcaster-app-shell-catalog.local.json",
+      "sha256": "d0d965418373a21a7d30923085d53ae922f66b506830099ac9787eec4bb72978"
+    },
+    {
+      "path": "apps/web/public/gitcaster-app-shell-catalog.json",
+      "sha256": "8981eeb4e0f40aceee5f68f869dc06aca28139316ebfc69a285daaafe89283e3"
+    }
+  ],
+  "blockers": [],
+  "nextProof": [
+    "Public native storage publish proof",
+    "native .caster route proof",
+    "managed runtime endpoint proof",
+    "security review proof per app shell",
+    "rollback proof for live deployment"
+  ]
+}

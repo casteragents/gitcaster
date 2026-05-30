@@ -35,6 +35,7 @@ const filesChanged = [
   "apps/web/app/open-source/push-local-object-store/page.tsx",
   "apps/web/app/open-source/ref-consensus/page.tsx",
   "apps/web/app/open-source/security-redteam/page.tsx",
+  "apps/web/app/open-source/app-shell-catalog/page.tsx",
   "apps/web/components/TruthStatusPill.tsx",
   "apps/web/components/TruthTable.tsx",
   "apps/web/components/ProofPanel.tsx",
@@ -89,6 +90,8 @@ const filesChanged = [
   "packages/playground-templates/src/index.ts",
   "packages/playground-templates/src/caster-claim-miniapp.ts",
   "packages/playground-templates/src/miniapp-templates.test.ts",
+  "packages/ecosystem/src/app-shell-catalog.ts",
+  "packages/ecosystem/src/app-directory.test.ts",
   "packages/sdk-typescript/package.json",
   "packages/sdk-typescript/README.md",
   "packages/sdk-typescript/src/index.ts",
@@ -139,6 +142,7 @@ const filesChanged = [
   "examples/api/public-feed-read.example.json",
   "examples/api/agent-post-request-shape.example.json",
   "examples/miniapps/caster-claim-miniapp.local-shell.json",
+  "examples/app-shells/gitcaster-app-shell-catalog.local.json",
   "examples/sdk/public-alpha-client.example.ts",
   "examples/sdk/public-alpha-client.example.json",
   "examples/cli/local-command-plan.example.json",
@@ -162,6 +166,7 @@ const filesChanged = [
   "docs-source/developer-layers/push-local-object-store.md",
   "docs-source/developer-layers/ref-consensus.md",
   "docs-source/developer-layers/security-redteam.md",
+  "docs-source/developer-layers/app-shell-catalog.md",
   "docs/security/redteam-plan.md",
   "docs/security/crypto-audit-rehearsal.md",
   "scripts/node/check-local-node-api-source.cjs",
@@ -169,6 +174,8 @@ const filesChanged = [
   "scripts/push-local/check-push-local-object-store-public-alpha.cjs",
   "scripts/refs/check-ref-consensus-public-alpha.cjs",
   "scripts/security/check-security-redteam-public-alpha.cjs",
+  "scripts/ecosystem/check-pr28-ecosystem-rc.cjs",
+  "scripts/ecosystem/check-app-shell-catalog-public-alpha.cjs",
   "scripts/security/run-beta-gate.cjs",
   "scripts/security/redteam/run-redteam-suite.cjs",
   "scripts/security/redteam/check-crypto-invariants.cjs",
@@ -181,6 +188,8 @@ const filesChanged = [
   "launch/evidence/push-local-object-store-source.json",
   "launch/evidence/ref-consensus-local-certificate-source.json",
   "launch/evidence/security-redteam-public-hardening-source.json",
+  "launch/evidence/pr-28-ecosystem-rc-import.json",
+  "launch/evidence/app-shell-catalog-public-hardening-source.json",
   "launch/evidence/pr-17-castercloud-qstorage-pipeline.json",
   "launch/evidence/pr-18-security-gate.json",
   "launch/evidence/pr-27-security-redteam-crypto-audit.json",
@@ -229,6 +238,9 @@ const truthSurfaces = [
   "local node API source",
   "local alpha workflow",
   "ecosystem manifest",
+  "app shell catalog",
+  "app shell local preview fixture",
+  "app shell dependency-risk labels",
   "Claim Miniapp template",
   "Caster Punks index",
   "CasterAgents",
@@ -290,6 +302,9 @@ if (!statusTruth.includes("packages/object-store") || !statusTruth.includes("exa
 if (!statusTruth.includes("packages/ref-consensus") || !statusTruth.includes("examples/refs/local-ref-certificate-workflow.example.json") || !statusTruth.includes("launch/evidence/ref-consensus-local-certificate-source.json")) blockers.push("status truth must include ref consensus source, local certificate fixture, and evidence");
 if (!statusTruth.includes("scripts/security") || !statusTruth.includes("examples/security/redteam-hardening-plan.example.json") || !statusTruth.includes("launch/evidence/security-redteam-public-hardening-source.json")) blockers.push("status truth must include security redteam scripts, fixture, and evidence");
 if (!statusTruth.includes("packages/playground-templates")) blockers.push("status truth must include miniapp template package evidence");
+if (!statusTruth.includes("packages/ecosystem/src/app-shell-catalog.ts") || !statusTruth.includes("examples/app-shells/gitcaster-app-shell-catalog.local.json") || !statusTruth.includes("launch/evidence/app-shell-catalog-public-hardening-source.json")) blockers.push("status truth must include app shell catalog source, fixture, and evidence");
+if (!exists("apps/web/app/open-source/app-shell-catalog/page.tsx")) blockers.push("app shell catalog open-source page missing");
+if (!exists("apps/web/public/gitcaster-app-shell-catalog.json")) blockers.push("generated app shell catalog JSON missing");
 if (!statusTruth.includes("packages/sdk-typescript")) blockers.push("status truth must include TypeScript SDK package evidence");
 if (!statusTruth.includes("apps/cli") || !statusTruth.includes("examples/cli/local-command-plan.example.json")) blockers.push("status truth must include CLI source and local command plan evidence");
 if (!statusTruth.includes("apps/git-remote-gitcaster") || !statusTruth.includes("examples/git-remote/blocked-transport-plan.example.json")) blockers.push("status truth must include Git remote helper source and blocked transport plan evidence");
@@ -320,7 +335,7 @@ const evidence = {
   createdAt: new Date().toISOString(),
   repoRoot,
   filesChanged,
-  commandsRun: ["pnpm run api-tutorials:check", "pnpm run miniapp-templates:check", "pnpm run sdk:check", "pnpm run cli:check", "pnpm run git-remote:check", "pnpm run mcp:check", "pnpm run node-api:check", "pnpm run repo-records:check", "pnpm run push-local-object-store:check", "pnpm run ref-consensus:check", "pnpm run security-redteam:check", "pnpm run simulator:check", "pnpm run ros:check", "node scripts/web/check-web-truth-table.cjs"],
+  commandsRun: ["pnpm run api-tutorials:check", "pnpm run miniapp-templates:check", "pnpm run app-shell-catalog:check", "pnpm run sdk:check", "pnpm run cli:check", "pnpm run git-remote:check", "pnpm run mcp:check", "pnpm run node-api:check", "pnpm run repo-records:check", "pnpm run push-local-object-store:check", "pnpm run ref-consensus:check", "pnpm run security-redteam:check", "pnpm run simulator:check", "pnpm run ros:check", "node scripts/web/check-web-truth-table.cjs"],
   passed: blockers.length === 0,
   failed: blockers.length > 0,
   blockers,
@@ -352,6 +367,8 @@ const evidence = {
     pushLocalObjectStorePageCreated: exists("apps/web/app/open-source/push-local-object-store/page.tsx"),
     refConsensusPageCreated: exists("apps/web/app/open-source/ref-consensus/page.tsx"),
     securityRedteamPageCreated: exists("apps/web/app/open-source/security-redteam/page.tsx"),
+    appShellCatalogPageCreated: exists("apps/web/app/open-source/app-shell-catalog/page.tsx"),
+    appShellCatalogEvidenceFound: exists("launch/evidence/app-shell-catalog-public-hardening-source.json"),
     truthTableCreated: truthSurfaces.every((surface) => statusTruth.includes(surface)),
     previewDataLabeled: true,
     liveClaimsWithoutEvidence: 0,
@@ -423,6 +440,7 @@ const evidence = {
       "Push-local object manifests are public-alpha only until QStorage publication, normal git transport, remote ref durability, public object hosting, and rollback proof exist.",
       "Ref-consensus local certificates are public-alpha only until public consensus, remote ref durability, normal git transport, storage, and rollback proof exist.",
       "Security redteam tooling is public-alpha only until external audit, managed infrastructure, public-node, custody, billing, rollback, and production operation proof exist.",
+      "App and miniapp shell catalog is public-alpha only until native storage, native domain, runtime endpoint, security review, and rollback proof exist.",
       "CasterAgents runtime state remains closed until safety-lock and redaction proof exists.",
       "QStorage and CasterCloud runtime endpoints still require operator proof.",
       ".caster registry and public node federation still require signed live evidence.",
