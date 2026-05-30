@@ -1,11 +1,12 @@
-# GitCaster Security Redteam Plan
+# GitCaster Security Redteam Hardening Plan
 
-Status: public-alpha rehearsal.
+Status: public-alpha rehearsal. Local only.
 
 This document describes local deterministic redteam coverage for GitCaster
 developer-facing code. It is not an external audit, not production security
 readiness, and not a claim that managed CasterCloud infrastructure is safe for
-public operation.
+public operation. No production exploit disclosure is included in this
+developer-facing release.
 
 ## Covered Local Checks
 
@@ -30,11 +31,12 @@ node scripts/security/run-beta-gate.cjs
 
 ## Still Blocked
 
-- External security audit completion.
-- Production security readiness.
-- Public node federation safety.
-- QStorage, CasterCloud, and .caster live deployment safety.
-- Custody, billing, rollback, and managed operation safety.
+- External security audit completion: blocked_external.
+- Production security readiness: blocked_external.
+- Public node federation safety: blocked_external.
+- QStorage, CasterCloud, and .caster live deployment safety: blocked_external.
+- Custody, billing, rollback, and managed operation safety: blocked_external.
+- Local redteam fixtures and abuse cases: fixture_only.
 
 ## Handoff
 

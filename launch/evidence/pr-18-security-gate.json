@@ -2,7 +2,7 @@
   "type": "gitcaster.pr.evidence.v1",
   "pr": "PR-18",
   "title": "Security gate",
-  "createdAt": "2026-05-30T00:55:08.294Z",
+  "createdAt": "2026-05-30T01:16:42.692Z",
   "status": "passed",
   "passed": true,
   "failed": false,

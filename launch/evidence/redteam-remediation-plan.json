@@ -1,7 +1,7 @@
 {
   "type": "gitcaster.redteam.remediation-plan.v1",
   "status": "manual-required",
-  "createdAt": "2026-05-30T00:54:37.774Z",
+  "createdAt": "2026-05-30T01:16:18.432Z",
   "items": [
     {
       "id": "rt.external-audit",

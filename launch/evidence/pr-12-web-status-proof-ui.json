@@ -2,7 +2,7 @@
   "type": "gitcaster.pr.evidence.v1",
   "pr": "PR-12",
   "title": "Web status and proof UI",
-  "createdAt": "2026-05-30T00:54:35.237Z",
+  "createdAt": "2026-05-30T01:16:50.306Z",
   "repoRoot": "D:\\user\\xxxcrypto-vercel-clean\\.quilibrium\\gitcaster-public-github-release\\gitcaster-public-repo",
   "filesChanged": [
     "apps/web/package.json",
@@ -321,7 +321,7 @@
     },
     {
       "path": "apps/web/app/open-source/security-redteam/page.tsx",
-      "sha256": "698e79bc5a2d52df24af8ea709ca58dcbc36de68d68144054ae3f92bcd495888"
+      "sha256": "0dcf41cb4c34e02052f70e51e900858c55c9a6490c9bdd4de04970d4280ce176"
     },
     {
       "path": "apps/web/components/TruthStatusPill.tsx",
@@ -833,7 +833,7 @@
     },
     {
       "path": "docs/security/redteam-plan.md",
-      "sha256": "a315591d1bdc358cee8f1c98d73d2717066beee3d2ce60c1ad268f581fce404b"
+      "sha256": "afc02540e882c1f6de3d246c404359f66fca7816a09e25a2e984784068308908"
     },
     {
       "path": "docs/security/crypto-audit-rehearsal.md",
@@ -905,7 +905,7 @@
     },
     {
       "path": "launch/evidence/security-redteam-public-hardening-source.json",
-      "sha256": "76ea47de82efc7efc7d6b718351a94035d534a99885229f362cdefc3f7282d27"
+      "sha256": "491720e8dad85ea0444be53b22f2442411c3f27f79ab300bd9d88e411caa6697"
     },
     {
       "path": "launch/evidence/pr-17-castercloud-qstorage-pipeline.json",
@@ -913,39 +913,39 @@
     },
     {
       "path": "launch/evidence/pr-18-security-gate.json",
-      "sha256": "6ea667e75634dd686645b780ac3040746649c5509abed5798e3537d8e66907b4"
+      "sha256": "ecb6c3aba57a8c8e1968cf2db37dcc73c49021aeab9934a3acfbb8acd8bec478"
     },
     {
       "path": "launch/evidence/pr-27-security-redteam-crypto-audit.json",
-      "sha256": "d9f8dd2e4c7bac5f94e914353ae7ed87459a4b61271b736638f87675d65e1a12"
+      "sha256": "ed0853f385c48fe1f696a4ccf7508f937c5cca7bc7bb2642b58a8b9cf3ea602e"
     },
     {
       "path": "launch/evidence/redteam-suite-result.json",
-      "sha256": "140c33c995d7196c7c0a32bbdee3ce7e8a23a9052f4e245475caea06cb1d14e5"
+      "sha256": "8a0684ee06ad014db8d8c3a81a5502a3989818afe5bef7b9ed3160ee3b869ed8"
     },
     {
       "path": "launch/evidence/redteam-crypto-invariants.json",
-      "sha256": "aeeceab23ecb20e352711b35144478f774139da631ad6ec4775f6fb7d833e707"
+      "sha256": "c31930934ba8be2130d82ba7df798ea45d83e1f5df8759760d102fb8026d6969"
     },
     {
       "path": "launch/evidence/redteam-identity-replay-attacks.json",
-      "sha256": "2eb9159fcabacee58d866f009d83e2060549bfb6970eccc99d45c8dd6e05ee5e"
+      "sha256": "20ae837f73aaeec786ef66f88a26c3713c112adeef3d0fc19bc0952e0ee4fec9"
     },
     {
       "path": "launch/evidence/redteam-capability-abuse.json",
-      "sha256": "0619d51f7b0800589eb7cbd570dc7de7fe798f2c48a43db56a1c167262c4cb81"
+      "sha256": "6399c8b64f19814e84d56aa19cf17bc78985df561575bdfd394753b19faf7419"
     },
     {
       "path": "launch/evidence/redteam-deployment-proof-abuse.json",
-      "sha256": "4d57c2b5a0963e08c49b5b8a8ca60a42336adb8f3d1451020e59c29474d7e0dc"
+      "sha256": "c6b9ac6ca33ade92c16d5b1afc77df94f58d030a2d973377b095bd03fafe327c"
     },
     {
       "path": "launch/evidence/redteam-findings.json",
-      "sha256": "df7a6d01c601677c7dd468a66ee42b5ba1addbee17dff93cddf1930427b117a0"
+      "sha256": "983de92290e747f1b2cf6c3dc7bcdccfa3621526dba04cc6127afbba0303d007"
     },
     {
       "path": "launch/evidence/redteam-remediation-plan.json",
-      "sha256": "51ce18770360a86c8aeb6322c1dead418d5e44eac886f4378802f27d6b3987c6"
+      "sha256": "3a80c9f3ad204b4b0b3d7463287521d9512000f55c7fb87be28124cd8bcc93b3"
     }
   ],
   "summary": {

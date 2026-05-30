@@ -1,7 +1,7 @@
 {
   "type": "gitcaster.redteam.crypto-invariants.v1",
   "status": "passed",
-  "createdAt": "2026-05-30T00:54:35.803Z",
+  "createdAt": "2026-05-30T01:16:18.230Z",
   "cases": [
     {
       "id": "crypto.did-prefix-reject",

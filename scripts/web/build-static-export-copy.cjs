@@ -117,6 +117,25 @@ function materializeFromServerApp() {
   }
 }
 
+function hasServerAppHtml() {
+  if (!fs.existsSync(generatedAppHtml)) {
+    return false;
+  }
+  const stack = [generatedAppHtml];
+  while (stack.length) {
+    const current = stack.pop();
+    for (const entry of fs.readdirSync(current, { withFileTypes: true })) {
+      const abs = path.join(current, entry.name);
+      if (entry.isDirectory()) {
+        stack.push(abs);
+      } else if (entry.name.endsWith(".html")) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
 fs.mkdirSync(workRoot, { recursive: true });
 if (!useInPlaceBuild) {
   for (const rel of copyEntries) {
@@ -126,13 +145,13 @@ if (!useInPlaceBuild) {
 
 const nextStatus = process.env.GITCASTER_WEB_SKIP_NEXT_BUILD === "1" ? 0 : runNextBuild();
 if (nextStatus !== 0) {
-  if (fs.existsSync(generatedAppHtml)) {
+  if (hasServerAppHtml()) {
     materializeFromServerApp();
   } else {
     process.exit(nextStatus);
   }
 }
-if (fs.existsSync(generatedAppHtml)) {
+if (hasServerAppHtml()) {
   materializeFromServerApp();
 }
 copyOut(fs.existsSync(outSource) ? outSource : distDirExportSource, outTarget);

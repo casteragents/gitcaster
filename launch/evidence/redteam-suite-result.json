@@ -1,7 +1,7 @@
 {
   "type": "gitcaster.redteam.suite-result.v1",
   "status": "passed",
-  "createdAt": "2026-05-30T00:54:37.774Z",
+  "createdAt": "2026-05-30T01:16:18.432Z",
   "checks": [
     {
       "name": "crypto-invariants",

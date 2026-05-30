@@ -3,7 +3,7 @@ import { sitePath } from "../../../lib/site-url";
 const publicArtifacts = [
   ["Security beta gate", "scripts/security/run-beta-gate.cjs", "Deterministic local gate for secret scans, fake live claims, hosted dependency claims, token/domain freezes, signed mutation blockers, and object-store honesty."],
   ["Redteam suite", "scripts/security/redteam/run-redteam-suite.cjs", "Local redteam runner for crypto invariants, replay attacks, capability abuse, and deployment proof abuse."],
-  ["Audit rehearsal docs", "docs/security/crypto-audit-rehearsal.md", "Contributor-facing rehearsal notes that do not replace an external security audit."],
+  ["Crypto audit rehearsal", "docs/security/crypto-audit-rehearsal.md", "Contributor-facing rehearsal notes that do not replace an external security audit."],
   ["Public hardening evidence", "launch/evidence/security-redteam-public-hardening-source.json", "Public-alpha evidence tying scripts, docs, blockers, and non-claims together."]
 ];
 
@@ -17,12 +17,12 @@ const coveredChecks = [
 ];
 
 const blockedClaims = [
-  "External security audit completion",
-  "Production security readiness",
-  "Managed infrastructure safety",
-  "Public node federation safety",
-  "QStorage or CasterCloud live deployment safety",
-  "Automated custody or billing safety"
+  ["External security audit completion", "blocked_external"],
+  ["Production security readiness", "blocked_external"],
+  ["Managed infrastructure safety", "blocked_external"],
+  ["Public node federation safety", "blocked_external"],
+  ["QStorage or CasterCloud live deployment safety", "blocked_external"],
+  ["Automated custody or billing safety", "blocked_external"]
 ];
 
 export default function SecurityRedteamOpenSourcePage() {
@@ -30,7 +30,7 @@ export default function SecurityRedteamOpenSourcePage() {
     <div className="stack">
       <section className="section">
         <div className="eyebrow">Open-core layer</div>
-        <h1>Security redteam and hardening proof tooling</h1>
+        <h1>Security redteam hardening</h1>
         <p className="lede">
           GitCaster now publishes the local security redteam scripts, beta safety
           gate, audit rehearsal notes, and public hardening evidence as a
@@ -76,6 +76,7 @@ export default function SecurityRedteamOpenSourcePage() {
             <div className="card" key={name}>
               <h3>{name}</h3>
               <p>{description}</p>
+              <span className="pill info">fixture_only</span>
             </div>
           ))}
         </div>
@@ -90,10 +91,11 @@ export default function SecurityRedteamOpenSourcePage() {
           <span className="pill danger">blocked</span>
         </div>
         <div className="grid">
-          {blockedClaims.map((claim) => (
+          {blockedClaims.map(([claim, status]) => (
             <div className="card" key={claim}>
               <h3>{claim}</h3>
               <p>No public release claim is made for this item in the current evidence set.</p>
+              <span className="pill danger">{status}</span>
             </div>
           ))}
         </div>
@@ -112,4 +114,3 @@ export default function SecurityRedteamOpenSourcePage() {
     </div>
   );
 }
-

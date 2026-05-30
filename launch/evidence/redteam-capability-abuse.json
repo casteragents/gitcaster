@@ -1,7 +1,7 @@
 {
   "type": "gitcaster.redteam.capability-abuse.v1",
   "status": "passed",
-  "createdAt": "2026-05-30T00:54:36.626Z",
+  "createdAt": "2026-05-30T01:16:18.327Z",
   "cases": [
     {
       "id": "capability.read-to-write",
