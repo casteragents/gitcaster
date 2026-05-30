@@ -56,6 +56,15 @@ export default function OpenSourcePage() {
         </div>
         <div className="grid">
           <div className="card">
+            <h3>CasterDID identity</h3>
+            <p>DID helpers, public-key fingerprints, local key-path helpers, signed mutation envelopes, and public-key-only fixtures are now public-alpha.</p>
+            <div className="mini-list">
+              <a href={sitePath("/open-source/casterdid-identity")}>Website page</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/packages/identity">Source</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/examples/identity">Fixture</a>
+            </div>
+          </div>
+          <div className="card">
             <h3>Protocol types</h3>
             <p>Typed identities, capabilities, repo records, event names, statuses, content types, error codes, fixture catalog, and placeholder-only envelope examples are now public-alpha.</p>
             <div className="mini-list">

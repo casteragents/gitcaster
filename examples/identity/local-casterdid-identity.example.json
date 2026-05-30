@@ -1,0 +1,40 @@
+{
+  "type": "gitcaster.casterdid-identity.local-example.v1",
+  "status": "public-alpha",
+  "runtime": "alpha-local",
+  "scope": "local-identity-inspection-only",
+  "localInspectionOnly": true,
+  "privateKeyIncluded": false,
+  "managedCustodyClaimed": false,
+  "publicRuntimeClaimed": false,
+  "publicNodeMutationClaimed": false,
+  "qstoragePublished": false,
+  "nativeDomainClaimed": false,
+  "productionRuntimeClaimed": false,
+  "didDocument": {
+    "id": "did:caster:zAq2KZvVU63wm9eTTnMnDC5SH8KWL8XBQR5cnkmctpfws",
+    "method": "caster",
+    "verificationMethod": [
+      {
+        "id": "did:caster:zAq2KZvVU63wm9eTTnMnDC5SH8KWL8XBQR5cnkmctpfws#ed25519",
+        "type": "Ed25519VerificationKey2020",
+        "controller": "did:caster:zAq2KZvVU63wm9eTTnMnDC5SH8KWL8XBQR5cnkmctpfws",
+        "publicKeyMultibase": "zAq2KZvVU63wm9eTTnMnDC5SH8KWL8XBQR5cnkmctpfws"
+      }
+    ],
+    "capabilityInvocation": [
+      "did:caster:zAq2KZvVU63wm9eTTnMnDC5SH8KWL8XBQR5cnkmctpfws#ed25519"
+    ],
+    "createdAt": "2026-05-31T00:00:00.000Z",
+    "kind": "agent"
+  },
+  "publicKeyPemFixture": "-----BEGIN PUBLIC KEY-----\nMCowBQYDK2VwAyEAkgu1Ndf5h461rxMJyCeYGPPUWVG7l7QLh0wJKd4vsMo=\n-----END PUBLIC KEY-----\n",
+  "blockedClaims": [
+    "managed signing custody",
+    "public runtime endpoint",
+    "public node mutation",
+    "storage publication",
+    "native domain routing",
+    "production runtime operation"
+  ]
+}

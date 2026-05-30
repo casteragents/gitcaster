@@ -1,0 +1,11 @@
+{
+  "type": "gitcaster.casterdid-identity.public-smoke.v1",
+  "status": "blocked_external",
+  "publicDeliveryOnly": true,
+  "managedRuntimeClaimed": false,
+  "createdAt": "2026-05-30T18:55:22.159Z",
+  "results": [],
+  "blockers": [
+    "Public delivery smoke must run after publication"
+  ]
+}

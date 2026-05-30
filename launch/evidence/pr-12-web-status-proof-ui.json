@@ -2,7 +2,7 @@
   "type": "gitcaster.pr.evidence.v1",
   "pr": "PR-12",
   "title": "Web status and proof UI",
-  "createdAt": "2026-05-30T18:19:08.468Z",
+  "createdAt": "2026-05-30T19:02:11.425Z",
   "repoRoot": "D:\\user\\xxxcrypto-vercel-clean\\.quilibrium\\gitcaster-public-github-release\\gitcaster-public-repo",
   "filesChanged": [
     "apps/web/package.json",
@@ -31,6 +31,7 @@
     "apps/web/app/open-source/mcp-source/page.tsx",
     "apps/web/app/open-source/agent-skills/page.tsx",
     "apps/web/app/open-source/protocol-types/page.tsx",
+    "apps/web/app/open-source/casterdid-identity/page.tsx",
     "apps/web/app/open-source/local-node-api/page.tsx",
     "apps/web/app/open-source/repo-records/page.tsx",
     "apps/web/app/open-source/push-local-object-store/page.tsx",
@@ -152,6 +153,10 @@
     "apps/web/public/gitcaster-protocol-types.md",
     "apps/web/public/gitcaster-protocol-types.json",
     "apps/web/public/gitcaster-protocol-types-public-smoke.json",
+    "apps/web/public/casterdid-identity.md",
+    "apps/web/public/gitcaster-casterdid-identity.md",
+    "apps/web/public/gitcaster-casterdid-identity.json",
+    "apps/web/public/gitcaster-casterdid-identity-public-smoke.json",
     "apps/web/public/gitcaster-local-node-api.md",
     "apps/web/public/gitcaster-repo-records.md",
     "apps/web/public/gitcaster-push-local-object-store.md",
@@ -178,6 +183,7 @@
     "examples/cli/local-command-plan.example.json",
     "examples/git-remote/blocked-transport-plan.example.json",
     "examples/mcp/local-tool-plan.example.json",
+    "examples/identity/local-casterdid-identity.example.json",
     "examples/node/local-api-smoke.example.json",
     "examples/repo-records/local-issue-pr-workflow.example.json",
     "examples/push-local/local-object-manifest.example.json",
@@ -194,6 +200,8 @@
     "docs-source/developer-layers/mcp-source.md",
     "docs-source/developer-layers/agent-skills.md",
     "docs-source/developer-layers/protocol-types.md",
+    "docs-source/developer-layers/casterdid-identity.md",
+    "docs/casterdid-identity.md",
     "docs-source/developer-layers/local-node-api.md",
     "docs-source/developer-layers/repo-records.md",
     "docs-source/developer-layers/push-local-object-store.md",
@@ -220,6 +228,8 @@
     "scripts/mcp/check-agent-skills-public-smoke.cjs",
     "scripts/protocol/check-protocol-types-public-alpha.cjs",
     "scripts/protocol/check-protocol-types-public-smoke.cjs",
+    "scripts/identity/check-casterdid-identity-public-alpha.cjs",
+    "scripts/identity/check-casterdid-identity-public-smoke.cjs",
     "scripts/security/run-beta-gate.cjs",
     "scripts/security/redteam/run-redteam-suite.cjs",
     "scripts/security/redteam/check-crypto-invariants.cjs",
@@ -243,6 +253,8 @@
     "launch/evidence/agent-skills-public-smoke.json",
     "launch/evidence/protocol-types-public-alpha.json",
     "launch/evidence/protocol-types-public-smoke.json",
+    "launch/evidence/casterdid-identity-public-alpha.json",
+    "launch/evidence/casterdid-identity-public-smoke.json",
     "launch/evidence/pr-17-castercloud-qstorage-pipeline.json",
     "launch/evidence/pr-18-security-gate.json",
     "launch/evidence/pr-27-security-redteam-crypto-audit.json",
@@ -271,6 +283,8 @@
     "pnpm run agent-skills:public-smoke",
     "pnpm run protocol-types:check",
     "pnpm run protocol-types:public-smoke",
+    "pnpm run casterdid-identity:check",
+    "pnpm run casterdid-identity:public-smoke",
     "pnpm run node-api:check",
     "pnpm run repo-records:check",
     "pnpm run push-local-object-store:check",
@@ -278,8 +292,7 @@
     "pnpm run security-redteam:check",
     "pnpm run simulator:check",
     "pnpm run ros:check",
-    "node scripts/web/check-web-truth-table.cjs",
-    "node scripts/web/check-pr12-web-ui.cjs"
+    "node scripts/web/check-web-truth-table.cjs"
   ],
   "passed": true,
   "failed": false,
@@ -343,7 +356,7 @@
     },
     {
       "path": "apps/web/app/open-source/page.tsx",
-      "sha256": "dd81b13d61bcad4d2ca841b5bbdf3bde3d0b424ad7e0b244a537224bf2729b18"
+      "sha256": "f8a6d02d5a9483900784f9d685ced35070f516f4e05545edafffedf9624481be"
     },
     {
       "path": "apps/web/app/open-source/simulator/page.tsx",
@@ -388,6 +401,10 @@
     {
       "path": "apps/web/app/open-source/protocol-types/page.tsx",
       "sha256": "0883a7f42c825800f4e72b2dd4fe99e32b98a22e8a288bf47bf604c14cadd795"
+    },
+    {
+      "path": "apps/web/app/open-source/casterdid-identity/page.tsx",
+      "sha256": "2d52b1982f54ead95ac6216ff8bf1cbff35d2f5c1bcf7634467513d667777a38"
     },
     {
       "path": "apps/web/app/open-source/local-node-api/page.tsx",
@@ -491,7 +508,7 @@
     },
     {
       "path": "apps/web/lib/status-truth.ts",
-      "sha256": "d8023d6965cd0df384a37a9c3210ad0d920bcd63f7a1853c4f670b40b66a6cd8"
+      "sha256": "56ffe1824e4213fdbea86a231a4dcf8fa4eec43734bba06e01f3ca417642aa0e"
     },
     {
       "path": "apps/web/lib/preview-data.ts",
@@ -499,7 +516,7 @@
     },
     {
       "path": "apps/web/lib/evidence-links.ts",
-      "sha256": "40fa919bc10cf8f18dd72a49ca9a501e3cc1470db8b1e0d96ea4be128e18b60b"
+      "sha256": "4593a42a20be01ea76565605be8b4ecdc69ec75a3abdde484c5d91fc927541f0"
     },
     {
       "path": "apps/web/lib/caster-copy.ts",
@@ -539,11 +556,11 @@
     },
     {
       "path": "scripts/web/check-web-truth-table.cjs",
-      "sha256": "c4e221c341e803c537c166001221bd10ad612e00a3be6063b7bfe0efe9797922"
+      "sha256": "116be98d6d8372452171eb3e9e0180942549060464604f47248358df906de89b"
     },
     {
       "path": "scripts/web/check-pr12-web-ui.cjs",
-      "sha256": "5eeeee48b3518d64cf6075c9f5e778e19318539d531e4d9a339182b250345cca"
+      "sha256": "ec75fe06771c0f91155a2f7272e25adb89f206ea101228ff330782356ca8cf74"
     },
     {
       "path": "LICENSE",
@@ -871,7 +888,23 @@
     },
     {
       "path": "apps/web/public/gitcaster-protocol-types-public-smoke.json",
-      "sha256": "d7c671ef184b688f4929b924b7f487f72fa9418ece326dbe96443322724ccd1b"
+      "sha256": "bba860bcf58848c6c8efeb0c45269182995341c658dac278ab229627bb26c95b"
+    },
+    {
+      "path": "apps/web/public/casterdid-identity.md",
+      "sha256": "aff36be89818afa5b45a07b2b4faf621b9c5fd402f18a4864bf690dd9fe668ee"
+    },
+    {
+      "path": "apps/web/public/gitcaster-casterdid-identity.md",
+      "sha256": "f32df919a2cd57ed2b936663b161a1974172f2f81a4eaa6e7714aa5e6fc9f88a"
+    },
+    {
+      "path": "apps/web/public/gitcaster-casterdid-identity.json",
+      "sha256": "21e9515a99fd36a7391db8ad261cb85aa5f044c3c2e065862215adf3f76db5d7"
+    },
+    {
+      "path": "apps/web/public/gitcaster-casterdid-identity-public-smoke.json",
+      "sha256": "2b8add97cc3e0c14a3d49700fee3091705dd88b96a2e4321df25520e1fe1311e"
     },
     {
       "path": "apps/web/public/gitcaster-local-node-api.md",
@@ -978,6 +1011,10 @@
       "sha256": "c5b49793004887426c8c8f48afb1d10f3b9f1b758a8dd61b8d891ddf5196d799"
     },
     {
+      "path": "examples/identity/local-casterdid-identity.example.json",
+      "sha256": "368afc743a24803912e4761c8723115e623dac9d24209a5826e84bdc2ada1043"
+    },
+    {
       "path": "examples/node/local-api-smoke.example.json",
       "sha256": "ea51d0d0c4634a71e50094dd9dc9e1bb77417764c5ac706ac80c9de21de67829"
     },
@@ -1040,6 +1077,14 @@
     {
       "path": "docs-source/developer-layers/protocol-types.md",
       "sha256": "23018d749731f33282e00f3e37e342a9dcbe2cc298025d7e9bf8b5562de09d31"
+    },
+    {
+      "path": "docs-source/developer-layers/casterdid-identity.md",
+      "sha256": "aff36be89818afa5b45a07b2b4faf621b9c5fd402f18a4864bf690dd9fe668ee"
+    },
+    {
+      "path": "docs/casterdid-identity.md",
+      "sha256": "aff36be89818afa5b45a07b2b4faf621b9c5fd402f18a4864bf690dd9fe668ee"
     },
     {
       "path": "docs-source/developer-layers/local-node-api.md",
@@ -1146,6 +1191,14 @@
       "sha256": "043b35a356729931c333916f53e6f98ae5c6745a381e474230ef03e97701b55a"
     },
     {
+      "path": "scripts/identity/check-casterdid-identity-public-alpha.cjs",
+      "sha256": "49472f74f73cfb738dd2958d0f4e3898123dab0a677e12f105541541522c0870"
+    },
+    {
+      "path": "scripts/identity/check-casterdid-identity-public-smoke.cjs",
+      "sha256": "b3adac30e3bdcc8b67f1bd245680613f442f2317da78fa5d84b6dab6829e7047"
+    },
+    {
       "path": "scripts/security/run-beta-gate.cjs",
       "sha256": "acb4006a420f28a195ac01397e8e143ff2714cef666b1f567762fea40af2f32c"
     },
@@ -1235,7 +1288,15 @@
     },
     {
       "path": "launch/evidence/protocol-types-public-smoke.json",
-      "sha256": "d7c671ef184b688f4929b924b7f487f72fa9418ece326dbe96443322724ccd1b"
+      "sha256": "bba860bcf58848c6c8efeb0c45269182995341c658dac278ab229627bb26c95b"
+    },
+    {
+      "path": "launch/evidence/casterdid-identity-public-alpha.json",
+      "sha256": "745534395b0cbf1a6ef72267a3c33cab7d9ac7e6f3a485c39e4c9bdda52c7f48"
+    },
+    {
+      "path": "launch/evidence/casterdid-identity-public-smoke.json",
+      "sha256": "2b8add97cc3e0c14a3d49700fee3091705dd88b96a2e4321df25520e1fe1311e"
     },
     {
       "path": "launch/evidence/pr-17-castercloud-qstorage-pipeline.json",
@@ -1308,6 +1369,9 @@
     "protocolTypesPageCreated": true,
     "protocolTypesEvidenceFound": true,
     "protocolTypesPublicSmokeFound": true,
+    "casterDidIdentityPageCreated": true,
+    "casterDidIdentityEvidenceFound": true,
+    "casterDidIdentityPublicSmokeFound": true,
     "localNodeApiPageCreated": true,
     "repoRecordsPageCreated": true,
     "pushLocalObjectStorePageCreated": true,
@@ -1465,6 +1529,7 @@
       "CLI deploy plan dry-run is public-alpha only until installer, managed runtime, native storage, native domain, custody, billing, rollback, audit, and release-candidate proof exist.",
       "Git remote helper source is public-alpha only until pack transport, node mutation, storage, and rollback proof exist.",
       "MCP source is public-alpha only until public gateway, custody, node mutation, storage, and domain proof exist.",
+      "CasterDID identity is public-alpha local identity proof only until managed custody, public runtime, node mutation, storage, domain, rollback, and release-candidate proof exist.",
       "Local node API source is public-alpha only until public federation, production node health, storage, deploy, domain, and rollback proof exist.",
       "Repo records and issue/PR workflows are public-alpha only until public collaboration, remote event-log durability, normal git transport, storage, and rollback proof exist.",
       "Push-local object manifests are public-alpha only until QStorage publication, normal git transport, remote ref durability, public object hosting, and rollback proof exist.",

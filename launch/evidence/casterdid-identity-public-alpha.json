@@ -1,0 +1,63 @@
+{
+  "type": "gitcaster.casterdid-identity.evidence.v1",
+  "title": "CasterDID identity public-alpha layer",
+  "createdAt": "2026-05-30T19:02:18.173Z",
+  "status": "passed",
+  "repoRoot": "D:\\user\\xxxcrypto-vercel-clean\\.quilibrium\\gitcaster-public-github-release\\gitcaster-public-repo",
+  "filesChanged": [
+    "packages/identity/package.json",
+    "packages/identity/tsconfig.json",
+    "packages/identity/src/index.ts",
+    "packages/identity/src/did-caster.ts",
+    "packages/identity/src/ed25519.ts",
+    "packages/identity/src/key-storage.ts",
+    "packages/identity/src/signature-envelope.ts",
+    "packages/identity/src/canonical-json.ts",
+    "packages/identity/src/identity.test.ts",
+    "examples/identity/local-casterdid-identity.example.json",
+    "docs/casterdid-identity.md",
+    "apps/web/public/casterdid-identity.md",
+    "apps/web/app/open-source/casterdid-identity/page.tsx",
+    "docs-source/developer-layers/casterdid-identity.md",
+    "scripts/identity/check-casterdid-identity-public-alpha.cjs",
+    "scripts/identity/check-casterdid-identity-public-smoke.cjs",
+    "apps/web/public/gitcaster-casterdid-identity.json",
+    "apps/web/public/gitcaster-casterdid-identity.md",
+    "launch/evidence/casterdid-identity-public-alpha.json"
+  ],
+  "commandsRun": [
+    "pnpm --filter @gitcaster/protocol build",
+    "pnpm --filter @gitcaster/identity build",
+    "pnpm --filter @gitcaster/identity test",
+    "node scripts/identity/check-casterdid-identity-public-alpha.cjs"
+  ],
+  "blockers": [],
+  "findings": {
+    "secretFindings": [],
+    "legacyFindings": [],
+    "hostedFindings": [],
+    "fakeClaimFindings": []
+  },
+  "summary": {
+    "didCreated": true,
+    "didDocumentCreated": true,
+    "signedMutationVerified": true,
+    "tamperedMutationFailed": true,
+    "wrongKeyFailed": true,
+    "identityFilesRoundTrip": true,
+    "privateKeyPublished": false,
+    "managedCustodyClaimed": false,
+    "publicRuntimeClaimed": false,
+    "publicNodeMutationClaimed": false,
+    "storagePublicationClaimed": false,
+    "nativeDomainClaimed": false,
+    "productionRuntimeClaimed": false,
+    "secretLeakFindings": 0,
+    "legacyFindings": 0,
+    "hostedFindings": 0,
+    "fakeClaimFindings": 0
+  },
+  "publicJson": "apps/web/public/gitcaster-casterdid-identity.json",
+  "publicMarkdown": "apps/web/public/gitcaster-casterdid-identity.md",
+  "nextProof": "Published package artifact, managed custody review, public runtime endpoint, node mutation, storage, domain, rollback, and release-candidate proof"
+}

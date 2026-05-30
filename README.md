@@ -20,6 +20,7 @@ This public repository is intentionally scoped for contribution and website visi
 - `apps/git-remote-gitcaster` and `examples/git-remote`: public-alpha remote-helper source and blocked transport fixtures.
 - `apps/mcp`, `docs/agent-skills.md`, and `examples/mcp`: public-alpha agent-facing MCP skill notes, schemas, local tool plans, and structured blocker proof.
 - `packages/protocol`, `docs/protocol-types.md`, and `examples/protocol`: public-alpha protocol types, fixture catalog, and placeholder-only envelope examples.
+- `packages/identity`, `docs/casterdid-identity.md`, and `examples/identity`: public-alpha CasterDID helpers, signed mutation envelopes, and public-key-only local identity fixtures.
 - `packages/deploy-manifests` and `examples/deploy`: public-alpha local deploy manifest intake, retired dependency markers, and proof blockers.
 
 ## Open-core boundary
@@ -64,6 +65,8 @@ pnpm run agent-skills:check
 pnpm run agent-skills:public-smoke
 pnpm run protocol-types:check
 pnpm run protocol-types:public-smoke
+pnpm run casterdid-identity:check
+pnpm run casterdid-identity:public-smoke
 pnpm run deploy-manifest:check
 pnpm run simulator:check
 pnpm run ros:check

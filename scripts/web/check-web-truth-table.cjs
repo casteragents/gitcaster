@@ -33,6 +33,7 @@ const filesChanged = [
   "apps/web/app/open-source/mcp-source/page.tsx",
   "apps/web/app/open-source/agent-skills/page.tsx",
   "apps/web/app/open-source/protocol-types/page.tsx",
+  "apps/web/app/open-source/casterdid-identity/page.tsx",
   "apps/web/app/open-source/local-node-api/page.tsx",
   "apps/web/app/open-source/repo-records/page.tsx",
   "apps/web/app/open-source/push-local-object-store/page.tsx",
@@ -154,6 +155,10 @@ const filesChanged = [
   "apps/web/public/gitcaster-protocol-types.md",
   "apps/web/public/gitcaster-protocol-types.json",
   "apps/web/public/gitcaster-protocol-types-public-smoke.json",
+  "apps/web/public/casterdid-identity.md",
+  "apps/web/public/gitcaster-casterdid-identity.md",
+  "apps/web/public/gitcaster-casterdid-identity.json",
+  "apps/web/public/gitcaster-casterdid-identity-public-smoke.json",
   "apps/web/public/gitcaster-local-node-api.md",
   "apps/web/public/gitcaster-repo-records.md",
   "apps/web/public/gitcaster-push-local-object-store.md",
@@ -180,6 +185,7 @@ const filesChanged = [
   "examples/cli/local-command-plan.example.json",
   "examples/git-remote/blocked-transport-plan.example.json",
   "examples/mcp/local-tool-plan.example.json",
+  "examples/identity/local-casterdid-identity.example.json",
   "examples/node/local-api-smoke.example.json",
   "examples/repo-records/local-issue-pr-workflow.example.json",
   "examples/push-local/local-object-manifest.example.json",
@@ -196,6 +202,8 @@ const filesChanged = [
   "docs-source/developer-layers/mcp-source.md",
   "docs-source/developer-layers/agent-skills.md",
   "docs-source/developer-layers/protocol-types.md",
+  "docs-source/developer-layers/casterdid-identity.md",
+  "docs/casterdid-identity.md",
   "docs-source/developer-layers/local-node-api.md",
   "docs-source/developer-layers/repo-records.md",
   "docs-source/developer-layers/push-local-object-store.md",
@@ -222,6 +230,8 @@ const filesChanged = [
   "scripts/mcp/check-agent-skills-public-smoke.cjs",
   "scripts/protocol/check-protocol-types-public-alpha.cjs",
   "scripts/protocol/check-protocol-types-public-smoke.cjs",
+  "scripts/identity/check-casterdid-identity-public-alpha.cjs",
+  "scripts/identity/check-casterdid-identity-public-smoke.cjs",
   "scripts/security/run-beta-gate.cjs",
   "scripts/security/redteam/run-redteam-suite.cjs",
   "scripts/security/redteam/check-crypto-invariants.cjs",
@@ -245,6 +255,8 @@ const filesChanged = [
   "launch/evidence/agent-skills-public-smoke.json",
   "launch/evidence/protocol-types-public-alpha.json",
   "launch/evidence/protocol-types-public-smoke.json",
+  "launch/evidence/casterdid-identity-public-alpha.json",
+  "launch/evidence/casterdid-identity-public-smoke.json",
   "launch/evidence/pr-17-castercloud-qstorage-pipeline.json",
   "launch/evidence/pr-18-security-gate.json",
   "launch/evidence/pr-27-security-redteam-crypto-audit.json",
@@ -402,6 +414,11 @@ if (!statusTruth.includes("launch/evidence/protocol-types-public-smoke.json")) b
 if (!exists("apps/web/app/open-source/protocol-types/page.tsx")) blockers.push("protocol types open-source page missing");
 if (!exists("apps/web/public/gitcaster-protocol-types.json")) blockers.push("generated protocol types JSON missing");
 if (!exists("apps/web/public/gitcaster-protocol-types-public-smoke.json")) blockers.push("generated protocol types public smoke JSON missing");
+if (!statusTruth.includes("docs/casterdid-identity.md") || !statusTruth.includes("apps/web/public/gitcaster-casterdid-identity.json") || !statusTruth.includes("launch/evidence/casterdid-identity-public-alpha.json")) blockers.push("status truth must include CasterDID identity notes, public JSON, and evidence");
+if (!statusTruth.includes("launch/evidence/casterdid-identity-public-smoke.json")) blockers.push("status truth must include CasterDID identity public smoke evidence");
+if (!exists("apps/web/app/open-source/casterdid-identity/page.tsx")) blockers.push("CasterDID identity open-source page missing");
+if (!exists("apps/web/public/gitcaster-casterdid-identity.json")) blockers.push("generated CasterDID identity JSON missing");
+if (!exists("apps/web/public/gitcaster-casterdid-identity-public-smoke.json")) blockers.push("generated CasterDID identity public smoke JSON missing");
 if (!statusTruth.includes("apps/node") || !statusTruth.includes("examples/node/local-api-smoke.example.json") || !statusTruth.includes("launch/evidence/local-node-api-source.json")) blockers.push("status truth must include local node API source, smoke fixture, and evidence");
 if (!startText.includes("gc identity new") || !startText.includes("gitcaster://did:caster:z.../hello-gitcaster")) blockers.push("start page must use GitCaster commands");
 if (!configText.includes('output: "export"')) blockers.push("next config must use static export");
@@ -428,7 +445,7 @@ const evidence = {
   createdAt: new Date().toISOString(),
   repoRoot,
   filesChanged,
-  commandsRun: ["pnpm run api-tutorials:check", "pnpm run miniapp-templates:check", "pnpm run app-shell-catalog:check", "pnpm run app-shell-preview-smoke:check", "pnpm run caster-intelligence-preview:check", "pnpm run deploy-manifest:check", "pnpm run sdk:check", "pnpm run cli:check", "pnpm run cli-deploy-plan:check", "pnpm run git-remote:check", "pnpm run mcp:check", "pnpm run agent-skills:check", "pnpm run agent-skills:public-smoke", "pnpm run protocol-types:check", "pnpm run protocol-types:public-smoke", "pnpm run node-api:check", "pnpm run repo-records:check", "pnpm run push-local-object-store:check", "pnpm run ref-consensus:check", "pnpm run security-redteam:check", "pnpm run simulator:check", "pnpm run ros:check", "node scripts/web/check-web-truth-table.cjs"],
+  commandsRun: ["pnpm run api-tutorials:check", "pnpm run miniapp-templates:check", "pnpm run app-shell-catalog:check", "pnpm run app-shell-preview-smoke:check", "pnpm run caster-intelligence-preview:check", "pnpm run deploy-manifest:check", "pnpm run sdk:check", "pnpm run cli:check", "pnpm run cli-deploy-plan:check", "pnpm run git-remote:check", "pnpm run mcp:check", "pnpm run agent-skills:check", "pnpm run agent-skills:public-smoke", "pnpm run protocol-types:check", "pnpm run protocol-types:public-smoke", "pnpm run casterdid-identity:check", "pnpm run casterdid-identity:public-smoke", "pnpm run node-api:check", "pnpm run repo-records:check", "pnpm run push-local-object-store:check", "pnpm run ref-consensus:check", "pnpm run security-redteam:check", "pnpm run simulator:check", "pnpm run ros:check", "node scripts/web/check-web-truth-table.cjs"],
   passed: blockers.length === 0,
   failed: blockers.length > 0,
   blockers,
@@ -463,6 +480,9 @@ const evidence = {
     protocolTypesPageCreated: exists("apps/web/app/open-source/protocol-types/page.tsx"),
     protocolTypesEvidenceFound: exists("launch/evidence/protocol-types-public-alpha.json"),
     protocolTypesPublicSmokeFound: exists("launch/evidence/protocol-types-public-smoke.json"),
+    casterDidIdentityPageCreated: exists("apps/web/app/open-source/casterdid-identity/page.tsx"),
+    casterDidIdentityEvidenceFound: exists("launch/evidence/casterdid-identity-public-alpha.json"),
+    casterDidIdentityPublicSmokeFound: exists("launch/evidence/casterdid-identity-public-smoke.json"),
     localNodeApiPageCreated: exists("apps/web/app/open-source/local-node-api/page.tsx"),
     repoRecordsPageCreated: exists("apps/web/app/open-source/repo-records/page.tsx"),
     pushLocalObjectStorePageCreated: exists("apps/web/app/open-source/push-local-object-store/page.tsx"),
@@ -544,6 +564,7 @@ const evidence = {
       "CLI deploy plan dry-run is public-alpha only until installer, managed runtime, native storage, native domain, custody, billing, rollback, audit, and release-candidate proof exist.",
       "Git remote helper source is public-alpha only until pack transport, node mutation, storage, and rollback proof exist.",
       "MCP source is public-alpha only until public gateway, custody, node mutation, storage, and domain proof exist.",
+      "CasterDID identity is public-alpha local identity proof only until managed custody, public runtime, node mutation, storage, domain, rollback, and release-candidate proof exist.",
       "Local node API source is public-alpha only until public federation, production node health, storage, deploy, domain, and rollback proof exist.",
       "Repo records and issue/PR workflows are public-alpha only until public collaboration, remote event-log durability, normal git transport, storage, and rollback proof exist.",
       "Push-local object manifests are public-alpha only until QStorage publication, normal git transport, remote ref durability, public object hosting, and rollback proof exist.",
