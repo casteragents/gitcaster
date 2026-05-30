@@ -2,7 +2,7 @@
   "type": "gitcaster.app-shell-local-preview-smoke.public-alpha.v1",
   "status": "passed",
   "localPreviewOnly": true,
-  "createdAt": "2026-05-30T12:55:42.604Z",
+  "createdAt": "2026-05-30T13:02:32.567Z",
   "catalog": {
     "path": "apps/web/public/gitcaster-app-shell-catalog.json",
     "entriesTotal": 11,

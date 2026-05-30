@@ -2,7 +2,7 @@
   "type": "gitcaster.pr.evidence.v1",
   "pr": "PR-12",
   "title": "Web status and proof UI",
-  "createdAt": "2026-05-30T13:02:31.712Z",
+  "createdAt": "2026-05-30T13:22:40.548Z",
   "repoRoot": "D:\\user\\xxxcrypto-vercel-clean\\.quilibrium\\gitcaster-public-github-release\\gitcaster-public-repo",
   "filesChanged": [
     "apps/web/package.json",
@@ -458,7 +458,7 @@
     },
     {
       "path": "apps/web/lib/public-release-feed.ts",
-      "sha256": "6cee690e503fbc53e4cccaa67079178f436cd0137ec1470ebbc7224375be6906"
+      "sha256": "c38dc49902eaa18b7411fc6c909715352f832bee013ddfe8ea2cbf3f579e4cff"
     },
     {
       "path": "apps/web/styles/caster-theme.css",
@@ -830,7 +830,7 @@
     },
     {
       "path": "apps/web/public/gitcaster-app-shell-local-preview-smoke.json",
-      "sha256": "79590c95473f351d85b81322cb083560e1ad414e02e42d2f6bca6a2fe27953bc"
+      "sha256": "ea3ca9b8ca686e7441fe904b7cb1da11796ff2fd5ae73d3deb828a3c46208ba3"
     },
     {
       "path": "examples/worlds/local-agent-grid.world.json",
@@ -1078,7 +1078,7 @@
     },
     {
       "path": "launch/evidence/app-shell-local-preview-smoke-public-alpha.json",
-      "sha256": "0381f8f467989f3ad889e97dda4af862a41333a0b49ce1b27c5a215e96f99468"
+      "sha256": "85cc2ac48886b8078ac18f4ee2db8fc6464b02e9ebc86203763b31dfeef41fb0"
     },
     {
       "path": "launch/evidence/deploy-manifest-intake-public-alpha.json",

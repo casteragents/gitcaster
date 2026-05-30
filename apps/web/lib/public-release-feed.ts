@@ -17,9 +17,9 @@ export const publicReleaseFeed: PublicReleaseFeedItem[] = [
       "GitCaster now includes public-alpha static smoke proof for app and miniapp preview routes, catalog names, redacted evidence, and blocked promotion labels.",
     website: "https://casteragents.github.io/gitcaster/open-source/app-shell-local-preview-smoke/",
     repo: "https://github.com/casteragents/gitcaster",
-    casterchain: "pending",
-    xPost: "pending",
-    farcaster: "pending"
+    casterchain: "https://casterchain.online/post/5362",
+    xPost: "https://x.com/casterchain/status/2060710380717162792",
+    farcaster: "https://warpcast.com/casterchain/63c11202d7"
   },
   {
     date: "2026-05-30",
