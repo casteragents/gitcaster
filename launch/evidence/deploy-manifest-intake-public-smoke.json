@@ -1,15 +1,33 @@
 {
   "type": "gitcaster.deploy-manifest-intake.public-smoke.v1",
-  "createdAt": "2026-05-30T11:34:12.880Z",
+  "createdAt": "2026-05-30T12:02:03.811Z",
   "status": "passed",
-  "url": "https://casteragents.github.io/gitcaster/open-source/deploy-manifest-intake/",
-  "statusCode": 200,
-  "length": 22319,
-  "checks": {
-    "hasTitle": true,
-    "hasBlockedExternal": true,
-    "hasVerificationCommand": true,
-    "hasEvidenceJsonLink": true
-  },
+  "commitSha": "7b7c6d90f639efb52aeef1c8370689e8aa27957f",
+  "results": [
+    {
+      "name": "deployPage",
+      "url": "https://casteragents.github.io/gitcaster/open-source/deploy-manifest-intake/",
+      "statusCode": 200,
+      "ok": true,
+      "length": 22319,
+      "checks": {
+        "Deploy manifest intake": true,
+        "blocked_external": true,
+        "pnpm run deploy-manifest:check": true
+      }
+    },
+    {
+      "name": "homeFeed",
+      "url": "https://casteragents.github.io/gitcaster/",
+      "statusCode": 200,
+      "ok": true,
+      "length": 86422,
+      "checks": {
+        "https://casterchain.online/post/5350": true,
+        "https://x.com/casterchain/status/2060687371616833702": true,
+        "https://warpcast.com/casterchain/461f181900": true
+      }
+    }
+  ],
   "note": "HTTP public smoke used because the in-app browser backend failed during Node kernel startup in this session."
 }
