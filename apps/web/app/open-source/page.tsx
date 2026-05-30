@@ -56,6 +56,15 @@ export default function OpenSourcePage() {
         </div>
         <div className="grid">
           <div className="card">
+            <h3>Caster Intelligence preview shell</h3>
+            <p>Redacted builder-tool shell, local fixture, data-rights blockers, and static preview proof are now public-alpha without source or runtime claims.</p>
+            <div className="mini-list">
+              <a href={sitePath("/open-source/caster-intelligence-preview")}>Website page</a>
+              <a href={sitePath("/ecosystem/caster-intelligence")}>Preview shell</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/examples/app-shells/caster-intelligence.local-shell.json">Fixture</a>
+            </div>
+          </div>
+          <div className="card">
             <h3>App shell local preview smoke</h3>
             <p>Static route smoke proof now checks the app and miniapp preview pages, catalog names, redacted evidence, and blocked promotion labels.</p>
             <div className="mini-list">

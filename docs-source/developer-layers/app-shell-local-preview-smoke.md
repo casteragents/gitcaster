@@ -11,12 +11,15 @@ catalog verification, not a managed runtime or production launch signal.
 - `scripts/ecosystem/check-app-shell-local-preview-smoke-public-alpha.cjs`
 - `apps/web/public/gitcaster-app-shell-local-preview-smoke.json`
 - `apps/web/public/gitcaster-app-shell-local-preview-smoke.md`
+- `apps/web/public/gitcaster-caster-intelligence-preview.json`
 - `launch/evidence/app-shell-local-preview-smoke-public-alpha.json`
+- `launch/evidence/caster-intelligence-preview-public-alpha.json`
 - `apps/web/app/open-source/app-shell-local-preview-smoke/page.tsx`
 
 ## Checked Routes
 
 - `/ecosystem`
+- `/ecosystem/caster-intelligence`
 - `/ecosystem/caster-claim-miniapp`
 - `/open-source/app-shell-catalog`
 

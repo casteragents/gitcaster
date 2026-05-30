@@ -25,6 +25,7 @@ export default function EcosystemPage() {
           <a className="button primary" href={sitePath("/ecosystem/submit")}>Preview submission policy</a>
           <a className="button" href={sitePath("/open-source/app-shell-catalog")}>App shell catalog</a>
           <a className="button" href={sitePath("/open-source/app-shell-local-preview-smoke")}>Preview smoke</a>
+          <a className="button" href={sitePath("/ecosystem/caster-intelligence")}>Caster Intelligence</a>
           <a className="button" href={sitePath("/status")}>View proof status</a>
         </div>
       </div>

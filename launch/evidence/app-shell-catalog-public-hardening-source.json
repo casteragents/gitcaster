@@ -1,7 +1,7 @@
 {
   "type": "gitcaster.app-shell-catalog.public-hardening.evidence.v1",
   "status": "passed",
-  "createdAt": "2026-05-30T12:55:41.436Z",
+  "createdAt": "2026-05-30T13:55:29.398Z",
   "title": "GitCaster app and miniapp shell catalog hardening",
   "publicArtifacts": [
     "packages/ecosystem/src/app-shell-catalog.ts",
@@ -19,7 +19,7 @@
   "summary": {
     "entriesTotal": 11,
     "miniappShells": 2,
-    "localFixtures": 2,
+    "localFixtures": 3,
     "blockedNativeDeployments": 11,
     "blockedManagedRuntimes": 11,
     "noLiveRuntimeClaims": true,
@@ -39,11 +39,11 @@
     },
     {
       "path": "examples/app-shells/gitcaster-app-shell-catalog.local.json",
-      "sha256": "d0d965418373a21a7d30923085d53ae922f66b506830099ac9787eec4bb72978"
+      "sha256": "f1115959d06113a0071283022c79f6dfc84d42493b6c5d9adc6728f270cb3053"
     },
     {
       "path": "apps/web/public/gitcaster-app-shell-catalog.json",
-      "sha256": "8981eeb4e0f40aceee5f68f869dc06aca28139316ebfc69a285daaafe89283e3"
+      "sha256": "4841d09c71d4089bae9f92afae9e8e0ac8a034ecacf558bad2c957f841dfee78"
     }
   ],
   "blockers": [],

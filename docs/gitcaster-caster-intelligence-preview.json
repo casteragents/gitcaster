@@ -1,0 +1,68 @@
+{
+  "type": "gitcaster.caster-intelligence-preview.public-alpha.v1",
+  "status": "passed",
+  "localPreviewOnly": true,
+  "createdAt": "2026-05-30T13:55:31.487Z",
+  "fixture": "examples/app-shells/caster-intelligence.local-shell.json",
+  "catalog": "apps/web/public/gitcaster-app-shell-catalog.json",
+  "claims": {
+    "sourceContentsPublished": false,
+    "nativeStoragePublished": false,
+    "nativeDomainMapped": false,
+    "managedRuntimeAvailable": false,
+    "runtimeEndpointLive": false,
+    "rollbackVerified": false,
+    "productionReady": false
+  },
+  "dataRights": {
+    "provenanceRequired": true,
+    "sourceContentsPublished": false,
+    "indexOnlyAllowed": true,
+    "runtimeStatePublic": false,
+    "secretsExposed": false
+  },
+  "blockedCapabilities": [
+    {
+      "id": "source-contents-publication",
+      "status": "blocked_external"
+    },
+    {
+      "id": "native-storage",
+      "status": "blocked_external"
+    },
+    {
+      "id": "native-domain",
+      "status": "blocked_external"
+    },
+    {
+      "id": "managed-runtime",
+      "status": "blocked_external"
+    },
+    {
+      "id": "runtime-endpoint",
+      "status": "blocked_external"
+    },
+    {
+      "id": "rollback",
+      "status": "blocked_external"
+    },
+    {
+      "id": "production-readiness",
+      "status": "blocked_external"
+    }
+  ],
+  "routeSmokes": [
+    {
+      "route": "/ecosystem/caster-intelligence",
+      "html": "docs/ecosystem/caster-intelligence/index.html",
+      "expectedText": "Caster Intelligence",
+      "status": "passed"
+    },
+    {
+      "route": "/open-source/caster-intelligence-preview",
+      "html": "docs/open-source/caster-intelligence-preview/index.html",
+      "expectedText": "Caster Intelligence preview shell",
+      "status": "passed"
+    }
+  ]
+}

@@ -78,33 +78,46 @@ export function deriveAppShellEntryFromDirectory(entry: GitCasterAppDirectoryEnt
   if (!kind) return null;
   const localPreviewPath = entry.id === "caster-claim-miniapp"
     ? "/ecosystem/caster-claim-miniapp"
+    : entry.id === "caster-intelligence"
+      ? "/ecosystem/caster-intelligence"
     : `/ecosystem#${entry.id}`;
   const isMiniapp = kind === "miniapp-shell";
+  const hasLocalPreviewFixture = isMiniapp || entry.id === "caster-intelligence";
   return createAppShellCatalogEntry({
     id: entry.id,
     name: entry.name,
     kind,
-    status: entry.status === "template-candidate" ? "public-alpha" : statusFromDirectory(entry),
+    status: entry.status === "template-candidate" || entry.id === "caster-intelligence" ? "public-alpha" : statusFromDirectory(entry),
     sourcePath: entry.sourcePath,
     localPreviewPath,
-    manifestPath: isMiniapp ? "examples/miniapps/caster-claim-miniapp.local-shell.json" : null,
+    manifestPath: isMiniapp
+      ? "examples/miniapps/caster-claim-miniapp.local-shell.json"
+      : entry.id === "caster-intelligence"
+        ? "examples/app-shells/caster-intelligence.local-shell.json"
+        : null,
     dependencyRisk: {
-      runtimeApi: isMiniapp ? "local-fixture-only" : "blocked_external",
+      runtimeApi: hasLocalPreviewFixture ? "local-fixture-only" : "blocked_external",
       nativeStorage: "blocked_external",
       nativeDomain: "blocked_external",
       managedRuntime: "blocked_external",
       legacyHostedPlatform: entry.blockers.some((blocker) => /vercel|hosted/i.test(blocker)) ? "legacy-reference" : "none"
     },
     proof: {
-      localFixture: isMiniapp,
+      localFixture: hasLocalPreviewFixture,
       nativeDeployment: false,
       qstoragePublished: false,
       casterDomainMapped: false,
       runtimeEndpointLive: false,
-      evidence: isMiniapp ? ["examples/miniapps/caster-claim-miniapp.local-shell.json"] : entry.proof.evidence
+      evidence: isMiniapp
+        ? ["examples/miniapps/caster-claim-miniapp.local-shell.json"]
+        : entry.id === "caster-intelligence"
+          ? ["examples/app-shells/caster-intelligence.local-shell.json"]
+          : entry.proof.evidence
     },
     publicClaims: isMiniapp
       ? ["local app shell fixture", "manifest shape", "blocked runtime labels"]
+      : entry.id === "caster-intelligence"
+        ? ["local builder shell fixture", "redacted page shape", "blocked runtime labels"]
       : ["proof-aware catalog listing"],
     blockedClaims: [
       "native .caster deployment",

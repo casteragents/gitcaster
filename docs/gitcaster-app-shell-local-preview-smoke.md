@@ -9,9 +9,10 @@ production readiness.
 ## Checked Routes
 
 - /ecosystem: passed
+- /ecosystem/caster-intelligence: passed
 - /ecosystem/caster-claim-miniapp: passed
 - /open-source/app-shell-catalog: passed
-- /ecosystem#caster-intelligence: passed
+- /ecosystem/caster-intelligence: passed
 - /ecosystem/caster-claim-miniapp: passed
 - /ecosystem#casteragents: passed
 - /ecosystem#casterai: passed

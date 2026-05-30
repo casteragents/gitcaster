@@ -2,16 +2,16 @@
   "type": "gitcaster.app-shell-local-preview-smoke.public-alpha.v1",
   "status": "passed",
   "localPreviewOnly": true,
-  "createdAt": "2026-05-30T13:22:41.500Z",
+  "createdAt": "2026-05-30T13:55:30.596Z",
   "catalog": {
     "path": "apps/web/public/gitcaster-app-shell-catalog.json",
     "entriesTotal": 11,
     "miniappShells": 2,
-    "localFixtures": 2
+    "localFixtures": 3
   },
   "staticExport": {
     "root": "docs",
-    "routeSmokeCount": 14
+    "routeSmokeCount": 15
   },
   "claims": {
     "nativeStoragePublished": false,
@@ -55,6 +55,12 @@
       "status": "passed"
     },
     {
+      "route": "/ecosystem/caster-intelligence",
+      "html": "docs/ecosystem/caster-intelligence/index.html",
+      "expectedText": "Caster Intelligence",
+      "status": "passed"
+    },
+    {
       "route": "/ecosystem/caster-claim-miniapp",
       "html": "docs/ecosystem/caster-claim-miniapp/index.html",
       "expectedText": "Caster Claim Miniapp",
@@ -67,9 +73,9 @@
       "status": "passed"
     },
     {
-      "route": "/ecosystem#caster-intelligence",
+      "route": "/ecosystem/caster-intelligence",
       "entryId": "caster-intelligence",
-      "html": "docs/ecosystem/index.html",
+      "html": "docs/ecosystem/caster-intelligence/index.html",
       "expectedText": "Caster Intelligence",
       "status": "passed"
     },

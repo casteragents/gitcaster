@@ -1,6 +1,6 @@
 {
   "type": "gitcaster.app-shell-local-preview-smoke.evidence.v1",
-  "createdAt": "2026-05-30T13:22:41.503Z",
+  "createdAt": "2026-05-30T13:55:30.598Z",
   "status": "passed",
   "title": "GitCaster app and miniapp local preview smoke",
   "localPreviewOnly": true,
@@ -29,6 +29,12 @@
       "status": "passed"
     },
     {
+      "route": "/ecosystem/caster-intelligence",
+      "html": "docs/ecosystem/caster-intelligence/index.html",
+      "expectedText": "Caster Intelligence",
+      "status": "passed"
+    },
+    {
       "route": "/ecosystem/caster-claim-miniapp",
       "html": "docs/ecosystem/caster-claim-miniapp/index.html",
       "expectedText": "Caster Claim Miniapp",
@@ -41,9 +47,9 @@
       "status": "passed"
     },
     {
-      "route": "/ecosystem#caster-intelligence",
+      "route": "/ecosystem/caster-intelligence",
       "entryId": "caster-intelligence",
-      "html": "docs/ecosystem/index.html",
+      "html": "docs/ecosystem/caster-intelligence/index.html",
       "expectedText": "Caster Intelligence",
       "status": "passed"
     },
@@ -122,15 +128,19 @@
   "artifacts": [
     {
       "path": "apps/web/public/gitcaster-app-shell-catalog.json",
-      "sha256": "8981eeb4e0f40aceee5f68f869dc06aca28139316ebfc69a285daaafe89283e3"
+      "sha256": "4841d09c71d4089bae9f92afae9e8e0ac8a034ecacf558bad2c957f841dfee78"
     },
     {
       "path": "examples/app-shells/gitcaster-app-shell-catalog.local.json",
-      "sha256": "d0d965418373a21a7d30923085d53ae922f66b506830099ac9787eec4bb72978"
+      "sha256": "f1115959d06113a0071283022c79f6dfc84d42493b6c5d9adc6728f270cb3053"
     },
     {
       "path": "apps/web/app/ecosystem/page.tsx",
-      "sha256": "2cda753b0c6e47c3b60cd1021a61449e8a97ec51163f6055c68dce3eddd7e49f"
+      "sha256": "b38329a54709215abd60331e0bc54ecc2b64a54c5ceffe34a56468775dcaa022"
+    },
+    {
+      "path": "apps/web/app/ecosystem/caster-intelligence/page.tsx",
+      "sha256": "a05c160d884254610644e7d2bb909087e93d9dd90294a302d90edb400e933432"
     },
     {
       "path": "apps/web/app/ecosystem/caster-claim-miniapp/page.tsx",
@@ -138,11 +148,11 @@
     },
     {
       "path": "apps/web/app/open-source/app-shell-catalog/page.tsx",
-      "sha256": "dc1a512d33b6b9c481f69dc725268b56b4ade97e996c3bfd67e5c081b7409276"
+      "sha256": "4028d5ca265208949ef35729b359b405009589bf21ba0b804537d16f6f3eac37"
     },
     {
       "path": "apps/web/app/open-source/app-shell-local-preview-smoke/page.tsx",
-      "sha256": "fea1b26d0f74db5e23f92f32220a78153812202ac3498eef274bed8d17f7f2ce"
+      "sha256": "4486139111a830004ac27817b031c050f4effa73119fdefaf3dc343c1e2cb1ea"
     },
     {
       "path": "scripts/ecosystem/check-app-shell-catalog-public-alpha.cjs",
@@ -150,19 +160,23 @@
     },
     {
       "path": "scripts/ecosystem/check-app-shell-local-preview-smoke-public-alpha.cjs",
-      "sha256": "e12dc4add3cc5cd4ded61fdd6846336c430c26c26c9c2ec114be07cc24d3adc8"
+      "sha256": "12ece313795acd8edab864e893037d6eb0e61b4a8fc390739a15a676876def08"
+    },
+    {
+      "path": "scripts/ecosystem/check-caster-intelligence-preview-public-alpha.cjs",
+      "sha256": "15285d88eb480d4851ab46c93b91db809799370d4b07c231b728df5e8929b96e"
     },
     {
       "path": "docs-source/developer-layers/app-shell-local-preview-smoke.md",
-      "sha256": "c3988c21abb53c1c25e7e67e4c2f33f273f618877f771500d2b1859ad011bfc0"
+      "sha256": "31347c708c04c157b9ae9840c28061938779b66788b2ea8bdcf6fb18146c1570"
     },
     {
       "path": "apps/web/public/gitcaster-app-shell-local-preview-smoke.json",
-      "sha256": "87a334506c9e353deec58073b0c6c8a90ad66e89264e0bc63d3d1b0e9c590d1c"
+      "sha256": "32571eb819474b32a6a6f4818e95242e87a3b575f816fddabb37bce947bd5fd5"
     },
     {
       "path": "apps/web/public/gitcaster-app-shell-local-preview-smoke.md",
-      "sha256": "20e5d83291a7bcbb28527433c282b5b28c061cff5da7a6edc0ec3c642bce1d99"
+      "sha256": "2f5c855d6db3f8d7bd5e4645a464f757cdf6992ccddce42208cfdf7650c60489"
     }
   ],
   "nextProofRequired": [

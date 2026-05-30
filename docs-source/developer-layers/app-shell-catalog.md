@@ -10,16 +10,21 @@ dependency-risk labeling, and blocked native deployment claims.
 
 - `packages/ecosystem/src/app-shell-catalog.ts`
 - `examples/app-shells/gitcaster-app-shell-catalog.local.json`
+- `examples/app-shells/caster-intelligence.local-shell.json`
 - `apps/web/public/gitcaster-app-shell-catalog.json`
 - `apps/web/public/gitcaster-app-shell-local-preview-smoke.json`
+- `apps/web/public/gitcaster-caster-intelligence-preview.json`
 - `scripts/ecosystem/check-app-shell-catalog-public-alpha.cjs`
 - `scripts/ecosystem/check-app-shell-local-preview-smoke-public-alpha.cjs`
+- `scripts/ecosystem/check-caster-intelligence-preview-public-alpha.cjs`
 - `launch/evidence/app-shell-catalog-public-hardening-source.json`
 - `launch/evidence/app-shell-local-preview-smoke-public-alpha.json`
+- `launch/evidence/caster-intelligence-preview-public-alpha.json`
 
 ## What Is Public
 
 - Local preview routes under `/ecosystem`.
+- Redacted Caster Intelligence builder-tool shell metadata.
 - Miniapp shell manifest shape for Caster Claim.
 - Dependency-risk labels for runtime API, native storage, native domains,
   managed runtime, and legacy hosted references.

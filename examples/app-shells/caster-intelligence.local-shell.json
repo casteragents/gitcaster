@@ -1,0 +1,49 @@
+{
+  "type": "gitcaster.caster-intelligence.local-shell.v1",
+  "status": "public-alpha",
+  "scope": "local-preview-shell-only",
+  "id": "caster-intelligence",
+  "name": "Caster Intelligence",
+  "kind": "tool-shell",
+  "sitePath": "/ecosystem/caster-intelligence",
+  "catalogPath": "apps/web/public/gitcaster-app-shell-catalog.json",
+  "publicArtifacts": [
+    "apps/web/app/ecosystem/caster-intelligence/page.tsx",
+    "apps/web/app/open-source/caster-intelligence-preview/page.tsx",
+    "apps/web/public/gitcaster-caster-intelligence-preview.json",
+    "launch/evidence/caster-intelligence-preview-public-alpha.json"
+  ],
+  "claims": {
+    "localPreviewShell": true,
+    "sourceContentsPublished": false,
+    "nativeStoragePublished": false,
+    "nativeDomainMapped": false,
+    "managedRuntimeAvailable": false,
+    "runtimeEndpointLive": false,
+    "rollbackVerified": false,
+    "productionReady": false
+  },
+  "dependencyRisk": {
+    "runtimeApi": "local-fixture-only",
+    "nativeStorage": "blocked_external",
+    "nativeDomain": "blocked_external",
+    "managedRuntime": "blocked_external",
+    "legacyHostedPlatform": "none"
+  },
+  "dataRights": {
+    "provenanceRequired": true,
+    "sourceContentsPublished": false,
+    "indexOnlyAllowed": true,
+    "runtimeStatePublic": false,
+    "secretsExposed": false
+  },
+  "blockedClaims": [
+    "native .caster deployment",
+    "QStorage publication",
+    "managed runtime endpoint",
+    "production readiness",
+    "external audit completion",
+    "source contents publication"
+  ],
+  "canShipProduction": false
+}

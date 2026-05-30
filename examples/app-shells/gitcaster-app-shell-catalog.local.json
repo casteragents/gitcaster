@@ -6,6 +6,7 @@
   "sourceDirectoryPath": "apps/web/public/gitcaster-ecosystem.rc.json",
   "localPreviewRoutes": [
     "/ecosystem",
+    "/ecosystem/caster-intelligence",
     "/ecosystem/caster-claim-miniapp",
     "/open-source/app-shell-catalog"
   ],

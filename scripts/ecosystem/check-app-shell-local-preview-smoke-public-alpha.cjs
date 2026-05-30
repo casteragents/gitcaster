@@ -14,11 +14,13 @@ const requiredFiles = [
   catalogRel,
   fixtureRel,
   "apps/web/app/ecosystem/page.tsx",
+  "apps/web/app/ecosystem/caster-intelligence/page.tsx",
   "apps/web/app/ecosystem/caster-claim-miniapp/page.tsx",
   "apps/web/app/open-source/app-shell-catalog/page.tsx",
   "apps/web/app/open-source/app-shell-local-preview-smoke/page.tsx",
   "scripts/ecosystem/check-app-shell-catalog-public-alpha.cjs",
   "scripts/ecosystem/check-app-shell-local-preview-smoke-public-alpha.cjs",
+  "scripts/ecosystem/check-caster-intelligence-preview-public-alpha.cjs",
   "docs-source/developer-layers/app-shell-local-preview-smoke.md"
 ];
 
@@ -136,6 +138,8 @@ if (staticRoot) {
     const html = htmlExists ? fs.readFileSync(htmlPath, "utf8") : "";
     const expectedText = route === "/ecosystem/caster-claim-miniapp"
       ? "Caster Claim Miniapp"
+      : route === "/ecosystem/caster-intelligence"
+        ? "Caster Intelligence"
       : route === "/open-source/app-shell-catalog"
         ? "App shell catalog"
         : "GitCaster ecosystem";

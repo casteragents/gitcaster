@@ -3,6 +3,7 @@ import { sitePath } from "../../../lib/site-url";
 const publicArtifacts = [
   ["Catalog module", "packages/ecosystem/src/app-shell-catalog.ts", "Typed shell catalog entries derived from the proof-aware ecosystem RC directory."],
   ["Local fixture", "examples/app-shells/gitcaster-app-shell-catalog.local.json", "Local preview routes, dependency-risk labels, and blocked native deployment claims."],
+  ["Caster Intelligence fixture", "examples/app-shells/caster-intelligence.local-shell.json", "Redacted builder-tool shell metadata and data-rights blockers."],
   ["Generated catalog", "apps/web/public/gitcaster-app-shell-catalog.json", "Public JSON catalog for app and miniapp shell review."],
   ["Preview smoke", "apps/web/public/gitcaster-app-shell-local-preview-smoke.json", "Static route smoke status for local app and miniapp previews."],
   ["Strict checker", "scripts/ecosystem/check-app-shell-catalog-public-alpha.cjs", "Deterministic gate that rejects live runtime, native deploy, QStorage, domain, and production claims."],

@@ -38,7 +38,9 @@ const requiredFiles = [
   "apps/web/app/open-source/security-redteam/page.tsx",
   "apps/web/app/open-source/app-shell-catalog/page.tsx",
   "apps/web/app/open-source/app-shell-local-preview-smoke/page.tsx",
+  "apps/web/app/open-source/caster-intelligence-preview/page.tsx",
   "apps/web/app/open-source/deploy-manifest-intake/page.tsx",
+  "apps/web/app/ecosystem/caster-intelligence/page.tsx",
   "apps/web/components/TruthStatusPill.tsx",
   "apps/web/components/TruthTable.tsx",
   "apps/web/components/ProofPanel.tsx",
@@ -151,6 +153,8 @@ const requiredFiles = [
   "apps/web/public/gitcaster-cli-deploy-plan.md",
   "apps/web/public/gitcaster-app-shell-local-preview-smoke.md",
   "apps/web/public/gitcaster-app-shell-local-preview-smoke.json",
+  "apps/web/public/gitcaster-caster-intelligence-preview.md",
+  "apps/web/public/gitcaster-caster-intelligence-preview.json",
   "examples/worlds/local-agent-grid.world.json",
   "examples/ros/local-agent-bridge.launch.json",
   "examples/ros/local-agent-bridge.messages.json",
@@ -158,6 +162,7 @@ const requiredFiles = [
   "examples/api/agent-post-request-shape.example.json",
   "examples/miniapps/caster-claim-miniapp.local-shell.json",
   "examples/app-shells/gitcaster-app-shell-catalog.local.json",
+  "examples/app-shells/caster-intelligence.local-shell.json",
   "examples/deploy/local-deploy-manifest.example.json",
   "examples/sdk/public-alpha-client.example.ts",
   "examples/sdk/public-alpha-client.example.json",
@@ -185,6 +190,7 @@ const requiredFiles = [
   "docs-source/developer-layers/security-redteam.md",
   "docs-source/developer-layers/app-shell-catalog.md",
   "docs-source/developer-layers/app-shell-local-preview-smoke.md",
+  "docs-source/developer-layers/caster-intelligence-preview.md",
   "docs-source/developer-layers/deploy-manifest-intake.md",
   "docs/security/redteam-plan.md",
   "docs/security/crypto-audit-rehearsal.md",
@@ -196,6 +202,7 @@ const requiredFiles = [
   "scripts/ecosystem/check-pr28-ecosystem-rc.cjs",
   "scripts/ecosystem/check-app-shell-catalog-public-alpha.cjs",
   "scripts/ecosystem/check-app-shell-local-preview-smoke-public-alpha.cjs",
+  "scripts/ecosystem/check-caster-intelligence-preview-public-alpha.cjs",
   "scripts/deploy/check-deploy-manifest-intake-public-alpha.cjs",
   "scripts/cli/check-cli-deploy-plan-public-alpha.cjs",
   "scripts/security/run-beta-gate.cjs",
@@ -213,6 +220,7 @@ const requiredFiles = [
   "launch/evidence/pr-28-ecosystem-rc-import.json",
   "launch/evidence/app-shell-catalog-public-hardening-source.json",
   "launch/evidence/app-shell-local-preview-smoke-public-alpha.json",
+  "launch/evidence/caster-intelligence-preview-public-alpha.json",
   "launch/evidence/deploy-manifest-intake-public-alpha.json",
   "launch/evidence/cli-deploy-plan-local-dry-run.json",
   "launch/evidence/cli-deploy-plan-public-alpha.json",
@@ -301,7 +309,7 @@ if (!packageOnly) {
     if (evidence.summary?.publicNodesOnlineClaimed !== false) blockers.push("publicNodesOnlineClaimed must be false");
     if (evidence.summary?.multiNodeReplicationClaimed !== false) blockers.push("multiNodeReplicationClaimed must be false");
     if (evidence.summary?.unhackableClaimed !== false) blockers.push("unhackableClaimed must be false");
-    if (!Array.isArray(evidence.truthTable?.surfaces) || evidence.truthTable.surfaces.length !== 59) blockers.push("truth table must include 59 current surfaces");
+    if (!Array.isArray(evidence.truthTable?.surfaces) || evidence.truthTable.surfaces.length !== 62) blockers.push("truth table must include 62 current surfaces");
     if (!evidence.truthTable?.surfaces?.includes("GitHub Pages website")) blockers.push("truth table must include GitHub Pages website");
     if (!evidence.truthTable?.surfaces?.includes("open-core boundary")) blockers.push("truth table must include open-core boundary");
     if (!evidence.truthTable?.surfaces?.includes("simulator package")) blockers.push("truth table must include simulator package");
@@ -313,6 +321,9 @@ if (!packageOnly) {
     if (!evidence.truthTable?.surfaces?.includes("app shell local preview evidence")) blockers.push("truth table must include app shell local preview evidence");
     if (!evidence.truthTable?.surfaces?.includes("app shell preview promotion blockers")) blockers.push("truth table must include app shell preview promotion blockers");
     if (!evidence.truthTable?.surfaces?.includes("app shell dependency-risk labels")) blockers.push("truth table must include app shell dependency-risk labels");
+    if (!evidence.truthTable?.surfaces?.includes("Caster Intelligence preview shell")) blockers.push("truth table must include Caster Intelligence preview shell");
+    if (!evidence.truthTable?.surfaces?.includes("Caster Intelligence fixture")) blockers.push("truth table must include Caster Intelligence fixture");
+    if (!evidence.truthTable?.surfaces?.includes("Caster Intelligence promotion blockers")) blockers.push("truth table must include Caster Intelligence promotion blockers");
     if (!evidence.truthTable?.surfaces?.includes("deploy manifest intake")) blockers.push("truth table must include deploy manifest intake");
     if (!evidence.truthTable?.surfaces?.includes("deploy manifest production blockers")) blockers.push("truth table must include deploy manifest production blockers");
     if (!evidence.truthTable?.surfaces?.includes("CLI deploy plan dry-run")) blockers.push("truth table must include CLI deploy plan dry-run");

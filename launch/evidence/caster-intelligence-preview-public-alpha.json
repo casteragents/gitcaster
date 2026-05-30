@@ -1,0 +1,82 @@
+{
+  "type": "gitcaster.caster-intelligence-preview.evidence.v1",
+  "createdAt": "2026-05-30T13:55:31.700Z",
+  "status": "passed",
+  "title": "Caster Intelligence public-alpha local preview shell",
+  "localPreviewOnly": true,
+  "fixture": "examples/app-shells/caster-intelligence.local-shell.json",
+  "catalog": "apps/web/public/gitcaster-app-shell-catalog.json",
+  "publicJson": "apps/web/public/gitcaster-caster-intelligence-preview.json",
+  "publicMarkdown": "apps/web/public/gitcaster-caster-intelligence-preview.md",
+  "website": "apps/web/app/ecosystem/caster-intelligence/page.tsx",
+  "openSourcePage": "apps/web/app/open-source/caster-intelligence-preview/page.tsx",
+  "commandsRun": [
+    "pnpm run app-shell-preview-smoke:check",
+    "node scripts/ecosystem/check-caster-intelligence-preview-public-alpha.cjs"
+  ],
+  "claims": {
+    "sourceContentsPublished": false,
+    "nativeStoragePublished": false,
+    "nativeDomainMapped": false,
+    "managedRuntimeAvailable": false,
+    "runtimeEndpointLive": false,
+    "rollbackVerified": false,
+    "productionReady": false
+  },
+  "dataRights": {
+    "provenanceRequired": true,
+    "sourceContentsPublished": false,
+    "indexOnlyAllowed": true,
+    "runtimeStatePublic": false,
+    "secretsExposed": false
+  },
+  "routeSmokes": [
+    {
+      "route": "/ecosystem/caster-intelligence",
+      "html": "docs/ecosystem/caster-intelligence/index.html",
+      "expectedText": "Caster Intelligence",
+      "status": "passed"
+    },
+    {
+      "route": "/open-source/caster-intelligence-preview",
+      "html": "docs/open-source/caster-intelligence-preview/index.html",
+      "expectedText": "Caster Intelligence preview shell",
+      "status": "passed"
+    }
+  ],
+  "blockers": [],
+  "artifacts": [
+    {
+      "path": "examples/app-shells/caster-intelligence.local-shell.json",
+      "sha256": "5e678b0fe67474883dd169a94877a1a6da7fb2804ea191417849c1d95b795721"
+    },
+    {
+      "path": "apps/web/public/gitcaster-app-shell-catalog.json",
+      "sha256": "4841d09c71d4089bae9f92afae9e8e0ac8a034ecacf558bad2c957f841dfee78"
+    },
+    {
+      "path": "apps/web/app/ecosystem/caster-intelligence/page.tsx",
+      "sha256": "a05c160d884254610644e7d2bb909087e93d9dd90294a302d90edb400e933432"
+    },
+    {
+      "path": "apps/web/app/open-source/caster-intelligence-preview/page.tsx",
+      "sha256": "56ffb659e07c215d28cd080ae84a88882ff01ec1d9bb7b97e280bf73b9b29084"
+    },
+    {
+      "path": "apps/web/public/gitcaster-caster-intelligence-preview.json",
+      "sha256": "7d80079d8b40f5ba7e511acc849dac6220760a95adcbbc7fd26ba4e7644c4abc"
+    },
+    {
+      "path": "apps/web/public/gitcaster-caster-intelligence-preview.md",
+      "sha256": "36b6f4c14f6886af691f768a6ba5031b2e13ebbd48a30ed6847fce3593d7daa3"
+    }
+  ],
+  "nextProofRequired": [
+    "source rights review proof",
+    "public user browser smoke proof",
+    "native storage publish and read proof",
+    "native domain route proof",
+    "managed runtime endpoint proof",
+    "rollback proof for live promotion"
+  ]
+}

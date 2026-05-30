@@ -9,6 +9,7 @@ const publicArtifacts = [
 
 const checkedRoutes = [
   ["/ecosystem", "Catalog directory loads preview entries from the RC manifest."],
+  ["/ecosystem/caster-intelligence", "Caster Intelligence builder shell loads as a redacted local preview surface."],
   ["/ecosystem/caster-claim-miniapp", "Caster Claim miniapp shell loads as a local preview surface."],
   ["/open-source/app-shell-catalog", "Catalog hardening page loads with proof labels and blocked claims."]
 ];

@@ -9,29 +9,31 @@
       "id": "caster-intelligence",
       "name": "Caster Intelligence",
       "kind": "tool-shell",
-      "status": "preview",
+      "status": "public-alpha",
       "sourcePath": "caster intelligence",
-      "localPreviewPath": "/ecosystem#caster-intelligence",
-      "manifestPath": null,
+      "localPreviewPath": "/ecosystem/caster-intelligence",
+      "manifestPath": "examples/app-shells/caster-intelligence.local-shell.json",
       "dependencyRisk": {
-        "runtimeApi": "blocked_external",
+        "runtimeApi": "local-fixture-only",
         "nativeStorage": "blocked_external",
         "nativeDomain": "blocked_external",
         "managedRuntime": "blocked_external",
         "legacyHostedPlatform": "none"
       },
       "proof": {
-        "localFixture": false,
+        "localFixture": true,
         "nativeDeployment": false,
         "qstoragePublished": false,
         "casterDomainMapped": false,
         "runtimeEndpointLive": false,
         "evidence": [
-          "caster intelligence"
+          "examples/app-shells/caster-intelligence.local-shell.json"
         ]
       },
       "publicClaims": [
-        "proof-aware catalog listing"
+        "local builder shell fixture",
+        "redacted page shape",
+        "blocked runtime labels"
       ],
       "blockedClaims": [
         "native .caster deployment",
@@ -417,7 +419,7 @@
   "summary": {
     "entriesTotal": 11,
     "miniappShells": 2,
-    "localFixtures": 2,
+    "localFixtures": 3,
     "blockedNativeDeployments": 11,
     "blockedManagedRuntimes": 11
   },
@@ -427,5 +429,5 @@
     "Local previews are not deployment claims.",
     "Native storage, native domain, and managed runtime claims stay blocked until proof exists."
   ],
-  "rootHash": "sha256:e8dceb2f8b9e02fe840e25857a895318e0fde838fe26f81a1224c1710d2592cd"
+  "rootHash": "sha256:82308df4a041c0a2c075eb8e0c45fca6e5df3146f8f6200631135d5bb63c0d0a"
 }
