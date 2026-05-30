@@ -12,6 +12,17 @@ export type PublicReleaseFeedItem = {
 export const publicReleaseFeed: PublicReleaseFeedItem[] = [
   {
     date: "2026-05-30",
+    title: "Caster Intelligence preview shell",
+    summary:
+      "GitCaster now includes a public-alpha redacted Caster Intelligence shell with local fixture evidence, source and data-rights blockers, and no runtime/source-release claims.",
+    website: "https://casteragents.github.io/gitcaster/ecosystem/caster-intelligence/",
+    repo: "https://github.com/casteragents/gitcaster",
+    casterchain: "https://casterchain.online/post/5363",
+    xPost: "https://x.com/casterchain/status/2060725246613967316",
+    farcaster: "https://warpcast.com/casterchain/6bef26fa78"
+  },
+  {
+    date: "2026-05-30",
     title: "App shell local preview smoke",
     summary:
       "GitCaster now includes public-alpha static smoke proof for app and miniapp preview routes, catalog names, redacted evidence, and blocked promotion labels.",

@@ -7,9 +7,10 @@ const repoRoot = path.resolve(__dirname, "../..");
 const appRoot = path.join(repoRoot, "apps/web");
 const useInPlaceBuild = process.env.GITCASTER_WEB_BUILD_IN_PLACE !== "0";
 const workRoot = useInPlaceBuild ? appRoot : path.join(appRoot, `.next-codex-web-build-${process.pid}`);
+const distDirName = process.env.GITCASTER_NEXT_DIST_DIR || ".next-gitcaster";
 const nextBin = path.join(appRoot, "node_modules/next/dist/bin/next");
 const outSource = useInPlaceBuild ? path.join(appRoot, ".next-codex-export-out") : path.join(workRoot, "out");
-const distDirExportSource = path.join(workRoot, ".next-gitcaster");
+const distDirExportSource = path.join(workRoot, distDirName);
 const outTarget = path.join(appRoot, "out");
 const docsTarget = path.join(repoRoot, "docs");
 const docsSourceSecurity = path.join(repoRoot, "docs-source", "security");
@@ -104,7 +105,8 @@ function runNextBuild() {
       ...process.env,
       NEXT_TELEMETRY_DISABLED: "1",
       GITCASTER_PAGES_BASE_PATH: process.env.GITCASTER_PAGES_BASE_PATH || "/gitcaster",
-      NEXT_PUBLIC_GITCASTER_BASE_PATH: process.env.NEXT_PUBLIC_GITCASTER_BASE_PATH || "/gitcaster"
+      NEXT_PUBLIC_GITCASTER_BASE_PATH: process.env.NEXT_PUBLIC_GITCASTER_BASE_PATH || "/gitcaster",
+      GITCASTER_NEXT_DIST_DIR: distDirName
     },
     stdio: "inherit",
     timeout: 600000

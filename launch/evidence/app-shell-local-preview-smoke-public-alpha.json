@@ -1,6 +1,6 @@
 {
   "type": "gitcaster.app-shell-local-preview-smoke.evidence.v1",
-  "createdAt": "2026-05-30T13:55:30.598Z",
+  "createdAt": "2026-05-30T14:37:22.275Z",
   "status": "passed",
   "title": "GitCaster app and miniapp local preview smoke",
   "localPreviewOnly": true,
@@ -172,7 +172,7 @@
     },
     {
       "path": "apps/web/public/gitcaster-app-shell-local-preview-smoke.json",
-      "sha256": "32571eb819474b32a6a6f4818e95242e87a3b575f816fddabb37bce947bd5fd5"
+      "sha256": "aeea634bd69dbd85aeaba6770cb67ad8fa008084b2255579177d034ba7d93045"
     },
     {
       "path": "apps/web/public/gitcaster-app-shell-local-preview-smoke.md",

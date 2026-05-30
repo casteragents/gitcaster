@@ -1,7 +1,7 @@
 {
   "type": "gitcaster.app-shell-catalog.public-hardening.evidence.v1",
   "status": "passed",
-  "createdAt": "2026-05-30T13:55:29.398Z",
+  "createdAt": "2026-05-30T14:37:21.410Z",
   "title": "GitCaster app and miniapp shell catalog hardening",
   "publicArtifacts": [
     "packages/ecosystem/src/app-shell-catalog.ts",

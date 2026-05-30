@@ -1,6 +1,6 @@
 {
   "type": "gitcaster.caster-intelligence-preview.evidence.v1",
-  "createdAt": "2026-05-30T13:55:31.700Z",
+  "createdAt": "2026-05-30T14:37:22.914Z",
   "status": "passed",
   "title": "Caster Intelligence public-alpha local preview shell",
   "localPreviewOnly": true,
@@ -64,7 +64,7 @@
     },
     {
       "path": "apps/web/public/gitcaster-caster-intelligence-preview.json",
-      "sha256": "7d80079d8b40f5ba7e511acc849dac6220760a95adcbbc7fd26ba4e7644c4abc"
+      "sha256": "18f7424ad15b19d1fee895cfeb0b12137bc22d37230e2d7e72ab8dfa73d7a931"
     },
     {
       "path": "apps/web/public/gitcaster-caster-intelligence-preview.md",

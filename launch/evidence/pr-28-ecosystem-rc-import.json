@@ -1,7 +1,7 @@
 {
   "type": "gitcaster.pr28.ecosystem-rc-import.evidence.v1",
   "status": "passed",
-  "createdAt": "2026-05-30T13:55:29.263Z",
+  "createdAt": "2026-05-30T14:37:21.150Z",
   "packageOnly": false,
   "rcDirectory": {
     "path": "apps/web/public/gitcaster-ecosystem.rc.json",

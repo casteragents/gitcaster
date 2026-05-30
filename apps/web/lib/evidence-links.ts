@@ -71,6 +71,7 @@ export const evidenceLinks: EvidenceLink[] = [
   { label: "Caster Intelligence preview shell", path: "apps/web/app/ecosystem/caster-intelligence/page.tsx", status: "public-alpha" },
   { label: "Caster Intelligence fixture", path: "examples/app-shells/caster-intelligence.local-shell.json", status: "public-alpha" },
   { label: "Caster Intelligence preview evidence", path: "launch/evidence/caster-intelligence-preview-public-alpha.json", status: "public-alpha" },
+  { label: "Caster Intelligence public smoke", path: "launch/evidence/caster-intelligence-preview-public-smoke.json", status: "public-alpha" },
   { label: "QStorage publish", path: "blocked: CASTER_QSTORAGE_ENDPOINT", status: "requires-endpoint" },
   { label: "CasterCloud deploy", path: "blocked: CASTER_CLOUD_DEPLOY_ENDPOINT", status: "requires-endpoint" },
   { label: ".caster domains", path: "blocked: CASTER_DOMAIN_REGISTRY_ENDPOINT", status: "requires-registry" },

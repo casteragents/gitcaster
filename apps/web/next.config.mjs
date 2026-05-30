@@ -3,10 +3,11 @@ import { fileURLToPath } from "node:url";
 
 const appRoot = dirname(fileURLToPath(import.meta.url));
 const pagesBasePath = process.env.GITCASTER_PAGES_BASE_PATH || "";
+const distDir = process.env.GITCASTER_NEXT_DIST_DIR || ".next-gitcaster";
 
 const nextConfig = {
   output: "export",
-  distDir: ".next-gitcaster",
+  distDir,
   trailingSlash: true,
   ...(pagesBasePath
     ? {
