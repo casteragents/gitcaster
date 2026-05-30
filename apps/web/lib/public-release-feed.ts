@@ -12,6 +12,17 @@ export type PublicReleaseFeedItem = {
 export const publicReleaseFeed: PublicReleaseFeedItem[] = [
   {
     date: "2026-05-31",
+    title: "CasterDID identity layer",
+    summary:
+      "GitCaster now includes public-alpha CasterDID identity helpers for local DID documents, public-key fingerprints, signed mutation envelopes, public-key-only fixtures, and deterministic smoke proof.",
+    website: "https://casteragents.github.io/gitcaster/open-source/casterdid-identity/",
+    repo: "https://github.com/casteragents/gitcaster",
+    casterchain: "https://casterchain.online/post/5366",
+    xPost: "https://x.com/casterchain/status/2060801268097102108",
+    farcaster: "https://warpcast.com/casterchain/a1e0c57eb7"
+  },
+  {
+    date: "2026-05-31",
     title: "Protocol types layer",
     summary:
       "GitCaster now includes public-alpha protocol types for identities, capabilities, repo records, events, statuses, content types, error codes, fixture names, and placeholder-only envelope examples.",

@@ -2,7 +2,7 @@
   "type": "gitcaster.pr.evidence.v1",
   "pr": "PR-12",
   "title": "Web status and proof UI",
-  "createdAt": "2026-05-30T19:02:11.425Z",
+  "createdAt": "2026-05-30T19:22:33.637Z",
   "repoRoot": "D:\\user\\xxxcrypto-vercel-clean\\.quilibrium\\gitcaster-public-github-release\\gitcaster-public-repo",
   "filesChanged": [
     "apps/web/package.json",
@@ -524,7 +524,7 @@
     },
     {
       "path": "apps/web/lib/public-release-feed.ts",
-      "sha256": "e08f807ef5ecd0c8f2a346298e6588fa4ffba92ee73449ed801bd650234ca725"
+      "sha256": "3bc654be7315fa206543095dc0a56c1dd8d1ecebb8257cf69911fb38f8990e34"
     },
     {
       "path": "apps/web/styles/caster-theme.css",
@@ -900,11 +900,11 @@
     },
     {
       "path": "apps/web/public/gitcaster-casterdid-identity.json",
-      "sha256": "21e9515a99fd36a7391db8ad261cb85aa5f044c3c2e065862215adf3f76db5d7"
+      "sha256": "7acac72fb229d975642097989caa876662aed2ce80fa3311a7c43126f1e07ace"
     },
     {
       "path": "apps/web/public/gitcaster-casterdid-identity-public-smoke.json",
-      "sha256": "2b8add97cc3e0c14a3d49700fee3091705dd88b96a2e4321df25520e1fe1311e"
+      "sha256": "c71d4b8d15e08e2ca5916fb83d65e0e21ccc561c575bcff1bdf9297ca04ca9cd"
     },
     {
       "path": "apps/web/public/gitcaster-local-node-api.md",
@@ -1292,11 +1292,11 @@
     },
     {
       "path": "launch/evidence/casterdid-identity-public-alpha.json",
-      "sha256": "745534395b0cbf1a6ef72267a3c33cab7d9ac7e6f3a485c39e4c9bdda52c7f48"
+      "sha256": "dd8eb2747c2bcfb4262ec07d942e96e267f582373a8a23f33ccd49c10a433fcb"
     },
     {
       "path": "launch/evidence/casterdid-identity-public-smoke.json",
-      "sha256": "2b8add97cc3e0c14a3d49700fee3091705dd88b96a2e4321df25520e1fe1311e"
+      "sha256": "c71d4b8d15e08e2ca5916fb83d65e0e21ccc561c575bcff1bdf9297ca04ca9cd"
     },
     {
       "path": "launch/evidence/pr-17-castercloud-qstorage-pipeline.json",
