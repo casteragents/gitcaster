@@ -1,0 +1,15 @@
+{
+  "type": "gitcaster.deploy-manifest-intake.public-smoke.v1",
+  "createdAt": "2026-05-30T11:34:12.880Z",
+  "status": "passed",
+  "url": "https://casteragents.github.io/gitcaster/open-source/deploy-manifest-intake/",
+  "statusCode": 200,
+  "length": 22319,
+  "checks": {
+    "hasTitle": true,
+    "hasBlockedExternal": true,
+    "hasVerificationCommand": true,
+    "hasEvidenceJsonLink": true
+  },
+  "note": "HTTP public smoke used because the in-app browser backend failed during Node kernel startup in this session."
+}

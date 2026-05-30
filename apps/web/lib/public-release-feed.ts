@@ -17,9 +17,9 @@ export const publicReleaseFeed: PublicReleaseFeedItem[] = [
       "GitCaster now includes public-alpha deploy manifest intake for local dry-run release plans, retired dependency markers, proof blockers, and production-claim rejection.",
     website: "https://casteragents.github.io/gitcaster/open-source/deploy-manifest-intake/",
     repo: "https://github.com/casteragents/gitcaster",
-    casterchain: "pending",
-    xPost: "pending",
-    farcaster: "pending"
+    casterchain: "https://casterchain.online/post/5350",
+    xPost: "https://x.com/casterchain/status/2060687371616833702",
+    farcaster: "https://warpcast.com/casterchain/461f181900"
   },
   {
     date: "2026-05-30",
