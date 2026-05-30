@@ -1,0 +1,10 @@
+{
+  "id": "no-fake-live-claims",
+  "title": "No fake live/deployment claims",
+  "status": "passed",
+  "checkedAt": "2026-05-30T00:25:47.048Z",
+  "findings": [],
+  "skipped": [],
+  "fixList": [],
+  "secretValuesPrinted": false
+}

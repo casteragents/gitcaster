@@ -1,0 +1,16 @@
+{
+  "type": "gitcaster.redteam.evidence-integrity-abuse.v1",
+  "status": "passed",
+  "createdAt": "2026-05-30T00:25:13.049Z",
+  "evidenceFilesChecked": 22,
+  "invalidEvidence": [],
+  "unsupportedClaims": [],
+  "secretFindings": [],
+  "canShipProductionViolations": [],
+  "summary": {
+    "productionClaimBeforePr32": false,
+    "fakeProofClaims": 0,
+    "secretFindings": 0,
+    "invalidEvidenceFiles": 0
+  }
+}

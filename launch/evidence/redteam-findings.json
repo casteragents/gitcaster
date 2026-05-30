@@ -1,0 +1,11 @@
+{
+  "type": "gitcaster.redteam.findings.v1",
+  "status": "passed",
+  "createdAt": "2026-05-30T00:25:13.074Z",
+  "findings": [],
+  "summary": {
+    "criticalOpen": 0,
+    "highOpen": 0,
+    "manualRequired": 1
+  }
+}

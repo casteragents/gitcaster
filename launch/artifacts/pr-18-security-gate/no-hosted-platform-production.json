@@ -1,0 +1,10 @@
+{
+  "id": "no-hosted-platform-production",
+  "title": "No hosted platform production dependency",
+  "status": "passed",
+  "checkedAt": "2026-05-30T00:25:46.908Z",
+  "findings": [],
+  "skipped": [],
+  "fixList": [],
+  "secretValuesPrinted": false
+}

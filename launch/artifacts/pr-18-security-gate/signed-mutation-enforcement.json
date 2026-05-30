@@ -1,0 +1,10 @@
+{
+  "id": "signed-mutation-enforcement",
+  "title": "Signed mutation enforcement",
+  "status": "passed",
+  "checkedAt": "2026-05-30T00:25:47.198Z",
+  "findings": [],
+  "skipped": [],
+  "fixList": [],
+  "secretValuesPrinted": false
+}

@@ -5,12 +5,14 @@ const cp = require("node:child_process");
 
 const repoRoot = path.resolve(__dirname, "../..");
 const appRoot = path.join(repoRoot, "apps/web");
-const workRoot = path.join(appRoot, `.next-codex-web-build-${process.pid}`);
+const useInPlaceBuild = process.env.GITCASTER_WEB_BUILD_IN_PLACE !== "0";
+const workRoot = useInPlaceBuild ? appRoot : path.join(appRoot, `.next-codex-web-build-${process.pid}`);
 const nextBin = path.join(appRoot, "node_modules/next/dist/bin/next");
-const outSource = path.join(workRoot, "out");
+const outSource = useInPlaceBuild ? path.join(appRoot, ".next-codex-export-out") : path.join(workRoot, "out");
 const distDirExportSource = path.join(workRoot, ".next-gitcaster");
 const outTarget = path.join(appRoot, "out");
 const docsTarget = path.join(repoRoot, "docs");
+const docsSourceSecurity = path.join(repoRoot, "docs-source", "security");
 const generatedAppHtml = path.join(workRoot, ".next/server/app");
 const generatedStatic = path.join(workRoot, ".next/static");
 
@@ -74,6 +76,7 @@ function materializeFromServerApp() {
   if (!fs.existsSync(generatedAppHtml)) {
     throw new Error(`Next generated app HTML missing: ${generatedAppHtml}`);
   }
+  fs.rmSync(outSource, { recursive: true, force: true, maxRetries: 10, retryDelay: 250 });
   fs.mkdirSync(outSource, { recursive: true });
 
   const htmlFiles = [];
@@ -115,23 +118,30 @@ function materializeFromServerApp() {
 }
 
 fs.mkdirSync(workRoot, { recursive: true });
-for (const rel of copyEntries) {
-  copyIntoWorktree(rel);
+if (!useInPlaceBuild) {
+  for (const rel of copyEntries) {
+    copyIntoWorktree(rel);
+  }
 }
 
-const nextStatus = runNextBuild();
+const nextStatus = process.env.GITCASTER_WEB_SKIP_NEXT_BUILD === "1" ? 0 : runNextBuild();
 if (nextStatus !== 0) {
-  const cleanupErrorPath = path.join(workRoot, ".next/export");
-  if (fs.existsSync(generatedAppHtml) && fs.existsSync(cleanupErrorPath)) {
+  if (fs.existsSync(generatedAppHtml)) {
     materializeFromServerApp();
   } else {
     process.exit(nextStatus);
   }
 }
+if (fs.existsSync(generatedAppHtml)) {
+  materializeFromServerApp();
+}
 copyOut(fs.existsSync(outSource) ? outSource : distDirExportSource, outTarget);
 fs.writeFileSync(path.join(outTarget, ".nojekyll"), "");
 copyOut(outTarget, docsTarget);
 fs.writeFileSync(path.join(docsTarget, ".nojekyll"), "");
+if (fs.existsSync(docsSourceSecurity)) {
+  fs.cpSync(docsSourceSecurity, path.join(docsTarget, "security"), { recursive: true, force: true });
+}
 
 console.log(JSON.stringify({
   status: "passed",

@@ -1,0 +1,229 @@
+{
+  "type": "gitcaster.redteam.deployment-proof-abuse.v1",
+  "status": "passed",
+  "createdAt": "2026-05-30T00:25:12.180Z",
+  "cases": [
+    {
+      "id": "deploy.local-hash-as-qstorage-proof",
+      "area": "deployment-proof",
+      "attack": "Local static hash marked as QStorage verification.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "launch/evidence/pr-17-castercloud-qstorage-pipeline.json"
+      ],
+      "finding": null
+    },
+    {
+      "id": "deploy.dry-run-as-castercloud-proof",
+      "area": "deployment-proof",
+      "attack": "Dry run marked as CasterCloud deployment.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "launch/evidence/pr-23-castercloud-qstorage-live-gate.json"
+      ],
+      "finding": null
+    },
+    {
+      "id": "deploy.placeholder-cid",
+      "area": "deployment-proof",
+      "attack": "Placeholder CID accepted.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "scripts/deploy/live/check-pr23-live-integration.cjs"
+      ],
+      "finding": null
+    },
+    {
+      "id": "deploy.placeholder-deployment-id",
+      "area": "deployment-proof",
+      "attack": "Placeholder deploymentId accepted.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "scripts/deploy/live/check-pr23-live-integration.cjs"
+      ],
+      "finding": null
+    },
+    {
+      "id": "deploy.example-url",
+      "area": "deployment-proof",
+      "attack": "Example URL accepted as proof endpoint.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "scripts/deploy/live/check-pr23-live-integration.cjs"
+      ],
+      "finding": null
+    },
+    {
+      "id": "deploy.hosted-platform-url",
+      "area": "deployment-proof",
+      "attack": "Hosted platform URL accepted as production proof.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "scripts/deploy/live/check-pr23-live-integration.cjs"
+      ],
+      "finding": null
+    },
+    {
+      "id": "deploy.legacy-storage-pinata",
+      "area": "deployment-proof",
+      "attack": "Pinata proof accepted as production storage.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "scripts/deploy/live/check-pr23-live-integration.cjs"
+      ],
+      "finding": null
+    },
+    {
+      "id": "deploy.legacy-storage-ipfs",
+      "area": "deployment-proof",
+      "attack": "IPFS proof accepted as production storage.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "scripts/deploy/live/check-pr23-live-integration.cjs"
+      ],
+      "finding": null
+    },
+    {
+      "id": "deploy.legacy-storage-filecoin",
+      "area": "deployment-proof",
+      "attack": "Filecoin proof accepted as production storage.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "scripts/deploy/live/check-pr23-live-integration.cjs"
+      ],
+      "finding": null
+    },
+    {
+      "id": "deploy.legacy-storage-arweave",
+      "area": "deployment-proof",
+      "attack": "Arweave proof accepted as production storage.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "scripts/deploy/live/check-pr23-live-integration.cjs"
+      ],
+      "finding": null
+    },
+    {
+      "id": "deploy.missing-response-hash",
+      "area": "deployment-proof",
+      "attack": "Verification response without hash accepted.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "scripts/deploy/live/verify-qstorage-live-proof.cjs"
+      ],
+      "finding": null
+    },
+    {
+      "id": "deploy.mismatched-root",
+      "area": "deployment-proof",
+      "attack": "Verification response with mismatched root accepted.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "scripts/deploy/live/verify-qstorage-live-proof.cjs"
+      ],
+      "finding": null
+    },
+    {
+      "id": "deploy.unsigned-node-health",
+      "area": "deployment-proof",
+      "attack": "Unsigned node health accepted.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "launch/evidence/pr-24-public-node-ops-federation.json"
+      ],
+      "finding": null
+    },
+    {
+      "id": "deploy.stale-node-health",
+      "area": "deployment-proof",
+      "attack": "Stale node health accepted.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "launch/evidence/pr-24-public-node-ops-federation.json"
+      ],
+      "finding": null
+    },
+    {
+      "id": "deploy.one-node-federation",
+      "area": "deployment-proof",
+      "attack": "One node accepted as federation.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "launch/evidence/pr-24-public-node-ops-federation.json"
+      ],
+      "finding": null
+    },
+    {
+      "id": "deploy.domain-without-registry",
+      "area": "deployment-proof",
+      "attack": ".caster mapped without registry proof.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "launch/evidence/pr-12-web-status-proof-ui.json"
+      ],
+      "finding": null
+    },
+    {
+      "id": "deploy.token-without-contract",
+      "area": "deployment-proof",
+      "attack": "Token utility activated without contract proof.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "launch/evidence/pr-12-web-status-proof-ui.json"
+      ],
+      "finding": null
+    },
+    {
+      "id": "deploy.normal-push-without-pr22",
+      "area": "deployment-proof",
+      "attack": "Normal Git push claimed without PR-22 pack proof.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "launch/evidence/pr-22-git-transport-rc.json"
+      ],
+      "finding": null
+    },
+    {
+      "id": "deploy.production-before-pr32",
+      "area": "deployment-proof",
+      "attack": "Production launch accepted before PR-32.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "launch/evidence/pr-32-production-launch.json"
+      ],
+      "finding": null
+    }
+  ],
+  "summary": {
+    "casesTotal": 19,
+    "passed": 19,
+    "failed": 0,
+    "blocked": 0,
+    "manualRequired": 0,
+    "fakeProofAccepted": false,
+    "hostedPlatformProofAccepted": false,
+    "placeholderProofAccepted": false,
+    "dryRunAcceptedAsLiveProof": false,
+    "productionClaimBeforePr32": false
+  },
+  "canShipProduction": false
+}

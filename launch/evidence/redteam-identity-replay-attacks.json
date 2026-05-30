@@ -1,0 +1,150 @@
+{
+  "type": "gitcaster.redteam.identity-replay-attacks.v1",
+  "status": "passed",
+  "createdAt": "2026-05-30T00:25:11.167Z",
+  "cases": [
+    {
+      "id": "replay.duplicate-nonce",
+      "area": "replay",
+      "attack": "Replay duplicate nonce.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "packages/security/src/replay-protection.ts"
+      ],
+      "finding": null
+    },
+    {
+      "id": "replay.stale-timestamp",
+      "area": "replay",
+      "attack": "Replay stale timestamp.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "packages/security/src/replay-protection.ts"
+      ],
+      "finding": null
+    },
+    {
+      "id": "replay.future-timestamp",
+      "area": "replay",
+      "attack": "Use timestamp beyond allowed skew.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "packages/security/src/replay-protection.ts"
+      ],
+      "finding": null
+    },
+    {
+      "id": "replay.route-substitution",
+      "area": "replay",
+      "attack": "Reuse envelope for a different route.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "packages/identity/src/signature-envelope.ts"
+      ],
+      "finding": null
+    },
+    {
+      "id": "replay.payload-substitution",
+      "area": "replay",
+      "attack": "Reuse signature for a different payload.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "packages/identity/src/signature-envelope.ts"
+      ],
+      "finding": null
+    },
+    {
+      "id": "replay.did-substitution",
+      "area": "replay",
+      "attack": "Reuse envelope with a different actor DID.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "packages/identity/src/signature-envelope.ts"
+      ],
+      "finding": null
+    },
+    {
+      "id": "replay.capability-substitution",
+      "area": "replay",
+      "attack": "Reuse envelope outside capability scope.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "packages/capabilities/src/capability.ts"
+      ],
+      "finding": null
+    },
+    {
+      "id": "replay.unsigned-mutation",
+      "area": "replay",
+      "attack": "Submit unsigned mutation.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "launch/evidence/pr-18-security-gate.json"
+      ],
+      "finding": null
+    },
+    {
+      "id": "replay.issue-create",
+      "area": "replay",
+      "attack": "Replay issue create mutation.",
+      "expected": "Rejected or blocked.",
+      "status": "blocked",
+      "evidence": [
+        "launch/evidence/pr-10-issues-prs.json"
+      ],
+      "finding": null
+    },
+    {
+      "id": "replay.pr-merge",
+      "area": "replay",
+      "attack": "Replay PR merge mutation.",
+      "expected": "Rejected or blocked.",
+      "status": "blocked",
+      "evidence": [
+        "launch/evidence/pr-10-issues-prs.json"
+      ],
+      "finding": null
+    },
+    {
+      "id": "replay.ref-update",
+      "area": "replay",
+      "attack": "Replay ref update.",
+      "expected": "Rejected or blocked.",
+      "status": "blocked",
+      "evidence": [
+        "launch/evidence/pr-07-ref-certificates.json"
+      ],
+      "finding": null
+    },
+    {
+      "id": "replay.deploy-request",
+      "area": "replay",
+      "attack": "Replay deploy request.",
+      "expected": "Rejected or blocked.",
+      "status": "blocked",
+      "evidence": [
+        "launch/evidence/pr-23-castercloud-qstorage-live-gate.json"
+      ],
+      "finding": null
+    }
+  ],
+  "summary": {
+    "casesTotal": 12,
+    "passed": 8,
+    "failed": 0,
+    "blocked": 4,
+    "manualRequired": 0,
+    "criticalFindings": 0,
+    "privateKeysGeneratedInRepo": false,
+    "privateKeysPrinted": false
+  },
+  "canShipProduction": false
+}

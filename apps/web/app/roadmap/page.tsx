@@ -1,8 +1,8 @@
 const phases = [
   ["Local alpha", "route shell, local node previews, contracts, and proof gates"],
   ["Canary public", "canary.cloud, canary.api, and canary.gitcaster with rollback proof"],
-  ["Dependency parity", "Supabase, Redis, R2, and hosted runtime adapters replaced"],
-  ["Primary cutover", "DNS switch only after smoke, rollback, health, and burn-in evidence"],
+  ["Dependency parity", "Legacy runtime adapters retire only after parity, rollback, and burn-in evidence"],
+  ["Cutover candidate", "DNS switch only after smoke, rollback, health, and burn-in evidence"],
 ];
 
 export default function RoadmapPage() {

@@ -1,0 +1,125 @@
+{
+  "type": "gitcaster.public-release.evidence.v1",
+  "slice": "security-redteam-public-hardening",
+  "status": "passed",
+  "createdAt": "2026-05-30T00:25:47.256Z",
+  "filesChanged": [
+    "scripts/security/run-beta-gate.cjs",
+    "scripts/security/check-security-redteam-public-alpha.cjs",
+    "scripts/security/redteam/run-redteam-suite.cjs",
+    "scripts/security/redteam/check-crypto-invariants.cjs",
+    "scripts/security/redteam/check-identity-replay-attacks.cjs",
+    "scripts/security/redteam/check-capability-abuse.cjs",
+    "scripts/security/redteam/check-deployment-proof-abuse.cjs",
+    "scripts/security/redteam/check-pr27-redteam.cjs",
+    "docs/security/redteam-plan.md",
+    "docs/security/crypto-audit-rehearsal.md",
+    "apps/web/app/open-source/security-redteam/page.tsx",
+    "apps/web/public/gitcaster-security-redteam.md",
+    "docs-source/developer-layers/security-redteam.md",
+    "examples/security/redteam-hardening-plan.example.json",
+    "launch/evidence/pr-17-castercloud-qstorage-pipeline.json"
+  ],
+  "commandsRun": [
+    "node scripts/security/redteam/run-redteam-suite.cjs",
+    "node scripts/security/redteam/check-pr27-redteam.cjs",
+    "node scripts/security/run-beta-gate.cjs"
+  ],
+  "summary": {
+    "securityScriptsPublished": true,
+    "redteamSuiteStatus": "passed",
+    "pr18SecurityGateStatus": "passed",
+    "pr27RedteamStatus": "passed",
+    "secretScanStatus": "passed",
+    "fakeLiveClaimCheckStatus": "passed",
+    "hostedPlatformCheckStatus": "passed",
+    "signedMutationCheckStatus": "passed",
+    "objectStoreHonestyStatus": "passed",
+    "capabilityEscalationsFound": 0,
+    "fakeProofAccepted": false,
+    "hostedPlatformProofAccepted": false,
+    "placeholderProofAccepted": false,
+    "dryRunAcceptedAsLiveProof": false,
+    "externalAuditRequired": true,
+    "securityAuditCompleteClaimed": false,
+    "productionSecurityReadinessClaimed": false,
+    "canShipProduction": false,
+    "secretLeakFindings": 0,
+    "fakeLiveClaimsFound": 0
+  },
+  "commandResults": [
+    {
+      "command": "node scripts/security/redteam/run-redteam-suite.cjs",
+      "exitCode": 0,
+      "timedOut": false,
+      "stdout": [
+        "  \"evidenceIntegrity\": \"passed\",",
+        "  \"evidence\": \"launch/evidence/redteam-deployment-proof-abuse.json\"",
+        "}",
+        "{",
+        "  \"status\": \"passed\",",
+        "  \"checks\": 4,",
+        "  \"evidence\": \"launch/evidence/redteam-suite-result.json\"",
+        "}"
+      ],
+      "stderr": []
+    },
+    {
+      "command": "node scripts/security/redteam/check-pr27-redteam.cjs",
+      "exitCode": 0,
+      "timedOut": false,
+      "stdout": [
+        "{",
+        "  \"status\": \"passed\",",
+        "  \"passed\": true,",
+        "  \"blockers\": 0,",
+        "  \"evidence\": \"launch/evidence/pr-27-security-redteam-crypto-audit.json\"",
+        "}"
+      ],
+      "stderr": []
+    },
+    {
+      "command": "node scripts/security/run-beta-gate.cjs",
+      "exitCode": 0,
+      "timedOut": false,
+      "stdout": [
+        "{",
+        "  \"status\": \"passed\",",
+        "  \"passed\": true,",
+        "  \"failed\": false,",
+        "  \"failedChecks\": [],",
+        "  \"fixCount\": 0,",
+        "  \"evidence\": \"launch/evidence/pr-18-security-gate.json\"",
+        "}"
+      ],
+      "stderr": []
+    }
+  ],
+  "artifacts": {
+    "publicPage": "apps/web/app/open-source/security-redteam/page.tsx",
+    "publicMarkdown": "apps/web/public/gitcaster-security-redteam.md",
+    "redteamPlan": "docs/security/redteam-plan.md",
+    "auditRehearsal": "docs/security/crypto-audit-rehearsal.md",
+    "pr18": "launch/evidence/pr-18-security-gate.json",
+    "pr27": "launch/evidence/pr-27-security-redteam-crypto-audit.json",
+    "suite": "launch/evidence/redteam-suite-result.json",
+    "pr17Blocked": "launch/evidence/pr-17-castercloud-qstorage-pipeline.json"
+  },
+  "releaseQuality": {
+    "releaseLevel": "public-alpha",
+    "canShipProduction": false,
+    "externalAudit": "required",
+    "productionBlockers": [
+      "External security audit evidence is still required.",
+      "Managed infrastructure security evidence is still closed and unavailable in this public repo.",
+      "Public node federation, QStorage, CasterCloud, .caster, custody, billing, rollback, and production operation proofs remain blocked.",
+      "This release is local deterministic proof tooling only."
+    ]
+  },
+  "findings": {
+    "missingFiles": [],
+    "missingArtifacts": [],
+    "publicScanFindings": []
+  },
+  "blockers": []
+}

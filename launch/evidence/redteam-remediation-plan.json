@@ -1,0 +1,18 @@
+{
+  "type": "gitcaster.redteam.remediation-plan.v1",
+  "status": "manual-required",
+  "createdAt": "2026-05-30T00:25:13.074Z",
+  "items": [
+    {
+      "id": "rt.external-audit",
+      "severity": "manual-required",
+      "title": "External security audit remains required before production approval.",
+      "status": "manual-required"
+    }
+  ],
+  "productionBlockers": [
+    "External security audit remains required.",
+    "Production launch remains PR-32."
+  ],
+  "canShipProduction": false
+}

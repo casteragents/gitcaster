@@ -1,0 +1,10 @@
+{
+  "type": "gitcaster.redteam.sdk-blocker-abuse.v1",
+  "status": "passed",
+  "createdAt": "2026-05-30T00:25:11.956Z",
+  "typescriptMutationsBlockWithoutSigner": true,
+  "pythonMutationsBlockWithoutSigner": "blocked_missing_package",
+  "nodeCallsBlockWithoutNodeUrl": true,
+  "fakeProofSuccessReturned": false,
+  "canShipProduction": false
+}

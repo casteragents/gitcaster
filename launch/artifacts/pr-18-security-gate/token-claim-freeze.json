@@ -1,0 +1,10 @@
+{
+  "id": "token-claim-freeze",
+  "title": "Token claim freeze",
+  "status": "passed",
+  "checkedAt": "2026-05-30T00:25:47.181Z",
+  "findings": [],
+  "skipped": [],
+  "fixList": [],
+  "secretValuesPrinted": false
+}

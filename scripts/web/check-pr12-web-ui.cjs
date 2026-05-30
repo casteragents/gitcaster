@@ -34,6 +34,7 @@ const requiredFiles = [
   "apps/web/app/open-source/repo-records/page.tsx",
   "apps/web/app/open-source/push-local-object-store/page.tsx",
   "apps/web/app/open-source/ref-consensus/page.tsx",
+  "apps/web/app/open-source/security-redteam/page.tsx",
   "apps/web/components/TruthStatusPill.tsx",
   "apps/web/components/TruthTable.tsx",
   "apps/web/components/ProofPanel.tsx",
@@ -131,6 +132,7 @@ const requiredFiles = [
   "apps/web/public/gitcaster-repo-records.md",
   "apps/web/public/gitcaster-push-local-object-store.md",
   "apps/web/public/gitcaster-ref-consensus.md",
+  "apps/web/public/gitcaster-security-redteam.md",
   "examples/worlds/local-agent-grid.world.json",
   "examples/ros/local-agent-bridge.launch.json",
   "examples/ros/local-agent-bridge.messages.json",
@@ -146,6 +148,7 @@ const requiredFiles = [
   "examples/repo-records/local-issue-pr-workflow.example.json",
   "examples/push-local/local-object-manifest.example.json",
   "examples/refs/local-ref-certificate-workflow.example.json",
+  "examples/security/redteam-hardening-plan.example.json",
   "docs-source/developer-layers/simulator.md",
   "docs-source/developer-layers/ros-adapters.md",
   "docs-source/developer-layers/api-sdk-tutorials.md",
@@ -158,14 +161,36 @@ const requiredFiles = [
   "docs-source/developer-layers/repo-records.md",
   "docs-source/developer-layers/push-local-object-store.md",
   "docs-source/developer-layers/ref-consensus.md",
+  "docs-source/developer-layers/security-redteam.md",
+  "docs/security/redteam-plan.md",
+  "docs/security/crypto-audit-rehearsal.md",
   "scripts/node/check-local-node-api-source.cjs",
   "scripts/repo-records/check-repo-records-public-alpha.cjs",
   "scripts/push-local/check-push-local-object-store-public-alpha.cjs",
   "scripts/refs/check-ref-consensus-public-alpha.cjs",
+  "scripts/security/check-security-redteam-public-alpha.cjs",
+  "scripts/security/run-beta-gate.cjs",
+  "scripts/security/redteam/run-redteam-suite.cjs",
+  "scripts/security/redteam/check-crypto-invariants.cjs",
+  "scripts/security/redteam/check-identity-replay-attacks.cjs",
+  "scripts/security/redteam/check-capability-abuse.cjs",
+  "scripts/security/redteam/check-deployment-proof-abuse.cjs",
+  "scripts/security/redteam/check-pr27-redteam.cjs",
   "launch/evidence/local-node-api-source.json",
   "launch/evidence/repo-records-issue-pr-source.json",
   "launch/evidence/push-local-object-store-source.json",
   "launch/evidence/ref-consensus-local-certificate-source.json",
+  "launch/evidence/security-redteam-public-hardening-source.json",
+  "launch/evidence/pr-17-castercloud-qstorage-pipeline.json",
+  "launch/evidence/pr-18-security-gate.json",
+  "launch/evidence/pr-27-security-redteam-crypto-audit.json",
+  "launch/evidence/redteam-suite-result.json",
+  "launch/evidence/redteam-crypto-invariants.json",
+  "launch/evidence/redteam-identity-replay-attacks.json",
+  "launch/evidence/redteam-capability-abuse.json",
+  "launch/evidence/redteam-deployment-proof-abuse.json",
+  "launch/evidence/redteam-findings.json",
+  "launch/evidence/redteam-remediation-plan.json",
   "launch/evidence/pr-12-web-status-proof-ui.json"
 ];
 
@@ -241,13 +266,14 @@ if (!packageOnly) {
     if (evidence.summary?.publicNodesOnlineClaimed !== false) blockers.push("publicNodesOnlineClaimed must be false");
     if (evidence.summary?.multiNodeReplicationClaimed !== false) blockers.push("multiNodeReplicationClaimed must be false");
     if (evidence.summary?.unhackableClaimed !== false) blockers.push("unhackableClaimed must be false");
-    if (!Array.isArray(evidence.truthTable?.surfaces) || evidence.truthTable.surfaces.length !== 46) blockers.push("truth table must include 46 current surfaces");
+    if (!Array.isArray(evidence.truthTable?.surfaces) || evidence.truthTable.surfaces.length !== 47) blockers.push("truth table must include 47 current surfaces");
     if (!evidence.truthTable?.surfaces?.includes("GitHub Pages website")) blockers.push("truth table must include GitHub Pages website");
     if (!evidence.truthTable?.surfaces?.includes("open-core boundary")) blockers.push("truth table must include open-core boundary");
     if (!evidence.truthTable?.surfaces?.includes("simulator package")) blockers.push("truth table must include simulator package");
     if (!evidence.truthTable?.surfaces?.includes("ROS adapter package")) blockers.push("truth table must include ROS adapter package");
     if (!evidence.truthTable?.surfaces?.includes("API tutorial package")) blockers.push("truth table must include API tutorial package");
     if (!evidence.truthTable?.surfaces?.includes("Claim Miniapp template")) blockers.push("truth table must include Claim Miniapp template");
+    if (!evidence.truthTable?.surfaces?.includes("security redteam tooling")) blockers.push("truth table must include security redteam tooling");
   }
 }
 

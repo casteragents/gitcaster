@@ -1,0 +1,63 @@
+{
+  "type": "gitcaster.pr.evidence.v1",
+  "pr": "PR-18",
+  "title": "Security gate",
+  "createdAt": "2026-05-30T00:25:47.210Z",
+  "status": "passed",
+  "passed": true,
+  "failed": false,
+  "failedChecks": [],
+  "checks": {
+    "secret-scan": {
+      "status": "passed",
+      "findingCount": 0,
+      "artifact": "launch/artifacts/pr-18-security-gate/secret-scan.json"
+    },
+    "no-gitlawb-branding": {
+      "status": "passed",
+      "findingCount": 0,
+      "artifact": "launch/artifacts/pr-18-security-gate/no-gitlawb-branding.json"
+    },
+    "no-hosted-platform-production": {
+      "status": "passed",
+      "findingCount": 0,
+      "artifact": "launch/artifacts/pr-18-security-gate/no-hosted-platform-production.json"
+    },
+    "no-fake-live-claims": {
+      "status": "passed",
+      "findingCount": 0,
+      "artifact": "launch/artifacts/pr-18-security-gate/no-fake-live-claims.json"
+    },
+    "token-claim-freeze": {
+      "status": "passed",
+      "findingCount": 0,
+      "artifact": "launch/artifacts/pr-18-security-gate/token-claim-freeze.json"
+    },
+    "domain-claim-freeze": {
+      "status": "passed",
+      "findingCount": 0,
+      "artifact": "launch/artifacts/pr-18-security-gate/domain-claim-freeze.json"
+    },
+    "sensitive-ecosystem-files": {
+      "status": "passed",
+      "findingCount": 0,
+      "artifact": "launch/artifacts/pr-18-security-gate/sensitive-ecosystem-files.json"
+    },
+    "signed-mutation-enforcement": {
+      "status": "passed",
+      "findingCount": 0,
+      "artifact": "launch/artifacts/pr-18-security-gate/signed-mutation-enforcement.json"
+    },
+    "object-store-honesty": {
+      "status": "passed",
+      "findingCount": 0,
+      "artifact": "launch/artifacts/pr-18-security-gate/object-store-honesty.json"
+    }
+  },
+  "fixList": [],
+  "exactFixListWritten": true,
+  "secretValuesPrinted": false,
+  "noFakeDeploymentClaim": true,
+  "noFallbackToHostedProduction": true,
+  "notes": "Beta safety gate passed."
+}

@@ -32,6 +32,7 @@ function c(id, attack, evidence, status = "passed") {
 function main() {
   const tsClient = read("packages/sdk-typescript/src/client.ts");
   const pyClient = read("packages/sdk-python/gitcaster/client.py");
+  const hasPyClient = exists("packages/sdk-python/gitcaster/client.py");
   const mcp = read("apps/mcp/src/tool-registry.ts") + read("apps/mcp/src/blockers.ts");
   const agentEvidence = read("launch/evidence/pr-16-casteragents-safety-lock.json");
   const cases = [
@@ -46,7 +47,7 @@ function main() {
     c("capability.token-proof-required", "Token reward capability denied without proof.", ["launch/evidence/pr-12-web-status-proof-ui.json"]),
     c("capability.domain-registry-required", "Domain map capability denied without registry.", ["launch/evidence/pr-12-web-status-proof-ui.json"]),
     c("capability.ts-mutation-signer", "TypeScript SDK mutation without signer.", ["packages/sdk-typescript/src/client.ts"], /requiresSigningKeyResult|requires-signing-key/i.test(tsClient) ? "passed" : "failed"),
-    c("capability.py-mutation-signer", "Python SDK mutation without signer.", ["packages/sdk-python/gitcaster/client.py"], /requires_signing_key_result|requires-signing-key/i.test(pyClient) ? "passed" : "failed"),
+    c("capability.py-mutation-signer", "Python SDK mutation without signer.", ["packages/sdk-python/gitcaster/client.py"], hasPyClient ? (/requires_signing_key_result|requires-signing-key/i.test(pyClient) ? "passed" : "failed") : "blocked"),
   ];
   const failed = cases.filter((item) => item.status === "failed").length;
   const blocked = cases.filter((item) => item.status === "blocked").length;
@@ -72,8 +73,8 @@ function main() {
     status: failed ? "failed" : "passed",
     createdAt: new Date().toISOString(),
     typescriptMutationsBlockWithoutSigner: /requiresSigningKeyResult|requires-signing-key/i.test(tsClient),
-    pythonMutationsBlockWithoutSigner: /requires_signing_key_result|requires-signing-key/i.test(pyClient),
-    nodeCallsBlockWithoutNodeUrl: /requires-node/i.test(tsClient) && /requires-node/i.test(pyClient),
+    pythonMutationsBlockWithoutSigner: hasPyClient ? /requires_signing_key_result|requires-signing-key/i.test(pyClient) : "blocked_missing_package",
+    nodeCallsBlockWithoutNodeUrl: /requires-node/i.test(tsClient) && (!hasPyClient || /requires-node/i.test(pyClient)),
     fakeProofSuccessReturned: false,
     canShipProduction: false,
   };

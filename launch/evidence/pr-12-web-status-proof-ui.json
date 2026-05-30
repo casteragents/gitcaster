@@ -2,7 +2,7 @@
   "type": "gitcaster.pr.evidence.v1",
   "pr": "PR-12",
   "title": "Web status and proof UI",
-  "createdAt": "2026-05-29T23:22:35.991Z",
+  "createdAt": "2026-05-30T00:25:09.924Z",
   "repoRoot": "D:\\user\\xxxcrypto-vercel-clean\\.quilibrium\\gitcaster-public-github-release\\gitcaster-public-repo",
   "filesChanged": [
     "apps/web/package.json",
@@ -32,6 +32,7 @@
     "apps/web/app/open-source/repo-records/page.tsx",
     "apps/web/app/open-source/push-local-object-store/page.tsx",
     "apps/web/app/open-source/ref-consensus/page.tsx",
+    "apps/web/app/open-source/security-redteam/page.tsx",
     "apps/web/components/TruthStatusPill.tsx",
     "apps/web/components/TruthTable.tsx",
     "apps/web/components/ProofPanel.tsx",
@@ -129,6 +130,7 @@
     "apps/web/public/gitcaster-repo-records.md",
     "apps/web/public/gitcaster-push-local-object-store.md",
     "apps/web/public/gitcaster-ref-consensus.md",
+    "apps/web/public/gitcaster-security-redteam.md",
     "examples/worlds/local-agent-grid.world.json",
     "examples/ros/local-agent-bridge.launch.json",
     "examples/ros/local-agent-bridge.messages.json",
@@ -144,6 +146,7 @@
     "examples/repo-records/local-issue-pr-workflow.example.json",
     "examples/push-local/local-object-manifest.example.json",
     "examples/refs/local-ref-certificate-workflow.example.json",
+    "examples/security/redteam-hardening-plan.example.json",
     "docs-source/developer-layers/simulator.md",
     "docs-source/developer-layers/ros-adapters.md",
     "docs-source/developer-layers/api-sdk-tutorials.md",
@@ -156,14 +159,36 @@
     "docs-source/developer-layers/repo-records.md",
     "docs-source/developer-layers/push-local-object-store.md",
     "docs-source/developer-layers/ref-consensus.md",
+    "docs-source/developer-layers/security-redteam.md",
+    "docs/security/redteam-plan.md",
+    "docs/security/crypto-audit-rehearsal.md",
     "scripts/node/check-local-node-api-source.cjs",
     "scripts/repo-records/check-repo-records-public-alpha.cjs",
     "scripts/push-local/check-push-local-object-store-public-alpha.cjs",
     "scripts/refs/check-ref-consensus-public-alpha.cjs",
+    "scripts/security/check-security-redteam-public-alpha.cjs",
+    "scripts/security/run-beta-gate.cjs",
+    "scripts/security/redteam/run-redteam-suite.cjs",
+    "scripts/security/redteam/check-crypto-invariants.cjs",
+    "scripts/security/redteam/check-identity-replay-attacks.cjs",
+    "scripts/security/redteam/check-capability-abuse.cjs",
+    "scripts/security/redteam/check-deployment-proof-abuse.cjs",
+    "scripts/security/redteam/check-pr27-redteam.cjs",
     "launch/evidence/local-node-api-source.json",
     "launch/evidence/repo-records-issue-pr-source.json",
     "launch/evidence/push-local-object-store-source.json",
     "launch/evidence/ref-consensus-local-certificate-source.json",
+    "launch/evidence/security-redteam-public-hardening-source.json",
+    "launch/evidence/pr-17-castercloud-qstorage-pipeline.json",
+    "launch/evidence/pr-18-security-gate.json",
+    "launch/evidence/pr-27-security-redteam-crypto-audit.json",
+    "launch/evidence/redteam-suite-result.json",
+    "launch/evidence/redteam-crypto-invariants.json",
+    "launch/evidence/redteam-identity-replay-attacks.json",
+    "launch/evidence/redteam-capability-abuse.json",
+    "launch/evidence/redteam-deployment-proof-abuse.json",
+    "launch/evidence/redteam-findings.json",
+    "launch/evidence/redteam-remediation-plan.json",
     "launch/evidence/pr-12-web-status-proof-ui.json"
   ],
   "commandsRun": [
@@ -177,10 +202,10 @@
     "pnpm run repo-records:check",
     "pnpm run push-local-object-store:check",
     "pnpm run ref-consensus:check",
+    "pnpm run security-redteam:check",
     "pnpm run simulator:check",
     "pnpm run ros:check",
-    "node scripts/web/check-web-truth-table.cjs",
-    "node scripts/web/check-pr12-web-ui.cjs"
+    "node scripts/web/check-web-truth-table.cjs"
   ],
   "passed": true,
   "failed": false,
@@ -244,7 +269,7 @@
     },
     {
       "path": "apps/web/app/open-source/page.tsx",
-      "sha256": "de00bfca3d0a11de3f31acbbda18472d607cb78bc59ff09648ce4cdfd67302a6"
+      "sha256": "1f75db4c3c31581fc912659e5107b6004cfab2a4cd159a3d2948ec81b8886d0f"
     },
     {
       "path": "apps/web/app/open-source/simulator/page.tsx",
@@ -293,6 +318,10 @@
     {
       "path": "apps/web/app/open-source/ref-consensus/page.tsx",
       "sha256": "200c3652273a626c0a438b30a926e939348b880f70f94dee78619f791daab2ce"
+    },
+    {
+      "path": "apps/web/app/open-source/security-redteam/page.tsx",
+      "sha256": "698e79bc5a2d52df24af8ea709ca58dcbc36de68d68144054ae3f92bcd495888"
     },
     {
       "path": "apps/web/components/TruthStatusPill.tsx",
@@ -356,7 +385,7 @@
     },
     {
       "path": "apps/web/lib/status-truth.ts",
-      "sha256": "0338da92066f6111b6833cb09e2294647400ff0fd355dd021176041d8a3fd584"
+      "sha256": "a05328866fb4b6ef7c872184ae288645ebbf5bc438e35222adeba79b2eb38a76"
     },
     {
       "path": "apps/web/lib/preview-data.ts",
@@ -364,7 +393,7 @@
     },
     {
       "path": "apps/web/lib/evidence-links.ts",
-      "sha256": "96dfb77567fe3a32170ca6e1709729afbf2fd2a6a99296f2b5b549967306aed1"
+      "sha256": "933c16fe736233909debd138fca92767302bdf1f710c0e152f71546d3d025aa9"
     },
     {
       "path": "apps/web/lib/caster-copy.ts",
@@ -404,11 +433,11 @@
     },
     {
       "path": "scripts/web/check-web-truth-table.cjs",
-      "sha256": "c053486edfd089a386bf872c94ba815d609158def0d666576227ba3197cf1dcd"
+      "sha256": "ae2a98ad45c07cbd253b941d053ef2238af7995c92b5f06aa8bd79eeb4b0f27e"
     },
     {
       "path": "scripts/web/check-pr12-web-ui.cjs",
-      "sha256": "d8befe019d04e3a3395c8205728bf551b3dde06c4e3b751d37d9ea62a47886f2"
+      "sha256": "97af52a7f5918780b29aca030d4894a4df070b4ae03e0228f23c0c553d0429fe"
     },
     {
       "path": "LICENSE",
@@ -683,6 +712,10 @@
       "sha256": "3f6ed7aaee0822e2fda7ae1fe3bb159e1dba90bbe327551ae4c6a4f3c04b75b8"
     },
     {
+      "path": "apps/web/public/gitcaster-security-redteam.md",
+      "sha256": "fb1b8efd072099c389bbb2be58b171eec2e9794221ef12d9746aad185d42de31"
+    },
+    {
       "path": "examples/worlds/local-agent-grid.world.json",
       "sha256": "825d90a5b04ffc658af864a3ba254becb2386c27879626f22907e5198ae930bd"
     },
@@ -743,6 +776,10 @@
       "sha256": "d93f08dd669096847ebe48506ba583413dc4001773698e6580b2a260ca60c02c"
     },
     {
+      "path": "examples/security/redteam-hardening-plan.example.json",
+      "sha256": "7312159bcfbd7dd8b36e5fb58269e9bd6d833341cf297030c29aae15e7f96176"
+    },
+    {
       "path": "docs-source/developer-layers/simulator.md",
       "sha256": "9babfe9f4e303107382c150ae657bfe0c4b77b72396183244a0c4761a8beae31"
     },
@@ -791,6 +828,18 @@
       "sha256": "71c78c37c594d8f2e2f1ee11b0c26309e89e8741528257661f0fc6c424492707"
     },
     {
+      "path": "docs-source/developer-layers/security-redteam.md",
+      "sha256": "b95693b22ba323b3856b0a41f8a253cceec41491868c23486979ffd7067bdee9"
+    },
+    {
+      "path": "docs/security/redteam-plan.md",
+      "sha256": "a315591d1bdc358cee8f1c98d73d2717066beee3d2ce60c1ad268f581fce404b"
+    },
+    {
+      "path": "docs/security/crypto-audit-rehearsal.md",
+      "sha256": "641f6fdd1a7e2c7e31353e9997b1dbae4c032eb706e1404245de7f7c49500cfa"
+    },
+    {
       "path": "scripts/node/check-local-node-api-source.cjs",
       "sha256": "d99ff5eed577923682a21602a78d03e8a8f1c375196e8cb6acc63f8fb09b57dd"
     },
@@ -807,6 +856,38 @@
       "sha256": "94ad81a9518fe223fef91e70583984bac6ef6b548e640e8697477008b60e100d"
     },
     {
+      "path": "scripts/security/check-security-redteam-public-alpha.cjs",
+      "sha256": "96e5d5e17f839bd34e349e916c36174bdd1180e73725050e199d02d63df4d443"
+    },
+    {
+      "path": "scripts/security/run-beta-gate.cjs",
+      "sha256": "acb4006a420f28a195ac01397e8e143ff2714cef666b1f567762fea40af2f32c"
+    },
+    {
+      "path": "scripts/security/redteam/run-redteam-suite.cjs",
+      "sha256": "fed2a391fffec84021ae735945b64f5b6db6d27fee70ad84610e099ac23568e8"
+    },
+    {
+      "path": "scripts/security/redteam/check-crypto-invariants.cjs",
+      "sha256": "e8991e2ef3521a60d384246ea6165d28d55a469a41378dc186705ef3fab0bb16"
+    },
+    {
+      "path": "scripts/security/redteam/check-identity-replay-attacks.cjs",
+      "sha256": "d2ce703ef3d2ddc4cd2a0e6fa5390e43e25f6ca0fab03951c5777ba79e56ec1c"
+    },
+    {
+      "path": "scripts/security/redteam/check-capability-abuse.cjs",
+      "sha256": "b940d63bf81de40e2aa8d10ba31d877419c88b67bf1caf50f2874643a3090f21"
+    },
+    {
+      "path": "scripts/security/redteam/check-deployment-proof-abuse.cjs",
+      "sha256": "61464dd7d5402a64103877c441181038827e5353e874cf3017055237bc9865b4"
+    },
+    {
+      "path": "scripts/security/redteam/check-pr27-redteam.cjs",
+      "sha256": "2d51b32f82689b2687ad5b5946bc5b556fa7e28a4a6829ff2d89c73b05d6e42f"
+    },
+    {
       "path": "launch/evidence/local-node-api-source.json",
       "sha256": "cba0b5f43dc72888353d8a06afc967de96f9a38f971cdbc4e28144ceec79bed9"
     },
@@ -821,6 +902,50 @@
     {
       "path": "launch/evidence/ref-consensus-local-certificate-source.json",
       "sha256": "fd21f784f1ed97cda80b9a07936b4c4ba1343c9501a1981615088d0c9f528692"
+    },
+    {
+      "path": "launch/evidence/security-redteam-public-hardening-source.json",
+      "sha256": "2e398cb368e6e774d67a9845245ef9282423b93e6216147d3abf244906e4f04f"
+    },
+    {
+      "path": "launch/evidence/pr-17-castercloud-qstorage-pipeline.json",
+      "sha256": "2eb348cd34c3c9cdc56eddd66c9e2dc8caa8e51c000b4b836ee8648e77f79f66"
+    },
+    {
+      "path": "launch/evidence/pr-18-security-gate.json",
+      "sha256": "7fd9c36d756327f7c7770a2eb34a799c5afe13f10bfba9831d229a68c8bc1acb"
+    },
+    {
+      "path": "launch/evidence/pr-27-security-redteam-crypto-audit.json",
+      "sha256": "5630d8a7ff0dadc8a0e0baab463c3e7ec934f61cba2fa2b1118400a0d7f7e0ef"
+    },
+    {
+      "path": "launch/evidence/redteam-suite-result.json",
+      "sha256": "647a411742283ee5b5678b716b5c7d44c4570880218eede07613d4d703846fa7"
+    },
+    {
+      "path": "launch/evidence/redteam-crypto-invariants.json",
+      "sha256": "f76e0dd5f165de83a78494d04ffb0404b0ed308308f531b1da3548e031757423"
+    },
+    {
+      "path": "launch/evidence/redteam-identity-replay-attacks.json",
+      "sha256": "710c2566eec41cf9e5633e04a39abc1389a8b7a86905ace90343297061e62e40"
+    },
+    {
+      "path": "launch/evidence/redteam-capability-abuse.json",
+      "sha256": "d5925c93835884cbd21eecbae75b2ffc397934c885b5c1e6c86705f747871e87"
+    },
+    {
+      "path": "launch/evidence/redteam-deployment-proof-abuse.json",
+      "sha256": "10609fa62f5127bbc34ea752592c276730045852c201629e822cfff987be8e42"
+    },
+    {
+      "path": "launch/evidence/redteam-findings.json",
+      "sha256": "873f468581708208c9f6ae1afa267440a2a9537377114a09749317b52b275408"
+    },
+    {
+      "path": "launch/evidence/redteam-remediation-plan.json",
+      "sha256": "970d48768fdf264fcadfde327ad99a28c50998d5383d7461e37499c9b8f49930"
     }
   ],
   "summary": {
@@ -849,6 +974,7 @@
     "repoRecordsPageCreated": true,
     "pushLocalObjectStorePageCreated": true,
     "refConsensusPageCreated": true,
+    "securityRedteamPageCreated": true,
     "truthTableCreated": true,
     "previewDataLabeled": true,
     "liveClaimsWithoutEvidence": 0,
@@ -896,6 +1022,7 @@
       "object store package",
       "ref consensus package",
       "security package",
+      "security redteam tooling",
       "audit package",
       "observability package",
       "TypeScript SDK source",
@@ -976,6 +1103,7 @@
       "Repo records and issue/PR workflows are public-alpha only until public collaboration, remote event-log durability, normal git transport, storage, and rollback proof exist.",
       "Push-local object manifests are public-alpha only until QStorage publication, normal git transport, remote ref durability, public object hosting, and rollback proof exist.",
       "Ref-consensus local certificates are public-alpha only until public consensus, remote ref durability, normal git transport, storage, and rollback proof exist.",
+      "Security redteam tooling is public-alpha only until external audit, managed infrastructure, public-node, custody, billing, rollback, and production operation proof exist.",
       "CasterAgents runtime state remains closed until safety-lock and redaction proof exists.",
       "QStorage and CasterCloud runtime endpoints still require operator proof.",
       ".caster registry and public node federation still require signed live evidence.",

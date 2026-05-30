@@ -1,0 +1,14 @@
+{
+  "type": "gitcaster.redteam.sensitive-state-boundary.v1",
+  "status": "passed",
+  "createdAt": "2026-05-30T00:25:12.181Z",
+  "sensitiveRuntimeContentsRead": false,
+  "casterAgentsRuntimeStatePublic": false,
+  "casterPunksImagesBundled": false,
+  "redactedFindings": [],
+  "summary": {
+    "sensitivePathsDetected": 0,
+    "sensitiveValuesExposed": 0,
+    "casterPunksImageImports": 0
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "type": "gitcaster.redteam.crypto-invariants.v1",
+  "status": "passed",
+  "createdAt": "2026-05-30T00:25:10.849Z",
+  "cases": [
+    {
+      "id": "crypto.did-prefix-reject",
+      "area": "identity",
+      "attack": "Replace canonical DID prefix with a legacy prefix.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "did:caster"
+      ],
+      "finding": null
+    },
+    {
+      "id": "crypto.missing-signature",
+      "area": "signing",
+      "attack": "Submit mutation without signature.",
+      "expected": "Rejected or blocked.",
+      "status": "blocked",
+      "evidence": [
+        "launch/evidence/pr-03-identity-signed-envelopes.json",
+        "launch/evidence/pr-18-security-gate.json"
+      ],
+      "finding": null
+    },
+    {
+      "id": "crypto.payload-hash-mismatch",
+      "area": "signing",
+      "attack": "Reuse a signature with a changed payload.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "packages/identity/src/signature-envelope.ts"
+      ],
+      "finding": null
+    },
+    {
+      "id": "crypto.signer-did-mismatch",
+      "area": "signing",
+      "attack": "Bind signature to a different actor DID.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "packages/identity/src/signature-envelope.ts"
+      ],
+      "finding": null
+    },
+    {
+      "id": "crypto.unsigned-ref-certificate",
+      "area": "refs",
+      "attack": "Submit ref certificate without signer DID.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "packages/repo-records/src/signed-record.ts"
+      ],
+      "finding": null
+    },
+    {
+      "id": "crypto.placeholder-deploy-signature",
+      "area": "deployment-proof",
+      "attack": "Accept placeholder deployment signature.",
+      "expected": "Rejected or blocked.",
+      "status": "blocked",
+      "evidence": [
+        "scripts/deploy/sign-deployment-manifest.cjs"
+      ],
+      "finding": null
+    },
+    {
+      "id": "crypto.did-key-node-identity",
+      "area": "public-node",
+      "attack": "Use did:key as canonical public node identity.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "launch/evidence/pr-24-public-node-ops-federation.json"
+      ],
+      "finding": null
+    },
+    {
+      "id": "crypto.fake-verified-status",
+      "area": "evidence",
+      "attack": "Set verified status without proof.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "launch/evidence/pr-23-castercloud-qstorage-live-gate.json"
+      ],
+      "finding": null
+    }
+  ],
+  "summary": {
+    "casesTotal": 8,
+    "passed": 6,
+    "failed": 0,
+    "blocked": 2,
+    "manualRequired": 0,
+    "criticalFindings": 0,
+    "privateKeysFound": 0,
+    "fakeSignatureClaims": 0
+  },
+  "externalAuditRequired": true,
+  "canShipProduction": false
+}

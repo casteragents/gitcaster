@@ -1,0 +1,10 @@
+{
+  "id": "sensitive-ecosystem-files",
+  "title": "Sensitive ecosystem files are not public",
+  "status": "passed",
+  "checkedAt": "2026-05-30T00:25:47.186Z",
+  "findings": [],
+  "skipped": [],
+  "fixList": [],
+  "secretValuesPrinted": false
+}

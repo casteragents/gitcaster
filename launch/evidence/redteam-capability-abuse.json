@@ -1,0 +1,150 @@
+{
+  "type": "gitcaster.redteam.capability-abuse.v1",
+  "status": "passed",
+  "createdAt": "2026-05-30T00:25:11.956Z",
+  "cases": [
+    {
+      "id": "capability.read-to-write",
+      "area": "capability",
+      "attack": "Read capability attempts repo create.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "packages/capabilities/src/capability.ts"
+      ],
+      "finding": null
+    },
+    {
+      "id": "capability.issue-to-pr-merge",
+      "area": "capability",
+      "attack": "Issue capability attempts PR merge.",
+      "expected": "Rejected or blocked.",
+      "status": "blocked",
+      "evidence": [
+        "launch/evidence/pr-10-issues-prs.json"
+      ],
+      "finding": null
+    },
+    {
+      "id": "capability.review-to-ref-update",
+      "area": "capability",
+      "attack": "PR review capability attempts ref update.",
+      "expected": "Rejected or blocked.",
+      "status": "blocked",
+      "evidence": [
+        "launch/evidence/pr-07-ref-certificates.json"
+      ],
+      "finding": null
+    },
+    {
+      "id": "capability.repo-create-to-deploy",
+      "area": "capability",
+      "attack": "Repo create capability attempts deployment.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "launch/evidence/pr-23-castercloud-qstorage-live-gate.json"
+      ],
+      "finding": null
+    },
+    {
+      "id": "capability.mcp-list-to-mutate",
+      "area": "capability",
+      "attack": "MCP list tool attempts mutation.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "apps/mcp/src/tool-registry.ts"
+      ],
+      "finding": null
+    },
+    {
+      "id": "capability.mcp-identity-show-to-sign",
+      "area": "capability",
+      "attack": "MCP identity show attempts signing.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "apps/mcp/src/tools/identity.ts"
+      ],
+      "finding": null
+    },
+    {
+      "id": "capability.agent-run-default-deny",
+      "area": "capability",
+      "attack": "Agent run capability denied by default.",
+      "expected": "Rejected or blocked.",
+      "status": "blocked",
+      "evidence": [
+        "launch/evidence/pr-16-casteragents-safety-lock.json"
+      ],
+      "finding": null
+    },
+    {
+      "id": "capability.agent-runtime-publish-denied",
+      "area": "capability",
+      "attack": "Agent runtime publish denied by default.",
+      "expected": "Rejected or blocked.",
+      "status": "blocked",
+      "evidence": [
+        "launch/evidence/pr-16-casteragents-safety-lock.json"
+      ],
+      "finding": null
+    },
+    {
+      "id": "capability.token-proof-required",
+      "area": "capability",
+      "attack": "Token reward capability denied without proof.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "launch/evidence/pr-12-web-status-proof-ui.json"
+      ],
+      "finding": null
+    },
+    {
+      "id": "capability.domain-registry-required",
+      "area": "capability",
+      "attack": "Domain map capability denied without registry.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "launch/evidence/pr-12-web-status-proof-ui.json"
+      ],
+      "finding": null
+    },
+    {
+      "id": "capability.ts-mutation-signer",
+      "area": "capability",
+      "attack": "TypeScript SDK mutation without signer.",
+      "expected": "Rejected or blocked.",
+      "status": "passed",
+      "evidence": [
+        "packages/sdk-typescript/src/client.ts"
+      ],
+      "finding": null
+    },
+    {
+      "id": "capability.py-mutation-signer",
+      "area": "capability",
+      "attack": "Python SDK mutation without signer.",
+      "expected": "Rejected or blocked.",
+      "status": "blocked",
+      "evidence": [
+        "packages/sdk-python/gitcaster/client.py"
+      ],
+      "finding": null
+    }
+  ],
+  "summary": {
+    "casesTotal": 12,
+    "passed": 7,
+    "failed": 0,
+    "blocked": 5,
+    "manualRequired": 0,
+    "capabilityEscalationsFound": 0,
+    "agentRuntimePublishAllowed": false,
+    "mcpFakeMutationSuccess": false
+  },
+  "canShipProduction": false
+}

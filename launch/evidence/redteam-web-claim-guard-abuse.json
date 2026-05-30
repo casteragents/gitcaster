@@ -1,0 +1,9 @@
+{
+  "type": "gitcaster.redteam.web-claim-guard-abuse.v1",
+  "status": "passed",
+  "createdAt": "2026-05-30T00:25:11.957Z",
+  "unsupportedClaimsDowngraded": true,
+  "productionBeforePr32Blocked": true,
+  "unboundedSecurityClaimsBlocked": true,
+  "canShipProduction": false
+}

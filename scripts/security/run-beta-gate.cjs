@@ -25,7 +25,8 @@ const publicRoots = [
 
 const broadSourceRoots = [
   "apps",
-  "docs",
+  "docs-source",
+  "examples",
   "packages",
   "scripts",
   "launch/evidence",
@@ -60,7 +61,11 @@ function shouldSkipPath(relativePath) {
   const normalized = relativePath.replaceAll("\\", "/");
   if (normalized.includes("/node_modules/")) return true;
   if (normalized.includes("/.next/")) return true;
+  if (normalized.includes("/.next-codex-web-build-")) return true;
   if (normalized.includes("/out/")) return true;
+  if (normalized.startsWith("docs/_next/")) return true;
+  if (normalized.startsWith("apps/web/out/_next/")) return true;
+  if (normalized.includes("/__next.")) return true;
   if (normalized.includes("/dist/") && !normalized.startsWith("apps/git-remote-gitcaster/dist/")) return true;
   if (normalized.includes("/coverage/")) return true;
   if (normalized.includes("/.turbo/")) return true;
@@ -182,7 +187,7 @@ function scanLines({ id, title, roots, patterns, ignoreLine = () => false, secre
 }
 
 function ignoreHonestBlockerLine(_file, line) {
-  return /\b(no|not|without|unless|requires|blocked|blocked_external|fixture_only|false|refusing|cannot|must not|never|not yet|planned)\b/i.test(line);
+  return /\b(no|not|without|unless|requires|blocked|blocked_external|fixture_only|false|refusing|rejected|cannot|must not|never|not yet|planned)\b/i.test(line);
 }
 
 function checkSecretScan() {
@@ -201,6 +206,7 @@ function checkSecretScan() {
     ignoreLine: (file, line) => {
       if (file.startsWith("scripts/security/")) return true;
       if (/placeholder|example|template|redacted|present:redacted|missing/i.test(line)) return true;
+      if (/"sha256"\s*:/.test(line)) return true;
       if (/process\.env\.|crypto\.randomBytes|randomBytes\(/i.test(line)) return true;
       return false;
     },

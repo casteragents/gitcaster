@@ -1,0 +1,35 @@
+{
+  "type": "gitcaster.pr.evidence.v1",
+  "pr": "PR-17",
+  "title": "CasterCloud and QStorage deploy evidence pipeline",
+  "createdAt": "2026-05-30T00:00:00.000Z",
+  "status": "blocked_external",
+  "passed": false,
+  "failed": false,
+  "blocked": true,
+  "deployedClaimed": false,
+  "qstoragePublishedClaimed": false,
+  "castercloudDeployedClaimed": false,
+  "summary": {
+    "qstoragePublished": false,
+    "castercloudDeployed": false,
+    "publicEndpointVerified": false,
+    "rollbackProofPresent": false,
+    "fixtureAcceptedAsLiveProof": false,
+    "secretValuesPrinted": false
+  },
+  "blockers": [
+    "QStorage publish endpoint and write receipt are not present in the public repo.",
+    "CasterCloud deploy receipt and rollback proof are not present in the public repo.",
+    "This file blocks object-store deployment claims until live proof exists."
+  ],
+  "releaseQuality": {
+    "releaseLevel": "blocked_external",
+    "canShipProduction": false,
+    "productionBlockers": [
+      "Requires live QStorage publication evidence.",
+      "Requires live CasterCloud deployment evidence.",
+      "Requires rollback proof."
+    ]
+  }
+}

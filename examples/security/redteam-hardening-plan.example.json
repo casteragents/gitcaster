@@ -1,0 +1,30 @@
+{
+  "type": "gitcaster.security-redteam.public-alpha-plan.v1",
+  "status": "public-alpha",
+  "scope": "local deterministic security hardening only",
+  "commands": [
+    "node scripts/security/redteam/run-redteam-suite.cjs",
+    "node scripts/security/redteam/check-pr27-redteam.cjs",
+    "node scripts/security/run-beta-gate.cjs",
+    "pnpm run security-redteam:check"
+  ],
+  "coveredChecks": [
+    "secret-scan",
+    "no-hosted-platform-production",
+    "no-fake-live-claims",
+    "signed-mutation-enforcement",
+    "capability-abuse",
+    "deployment-proof-abuse",
+    "evidence-integrity"
+  ],
+  "blockedProductionClaims": [
+    "external-audit-complete",
+    "production-security-ready",
+    "managed-infrastructure-safe",
+    "public-node-federation-safe",
+    "qstorage-live",
+    "castercloud-live",
+    "caster-domain-live"
+  ],
+  "canShipProduction": false
+}
