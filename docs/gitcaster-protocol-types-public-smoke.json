@@ -3,10 +3,10 @@
   "status": "passed",
   "publicDeliveryOnly": true,
   "managedRuntimeClaimed": false,
-  "createdAt": "2026-05-30T18:11:38.973Z",
+  "createdAt": "2026-05-30T18:22:13.418Z",
   "results": [
     {
-      "url": "https://casteragents.github.io/gitcaster/open-source/protocol-types/?v=1780164698761",
+      "url": "https://casteragents.github.io/gitcaster/open-source/protocol-types/?v=1780165332662",
       "statusCode": 200,
       "ok": true,
       "expectedText": "Protocol types for local GitCaster builders",
@@ -14,7 +14,7 @@
       "bodySample": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/gitcaster/_next/stati"
     },
     {
-      "url": "https://casteragents.github.io/gitcaster/gitcaster-protocol-types.json?v=1780164698761",
+      "url": "https://casteragents.github.io/gitcaster/gitcaster-protocol-types.json?v=1780165332662",
       "statusCode": 200,
       "ok": true,
       "expectedText": "gitcaster.protocol-types.public-alpha.v1",
@@ -22,12 +22,12 @@
       "bodySample": "{\n  \"type\": \"gitcaster.protocol-types.public-alpha.v1\",\n  \"status\": \"passed\",\n  \"createdAt\": \"2026-05-30T18:02:36.814Z\",\n  \"localInspectionOnly\": true,\n  \"publicAlphaOnly\": true,\n "
     },
     {
-      "url": "https://raw.githubusercontent.com/casteragents/gitcaster/main/launch/evidence/protocol-types-public-alpha.json?v=1780164698761",
+      "url": "https://raw.githubusercontent.com/casteragents/gitcaster/main/launch/evidence/protocol-types-public-alpha.json?v=1780165332662",
       "statusCode": 200,
       "ok": true,
       "expectedText": "gitcaster.protocol-types.evidence.v1",
       "containsExpectedText": true,
-      "bodySample": "{\n  \"type\": \"gitcaster.protocol-types.evidence.v1\",\n  \"title\": \"Protocol types public-alpha layer\",\n  \"createdAt\": \"2026-05-30T18:02:36.848Z\",\n  \"status\": \"passed\",\n  \"repoRoot\": \""
+      "bodySample": "{\n  \"type\": \"gitcaster.protocol-types.evidence.v1\",\n  \"title\": \"Protocol types public-alpha layer\",\n  \"createdAt\": \"2026-05-30T18:19:06.962Z\",\n  \"status\": \"passed\",\n  \"repoRoot\": \""
     }
   ],
   "blockers": []
