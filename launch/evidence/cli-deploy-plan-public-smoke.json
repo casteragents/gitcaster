@@ -1,12 +1,12 @@
 {
   "type": "gitcaster.cli-deploy-plan.public-smoke.v1",
-  "createdAt": "2026-05-30T12:25:05.580Z",
-  "commitSha": "1ea51bbf189cb3559af02cc7d2c9bf3f0dbc21fa",
+  "createdAt": "2026-05-30T12:44:33.838Z",
+  "commitSha": "8e8609daf7e1ca17c838242d7e8471e464b48c8d",
   "status": "passed",
   "checks": [
     {
       "name": "cli-deploy-plan-page",
-      "url": "https://casteragents.github.io/gitcaster/open-source/cli-deploy-plan/?v=1ea51bbf189cb3559af02cc7d2c9bf3f0dbc21fa",
+      "url": "https://casteragents.github.io/gitcaster/open-source/cli-deploy-plan/?v=8e8609daf7e1ca17c838242d7e8471e464b48c8d",
       "required": [
         "CLI deploy plan dry-run",
         "gc deploy plan",
@@ -25,7 +25,7 @@
     },
     {
       "name": "cli-deploy-plan-json",
-      "url": "https://casteragents.github.io/gitcaster/gitcaster-cli-deploy-plan.json?v=1ea51bbf189cb3559af02cc7d2c9bf3f0dbc21fa",
+      "url": "https://casteragents.github.io/gitcaster/gitcaster-cli-deploy-plan.json?v=8e8609daf7e1ca17c838242d7e8471e464b48c8d",
       "required": [
         "gitcaster.cli-deploy-plan.public-alpha.v1",
         "managed-runtime",
@@ -43,11 +43,13 @@
       ]
     },
     {
-      "name": "open-source-index",
-      "url": "https://casteragents.github.io/gitcaster/open-source/?v=1ea51bbf189cb3559af02cc7d2c9bf3f0dbc21fa",
+      "name": "open-source-feed-receipts",
+      "url": "https://casteragents.github.io/gitcaster/open-source/?v=8e8609daf7e1ca17c838242d7e8471e464b48c8d",
       "required": [
         "CLI deploy plan dry-run",
-        "Public update feed"
+        "https://casterchain.online/post/5351",
+        "https://x.com/casterchain/status/2060699712848875953",
+        "https://warpcast.com/casterchain/f0b81f507c"
       ],
       "status": "passed",
       "attempts": [
@@ -55,11 +57,16 @@
           "attempt": 1,
           "status": 200,
           "ok": true,
-          "bytes": 72460,
+          "bytes": 72794,
           "missing": []
         }
       ]
     }
   ],
+  "socialReceipts": {
+    "casterchain": "https://casterchain.online/post/5351",
+    "xPost": "https://x.com/casterchain/status/2060699712848875953",
+    "farcaster": "https://warpcast.com/casterchain/f0b81f507c"
+  },
   "blockers": []
 }
