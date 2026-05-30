@@ -1,0 +1,29 @@
+{
+  "type": "gitcaster.signed-mutation.v1",
+  "actor": "did:caster:zAlphaHumanFixture",
+  "capability": {
+    "type": "gitcaster.capability.v1",
+    "issuer": "did:caster:zAlphaHumanFixture",
+    "subject": "did:caster:zAlphaHumanFixture",
+    "scope": "repo:create",
+    "resource": "gitcaster://did:caster:zAlphaHumanFixture/*",
+    "expiresAt": "2026-12-31T00:00:00.000Z",
+    "nonce": "cap-fixture-nonce-001",
+    "signature": "fixture-signature-not-cryptographic",
+    "status": "alpha-local"
+  },
+  "payload": {
+    "type": "gitcaster.repo.create.payload.v1",
+    "name": "hello-gitcaster",
+    "description": "first GitCaster fixture repo",
+    "visibility": "public",
+    "defaultBranch": "main"
+  },
+  "payloadHash": "sha256:fixture-repo-create-payload-hash",
+  "previousHash": null,
+  "timestamp": "2026-05-21T00:00:00.000Z",
+  "nonce": "mutation-fixture-nonce-001",
+  "signature": "fixture-signature-not-cryptographic",
+  "status": "alpha-local",
+  "fixtureNotice": "Structure fixture only. Signature verification is implemented in PR-03."
+}

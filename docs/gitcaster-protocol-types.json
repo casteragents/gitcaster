@@ -1,0 +1,43 @@
+{
+  "type": "gitcaster.protocol-types.public-alpha.v1",
+  "status": "passed",
+  "createdAt": "2026-05-30T18:02:36.814Z",
+  "localInspectionOnly": true,
+  "publicAlphaOnly": true,
+  "token": {
+    "symbol": "$GITCASTER",
+    "address": "0x764697544F09921c3c8bA89F1Fb6388C4127fB07",
+    "utilityStatus": "proof-only"
+  },
+  "catalogs": {
+    "events": 22,
+    "statuses": 14,
+    "contentTypes": 12,
+    "errorCodes": 25,
+    "fixtures": 5
+  },
+  "publicArtifacts": [
+    "packages/protocol/src/types.ts",
+    "packages/protocol/src/events.ts",
+    "packages/protocol/src/status.ts",
+    "packages/protocol/src/content-types.ts",
+    "packages/protocol/src/error-codes.ts",
+    "packages/protocol/src/fixtures.ts",
+    "examples/protocol/local-protocol-envelope.example.json",
+    "docs/protocol-types.md"
+  ],
+  "blockedClaims": [
+    "public runtime endpoint",
+    "managed signing custody",
+    "public node mutation",
+    "QStorage publication",
+    "native domain routing",
+    "production runtime operation"
+  ],
+  "commandsRun": [
+    "pnpm --filter @gitcaster/protocol build",
+    "node scripts/protocol/check-fixtures.cjs",
+    "node scripts/protocol/check-protocol-types-public-alpha.cjs"
+  ],
+  "blockers": []
+}

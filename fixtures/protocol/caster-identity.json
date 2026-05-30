@@ -1,0 +1,24 @@
+{
+  "type": "gitcaster.identity.fixture.v1",
+  "status": "alpha-local",
+  "identity": {
+    "did": {
+      "id": "did:caster:zAlphaHumanFixture",
+      "method": "caster",
+      "publicKey": "zAlphaPublicKeyFixture",
+      "createdAt": "2026-05-21T00:00:00.000Z",
+      "kind": "human",
+      "capabilities": ["repo:create", "repo:write"],
+      "trustScore": 0,
+      "status": "alpha-local"
+    },
+    "displayName": "GitCaster Alpha Human Fixture",
+    "kind": "human",
+    "publicKeys": ["zAlphaPublicKeyFixture"],
+    "profile": {
+      "note": "Fixture only. Not a live identity."
+    },
+    "signedAt": "2026-05-21T00:00:00.000Z",
+    "status": "alpha-local"
+  }
+}

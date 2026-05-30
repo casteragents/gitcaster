@@ -1,0 +1,30 @@
+{
+  "type": "gitcaster.object.manifest.v1",
+  "repo": "gitcaster://did:caster:zAlphaHumanFixture/hello-gitcaster",
+  "commit": "sha256:fixture-main-head",
+  "objects": [
+    {
+      "type": "gitcaster.qstorage.object.v1",
+      "cid": null,
+      "hash": "sha256:fixture-index-html",
+      "size": 32,
+      "mime": "text/html",
+      "path": "index.html",
+      "pinnedBy": "did:caster:zAlphaNodeFixture",
+      "proof": null,
+      "createdAt": "2026-05-21T00:00:00.000Z",
+      "status": "alpha-local"
+    }
+  ],
+  "rootHash": "sha256:fixture-object-manifest-root",
+  "createdAt": "2026-05-21T00:00:00.000Z",
+  "signedBy": "did:caster:zAlphaHumanFixture",
+  "signature": "fixture-signature-not-cryptographic",
+  "storage": {
+    "mode": "local-alpha",
+    "status": "alpha-local",
+    "cid": null,
+    "blocker": "QStorage publish requires CASTER_QSTORAGE_ENDPOINT and write credentials."
+  },
+  "fixtureNotice": "Local-alpha object manifest only. Not a production storage proof."
+}

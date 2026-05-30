@@ -2,7 +2,7 @@
   "type": "gitcaster.pr.evidence.v1",
   "pr": "PR-12",
   "title": "Web status and proof UI",
-  "createdAt": "2026-05-30T17:28:29.795Z",
+  "createdAt": "2026-05-30T18:07:13.424Z",
   "repoRoot": "D:\\user\\xxxcrypto-vercel-clean\\.quilibrium\\gitcaster-public-github-release\\gitcaster-public-repo",
   "filesChanged": [
     "apps/web/package.json",
@@ -30,6 +30,7 @@
     "apps/web/app/open-source/git-remote/page.tsx",
     "apps/web/app/open-source/mcp-source/page.tsx",
     "apps/web/app/open-source/agent-skills/page.tsx",
+    "apps/web/app/open-source/protocol-types/page.tsx",
     "apps/web/app/open-source/local-node-api/page.tsx",
     "apps/web/app/open-source/repo-records/page.tsx",
     "apps/web/app/open-source/push-local-object-store/page.tsx",
@@ -147,6 +148,10 @@
     "apps/web/public/gitcaster-agent-skills.md",
     "apps/web/public/gitcaster-agent-skills.json",
     "apps/web/public/gitcaster-agent-skills-public-smoke.json",
+    "apps/web/public/protocol-types.md",
+    "apps/web/public/gitcaster-protocol-types.md",
+    "apps/web/public/gitcaster-protocol-types.json",
+    "apps/web/public/gitcaster-protocol-types-public-smoke.json",
     "apps/web/public/gitcaster-local-node-api.md",
     "apps/web/public/gitcaster-repo-records.md",
     "apps/web/public/gitcaster-push-local-object-store.md",
@@ -188,6 +193,7 @@
     "docs-source/developer-layers/git-remote.md",
     "docs-source/developer-layers/mcp-source.md",
     "docs-source/developer-layers/agent-skills.md",
+    "docs-source/developer-layers/protocol-types.md",
     "docs-source/developer-layers/local-node-api.md",
     "docs-source/developer-layers/repo-records.md",
     "docs-source/developer-layers/push-local-object-store.md",
@@ -212,6 +218,8 @@
     "scripts/cli/check-cli-deploy-plan-public-alpha.cjs",
     "scripts/mcp/check-agent-skills-public-alpha.cjs",
     "scripts/mcp/check-agent-skills-public-smoke.cjs",
+    "scripts/protocol/check-protocol-types-public-alpha.cjs",
+    "scripts/protocol/check-protocol-types-public-smoke.cjs",
     "scripts/security/run-beta-gate.cjs",
     "scripts/security/redteam/run-redteam-suite.cjs",
     "scripts/security/redteam/check-crypto-invariants.cjs",
@@ -233,6 +241,8 @@
     "launch/evidence/cli-deploy-plan-public-alpha.json",
     "launch/evidence/agent-skills-public-alpha.json",
     "launch/evidence/agent-skills-public-smoke.json",
+    "launch/evidence/protocol-types-public-alpha.json",
+    "launch/evidence/protocol-types-public-smoke.json",
     "launch/evidence/pr-17-castercloud-qstorage-pipeline.json",
     "launch/evidence/pr-18-security-gate.json",
     "launch/evidence/pr-27-security-redteam-crypto-audit.json",
@@ -259,6 +269,8 @@
     "pnpm run mcp:check",
     "pnpm run agent-skills:check",
     "pnpm run agent-skills:public-smoke",
+    "pnpm run protocol-types:check",
+    "pnpm run protocol-types:public-smoke",
     "pnpm run node-api:check",
     "pnpm run repo-records:check",
     "pnpm run push-local-object-store:check",
@@ -331,7 +343,7 @@
     },
     {
       "path": "apps/web/app/open-source/page.tsx",
-      "sha256": "4329869ed95d4448ab656167e4412a5d2fcfbd2e6d0774342ff6946414e0ebfe"
+      "sha256": "dd81b13d61bcad4d2ca841b5bbdf3bde3d0b424ad7e0b244a537224bf2729b18"
     },
     {
       "path": "apps/web/app/open-source/simulator/page.tsx",
@@ -372,6 +384,10 @@
     {
       "path": "apps/web/app/open-source/agent-skills/page.tsx",
       "sha256": "658ed80605394c497ebee4a3866f5bbab82eec2930a46a600f34a70dc642780a"
+    },
+    {
+      "path": "apps/web/app/open-source/protocol-types/page.tsx",
+      "sha256": "0883a7f42c825800f4e72b2dd4fe99e32b98a22e8a288bf47bf604c14cadd795"
     },
     {
       "path": "apps/web/app/open-source/local-node-api/page.tsx",
@@ -475,7 +491,7 @@
     },
     {
       "path": "apps/web/lib/status-truth.ts",
-      "sha256": "c055b5d408ff6ff3c4b6f0af11b2ba6551db04fef7bc567ae1d7cccafc6dd62a"
+      "sha256": "d8023d6965cd0df384a37a9c3210ad0d920bcd63f7a1853c4f670b40b66a6cd8"
     },
     {
       "path": "apps/web/lib/preview-data.ts",
@@ -483,7 +499,7 @@
     },
     {
       "path": "apps/web/lib/evidence-links.ts",
-      "sha256": "ef82b2b6425fa3deb3f89b2d2c03a14c4ccef37b0c9dd6fb8a0849f7a1a037a5"
+      "sha256": "40fa919bc10cf8f18dd72a49ca9a501e3cc1470db8b1e0d96ea4be128e18b60b"
     },
     {
       "path": "apps/web/lib/caster-copy.ts",
@@ -523,11 +539,11 @@
     },
     {
       "path": "scripts/web/check-web-truth-table.cjs",
-      "sha256": "63080a25aef2ebe812a6ef376d519c3c92ffcac8ef794fdf787e5a7de994d220"
+      "sha256": "c4e221c341e803c537c166001221bd10ad612e00a3be6063b7bfe0efe9797922"
     },
     {
       "path": "scripts/web/check-pr12-web-ui.cjs",
-      "sha256": "83e84d34422499952afaa7066d8749078ead9117e367e28c1d01885269d42f9a"
+      "sha256": "5eeeee48b3518d64cf6075c9f5e778e19318539d531e4d9a339182b250345cca"
     },
     {
       "path": "LICENSE",
@@ -839,7 +855,23 @@
     },
     {
       "path": "apps/web/public/gitcaster-agent-skills-public-smoke.json",
-      "sha256": "789139c9ccbf224127f3ac98fd445491506a1dedc6579e85fdf80f0e084fca5b"
+      "sha256": "22a2754375643476d73d1a4ae2772e1f32c431e8441e50d8c0ec297f3b932a9f"
+    },
+    {
+      "path": "apps/web/public/protocol-types.md",
+      "sha256": "6869bb42e81933051f30108d98cbcb38a1af945d9f5a78113e7da487666b311a"
+    },
+    {
+      "path": "apps/web/public/gitcaster-protocol-types.md",
+      "sha256": "8a84f5ec9235dfb933ed0a71eb07a7227bf487545ef1277ff86d33e00b912bfe"
+    },
+    {
+      "path": "apps/web/public/gitcaster-protocol-types.json",
+      "sha256": "14c7612a9bf82772f3f8b96a114bae84c66f039671819f068fec69e8a2d85d8e"
+    },
+    {
+      "path": "apps/web/public/gitcaster-protocol-types-public-smoke.json",
+      "sha256": "b51c8ff45d9fc94bc460743240cf9fc355bfc9e90435a62006a02a3bf6686abf"
     },
     {
       "path": "apps/web/public/gitcaster-local-node-api.md",
@@ -1006,6 +1038,10 @@
       "sha256": "40587ef016fe52fdd20451f21052d068f193299ba8efbc6e99401c27ad9ad06e"
     },
     {
+      "path": "docs-source/developer-layers/protocol-types.md",
+      "sha256": "23018d749731f33282e00f3e37e342a9dcbe2cc298025d7e9bf8b5562de09d31"
+    },
+    {
       "path": "docs-source/developer-layers/local-node-api.md",
       "sha256": "56661a0326a071224e6555abd8ff0c0ac5b763723471fde3afc22ace6d5a431d"
     },
@@ -1102,6 +1138,14 @@
       "sha256": "51dae46c5056b498230da670fd395f92132491c1807c1ef3f0797eb910464c38"
     },
     {
+      "path": "scripts/protocol/check-protocol-types-public-alpha.cjs",
+      "sha256": "0564f909185879167c2f739645921ffff70d46f4646a9f274bd2b08548166fb1"
+    },
+    {
+      "path": "scripts/protocol/check-protocol-types-public-smoke.cjs",
+      "sha256": "043b35a356729931c333916f53e6f98ae5c6745a381e474230ef03e97701b55a"
+    },
+    {
       "path": "scripts/security/run-beta-gate.cjs",
       "sha256": "acb4006a420f28a195ac01397e8e143ff2714cef666b1f567762fea40af2f32c"
     },
@@ -1183,7 +1227,15 @@
     },
     {
       "path": "launch/evidence/agent-skills-public-smoke.json",
-      "sha256": "789139c9ccbf224127f3ac98fd445491506a1dedc6579e85fdf80f0e084fca5b"
+      "sha256": "22a2754375643476d73d1a4ae2772e1f32c431e8441e50d8c0ec297f3b932a9f"
+    },
+    {
+      "path": "launch/evidence/protocol-types-public-alpha.json",
+      "sha256": "1044dc308f441adb17826333da43f1003d0ccc7cb584c62da86e66195a6ffca9"
+    },
+    {
+      "path": "launch/evidence/protocol-types-public-smoke.json",
+      "sha256": "b51c8ff45d9fc94bc460743240cf9fc355bfc9e90435a62006a02a3bf6686abf"
     },
     {
       "path": "launch/evidence/pr-17-castercloud-qstorage-pipeline.json",
@@ -1253,6 +1305,9 @@
     "agentSkillsPageCreated": true,
     "agentSkillsEvidenceFound": true,
     "agentSkillsPublicSmokeFound": true,
+    "protocolTypesPageCreated": true,
+    "protocolTypesEvidenceFound": true,
+    "protocolTypesPublicSmokeFound": true,
     "localNodeApiPageCreated": true,
     "repoRecordsPageCreated": true,
     "pushLocalObjectStorePageCreated": true,

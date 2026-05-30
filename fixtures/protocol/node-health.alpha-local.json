@@ -1,0 +1,28 @@
+{
+  "type": "gitcaster.node.health.v1",
+  "node": "node.gitcaster.casterchain",
+  "did": "did:caster:zAlphaNodeFixture",
+  "sampleRepo": "gitcaster://did:caster:zAlphaHumanFixture/hello-gitcaster",
+  "status": "alpha-local",
+  "storage": {
+    "mode": "local-alpha",
+    "verified": false
+  },
+  "repos": 1,
+  "refs": 1,
+  "issues": 0,
+  "prs": 0,
+  "agents": 0,
+  "events": 2,
+  "mcpTools": 0,
+  "writesAccepted": 0,
+  "gossipEvents": 0,
+  "peersKnown": 0,
+  "preview": true,
+  "proof": {
+    "hash": "sha256:fixture-node-health-hash",
+    "signature": null
+  },
+  "timestamp": "2026-05-21T00:00:00.000Z",
+  "fixtureNotice": "Preview alpha-local node health. Not live node telemetry."
+}

@@ -1,0 +1,11 @@
+{
+  "type": "gitcaster.protocol-types.public-smoke.v1",
+  "status": "blocked_external",
+  "publicDeliveryOnly": true,
+  "managedRuntimeClaimed": false,
+  "createdAt": "2026-05-30T18:02:36.847Z",
+  "results": [],
+  "blockers": [
+    "Public delivery smoke must run after publication"
+  ]
+}

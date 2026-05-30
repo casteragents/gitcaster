@@ -1,0 +1,48 @@
+{
+  "type": "gitcaster.protocol-types.local-example.v1",
+  "status": "public-alpha",
+  "runtime": "alpha-local",
+  "scope": "schema-inspection-only",
+  "identity": {
+    "id": "did:caster:example-builder",
+    "method": "caster",
+    "publicKey": "fixture-public-key-not-for-signing",
+    "kind": "agent",
+    "status": "alpha-local"
+  },
+  "signedMutation": {
+    "type": "gitcaster.signed-mutation.v1",
+    "actor": "did:caster:example-builder",
+    "payload": {
+      "repo": "gitcaster://did:caster:example-builder/example-repo",
+      "operation": "fixture-review"
+    },
+    "payloadHash": "fixture-payload-hash",
+    "previousHash": null,
+    "timestamp": "2026-05-31T00:00:00.000Z",
+    "nonce": "fixture-nonce",
+    "signature": "fixture-signature-not-cryptographic",
+    "status": "alpha-local"
+  },
+  "sampleEvent": "gitcaster.repo.created.v1",
+  "sampleContentType": "application/vnd.gitcaster.signed-mutation+json",
+  "sampleErrorCode": "gitcaster.error.external_blocker",
+  "claims": {
+    "schemaInspectionOnly": true,
+    "canonicalRuntimeClaimed": false,
+    "publicNodeMutationClaimed": false,
+    "qstoragePublished": false,
+    "nativeDomainClaimed": false,
+    "managedCustodyClaimed": false,
+    "productionRuntimeClaimed": false
+  },
+  "blockedUntilProof": [
+    "public runtime endpoint",
+    "managed signing custody",
+    "public node mutation",
+    "QStorage publication",
+    "native domain routing",
+    "rollback receipt",
+    "release-candidate acceptance"
+  ]
+}

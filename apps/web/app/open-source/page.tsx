@@ -56,6 +56,15 @@ export default function OpenSourcePage() {
         </div>
         <div className="grid">
           <div className="card">
+            <h3>Protocol types</h3>
+            <p>Typed identities, capabilities, repo records, event names, statuses, content types, error codes, fixture catalog, and placeholder-only envelope examples are now public-alpha.</p>
+            <div className="mini-list">
+              <a href={sitePath("/open-source/protocol-types")}>Website page</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/packages/protocol">Source</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/examples/protocol">Fixture</a>
+            </div>
+          </div>
+          <div className="card">
             <h3>Agent skills notes</h3>
             <p>Agent-facing MCP skill notes, tool schemas, local fixtures, and structured blockers are now public-alpha for local inspection.</p>
             <div className="mini-list">

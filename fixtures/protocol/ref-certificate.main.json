@@ -1,0 +1,38 @@
+{
+  "type": "gitcaster.ref.update.v1",
+  "repo": "gitcaster://did:caster:zAlphaHumanFixture/hello-gitcaster",
+  "ref": "refs/heads/main",
+  "from": null,
+  "to": "sha256:fixture-main-head",
+  "objectCids": ["casterobj:fixture-index-html"],
+  "actor": "did:caster:zAlphaHumanFixture",
+  "node": "did:caster:zAlphaNodeFixture",
+  "timestamp": "2026-05-21T00:00:00.000Z",
+  "nonce": "ref-cert-fixture-nonce-001",
+  "capability": {
+    "type": "gitcaster.capability.v1",
+    "issuer": "did:caster:zAlphaHumanFixture",
+    "subject": "did:caster:zAlphaHumanFixture",
+    "scope": "ref:update",
+    "resource": "gitcaster://did:caster:zAlphaHumanFixture/hello-gitcaster#refs/heads/main",
+    "expiresAt": "2026-12-31T00:00:00.000Z",
+    "nonce": "cap-fixture-nonce-002",
+    "signature": "fixture-signature-not-cryptographic",
+    "status": "alpha-local"
+  },
+  "payloadHash": "sha256:fixture-ref-cert-payload-hash",
+  "signatures": [
+    {
+      "signer": "did:caster:zAlphaHumanFixture",
+      "alg": "ed25519",
+      "sig": "fixture-actor-signature-not-cryptographic"
+    },
+    {
+      "signer": "did:caster:zAlphaNodeFixture",
+      "alg": "ed25519",
+      "sig": "fixture-node-signature-not-cryptographic"
+    }
+  ],
+  "status": "alpha-local",
+  "fixtureNotice": "Structure fixture only. Ref adjudication is implemented later."
+}

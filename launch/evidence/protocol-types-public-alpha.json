@@ -1,0 +1,58 @@
+{
+  "type": "gitcaster.protocol-types.evidence.v1",
+  "title": "Protocol types public-alpha layer",
+  "createdAt": "2026-05-30T18:02:36.848Z",
+  "status": "passed",
+  "repoRoot": "D:\\user\\xxxcrypto-vercel-clean\\.quilibrium\\gitcaster-public-github-release\\gitcaster-public-repo",
+  "filesChanged": [
+    "packages/protocol/src/types.ts",
+    "packages/protocol/src/events.ts",
+    "packages/protocol/src/status.ts",
+    "packages/protocol/src/content-types.ts",
+    "packages/protocol/src/error-codes.ts",
+    "packages/protocol/src/fixtures.ts",
+    "examples/protocol/local-protocol-envelope.example.json",
+    "docs/protocol-types.md",
+    "apps/web/public/protocol-types.md",
+    "apps/web/app/open-source/protocol-types/page.tsx",
+    "docs-source/developer-layers/protocol-types.md",
+    "scripts/protocol/check-fixtures.cjs",
+    "scripts/protocol/check-protocol-types-public-alpha.cjs",
+    "scripts/protocol/check-protocol-types-public-smoke.cjs",
+    "apps/web/public/gitcaster-protocol-types.json",
+    "apps/web/public/gitcaster-protocol-types.md",
+    "launch/evidence/protocol-types-public-alpha.json"
+  ],
+  "commandsRun": [
+    "pnpm --filter @gitcaster/protocol build",
+    "node scripts/protocol/check-fixtures.cjs",
+    "node scripts/protocol/check-protocol-types-public-alpha.cjs"
+  ],
+  "blockers": [],
+  "findings": {
+    "secretFindings": [],
+    "legacyFindings": [],
+    "fakeClaimFindings": []
+  },
+  "summary": {
+    "localInspectionOnly": true,
+    "publicAlphaOnly": true,
+    "sourceFilesFound": true,
+    "examplePublicAlpha": true,
+    "exampleAlphaLocalRuntime": true,
+    "tokenSymbol": "$GITCASTER",
+    "tokenAddress": "0x764697544F09921c3c8bA89F1Fb6388C4127fB07",
+    "canonicalRuntimeClaimed": false,
+    "managedSigningCustodyClaimed": false,
+    "publicNodeMutationClaimed": false,
+    "qstoragePublicationClaimed": false,
+    "nativeDomainClaimed": false,
+    "productionRuntimeClaimed": false,
+    "secretLeakFindings": 0,
+    "legacyFindings": 0,
+    "fakeClaimFindings": 0
+  },
+  "publicJson": "apps/web/public/gitcaster-protocol-types.json",
+  "publicMarkdown": "apps/web/public/gitcaster-protocol-types.md",
+  "nextProof": "Published package artifact, downstream compatibility checks, public runtime endpoint, managed custody, storage, domain, rollback, and release-candidate proof"
+}
