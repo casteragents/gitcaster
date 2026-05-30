@@ -14,6 +14,7 @@ Public artifacts:
 - `examples/mcp/local-tool-plan.example.json`
 - `docs/agent-skills.md`
 - `apps/web/public/gitcaster-agent-skills.json`
+- `launch/evidence/agent-skills-public-smoke.json`
 
 Blocked until proof exists:
 
@@ -28,5 +29,6 @@ Verification:
 
 ```bash
 pnpm run agent-skills:check
+pnpm run agent-skills:public-smoke
 pnpm run secret-scan
 ```

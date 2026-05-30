@@ -1,0 +1,34 @@
+{
+  "type": "gitcaster.agent-skills.public-smoke.v1",
+  "status": "passed",
+  "publicDeliveryOnly": true,
+  "managedRuntimeClaimed": false,
+  "createdAt": "2026-05-30T17:23:53.822Z",
+  "results": [
+    {
+      "url": "https://casteragents.github.io/gitcaster/open-source/agent-skills/?v=1780161832356",
+      "statusCode": 200,
+      "ok": true,
+      "expectedText": "Agent skills for local GitCaster builders",
+      "containsExpectedText": true,
+      "bodySample": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/><link rel=\"stylesheet\" href=\"/gitcaster/_next/stati"
+    },
+    {
+      "url": "https://casteragents.github.io/gitcaster/gitcaster-agent-skills.json?v=1780161832356",
+      "statusCode": 200,
+      "ok": true,
+      "expectedText": "gitcaster.agent-skills.public-alpha.v1",
+      "containsExpectedText": true,
+      "bodySample": "{\n  \"type\": \"gitcaster.agent-skills.public-alpha.v1\",\n  \"status\": \"passed\",\n  \"createdAt\": \"2026-05-30T17:04:21.998Z\",\n  \"localInspectionOnly\": true,\n  \"publicAlphaOnly\": true,\n  \""
+    },
+    {
+      "url": "https://raw.githubusercontent.com/casteragents/gitcaster/main/launch/evidence/agent-skills-public-alpha.json?v=1780161832356",
+      "statusCode": 200,
+      "ok": true,
+      "expectedText": "gitcaster.agent-skills.evidence.v1",
+      "containsExpectedText": true,
+      "bodySample": "{\n  \"type\": \"gitcaster.agent-skills.evidence.v1\",\n  \"title\": \"Agent skills public-alpha layer\",\n  \"createdAt\": \"2026-05-30T17:04:22.002Z\",\n  \"status\": \"passed\",\n  \"repoRoot\": \"D:\\\\"
+    }
+  ],
+  "blockers": []
+}

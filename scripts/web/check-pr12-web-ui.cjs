@@ -148,6 +148,7 @@ const requiredFiles = [
   "apps/web/public/agent-skills.md",
   "apps/web/public/gitcaster-agent-skills.md",
   "apps/web/public/gitcaster-agent-skills.json",
+  "apps/web/public/gitcaster-agent-skills-public-smoke.json",
   "apps/web/public/gitcaster-local-node-api.md",
   "apps/web/public/gitcaster-repo-records.md",
   "apps/web/public/gitcaster-push-local-object-store.md",
@@ -211,6 +212,7 @@ const requiredFiles = [
   "scripts/deploy/check-deploy-manifest-intake-public-alpha.cjs",
   "scripts/cli/check-cli-deploy-plan-public-alpha.cjs",
   "scripts/mcp/check-agent-skills-public-alpha.cjs",
+  "scripts/mcp/check-agent-skills-public-smoke.cjs",
   "scripts/security/run-beta-gate.cjs",
   "scripts/security/redteam/run-redteam-suite.cjs",
   "scripts/security/redteam/check-crypto-invariants.cjs",
@@ -231,6 +233,7 @@ const requiredFiles = [
   "launch/evidence/cli-deploy-plan-local-dry-run.json",
   "launch/evidence/cli-deploy-plan-public-alpha.json",
   "launch/evidence/agent-skills-public-alpha.json",
+  "launch/evidence/agent-skills-public-smoke.json",
   "launch/evidence/pr-17-castercloud-qstorage-pipeline.json",
   "launch/evidence/pr-18-security-gate.json",
   "launch/evidence/pr-27-security-redteam-crypto-audit.json",
@@ -315,6 +318,7 @@ if (!packageOnly) {
     if (evidence.summary?.normalGitPushClaimed !== false) blockers.push("normalGitPushClaimed must be false");
     if (evidence.summary?.publicNodesOnlineClaimed !== false) blockers.push("publicNodesOnlineClaimed must be false");
     if (evidence.summary?.multiNodeReplicationClaimed !== false) blockers.push("multiNodeReplicationClaimed must be false");
+    if (evidence.summary?.agentSkillsPublicSmokeFound !== true) blockers.push("agentSkillsPublicSmokeFound must be true");
     if (evidence.summary?.unhackableClaimed !== false) blockers.push("unhackableClaimed must be false");
     if (!Array.isArray(evidence.truthTable?.surfaces) || evidence.truthTable.surfaces.length !== 65) blockers.push("truth table must include 65 current surfaces");
     if (!evidence.truthTable?.surfaces?.includes("GitHub Pages website")) blockers.push("truth table must include GitHub Pages website");

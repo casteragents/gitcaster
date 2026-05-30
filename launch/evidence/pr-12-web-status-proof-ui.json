@@ -2,7 +2,7 @@
   "type": "gitcaster.pr.evidence.v1",
   "pr": "PR-12",
   "title": "Web status and proof UI",
-  "createdAt": "2026-05-30T17:04:23.271Z",
+  "createdAt": "2026-05-30T17:28:29.795Z",
   "repoRoot": "D:\\user\\xxxcrypto-vercel-clean\\.quilibrium\\gitcaster-public-github-release\\gitcaster-public-repo",
   "filesChanged": [
     "apps/web/package.json",
@@ -146,6 +146,7 @@
     "apps/web/public/agent-skills.md",
     "apps/web/public/gitcaster-agent-skills.md",
     "apps/web/public/gitcaster-agent-skills.json",
+    "apps/web/public/gitcaster-agent-skills-public-smoke.json",
     "apps/web/public/gitcaster-local-node-api.md",
     "apps/web/public/gitcaster-repo-records.md",
     "apps/web/public/gitcaster-push-local-object-store.md",
@@ -210,6 +211,7 @@
     "scripts/deploy/check-deploy-manifest-intake-public-alpha.cjs",
     "scripts/cli/check-cli-deploy-plan-public-alpha.cjs",
     "scripts/mcp/check-agent-skills-public-alpha.cjs",
+    "scripts/mcp/check-agent-skills-public-smoke.cjs",
     "scripts/security/run-beta-gate.cjs",
     "scripts/security/redteam/run-redteam-suite.cjs",
     "scripts/security/redteam/check-crypto-invariants.cjs",
@@ -230,6 +232,7 @@
     "launch/evidence/cli-deploy-plan-local-dry-run.json",
     "launch/evidence/cli-deploy-plan-public-alpha.json",
     "launch/evidence/agent-skills-public-alpha.json",
+    "launch/evidence/agent-skills-public-smoke.json",
     "launch/evidence/pr-17-castercloud-qstorage-pipeline.json",
     "launch/evidence/pr-18-security-gate.json",
     "launch/evidence/pr-27-security-redteam-crypto-audit.json",
@@ -255,6 +258,7 @@
     "pnpm run git-remote:check",
     "pnpm run mcp:check",
     "pnpm run agent-skills:check",
+    "pnpm run agent-skills:public-smoke",
     "pnpm run node-api:check",
     "pnpm run repo-records:check",
     "pnpm run push-local-object-store:check",
@@ -367,7 +371,7 @@
     },
     {
       "path": "apps/web/app/open-source/agent-skills/page.tsx",
-      "sha256": "2e13074a85523d6bd4a031534e6fbe70b06a5469c4b44c2777a3234f3f44188a"
+      "sha256": "658ed80605394c497ebee4a3866f5bbab82eec2930a46a600f34a70dc642780a"
     },
     {
       "path": "apps/web/app/open-source/local-node-api/page.tsx",
@@ -471,7 +475,7 @@
     },
     {
       "path": "apps/web/lib/status-truth.ts",
-      "sha256": "7f4c1552e108627a9eb53b22f2f3e6de3672f3bdc57b95007f527736971e5790"
+      "sha256": "c055b5d408ff6ff3c4b6f0af11b2ba6551db04fef7bc567ae1d7cccafc6dd62a"
     },
     {
       "path": "apps/web/lib/preview-data.ts",
@@ -479,7 +483,7 @@
     },
     {
       "path": "apps/web/lib/evidence-links.ts",
-      "sha256": "d6912d43114a62dad14ca79393f604d9009e1ddf1d8a6072024fdc68dd06282d"
+      "sha256": "ef82b2b6425fa3deb3f89b2d2c03a14c4ccef37b0c9dd6fb8a0849f7a1a037a5"
     },
     {
       "path": "apps/web/lib/caster-copy.ts",
@@ -487,7 +491,7 @@
     },
     {
       "path": "apps/web/lib/public-release-feed.ts",
-      "sha256": "478efae73da8b6bee66229c522a450e984138f91696beabff81e95871c6db294"
+      "sha256": "da403d990ce42334c34c933a50277b0cecab58e5c3d306006b2a5263956634da"
     },
     {
       "path": "apps/web/styles/caster-theme.css",
@@ -519,11 +523,11 @@
     },
     {
       "path": "scripts/web/check-web-truth-table.cjs",
-      "sha256": "fb6069e7dcb29f580df78f114150fe01ae20c02b575756ac81824883c4fe75af"
+      "sha256": "63080a25aef2ebe812a6ef376d519c3c92ffcac8ef794fdf787e5a7de994d220"
     },
     {
       "path": "scripts/web/check-pr12-web-ui.cjs",
-      "sha256": "004ddb577d06b2e4e2373c8e603e9ac4b9fbd4e67090bf2c5f235fa195ab3524"
+      "sha256": "83e84d34422499952afaa7066d8749078ead9117e367e28c1d01885269d42f9a"
     },
     {
       "path": "LICENSE",
@@ -823,15 +827,19 @@
     },
     {
       "path": "apps/web/public/agent-skills.md",
-      "sha256": "3ad6627f7832059660db4d2a6aa07e173349e8c88e5be07772477edf8c6929eb"
+      "sha256": "5f13d18b6e259e6d31f0e64014328fdfe398de867b8c9416f43683e452b119c8"
     },
     {
       "path": "apps/web/public/gitcaster-agent-skills.md",
-      "sha256": "4655f663003d5ce879e7925248098cfa26dec8649c884f2c712e61237f3a0819"
+      "sha256": "1419a4a5597c139ade9920efd03cf2f88dc4d350b375d1c781f7bbf9c393f7c3"
     },
     {
       "path": "apps/web/public/gitcaster-agent-skills.json",
-      "sha256": "654ad959e98c95a7e954337490c880627a5280578ee5f809b11f7235f86656fe"
+      "sha256": "115e72849c5fffb19a2a5a768dd6f6ba09097d6bbbb5f28f873dd00a92001384"
+    },
+    {
+      "path": "apps/web/public/gitcaster-agent-skills-public-smoke.json",
+      "sha256": "789139c9ccbf224127f3ac98fd445491506a1dedc6579e85fdf80f0e084fca5b"
     },
     {
       "path": "apps/web/public/gitcaster-local-node-api.md",
@@ -995,7 +1003,7 @@
     },
     {
       "path": "docs-source/developer-layers/agent-skills.md",
-      "sha256": "fbb76609be182d30aae26d518d46df9fe5640c163df82a62780ae1f9bbc71583"
+      "sha256": "40587ef016fe52fdd20451f21052d068f193299ba8efbc6e99401c27ad9ad06e"
     },
     {
       "path": "docs-source/developer-layers/local-node-api.md",
@@ -1087,7 +1095,11 @@
     },
     {
       "path": "scripts/mcp/check-agent-skills-public-alpha.cjs",
-      "sha256": "939c23057f23efdddbd88868a881fed7565b2e600aae9efc716bb6fbd51c9dfa"
+      "sha256": "5eaba24cebee0a3dd56a97811eee42c0bd2e246c5ee3cb59c01a4ec474127cb2"
+    },
+    {
+      "path": "scripts/mcp/check-agent-skills-public-smoke.cjs",
+      "sha256": "51dae46c5056b498230da670fd395f92132491c1807c1ef3f0797eb910464c38"
     },
     {
       "path": "scripts/security/run-beta-gate.cjs",
@@ -1167,7 +1179,11 @@
     },
     {
       "path": "launch/evidence/agent-skills-public-alpha.json",
-      "sha256": "50764db5d6b2ebd99fc891324ffa97f3e8546f3073f3ea5581f1524f97dbab05"
+      "sha256": "5908de1df21ca015ff7a1d31ad8948b79b7c8e04ae01e432b6f63b9a39b14e4f"
+    },
+    {
+      "path": "launch/evidence/agent-skills-public-smoke.json",
+      "sha256": "789139c9ccbf224127f3ac98fd445491506a1dedc6579e85fdf80f0e084fca5b"
     },
     {
       "path": "launch/evidence/pr-17-castercloud-qstorage-pipeline.json",
@@ -1236,6 +1252,7 @@
     "mcpSourcePageCreated": true,
     "agentSkillsPageCreated": true,
     "agentSkillsEvidenceFound": true,
+    "agentSkillsPublicSmokeFound": true,
     "localNodeApiPageCreated": true,
     "repoRecordsPageCreated": true,
     "pushLocalObjectStorePageCreated": true,

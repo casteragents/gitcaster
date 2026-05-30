@@ -148,6 +148,7 @@ const filesChanged = [
   "apps/web/public/agent-skills.md",
   "apps/web/public/gitcaster-agent-skills.md",
   "apps/web/public/gitcaster-agent-skills.json",
+  "apps/web/public/gitcaster-agent-skills-public-smoke.json",
   "apps/web/public/gitcaster-local-node-api.md",
   "apps/web/public/gitcaster-repo-records.md",
   "apps/web/public/gitcaster-push-local-object-store.md",
@@ -212,6 +213,7 @@ const filesChanged = [
   "scripts/deploy/check-deploy-manifest-intake-public-alpha.cjs",
   "scripts/cli/check-cli-deploy-plan-public-alpha.cjs",
   "scripts/mcp/check-agent-skills-public-alpha.cjs",
+  "scripts/mcp/check-agent-skills-public-smoke.cjs",
   "scripts/security/run-beta-gate.cjs",
   "scripts/security/redteam/run-redteam-suite.cjs",
   "scripts/security/redteam/check-crypto-invariants.cjs",
@@ -232,6 +234,7 @@ const filesChanged = [
   "launch/evidence/cli-deploy-plan-local-dry-run.json",
   "launch/evidence/cli-deploy-plan-public-alpha.json",
   "launch/evidence/agent-skills-public-alpha.json",
+  "launch/evidence/agent-skills-public-smoke.json",
   "launch/evidence/pr-17-castercloud-qstorage-pipeline.json",
   "launch/evidence/pr-18-security-gate.json",
   "launch/evidence/pr-27-security-redteam-crypto-audit.json",
@@ -380,8 +383,10 @@ if (!exists("apps/web/public/gitcaster-cli-deploy-plan.json")) blockers.push("ge
 if (!statusTruth.includes("apps/git-remote-gitcaster") || !statusTruth.includes("examples/git-remote/blocked-transport-plan.example.json")) blockers.push("status truth must include Git remote helper source and blocked transport plan evidence");
 if (!statusTruth.includes("apps/mcp") || !statusTruth.includes("examples/mcp/local-tool-plan.example.json") || !statusTruth.includes("launch/evidence/pr-11-mcp-tools.json")) blockers.push("status truth must include MCP source, local tool plan, and PR-11 evidence");
 if (!statusTruth.includes("docs/agent-skills.md") || !statusTruth.includes("apps/web/public/gitcaster-agent-skills.json") || !statusTruth.includes("launch/evidence/agent-skills-public-alpha.json")) blockers.push("status truth must include agent skills notes, public JSON, and evidence");
+if (!statusTruth.includes("launch/evidence/agent-skills-public-smoke.json")) blockers.push("status truth must include agent skills public smoke evidence");
 if (!exists("apps/web/app/open-source/agent-skills/page.tsx")) blockers.push("agent skills open-source page missing");
 if (!exists("apps/web/public/gitcaster-agent-skills.json")) blockers.push("generated agent skills JSON missing");
+if (!exists("apps/web/public/gitcaster-agent-skills-public-smoke.json")) blockers.push("generated agent skills public smoke JSON missing");
 if (!statusTruth.includes("apps/node") || !statusTruth.includes("examples/node/local-api-smoke.example.json") || !statusTruth.includes("launch/evidence/local-node-api-source.json")) blockers.push("status truth must include local node API source, smoke fixture, and evidence");
 if (!startText.includes("gc identity new") || !startText.includes("gitcaster://did:caster:z.../hello-gitcaster")) blockers.push("start page must use GitCaster commands");
 if (!configText.includes('output: "export"')) blockers.push("next config must use static export");
@@ -408,7 +413,7 @@ const evidence = {
   createdAt: new Date().toISOString(),
   repoRoot,
   filesChanged,
-  commandsRun: ["pnpm run api-tutorials:check", "pnpm run miniapp-templates:check", "pnpm run app-shell-catalog:check", "pnpm run app-shell-preview-smoke:check", "pnpm run caster-intelligence-preview:check", "pnpm run deploy-manifest:check", "pnpm run sdk:check", "pnpm run cli:check", "pnpm run cli-deploy-plan:check", "pnpm run git-remote:check", "pnpm run mcp:check", "pnpm run agent-skills:check", "pnpm run node-api:check", "pnpm run repo-records:check", "pnpm run push-local-object-store:check", "pnpm run ref-consensus:check", "pnpm run security-redteam:check", "pnpm run simulator:check", "pnpm run ros:check", "node scripts/web/check-web-truth-table.cjs"],
+  commandsRun: ["pnpm run api-tutorials:check", "pnpm run miniapp-templates:check", "pnpm run app-shell-catalog:check", "pnpm run app-shell-preview-smoke:check", "pnpm run caster-intelligence-preview:check", "pnpm run deploy-manifest:check", "pnpm run sdk:check", "pnpm run cli:check", "pnpm run cli-deploy-plan:check", "pnpm run git-remote:check", "pnpm run mcp:check", "pnpm run agent-skills:check", "pnpm run agent-skills:public-smoke", "pnpm run node-api:check", "pnpm run repo-records:check", "pnpm run push-local-object-store:check", "pnpm run ref-consensus:check", "pnpm run security-redteam:check", "pnpm run simulator:check", "pnpm run ros:check", "node scripts/web/check-web-truth-table.cjs"],
   passed: blockers.length === 0,
   failed: blockers.length > 0,
   blockers,
@@ -439,6 +444,7 @@ const evidence = {
     mcpSourcePageCreated: exists("apps/web/app/open-source/mcp-source/page.tsx"),
     agentSkillsPageCreated: exists("apps/web/app/open-source/agent-skills/page.tsx"),
     agentSkillsEvidenceFound: exists("launch/evidence/agent-skills-public-alpha.json"),
+    agentSkillsPublicSmokeFound: exists("launch/evidence/agent-skills-public-smoke.json"),
     localNodeApiPageCreated: exists("apps/web/app/open-source/local-node-api/page.tsx"),
     repoRecordsPageCreated: exists("apps/web/app/open-source/repo-records/page.tsx"),
     pushLocalObjectStorePageCreated: exists("apps/web/app/open-source/push-local-object-store/page.tsx"),

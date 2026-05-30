@@ -25,4 +25,5 @@ Run the local check before contributing:
 
 ```bash
 pnpm run agent-skills:check
+pnpm run agent-skills:public-smoke
 ```

@@ -1,7 +1,7 @@
 {
   "type": "gitcaster.agent-skills.public-alpha.v1",
   "status": "passed",
-  "createdAt": "2026-05-30T17:04:21.998Z",
+  "createdAt": "2026-05-30T17:23:50.926Z",
   "localInspectionOnly": true,
   "publicAlphaOnly": true,
   "requiredToolCount": 31,

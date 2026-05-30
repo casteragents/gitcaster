@@ -11,6 +11,17 @@ export type PublicReleaseFeedItem = {
 
 export const publicReleaseFeed: PublicReleaseFeedItem[] = [
   {
+    date: "2026-05-31",
+    title: "Agent skills notes",
+    summary:
+      "GitCaster now includes public-alpha agent-facing MCP skill notes for local tool names, schemas, structured blockers, placeholder-only plans, and public delivery smoke proof.",
+    website: "https://casteragents.github.io/gitcaster/open-source/agent-skills/",
+    repo: "https://github.com/casteragents/gitcaster",
+    casterchain: "https://casterchain.online/post/5364",
+    xPost: "https://x.com/casterchain/status/2060770888606425600",
+    farcaster: "https://warpcast.com/casterchain/41cf79cb99"
+  },
+  {
     date: "2026-05-30",
     title: "Caster Intelligence preview shell",
     summary:

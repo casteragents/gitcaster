@@ -5,7 +5,8 @@ const publicArtifacts = [
   ["Schemas", "apps/mcp/src/schemas.ts", "Beta tool input and output shapes for contributor review."],
   ["Tool handlers", "apps/mcp/src/tools", "Local handlers with structured blockers for external or custody-backed actions."],
   ["Local plan fixture", "examples/mcp/local-tool-plan.example.json", "Placeholder-only workflow proof that stays alpha-local."],
-  ["Agent notes", "docs/agent-skills.md", "Human-readable scope notes for safe agent-facing contributions."]
+  ["Agent notes", "docs/agent-skills.md", "Human-readable scope notes for safe agent-facing contributions."],
+  ["Public smoke", "launch/evidence/agent-skills-public-smoke.json", "Public delivery checks for the Pages route, JSON summary, and raw GitHub evidence."]
 ];
 
 const localWorkflow = [
@@ -41,6 +42,7 @@ export default function AgentSkillsOpenSourcePage() {
           <a className="button primary" href="https://github.com/casteragents/gitcaster/tree/main/apps/mcp">MCP source</a>
           <a className="button" href="https://github.com/casteragents/gitcaster/tree/main/examples/mcp">Local fixture</a>
           <a className="button" href={sitePath("/gitcaster-agent-skills.json")}>Evidence JSON</a>
+          <a className="button" href={sitePath("/gitcaster-agent-skills-public-smoke.json")}>Public smoke JSON</a>
           <a className="button" href={sitePath("/agent-skills.md")}>Agent notes</a>
         </div>
       </section>
@@ -107,7 +109,7 @@ export default function AgentSkillsOpenSourcePage() {
           </div>
           <span className="pill info">deterministic</span>
         </div>
-        <pre className="terminal">pnpm run agent-skills:check</pre>
+        <pre className="terminal">pnpm run agent-skills:check{"\n"}pnpm run agent-skills:public-smoke</pre>
       </section>
     </div>
   );

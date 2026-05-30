@@ -60,6 +60,7 @@ pnpm run cli:check
 pnpm run cli-deploy-plan:check
 pnpm run git-remote:check
 pnpm run agent-skills:check
+pnpm run agent-skills:public-smoke
 pnpm run deploy-manifest:check
 pnpm run simulator:check
 pnpm run ros:check

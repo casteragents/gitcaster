@@ -31,7 +31,8 @@ const requiredFiles = [
   "apps/web/public/agent-skills.md",
   "apps/web/app/open-source/agent-skills/page.tsx",
   "docs-source/developer-layers/agent-skills.md",
-  "scripts/mcp/check-agent-skills-public-alpha.cjs"
+  "scripts/mcp/check-agent-skills-public-alpha.cjs",
+  "scripts/mcp/check-agent-skills-public-smoke.cjs"
 ];
 
 const fakeClaimPattern = /(public MCP gateway ready|managed signing custody enabled|public node mutation enabled|QStorage verified|CasterCloud verified|\.caster mapped|staking live|rewards paid|governance live|production-ready|public nodes online|multi-node replicated|live decentralized network)/i;
@@ -143,6 +144,7 @@ async function main() {
     "",
     "```bash",
     "pnpm run agent-skills:check",
+    "pnpm run agent-skills:public-smoke",
     "```",
     ""
   ].join("\n");
