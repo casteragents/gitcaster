@@ -1,10 +1,15 @@
 {
   "type": "gitcaster.app-shell-local-preview-smoke.public-smoke.v1",
   "status": "passed",
-  "createdAt": "2026-05-30T13:06:16.704Z",
-  "commit": "5245803ba6b13d14ad695eb2e220b3baa9c1db73",
+  "createdAt": "2026-05-30T13:24:34.250Z",
+  "commit": "19ec9ee08f6a75ca685a34867f95e68419eaa9a0",
   "publicPage": "https://casteragents.github.io/gitcaster/open-source/app-shell-local-preview-smoke/",
   "publicJson": "https://casteragents.github.io/gitcaster/gitcaster-app-shell-local-preview-smoke.json",
+  "socialReceipts": {
+    "casterchain": "https://casterchain.online/post/5362",
+    "x": "https://x.com/casterchain/status/2060710380717162792",
+    "farcaster": "https://warpcast.com/casterchain/63c11202d7"
+  },
   "localPreviewOnly": true,
   "claims": {
     "nativeStoragePublished": false,
@@ -16,47 +21,47 @@
   "results": [
     {
       "id": "page",
-      "url": "https://casteragents.github.io/gitcaster/open-source/app-shell-local-preview-smoke/?v=5245803ba6b13d14ad695eb2e220b3baa9c1db73",
+      "url": "https://casteragents.github.io/gitcaster/open-source/app-shell-local-preview-smoke/?v=19ec9ee08f6a75ca685a34867f95e68419eaa9a0",
       "expect": "App shell local preview smoke",
       "attempt": 1,
       "statusCode": 200,
       "passed": true,
       "bytes": 19670,
-      "sha256": "235ccafc8d6024ed4433688ffcb7257a08195d71109ef17570b241d21fe2f5ef",
-      "checkedAt": "2026-05-30T13:06:15.160Z"
+      "sha256": "d26efaa930f94cff842e022feb2505f47cf421eb4f1e27dc63054260661c6c2e",
+      "checkedAt": "2026-05-30T13:24:32.673Z"
     },
     {
       "id": "json",
-      "url": "https://casteragents.github.io/gitcaster/gitcaster-app-shell-local-preview-smoke.json?v=5245803ba6b13d14ad695eb2e220b3baa9c1db73",
+      "url": "https://casteragents.github.io/gitcaster/gitcaster-app-shell-local-preview-smoke.json?v=19ec9ee08f6a75ca685a34867f95e68419eaa9a0",
       "expect": "gitcaster.app-shell-local-preview-smoke.public-alpha.v1",
       "attempt": 1,
       "statusCode": 200,
       "passed": true,
       "bytes": 3938,
-      "sha256": "79590c95473f351d85b81322cb083560e1ad414e02e42d2f6bca6a2fe27953bc",
-      "checkedAt": "2026-05-30T13:06:15.696Z"
+      "sha256": "ea3ca9b8ca686e7441fe904b7cb1da11796ff2fd5ae73d3deb828a3c46208ba3",
+      "checkedAt": "2026-05-30T13:24:33.272Z"
     },
     {
       "id": "open-source-index",
-      "url": "https://casteragents.github.io/gitcaster/open-source/?v=5245803ba6b13d14ad695eb2e220b3baa9c1db73",
-      "expect": "App shell local preview smoke",
+      "url": "https://casteragents.github.io/gitcaster/open-source/?v=19ec9ee08f6a75ca685a34867f95e68419eaa9a0",
+      "expect": "https://x.com/casterchain/status/2060710380717162792",
       "attempt": 1,
       "statusCode": 200,
       "passed": true,
-      "bytes": 75612,
-      "sha256": "083b76732bf310cae790f5e2f5ea1ded0d99eaba3d1000263d4b65f18d4e1183",
-      "checkedAt": "2026-05-30T13:06:15.983Z"
+      "bytes": 75903,
+      "sha256": "79ad7dc755d4c7be75dab27d2f4dd89b4e2f59e663c95a4bcc0ebcb5bf82dc48",
+      "checkedAt": "2026-05-30T13:24:33.647Z"
     },
     {
       "id": "ecosystem",
-      "url": "https://casteragents.github.io/gitcaster/ecosystem/?v=5245803ba6b13d14ad695eb2e220b3baa9c1db73",
+      "url": "https://casteragents.github.io/gitcaster/ecosystem/?v=19ec9ee08f6a75ca685a34867f95e68419eaa9a0",
       "expect": "Preview smoke",
       "attempt": 1,
       "statusCode": 200,
       "passed": true,
       "bytes": 77161,
-      "sha256": "c7999e20a49db2d5819d554c16dacf059a7c00ac61ff10918a752d4a84ff2868",
-      "checkedAt": "2026-05-30T13:06:16.270Z"
+      "sha256": "211d14186c55b6790cade820cd895157fc8c64f797cd9fe221f539f32f664b7a",
+      "checkedAt": "2026-05-30T13:24:33.944Z"
     }
   ]
 }
