@@ -1,7 +1,7 @@
 {
   "type": "gitcaster.redteam.deployment-proof-abuse.v1",
   "status": "passed",
-  "createdAt": "2026-05-30T00:25:12.180Z",
+  "createdAt": "2026-05-30T00:54:36.740Z",
   "cases": [
     {
       "id": "deploy.local-hash-as-qstorage-proof",

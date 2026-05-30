@@ -1,7 +1,7 @@
 {
   "type": "gitcaster.redteam.sensitive-state-boundary.v1",
   "status": "passed",
-  "createdAt": "2026-05-30T00:25:12.181Z",
+  "createdAt": "2026-05-30T00:54:36.740Z",
   "sensitiveRuntimeContentsRead": false,
   "casterAgentsRuntimeStatePublic": false,
   "casterPunksImagesBundled": false,

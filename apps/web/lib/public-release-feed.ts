@@ -12,6 +12,17 @@ export type PublicReleaseFeedItem = {
 export const publicReleaseFeed: PublicReleaseFeedItem[] = [
   {
     date: "2026-05-30",
+    title: "Security redteam hardening",
+    summary:
+      "GitCaster now includes public-alpha security redteam tooling for secret scans, fake-live claim blockers, hosted dependency checks, capability abuse tests, deployment proof abuse checks, and audit rehearsal notes.",
+    website: "https://casteragents.github.io/gitcaster/open-source/security-redteam/",
+    repo: "https://github.com/casteragents/gitcaster",
+    casterchain: "https://casterchain.online/post/5291",
+    xPost: "https://x.com/casterchain/status/2060519441813897402",
+    farcaster: "https://warpcast.com/casterchain/4492b39700"
+  },
+  {
+    date: "2026-05-30",
     title: "Ref-consensus local certificates",
     summary:
       "GitCaster now includes public ref-consensus source, signed ref update certificates, append-only local ledgers, conflict evidence, double-sign detection, and unsigned ref mutation blockers for public-alpha contribution work.",
