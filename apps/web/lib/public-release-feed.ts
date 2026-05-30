@@ -17,9 +17,9 @@ export const publicReleaseFeed: PublicReleaseFeedItem[] = [
       "GitCaster now includes gc deploy plan for local manifest validation, redacted dry-run evidence, explicit promotion blockers, and false runtime/custody/billing/domain claims.",
     website: "https://casteragents.github.io/gitcaster/open-source/cli-deploy-plan/",
     repo: "https://github.com/casteragents/gitcaster",
-    casterchain: "pending",
-    xPost: "pending",
-    farcaster: "pending"
+    casterchain: "https://casterchain.online/post/5351",
+    xPost: "https://x.com/casterchain/status/2060699712848875953",
+    farcaster: "https://warpcast.com/casterchain/f0b81f507c"
   },
   {
     date: "2026-05-30",
