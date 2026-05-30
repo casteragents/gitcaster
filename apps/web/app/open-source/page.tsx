@@ -56,6 +56,15 @@ export default function OpenSourcePage() {
         </div>
         <div className="grid">
           <div className="card">
+            <h3>Agent skills notes</h3>
+            <p>Agent-facing MCP skill notes, tool schemas, local fixtures, and structured blockers are now public-alpha for local inspection.</p>
+            <div className="mini-list">
+              <a href={sitePath("/open-source/agent-skills")}>Website page</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/apps/mcp">Source</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/docs/agent-skills.md">Notes</a>
+            </div>
+          </div>
+          <div className="card">
             <h3>Caster Intelligence preview shell</h3>
             <p>Redacted builder-tool shell, local fixture, data-rights blockers, and static preview proof are now public-alpha without source or runtime claims.</p>
             <div className="mini-list">

@@ -31,6 +31,7 @@ const requiredFiles = [
   "apps/web/app/open-source/cli-deploy-plan/page.tsx",
   "apps/web/app/open-source/git-remote/page.tsx",
   "apps/web/app/open-source/mcp-source/page.tsx",
+  "apps/web/app/open-source/agent-skills/page.tsx",
   "apps/web/app/open-source/local-node-api/page.tsx",
   "apps/web/app/open-source/repo-records/page.tsx",
   "apps/web/app/open-source/push-local-object-store/page.tsx",
@@ -144,6 +145,9 @@ const requiredFiles = [
   "apps/node/src/services/redact.ts",
   "apps/web/public/git-remote-gitcaster.md",
   "apps/web/public/gitcaster-mcp-source.md",
+  "apps/web/public/agent-skills.md",
+  "apps/web/public/gitcaster-agent-skills.md",
+  "apps/web/public/gitcaster-agent-skills.json",
   "apps/web/public/gitcaster-local-node-api.md",
   "apps/web/public/gitcaster-repo-records.md",
   "apps/web/public/gitcaster-push-local-object-store.md",
@@ -183,6 +187,7 @@ const requiredFiles = [
   "docs-source/developer-layers/cli-deploy-plan.md",
   "docs-source/developer-layers/git-remote.md",
   "docs-source/developer-layers/mcp-source.md",
+  "docs-source/developer-layers/agent-skills.md",
   "docs-source/developer-layers/local-node-api.md",
   "docs-source/developer-layers/repo-records.md",
   "docs-source/developer-layers/push-local-object-store.md",
@@ -205,6 +210,7 @@ const requiredFiles = [
   "scripts/ecosystem/check-caster-intelligence-preview-public-alpha.cjs",
   "scripts/deploy/check-deploy-manifest-intake-public-alpha.cjs",
   "scripts/cli/check-cli-deploy-plan-public-alpha.cjs",
+  "scripts/mcp/check-agent-skills-public-alpha.cjs",
   "scripts/security/run-beta-gate.cjs",
   "scripts/security/redteam/run-redteam-suite.cjs",
   "scripts/security/redteam/check-crypto-invariants.cjs",
@@ -224,6 +230,7 @@ const requiredFiles = [
   "launch/evidence/deploy-manifest-intake-public-alpha.json",
   "launch/evidence/cli-deploy-plan-local-dry-run.json",
   "launch/evidence/cli-deploy-plan-public-alpha.json",
+  "launch/evidence/agent-skills-public-alpha.json",
   "launch/evidence/pr-17-castercloud-qstorage-pipeline.json",
   "launch/evidence/pr-18-security-gate.json",
   "launch/evidence/pr-27-security-redteam-crypto-audit.json",
@@ -309,7 +316,7 @@ if (!packageOnly) {
     if (evidence.summary?.publicNodesOnlineClaimed !== false) blockers.push("publicNodesOnlineClaimed must be false");
     if (evidence.summary?.multiNodeReplicationClaimed !== false) blockers.push("multiNodeReplicationClaimed must be false");
     if (evidence.summary?.unhackableClaimed !== false) blockers.push("unhackableClaimed must be false");
-    if (!Array.isArray(evidence.truthTable?.surfaces) || evidence.truthTable.surfaces.length !== 62) blockers.push("truth table must include 62 current surfaces");
+    if (!Array.isArray(evidence.truthTable?.surfaces) || evidence.truthTable.surfaces.length !== 65) blockers.push("truth table must include 65 current surfaces");
     if (!evidence.truthTable?.surfaces?.includes("GitHub Pages website")) blockers.push("truth table must include GitHub Pages website");
     if (!evidence.truthTable?.surfaces?.includes("open-core boundary")) blockers.push("truth table must include open-core boundary");
     if (!evidence.truthTable?.surfaces?.includes("simulator package")) blockers.push("truth table must include simulator package");
@@ -329,6 +336,9 @@ if (!packageOnly) {
     if (!evidence.truthTable?.surfaces?.includes("CLI deploy plan dry-run")) blockers.push("truth table must include CLI deploy plan dry-run");
     if (!evidence.truthTable?.surfaces?.includes("CLI deploy plan evidence")) blockers.push("truth table must include CLI deploy plan evidence");
     if (!evidence.truthTable?.surfaces?.includes("CLI deploy plan blockers")) blockers.push("truth table must include CLI deploy plan blockers");
+    if (!evidence.truthTable?.surfaces?.includes("agent skills notes")) blockers.push("truth table must include agent skills notes");
+    if (!evidence.truthTable?.surfaces?.includes("agent skills local fixture")) blockers.push("truth table must include agent skills local fixture");
+    if (!evidence.truthTable?.surfaces?.includes("agent skills promotion blockers")) blockers.push("truth table must include agent skills promotion blockers");
     if (!evidence.truthTable?.surfaces?.includes("security redteam tooling")) blockers.push("truth table must include security redteam tooling");
   }
 }

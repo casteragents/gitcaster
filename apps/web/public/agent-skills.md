@@ -24,5 +24,5 @@ Reserved managed layers:
 Run the local check before contributing:
 
 ```bash
-pnpm run mcp:check
+pnpm run agent-skills:check
 ```

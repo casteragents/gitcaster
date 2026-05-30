@@ -58,6 +58,8 @@ export const evidenceLinks: EvidenceLink[] = [
   { label: "MCP source", path: "apps/mcp", status: "public-alpha" },
   { label: "MCP local tool plan", path: "examples/mcp/local-tool-plan.example.json", status: "public-alpha" },
   { label: "PR-11 MCP tool evidence", path: "launch/evidence/pr-11-mcp-tools.json", status: "public-alpha" },
+  { label: "Agent skills notes", path: "docs/agent-skills.md", status: "public-alpha" },
+  { label: "Agent skills evidence", path: "launch/evidence/agent-skills-public-alpha.json", status: "public-alpha" },
   { label: "Local node API source", path: "apps/node", status: "public-alpha" },
   { label: "Local node API smoke fixture", path: "examples/node/local-api-smoke.example.json", status: "public-alpha" },
   { label: "Local node API evidence", path: "launch/evidence/local-node-api-source.json", status: "public-alpha" },

@@ -1,0 +1,28 @@
+{
+  "type": "gitcaster.agent-skills.public-alpha.v1",
+  "status": "passed",
+  "createdAt": "2026-05-30T17:04:21.998Z",
+  "localInspectionOnly": true,
+  "publicAlphaOnly": true,
+  "requiredToolCount": 31,
+  "publicArtifacts": [
+    "apps/mcp/src/tool-registry.ts",
+    "apps/mcp/src/schemas.ts",
+    "apps/mcp/src/tools",
+    "examples/mcp/local-tool-plan.example.json",
+    "docs/agent-skills.md"
+  ],
+  "blockedClaims": [
+    "public MCP gateway endpoint",
+    "managed signing custody",
+    "public node mutation",
+    "QStorage publication",
+    "native domain routing",
+    "production runtime operation"
+  ],
+  "commandsRun": [
+    "pnpm --filter @gitcaster/mcp build",
+    "node scripts/mcp/check-agent-skills-public-alpha.cjs"
+  ],
+  "blockers": []
+}
