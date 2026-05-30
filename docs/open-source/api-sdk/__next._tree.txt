@@ -1,2 +1,0 @@
-:HL["/gitcaster/_next/static/css/7c380ed0c8168a17.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"open-source","param":null,"prefetchHints":0,"slots":{"children":{"name":"api-sdk","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}}}},"staleTime":300,"buildId":"IWCla3-NN4lfoonBLy1jZ"}
