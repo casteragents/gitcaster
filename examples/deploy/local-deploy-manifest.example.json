@@ -1,0 +1,120 @@
+{
+  "type": "gitcaster.deploy-manifest.v1",
+  "id": "deploy-manifest-gitcaster-studio-local",
+  "appId": "gitcaster-studio",
+  "name": "GitCaster Studio",
+  "layer": "app",
+  "createdAt": "2026-05-30T00:00:00.000Z",
+  "source": {
+    "kind": "local-fixture",
+    "path": "apps/web",
+    "repository": "https://github.com/casteragents/gitcaster"
+  },
+  "target": {
+    "mode": "local-dry-run",
+    "previewUrl": "http://127.0.0.1:3000",
+    "publicHost": null,
+    "nativeDomain": null,
+    "storageTarget": null,
+    "managedRuntime": null
+  },
+  "checks": [
+    {
+      "id": "static-export-build",
+      "command": "pnpm run build:web",
+      "expectedStatus": "passed",
+      "scope": "local"
+    },
+    {
+      "id": "public-secret-scan",
+      "command": "pnpm run secret-scan",
+      "expectedStatus": "passed",
+      "scope": "local"
+    },
+    {
+      "id": "native-runtime-proof",
+      "command": "operator proof required before promotion",
+      "expectedStatus": "blocked_external",
+      "scope": "proof-gate"
+    }
+  ],
+  "dependencies": [
+    {
+      "id": "vercel",
+      "requiredRuntime": false,
+      "retirementStatus": "not-required-for-native-path"
+    },
+    {
+      "id": "cloudflare",
+      "requiredRuntime": false,
+      "retirementStatus": "not-required-for-native-path"
+    },
+    {
+      "id": "supabase",
+      "requiredRuntime": false,
+      "retirementStatus": "not-required-for-native-path"
+    },
+    {
+      "id": "redis",
+      "requiredRuntime": false,
+      "retirementStatus": "not-required-for-native-path"
+    },
+    {
+      "id": "r2",
+      "requiredRuntime": false,
+      "retirementStatus": "not-required-for-native-path"
+    },
+    {
+      "id": "qconsole",
+      "requiredRuntime": false,
+      "retirementStatus": "not-required-for-native-path"
+    }
+  ],
+  "blockedCapabilities": [
+    {
+      "id": "managed-runtime",
+      "status": "blocked_external",
+      "requiredProof": "signed managed runtime deploy receipt, smoke proof, and rollback proof"
+    },
+    {
+      "id": "native-storage",
+      "status": "blocked_external",
+      "requiredProof": "native storage publish receipt, public read proof, and rollback proof"
+    },
+    {
+      "id": "native-domain",
+      "status": "blocked_external",
+      "requiredProof": "native domain registry receipt and browser smoke proof"
+    },
+    {
+      "id": "custody",
+      "status": "blocked_external",
+      "requiredProof": "QKMS or signer custody reference with redacted receipt"
+    },
+    {
+      "id": "billing",
+      "status": "blocked_external",
+      "requiredProof": "subscription contract, billing policy, and abuse-control proof"
+    },
+    {
+      "id": "rollback",
+      "status": "blocked_external",
+      "requiredProof": "bounded rollback path and post-rollback smoke proof"
+    },
+    {
+      "id": "production-readiness",
+      "status": "blocked_external",
+      "requiredProof": "release candidate, security audit, node health, storage, deploy, domain, and rollback evidence"
+    }
+  ],
+  "claims": {
+    "localDryRunOnly": true,
+    "managedRuntimeAvailable": false,
+    "nativeStoragePublished": false,
+    "nativeDomainMapped": false,
+    "custodyProvisioned": false,
+    "billingEnabled": false,
+    "rollbackVerified": false,
+    "productionReady": false
+  }
+}

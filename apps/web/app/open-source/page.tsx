@@ -56,6 +56,15 @@ export default function OpenSourcePage() {
         </div>
         <div className="grid">
           <div className="card">
+            <h3>Deploy manifest intake</h3>
+            <p>Safe local deployment manifests, retired dependency markers, proof blockers, and production-claim rejection are now public-alpha.</p>
+            <div className="mini-list">
+              <a href={sitePath("/open-source/deploy-manifest-intake")}>Website page</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/packages/deploy-manifests">Source</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/examples/deploy">Fixture</a>
+            </div>
+          </div>
+          <div className="card">
             <h3>App shell catalog hardening</h3>
             <p>Proof-aware app and miniapp shell catalog, local preview routing, dependency-risk labels, and blocked native deployment claims are now public-alpha.</p>
             <div className="mini-list">

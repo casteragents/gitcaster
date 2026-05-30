@@ -36,6 +36,7 @@ const filesChanged = [
   "apps/web/app/open-source/ref-consensus/page.tsx",
   "apps/web/app/open-source/security-redteam/page.tsx",
   "apps/web/app/open-source/app-shell-catalog/page.tsx",
+  "apps/web/app/open-source/deploy-manifest-intake/page.tsx",
   "apps/web/components/TruthStatusPill.tsx",
   "apps/web/components/TruthTable.tsx",
   "apps/web/components/ProofPanel.tsx",
@@ -92,6 +93,12 @@ const filesChanged = [
   "packages/playground-templates/src/miniapp-templates.test.ts",
   "packages/ecosystem/src/app-shell-catalog.ts",
   "packages/ecosystem/src/app-directory.test.ts",
+  "packages/deploy-manifests/package.json",
+  "packages/deploy-manifests/README.md",
+  "packages/deploy-manifests/src/index.ts",
+  "packages/deploy-manifests/src/types.ts",
+  "packages/deploy-manifests/src/deploy-manifest.ts",
+  "packages/deploy-manifests/src/deploy-manifest.test.ts",
   "packages/sdk-typescript/package.json",
   "packages/sdk-typescript/README.md",
   "packages/sdk-typescript/src/index.ts",
@@ -136,6 +143,7 @@ const filesChanged = [
   "apps/web/public/gitcaster-push-local-object-store.md",
   "apps/web/public/gitcaster-ref-consensus.md",
   "apps/web/public/gitcaster-security-redteam.md",
+  "apps/web/public/gitcaster-deploy-manifest-intake.md",
   "examples/worlds/local-agent-grid.world.json",
   "examples/ros/local-agent-bridge.launch.json",
   "examples/ros/local-agent-bridge.messages.json",
@@ -143,6 +151,7 @@ const filesChanged = [
   "examples/api/agent-post-request-shape.example.json",
   "examples/miniapps/caster-claim-miniapp.local-shell.json",
   "examples/app-shells/gitcaster-app-shell-catalog.local.json",
+  "examples/deploy/local-deploy-manifest.example.json",
   "examples/sdk/public-alpha-client.example.ts",
   "examples/sdk/public-alpha-client.example.json",
   "examples/cli/local-command-plan.example.json",
@@ -167,6 +176,7 @@ const filesChanged = [
   "docs-source/developer-layers/ref-consensus.md",
   "docs-source/developer-layers/security-redteam.md",
   "docs-source/developer-layers/app-shell-catalog.md",
+  "docs-source/developer-layers/deploy-manifest-intake.md",
   "docs/security/redteam-plan.md",
   "docs/security/crypto-audit-rehearsal.md",
   "scripts/node/check-local-node-api-source.cjs",
@@ -176,6 +186,7 @@ const filesChanged = [
   "scripts/security/check-security-redteam-public-alpha.cjs",
   "scripts/ecosystem/check-pr28-ecosystem-rc.cjs",
   "scripts/ecosystem/check-app-shell-catalog-public-alpha.cjs",
+  "scripts/deploy/check-deploy-manifest-intake-public-alpha.cjs",
   "scripts/security/run-beta-gate.cjs",
   "scripts/security/redteam/run-redteam-suite.cjs",
   "scripts/security/redteam/check-crypto-invariants.cjs",
@@ -190,6 +201,7 @@ const filesChanged = [
   "launch/evidence/security-redteam-public-hardening-source.json",
   "launch/evidence/pr-28-ecosystem-rc-import.json",
   "launch/evidence/app-shell-catalog-public-hardening-source.json",
+  "launch/evidence/deploy-manifest-intake-public-alpha.json",
   "launch/evidence/pr-17-castercloud-qstorage-pipeline.json",
   "launch/evidence/pr-18-security-gate.json",
   "launch/evidence/pr-27-security-redteam-crypto-audit.json",
@@ -212,6 +224,9 @@ const truthSurfaces = [
   "public update policy",
   "website static build",
   "developer package workspace",
+  "deploy manifest intake",
+  "deploy manifest local dry-run fixture",
+  "deploy manifest production blockers",
   "simulator package",
   "example world fixture",
   "digital twin exporter",
@@ -305,6 +320,9 @@ if (!statusTruth.includes("packages/playground-templates")) blockers.push("statu
 if (!statusTruth.includes("packages/ecosystem/src/app-shell-catalog.ts") || !statusTruth.includes("examples/app-shells/gitcaster-app-shell-catalog.local.json") || !statusTruth.includes("launch/evidence/app-shell-catalog-public-hardening-source.json")) blockers.push("status truth must include app shell catalog source, fixture, and evidence");
 if (!exists("apps/web/app/open-source/app-shell-catalog/page.tsx")) blockers.push("app shell catalog open-source page missing");
 if (!exists("apps/web/public/gitcaster-app-shell-catalog.json")) blockers.push("generated app shell catalog JSON missing");
+if (!statusTruth.includes("packages/deploy-manifests") || !statusTruth.includes("examples/deploy/local-deploy-manifest.example.json") || !statusTruth.includes("launch/evidence/deploy-manifest-intake-public-alpha.json")) blockers.push("status truth must include deploy manifest package, fixture, and evidence");
+if (!exists("apps/web/app/open-source/deploy-manifest-intake/page.tsx")) blockers.push("deploy manifest intake open-source page missing");
+if (!exists("apps/web/public/gitcaster-deploy-manifest-intake.json")) blockers.push("generated deploy manifest intake JSON missing");
 if (!statusTruth.includes("packages/sdk-typescript")) blockers.push("status truth must include TypeScript SDK package evidence");
 if (!statusTruth.includes("apps/cli") || !statusTruth.includes("examples/cli/local-command-plan.example.json")) blockers.push("status truth must include CLI source and local command plan evidence");
 if (!statusTruth.includes("apps/git-remote-gitcaster") || !statusTruth.includes("examples/git-remote/blocked-transport-plan.example.json")) blockers.push("status truth must include Git remote helper source and blocked transport plan evidence");
@@ -335,7 +353,7 @@ const evidence = {
   createdAt: new Date().toISOString(),
   repoRoot,
   filesChanged,
-  commandsRun: ["pnpm run api-tutorials:check", "pnpm run miniapp-templates:check", "pnpm run app-shell-catalog:check", "pnpm run sdk:check", "pnpm run cli:check", "pnpm run git-remote:check", "pnpm run mcp:check", "pnpm run node-api:check", "pnpm run repo-records:check", "pnpm run push-local-object-store:check", "pnpm run ref-consensus:check", "pnpm run security-redteam:check", "pnpm run simulator:check", "pnpm run ros:check", "node scripts/web/check-web-truth-table.cjs"],
+  commandsRun: ["pnpm run api-tutorials:check", "pnpm run miniapp-templates:check", "pnpm run app-shell-catalog:check", "pnpm run deploy-manifest:check", "pnpm run sdk:check", "pnpm run cli:check", "pnpm run git-remote:check", "pnpm run mcp:check", "pnpm run node-api:check", "pnpm run repo-records:check", "pnpm run push-local-object-store:check", "pnpm run ref-consensus:check", "pnpm run security-redteam:check", "pnpm run simulator:check", "pnpm run ros:check", "node scripts/web/check-web-truth-table.cjs"],
   passed: blockers.length === 0,
   failed: blockers.length > 0,
   blockers,
@@ -369,6 +387,8 @@ const evidence = {
     securityRedteamPageCreated: exists("apps/web/app/open-source/security-redteam/page.tsx"),
     appShellCatalogPageCreated: exists("apps/web/app/open-source/app-shell-catalog/page.tsx"),
     appShellCatalogEvidenceFound: exists("launch/evidence/app-shell-catalog-public-hardening-source.json"),
+    deployManifestIntakePageCreated: exists("apps/web/app/open-source/deploy-manifest-intake/page.tsx"),
+    deployManifestIntakeEvidenceFound: exists("launch/evidence/deploy-manifest-intake-public-alpha.json"),
     truthTableCreated: truthSurfaces.every((surface) => statusTruth.includes(surface)),
     previewDataLabeled: true,
     liveClaimsWithoutEvidence: 0,
@@ -441,6 +461,7 @@ const evidence = {
       "Ref-consensus local certificates are public-alpha only until public consensus, remote ref durability, normal git transport, storage, and rollback proof exist.",
       "Security redteam tooling is public-alpha only until external audit, managed infrastructure, public-node, custody, billing, rollback, and production operation proof exist.",
       "App and miniapp shell catalog is public-alpha only until native storage, native domain, runtime endpoint, security review, and rollback proof exist.",
+      "Deploy manifest intake is public-alpha only until managed runtime, native storage, native domain, custody, billing, rollback, and release-candidate proof exist.",
       "CasterAgents runtime state remains closed until safety-lock and redaction proof exists.",
       "QStorage and CasterCloud runtime endpoints still require operator proof.",
       ".caster registry and public node federation still require signed live evidence.",

@@ -11,7 +11,7 @@ The following categories are intended for Apache 2.0 publication in this repo:
 - ROS packages, robot adapters, message bridges, local launch files, and sample robot workflows.
 - APIs, SDKs, protocol types, CLI commands, MCP tools, and signed-repo developer interfaces.
 - Local simulators, example worlds, fixtures, deterministic proof checkers, and digital twin exporters.
-- GO-gated app and miniapp shells, manifests, compatibility adapters, and contribution docs after leak scans pass.
+- GO-gated app and miniapp shells, local deploy manifests, compatibility adapters, and contribution docs after leak scans pass.
 - Public docs, examples, templates, status pages, and roadmap handoffs.
 
 ## Commercial Platform Layers
@@ -30,10 +30,10 @@ The following categories are reserved for the managed Caster platform:
 - GO-gated apps and miniapps move public only after proof files show they are safe to publish.
 - Public claims must stay tied to proof artifacts or explicit blockers.
 - Every public GitCaster push should be announced from `@casterchain` on X with `@gitcasterx`, `@CasterAI_`, the GitHub repo, and the GitCaster website.
-- Farcaster announcements should be posted from `@casterchain` and contain only the X post link.
+- Farcaster announcements should be posted from `@casterchain` in `/caster` and contain the X post link plus the Casterchain post link.
 
 ## Contribution Focus
 
 The best first contributions are developer-facing improvements: docs, examples,
 local simulators, SDK ergonomics, MCP tool coverage, miniapp compatibility,
-digital twin exporters, test fixtures, and proof checkers.
+digital twin exporters, deploy manifest fixtures, test fixtures, and proof checkers.

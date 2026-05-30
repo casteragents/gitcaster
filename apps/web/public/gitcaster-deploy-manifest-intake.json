@@ -1,0 +1,90 @@
+{
+  "type": "gitcaster.deploy-manifest-intake.public-alpha.v1",
+  "status": "passed",
+  "manifestId": "deploy-manifest-gitcaster-studio-local",
+  "appId": "gitcaster-studio",
+  "localDryRunOnly": true,
+  "productionReadiness": "blocked_external",
+  "managedRuntimeRequired": false,
+  "requiredRuntimeDependencies": [],
+  "blockedCapabilities": [
+    {
+      "id": "managed-runtime",
+      "status": "blocked_external",
+      "requiredProof": "signed managed runtime deploy receipt, smoke proof, and rollback proof"
+    },
+    {
+      "id": "native-storage",
+      "status": "blocked_external",
+      "requiredProof": "native storage publish receipt, public read proof, and rollback proof"
+    },
+    {
+      "id": "native-domain",
+      "status": "blocked_external",
+      "requiredProof": "native domain registry receipt and browser smoke proof"
+    },
+    {
+      "id": "custody",
+      "status": "blocked_external",
+      "requiredProof": "QKMS or signer custody reference with redacted receipt"
+    },
+    {
+      "id": "billing",
+      "status": "blocked_external",
+      "requiredProof": "subscription contract, billing policy, and abuse-control proof"
+    },
+    {
+      "id": "rollback",
+      "status": "blocked_external",
+      "requiredProof": "bounded rollback path and post-rollback smoke proof"
+    },
+    {
+      "id": "production-readiness",
+      "status": "blocked_external",
+      "requiredProof": "release candidate, security audit, node health, storage, deploy, domain, and rollback evidence"
+    }
+  ],
+  "dependencyRetirement": [
+    {
+      "id": "vercel",
+      "requiredRuntime": false,
+      "retirementStatus": "not-required-for-native-path"
+    },
+    {
+      "id": "cloudflare",
+      "requiredRuntime": false,
+      "retirementStatus": "not-required-for-native-path"
+    },
+    {
+      "id": "supabase",
+      "requiredRuntime": false,
+      "retirementStatus": "not-required-for-native-path"
+    },
+    {
+      "id": "redis",
+      "requiredRuntime": false,
+      "retirementStatus": "not-required-for-native-path"
+    },
+    {
+      "id": "r2",
+      "requiredRuntime": false,
+      "retirementStatus": "not-required-for-native-path"
+    },
+    {
+      "id": "qconsole",
+      "requiredRuntime": false,
+      "retirementStatus": "not-required-for-native-path"
+    }
+  ],
+  "validation": {
+    "status": "passed",
+    "manifestId": "deploy-manifest-gitcaster-studio-local",
+    "appId": "gitcaster-studio",
+    "blockers": [],
+    "warnings": [],
+    "productionReadiness": "blocked_external",
+    "localDryRunAccepted": true,
+    "managedRuntimeRequired": false,
+    "requiredRuntimeDependencies": []
+  }
+}

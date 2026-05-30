@@ -12,6 +12,17 @@ export type PublicReleaseFeedItem = {
 export const publicReleaseFeed: PublicReleaseFeedItem[] = [
   {
     date: "2026-05-30",
+    title: "Deploy manifest intake",
+    summary:
+      "GitCaster now includes public-alpha deploy manifest intake for local dry-run release plans, retired dependency markers, proof blockers, and production-claim rejection.",
+    website: "https://casteragents.github.io/gitcaster/open-source/deploy-manifest-intake/",
+    repo: "https://github.com/casteragents/gitcaster",
+    casterchain: "pending",
+    xPost: "pending",
+    farcaster: "pending"
+  },
+  {
+    date: "2026-05-30",
     title: "App shell catalog hardening",
     summary:
       "GitCaster now includes a public-alpha app and miniapp shell catalog for local preview routes, dependency-risk labels, manifest review, and blocked native deployment claims.",
