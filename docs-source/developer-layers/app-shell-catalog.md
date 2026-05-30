@@ -11,8 +11,11 @@ dependency-risk labeling, and blocked native deployment claims.
 - `packages/ecosystem/src/app-shell-catalog.ts`
 - `examples/app-shells/gitcaster-app-shell-catalog.local.json`
 - `apps/web/public/gitcaster-app-shell-catalog.json`
+- `apps/web/public/gitcaster-app-shell-local-preview-smoke.json`
 - `scripts/ecosystem/check-app-shell-catalog-public-alpha.cjs`
+- `scripts/ecosystem/check-app-shell-local-preview-smoke-public-alpha.cjs`
 - `launch/evidence/app-shell-catalog-public-hardening-source.json`
+- `launch/evidence/app-shell-local-preview-smoke-public-alpha.json`
 
 ## What Is Public
 
@@ -35,6 +38,7 @@ dependency-risk labeling, and blocked native deployment claims.
 
 ```bash
 pnpm run app-shell-catalog:check
+pnpm run app-shell-preview-smoke:check
 pnpm run secret-scan
 pnpm run test:web
 ```

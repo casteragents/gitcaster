@@ -2,7 +2,7 @@
   "type": "gitcaster.pr.evidence.v1",
   "pr": "PR-12",
   "title": "Web status and proof UI",
-  "createdAt": "2026-05-30T12:41:53.179Z",
+  "createdAt": "2026-05-30T13:02:31.712Z",
   "repoRoot": "D:\\user\\xxxcrypto-vercel-clean\\.quilibrium\\gitcaster-public-github-release\\gitcaster-public-repo",
   "filesChanged": [
     "apps/web/package.json",
@@ -35,6 +35,7 @@
     "apps/web/app/open-source/ref-consensus/page.tsx",
     "apps/web/app/open-source/security-redteam/page.tsx",
     "apps/web/app/open-source/app-shell-catalog/page.tsx",
+    "apps/web/app/open-source/app-shell-local-preview-smoke/page.tsx",
     "apps/web/app/open-source/deploy-manifest-intake/page.tsx",
     "apps/web/components/TruthStatusPill.tsx",
     "apps/web/components/TruthTable.tsx",
@@ -147,6 +148,8 @@
     "apps/web/public/gitcaster-deploy-manifest-intake.md",
     "apps/web/public/gitcaster-cli-deploy-plan.md",
     "apps/web/public/gitcaster-cli-deploy-plan.json",
+    "apps/web/public/gitcaster-app-shell-local-preview-smoke.md",
+    "apps/web/public/gitcaster-app-shell-local-preview-smoke.json",
     "examples/worlds/local-agent-grid.world.json",
     "examples/ros/local-agent-bridge.launch.json",
     "examples/ros/local-agent-bridge.messages.json",
@@ -180,6 +183,7 @@
     "docs-source/developer-layers/ref-consensus.md",
     "docs-source/developer-layers/security-redteam.md",
     "docs-source/developer-layers/app-shell-catalog.md",
+    "docs-source/developer-layers/app-shell-local-preview-smoke.md",
     "docs-source/developer-layers/deploy-manifest-intake.md",
     "docs/security/redteam-plan.md",
     "docs/security/crypto-audit-rehearsal.md",
@@ -190,6 +194,7 @@
     "scripts/security/check-security-redteam-public-alpha.cjs",
     "scripts/ecosystem/check-pr28-ecosystem-rc.cjs",
     "scripts/ecosystem/check-app-shell-catalog-public-alpha.cjs",
+    "scripts/ecosystem/check-app-shell-local-preview-smoke-public-alpha.cjs",
     "scripts/deploy/check-deploy-manifest-intake-public-alpha.cjs",
     "scripts/cli/check-cli-deploy-plan-public-alpha.cjs",
     "scripts/security/run-beta-gate.cjs",
@@ -206,6 +211,7 @@
     "launch/evidence/security-redteam-public-hardening-source.json",
     "launch/evidence/pr-28-ecosystem-rc-import.json",
     "launch/evidence/app-shell-catalog-public-hardening-source.json",
+    "launch/evidence/app-shell-local-preview-smoke-public-alpha.json",
     "launch/evidence/deploy-manifest-intake-public-alpha.json",
     "launch/evidence/cli-deploy-plan-local-dry-run.json",
     "launch/evidence/cli-deploy-plan-public-alpha.json",
@@ -225,6 +231,7 @@
     "pnpm run api-tutorials:check",
     "pnpm run miniapp-templates:check",
     "pnpm run app-shell-catalog:check",
+    "pnpm run app-shell-preview-smoke:check",
     "pnpm run deploy-manifest:check",
     "pnpm run sdk:check",
     "pnpm run cli:check",
@@ -238,7 +245,8 @@
     "pnpm run security-redteam:check",
     "pnpm run simulator:check",
     "pnpm run ros:check",
-    "node scripts/web/check-web-truth-table.cjs"
+    "node scripts/web/check-web-truth-table.cjs",
+    "node scripts/web/check-pr12-web-ui.cjs"
   ],
   "passed": true,
   "failed": false,
@@ -282,7 +290,7 @@
     },
     {
       "path": "apps/web/app/ecosystem/page.tsx",
-      "sha256": "72941674fba759b7ccacc679654df9ddad07e1bbb88b9f62b8cbfa65ebfa8960"
+      "sha256": "2cda753b0c6e47c3b60cd1021a61449e8a97ec51163f6055c68dce3eddd7e49f"
     },
     {
       "path": "apps/web/app/security/page.tsx",
@@ -302,7 +310,7 @@
     },
     {
       "path": "apps/web/app/open-source/page.tsx",
-      "sha256": "137f30a0aa7ad501be97f320965a6445a6ea21db9aaf98a11e70abc045124e31"
+      "sha256": "535754d317255df27bfd4be87c3767f831af6aabfac10ec37319c0ccf064610e"
     },
     {
       "path": "apps/web/app/open-source/simulator/page.tsx",
@@ -362,7 +370,11 @@
     },
     {
       "path": "apps/web/app/open-source/app-shell-catalog/page.tsx",
-      "sha256": "5ef885b244982aa1ba83c39ca6d08f7a1b0fa87796151169a747f6f50cc82713"
+      "sha256": "dc1a512d33b6b9c481f69dc725268b56b4ade97e996c3bfd67e5c081b7409276"
+    },
+    {
+      "path": "apps/web/app/open-source/app-shell-local-preview-smoke/page.tsx",
+      "sha256": "fea1b26d0f74db5e23f92f32220a78153812202ac3498eef274bed8d17f7f2ce"
     },
     {
       "path": "apps/web/app/open-source/deploy-manifest-intake/page.tsx",
@@ -430,7 +442,7 @@
     },
     {
       "path": "apps/web/lib/status-truth.ts",
-      "sha256": "fcf6b30cdb7ae743a1ad138f7f1da041944c1143b9e99e7cdc041285b18a963d"
+      "sha256": "c9afde498cc1efc4d172e3569035aa4c1081b367eda23c24879e8b4f0ac67f55"
     },
     {
       "path": "apps/web/lib/preview-data.ts",
@@ -438,7 +450,7 @@
     },
     {
       "path": "apps/web/lib/evidence-links.ts",
-      "sha256": "b94f3633cc03663cfdfa362b74fbf5002227b214ed2a34e959ff4816b67d04d8"
+      "sha256": "44d1eedfdcb6fc8f52b8d022db6fb1b24d719b9651dea5edc200d9f8a56a8b31"
     },
     {
       "path": "apps/web/lib/caster-copy.ts",
@@ -446,7 +458,7 @@
     },
     {
       "path": "apps/web/lib/public-release-feed.ts",
-      "sha256": "50bc785b24498a0e263b45f580f21142bdaf1cfc0804662c1a346dddec2f3e17"
+      "sha256": "6cee690e503fbc53e4cccaa67079178f436cd0137ec1470ebbc7224375be6906"
     },
     {
       "path": "apps/web/styles/caster-theme.css",
@@ -478,11 +490,11 @@
     },
     {
       "path": "scripts/web/check-web-truth-table.cjs",
-      "sha256": "7cc9d423e8f180e419141ab9e5293e08740bf7d0b69b0cb44d2780c3e05650cb"
+      "sha256": "44682add0f7cc3b52cd69c7524c222495b4dabaea5c67c5a931333ac7958d587"
     },
     {
       "path": "scripts/web/check-pr12-web-ui.cjs",
-      "sha256": "0382f17757d6c1e09081a91f7add5638a60d0984cce408e728a7dd5008937170"
+      "sha256": "a644884cdfb7b6ebeca6d67d04781a072fe666f4b36bacb12adbd675c7ca97a4"
     },
     {
       "path": "LICENSE",
@@ -813,6 +825,14 @@
       "sha256": "fce9bce1cf63a80b6757faaf4ea6b5a2d880a0e0c52df9eda45097bd564a20ea"
     },
     {
+      "path": "apps/web/public/gitcaster-app-shell-local-preview-smoke.md",
+      "sha256": "20e5d83291a7bcbb28527433c282b5b28c061cff5da7a6edc0ec3c642bce1d99"
+    },
+    {
+      "path": "apps/web/public/gitcaster-app-shell-local-preview-smoke.json",
+      "sha256": "79590c95473f351d85b81322cb083560e1ad414e02e42d2f6bca6a2fe27953bc"
+    },
+    {
       "path": "examples/worlds/local-agent-grid.world.json",
       "sha256": "825d90a5b04ffc658af864a3ba254becb2386c27879626f22907e5198ae930bd"
     },
@@ -942,7 +962,11 @@
     },
     {
       "path": "docs-source/developer-layers/app-shell-catalog.md",
-      "sha256": "10f1b523660e4d816b7dd8255788c97ff075afdf156c5f62724e06704c886228"
+      "sha256": "429de56d376a4bc129901531c43a26fe65f41b729b649fbb451ff834ad5daa37"
+    },
+    {
+      "path": "docs-source/developer-layers/app-shell-local-preview-smoke.md",
+      "sha256": "c3988c21abb53c1c25e7e67e4c2f33f273f618877f771500d2b1859ad011bfc0"
     },
     {
       "path": "docs-source/developer-layers/deploy-manifest-intake.md",
@@ -983,6 +1007,10 @@
     {
       "path": "scripts/ecosystem/check-app-shell-catalog-public-alpha.cjs",
       "sha256": "a7bfb2d0d9637c721b932534f7c8e2e5626977340d73311f59205b9978afa36b"
+    },
+    {
+      "path": "scripts/ecosystem/check-app-shell-local-preview-smoke-public-alpha.cjs",
+      "sha256": "e12dc4add3cc5cd4ded61fdd6846336c430c26c26c9c2ec114be07cc24d3adc8"
     },
     {
       "path": "scripts/deploy/check-deploy-manifest-intake-public-alpha.cjs",
@@ -1042,11 +1070,15 @@
     },
     {
       "path": "launch/evidence/pr-28-ecosystem-rc-import.json",
-      "sha256": "5f61565ed964ca0240b335a6f89329660b676c8f87da38a99e3b1404039bac92"
+      "sha256": "c4b75941df5abbf7cd1af8447b252c03f21a40acf05e9e983b5e41971fe35b3f"
     },
     {
       "path": "launch/evidence/app-shell-catalog-public-hardening-source.json",
-      "sha256": "b87bdf171ab369259688d02703e4851c352b4b71221c97d2de5080480b08bbea"
+      "sha256": "a96843a70d5caa73b770ef5b229f982052ab9adad95f684002a7ca46f11e14b9"
+    },
+    {
+      "path": "launch/evidence/app-shell-local-preview-smoke-public-alpha.json",
+      "sha256": "0381f8f467989f3ad889e97dda4af862a41333a0b49ce1b27c5a215e96f99468"
     },
     {
       "path": "launch/evidence/deploy-manifest-intake-public-alpha.json",
@@ -1132,6 +1164,8 @@
     "securityRedteamPageCreated": true,
     "appShellCatalogPageCreated": true,
     "appShellCatalogEvidenceFound": true,
+    "appShellLocalPreviewSmokePageCreated": true,
+    "appShellLocalPreviewSmokeEvidenceFound": true,
     "deployManifestIntakePageCreated": true,
     "deployManifestIntakeEvidenceFound": true,
     "truthTableCreated": true,
@@ -1199,6 +1233,9 @@
       "ecosystem manifest",
       "app shell catalog",
       "app shell local preview fixture",
+      "app shell local preview smoke",
+      "app shell local preview evidence",
+      "app shell preview promotion blockers",
       "app shell dependency-risk labels",
       "Claim Miniapp template",
       "Caster Punks index",
@@ -1274,6 +1311,7 @@
       "Ref-consensus local certificates are public-alpha only until public consensus, remote ref durability, normal git transport, storage, and rollback proof exist.",
       "Security redteam tooling is public-alpha only until external audit, managed infrastructure, public-node, custody, billing, rollback, and production operation proof exist.",
       "App and miniapp shell catalog is public-alpha only until native storage, native domain, runtime endpoint, security review, and rollback proof exist.",
+      "App and miniapp preview smoke is public-alpha local static proof only until public user browser, native storage, native domain, runtime endpoint, security review, and rollback proof exist.",
       "Deploy manifest intake is public-alpha only until managed runtime, native storage, native domain, custody, billing, rollback, and release-candidate proof exist.",
       "CasterAgents runtime state remains closed until safety-lock and redaction proof exists.",
       "QStorage and CasterCloud runtime endpoints still require operator proof.",

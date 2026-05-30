@@ -37,6 +37,7 @@ const filesChanged = [
   "apps/web/app/open-source/ref-consensus/page.tsx",
   "apps/web/app/open-source/security-redteam/page.tsx",
   "apps/web/app/open-source/app-shell-catalog/page.tsx",
+  "apps/web/app/open-source/app-shell-local-preview-smoke/page.tsx",
   "apps/web/app/open-source/deploy-manifest-intake/page.tsx",
   "apps/web/components/TruthStatusPill.tsx",
   "apps/web/components/TruthTable.tsx",
@@ -149,6 +150,8 @@ const filesChanged = [
   "apps/web/public/gitcaster-deploy-manifest-intake.md",
   "apps/web/public/gitcaster-cli-deploy-plan.md",
   "apps/web/public/gitcaster-cli-deploy-plan.json",
+  "apps/web/public/gitcaster-app-shell-local-preview-smoke.md",
+  "apps/web/public/gitcaster-app-shell-local-preview-smoke.json",
   "examples/worlds/local-agent-grid.world.json",
   "examples/ros/local-agent-bridge.launch.json",
   "examples/ros/local-agent-bridge.messages.json",
@@ -182,6 +185,7 @@ const filesChanged = [
   "docs-source/developer-layers/ref-consensus.md",
   "docs-source/developer-layers/security-redteam.md",
   "docs-source/developer-layers/app-shell-catalog.md",
+  "docs-source/developer-layers/app-shell-local-preview-smoke.md",
   "docs-source/developer-layers/deploy-manifest-intake.md",
   "docs/security/redteam-plan.md",
   "docs/security/crypto-audit-rehearsal.md",
@@ -192,6 +196,7 @@ const filesChanged = [
   "scripts/security/check-security-redteam-public-alpha.cjs",
   "scripts/ecosystem/check-pr28-ecosystem-rc.cjs",
   "scripts/ecosystem/check-app-shell-catalog-public-alpha.cjs",
+  "scripts/ecosystem/check-app-shell-local-preview-smoke-public-alpha.cjs",
   "scripts/deploy/check-deploy-manifest-intake-public-alpha.cjs",
   "scripts/cli/check-cli-deploy-plan-public-alpha.cjs",
   "scripts/security/run-beta-gate.cjs",
@@ -208,6 +213,7 @@ const filesChanged = [
   "launch/evidence/security-redteam-public-hardening-source.json",
   "launch/evidence/pr-28-ecosystem-rc-import.json",
   "launch/evidence/app-shell-catalog-public-hardening-source.json",
+  "launch/evidence/app-shell-local-preview-smoke-public-alpha.json",
   "launch/evidence/deploy-manifest-intake-public-alpha.json",
   "launch/evidence/cli-deploy-plan-local-dry-run.json",
   "launch/evidence/cli-deploy-plan-public-alpha.json",
@@ -267,6 +273,9 @@ const truthSurfaces = [
   "ecosystem manifest",
   "app shell catalog",
   "app shell local preview fixture",
+  "app shell local preview smoke",
+  "app shell local preview evidence",
+  "app shell preview promotion blockers",
   "app shell dependency-risk labels",
   "Claim Miniapp template",
   "Caster Punks index",
@@ -330,8 +339,11 @@ if (!statusTruth.includes("packages/ref-consensus") || !statusTruth.includes("ex
 if (!statusTruth.includes("scripts/security") || !statusTruth.includes("examples/security/redteam-hardening-plan.example.json") || !statusTruth.includes("launch/evidence/security-redteam-public-hardening-source.json")) blockers.push("status truth must include security redteam scripts, fixture, and evidence");
 if (!statusTruth.includes("packages/playground-templates")) blockers.push("status truth must include miniapp template package evidence");
 if (!statusTruth.includes("packages/ecosystem/src/app-shell-catalog.ts") || !statusTruth.includes("examples/app-shells/gitcaster-app-shell-catalog.local.json") || !statusTruth.includes("launch/evidence/app-shell-catalog-public-hardening-source.json")) blockers.push("status truth must include app shell catalog source, fixture, and evidence");
+if (!statusTruth.includes("scripts/ecosystem/check-app-shell-local-preview-smoke-public-alpha.cjs") || !statusTruth.includes("apps/web/public/gitcaster-app-shell-local-preview-smoke.json") || !statusTruth.includes("launch/evidence/app-shell-local-preview-smoke-public-alpha.json")) blockers.push("status truth must include app shell local preview smoke checker, public JSON, and evidence");
 if (!exists("apps/web/app/open-source/app-shell-catalog/page.tsx")) blockers.push("app shell catalog open-source page missing");
 if (!exists("apps/web/public/gitcaster-app-shell-catalog.json")) blockers.push("generated app shell catalog JSON missing");
+if (!exists("apps/web/app/open-source/app-shell-local-preview-smoke/page.tsx")) blockers.push("app shell local preview smoke page missing");
+if (!exists("apps/web/public/gitcaster-app-shell-local-preview-smoke.json")) blockers.push("generated app shell local preview smoke JSON missing");
 if (!statusTruth.includes("packages/deploy-manifests") || !statusTruth.includes("examples/deploy/local-deploy-manifest.example.json") || !statusTruth.includes("launch/evidence/deploy-manifest-intake-public-alpha.json")) blockers.push("status truth must include deploy manifest package, fixture, and evidence");
 if (!exists("apps/web/app/open-source/deploy-manifest-intake/page.tsx")) blockers.push("deploy manifest intake open-source page missing");
 if (!exists("apps/web/public/gitcaster-deploy-manifest-intake.json")) blockers.push("generated deploy manifest intake JSON missing");
@@ -368,7 +380,7 @@ const evidence = {
   createdAt: new Date().toISOString(),
   repoRoot,
   filesChanged,
-  commandsRun: ["pnpm run api-tutorials:check", "pnpm run miniapp-templates:check", "pnpm run app-shell-catalog:check", "pnpm run deploy-manifest:check", "pnpm run sdk:check", "pnpm run cli:check", "pnpm run cli-deploy-plan:check", "pnpm run git-remote:check", "pnpm run mcp:check", "pnpm run node-api:check", "pnpm run repo-records:check", "pnpm run push-local-object-store:check", "pnpm run ref-consensus:check", "pnpm run security-redteam:check", "pnpm run simulator:check", "pnpm run ros:check", "node scripts/web/check-web-truth-table.cjs"],
+  commandsRun: ["pnpm run api-tutorials:check", "pnpm run miniapp-templates:check", "pnpm run app-shell-catalog:check", "pnpm run app-shell-preview-smoke:check", "pnpm run deploy-manifest:check", "pnpm run sdk:check", "pnpm run cli:check", "pnpm run cli-deploy-plan:check", "pnpm run git-remote:check", "pnpm run mcp:check", "pnpm run node-api:check", "pnpm run repo-records:check", "pnpm run push-local-object-store:check", "pnpm run ref-consensus:check", "pnpm run security-redteam:check", "pnpm run simulator:check", "pnpm run ros:check", "node scripts/web/check-web-truth-table.cjs"],
   passed: blockers.length === 0,
   failed: blockers.length > 0,
   blockers,
@@ -404,6 +416,8 @@ const evidence = {
     securityRedteamPageCreated: exists("apps/web/app/open-source/security-redteam/page.tsx"),
     appShellCatalogPageCreated: exists("apps/web/app/open-source/app-shell-catalog/page.tsx"),
     appShellCatalogEvidenceFound: exists("launch/evidence/app-shell-catalog-public-hardening-source.json"),
+    appShellLocalPreviewSmokePageCreated: exists("apps/web/app/open-source/app-shell-local-preview-smoke/page.tsx"),
+    appShellLocalPreviewSmokeEvidenceFound: exists("launch/evidence/app-shell-local-preview-smoke-public-alpha.json"),
     deployManifestIntakePageCreated: exists("apps/web/app/open-source/deploy-manifest-intake/page.tsx"),
     deployManifestIntakeEvidenceFound: exists("launch/evidence/deploy-manifest-intake-public-alpha.json"),
     truthTableCreated: truthSurfaces.every((surface) => statusTruth.includes(surface)),
@@ -479,6 +493,7 @@ const evidence = {
       "Ref-consensus local certificates are public-alpha only until public consensus, remote ref durability, normal git transport, storage, and rollback proof exist.",
       "Security redteam tooling is public-alpha only until external audit, managed infrastructure, public-node, custody, billing, rollback, and production operation proof exist.",
       "App and miniapp shell catalog is public-alpha only until native storage, native domain, runtime endpoint, security review, and rollback proof exist.",
+      "App and miniapp preview smoke is public-alpha local static proof only until public user browser, native storage, native domain, runtime endpoint, security review, and rollback proof exist.",
       "Deploy manifest intake is public-alpha only until managed runtime, native storage, native domain, custody, billing, rollback, and release-candidate proof exist.",
       "CasterAgents runtime state remains closed until safety-lock and redaction proof exists.",
       "QStorage and CasterCloud runtime endpoints still require operator proof.",

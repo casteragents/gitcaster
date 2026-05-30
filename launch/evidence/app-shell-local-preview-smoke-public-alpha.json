@@ -1,0 +1,176 @@
+{
+  "type": "gitcaster.app-shell-local-preview-smoke.evidence.v1",
+  "createdAt": "2026-05-30T13:02:32.571Z",
+  "status": "passed",
+  "title": "GitCaster app and miniapp local preview smoke",
+  "localPreviewOnly": true,
+  "catalog": "apps/web/public/gitcaster-app-shell-catalog.json",
+  "fixture": "examples/app-shells/gitcaster-app-shell-catalog.local.json",
+  "publicJson": "apps/web/public/gitcaster-app-shell-local-preview-smoke.json",
+  "publicMarkdown": "apps/web/public/gitcaster-app-shell-local-preview-smoke.md",
+  "website": "apps/web/app/open-source/app-shell-local-preview-smoke/page.tsx",
+  "commandsRun": [
+    "pnpm run app-shell-catalog:check",
+    "node scripts/ecosystem/check-app-shell-local-preview-smoke-public-alpha.cjs"
+  ],
+  "claims": {
+    "nativeStoragePublished": false,
+    "nativeDomainMapped": false,
+    "managedRuntimeAvailable": false,
+    "runtimeEndpointLive": false,
+    "rollbackVerified": false,
+    "productionReady": false
+  },
+  "routeSmokes": [
+    {
+      "route": "/ecosystem",
+      "html": "docs/ecosystem/index.html",
+      "expectedText": "GitCaster ecosystem",
+      "status": "passed"
+    },
+    {
+      "route": "/ecosystem/caster-claim-miniapp",
+      "html": "docs/ecosystem/caster-claim-miniapp/index.html",
+      "expectedText": "Caster Claim Miniapp",
+      "status": "passed"
+    },
+    {
+      "route": "/open-source/app-shell-catalog",
+      "html": "docs/open-source/app-shell-catalog/index.html",
+      "expectedText": "App shell catalog",
+      "status": "passed"
+    },
+    {
+      "route": "/ecosystem#caster-intelligence",
+      "entryId": "caster-intelligence",
+      "html": "docs/ecosystem/index.html",
+      "expectedText": "Caster Intelligence",
+      "status": "passed"
+    },
+    {
+      "route": "/ecosystem/caster-claim-miniapp",
+      "entryId": "caster-claim-miniapp",
+      "html": "docs/ecosystem/caster-claim-miniapp/index.html",
+      "expectedText": "Caster Claim Miniapp",
+      "status": "passed"
+    },
+    {
+      "route": "/ecosystem#casteragents",
+      "entryId": "casteragents",
+      "html": "docs/ecosystem/index.html",
+      "expectedText": "CasterAgents",
+      "status": "passed"
+    },
+    {
+      "route": "/ecosystem#casterai",
+      "entryId": "casterai",
+      "html": "docs/ecosystem/index.html",
+      "expectedText": "CasterAI",
+      "status": "passed"
+    },
+    {
+      "route": "/ecosystem#casterapp",
+      "entryId": "casterapp",
+      "html": "docs/ecosystem/index.html",
+      "expectedText": "CasterApp",
+      "status": "passed"
+    },
+    {
+      "route": "/ecosystem#tapcaster",
+      "entryId": "tapcaster",
+      "html": "docs/ecosystem/index.html",
+      "expectedText": "TapCaster",
+      "status": "passed"
+    },
+    {
+      "route": "/ecosystem#casterchain-agents",
+      "entryId": "casterchain-agents",
+      "html": "docs/ecosystem/index.html",
+      "expectedText": "CasterChain Agents",
+      "status": "passed"
+    },
+    {
+      "route": "/ecosystem#caster-punks",
+      "entryId": "caster-punks",
+      "html": "docs/ecosystem/index.html",
+      "expectedText": "Caster Punks",
+      "status": "passed"
+    },
+    {
+      "route": "/ecosystem#castergames-xgames",
+      "entryId": "castergames-xgames",
+      "html": "docs/ecosystem/index.html",
+      "expectedText": "CasterGames / xgames",
+      "status": "passed"
+    },
+    {
+      "route": "/ecosystem#farcaster-miniapps",
+      "entryId": "farcaster-miniapps",
+      "html": "docs/ecosystem/index.html",
+      "expectedText": "Farcaster miniapps",
+      "status": "passed"
+    },
+    {
+      "route": "/ecosystem#agent-workspace-skills",
+      "entryId": "agent-workspace-skills",
+      "html": "docs/ecosystem/index.html",
+      "expectedText": "Agent workspace/skills",
+      "status": "passed"
+    }
+  ],
+  "blockers": [],
+  "artifacts": [
+    {
+      "path": "apps/web/public/gitcaster-app-shell-catalog.json",
+      "sha256": "8981eeb4e0f40aceee5f68f869dc06aca28139316ebfc69a285daaafe89283e3"
+    },
+    {
+      "path": "examples/app-shells/gitcaster-app-shell-catalog.local.json",
+      "sha256": "d0d965418373a21a7d30923085d53ae922f66b506830099ac9787eec4bb72978"
+    },
+    {
+      "path": "apps/web/app/ecosystem/page.tsx",
+      "sha256": "2cda753b0c6e47c3b60cd1021a61449e8a97ec51163f6055c68dce3eddd7e49f"
+    },
+    {
+      "path": "apps/web/app/ecosystem/caster-claim-miniapp/page.tsx",
+      "sha256": "a19b9390698642a20b140c4d1eed33ed47f3df641bafaee9950e0894b2a75bbe"
+    },
+    {
+      "path": "apps/web/app/open-source/app-shell-catalog/page.tsx",
+      "sha256": "dc1a512d33b6b9c481f69dc725268b56b4ade97e996c3bfd67e5c081b7409276"
+    },
+    {
+      "path": "apps/web/app/open-source/app-shell-local-preview-smoke/page.tsx",
+      "sha256": "fea1b26d0f74db5e23f92f32220a78153812202ac3498eef274bed8d17f7f2ce"
+    },
+    {
+      "path": "scripts/ecosystem/check-app-shell-catalog-public-alpha.cjs",
+      "sha256": "a7bfb2d0d9637c721b932534f7c8e2e5626977340d73311f59205b9978afa36b"
+    },
+    {
+      "path": "scripts/ecosystem/check-app-shell-local-preview-smoke-public-alpha.cjs",
+      "sha256": "e12dc4add3cc5cd4ded61fdd6846336c430c26c26c9c2ec114be07cc24d3adc8"
+    },
+    {
+      "path": "docs-source/developer-layers/app-shell-local-preview-smoke.md",
+      "sha256": "c3988c21abb53c1c25e7e67e4c2f33f273f618877f771500d2b1859ad011bfc0"
+    },
+    {
+      "path": "apps/web/public/gitcaster-app-shell-local-preview-smoke.json",
+      "sha256": "ea3ca9b8ca686e7441fe904b7cb1da11796ff2fd5ae73d3deb828a3c46208ba3"
+    },
+    {
+      "path": "apps/web/public/gitcaster-app-shell-local-preview-smoke.md",
+      "sha256": "20e5d83291a7bcbb28527433c282b5b28c061cff5da7a6edc0ec3c642bce1d99"
+    }
+  ],
+  "nextProofRequired": [
+    "public user browser smoke proof",
+    "per-shell security review proof",
+    "native storage publish and read proof",
+    "native domain route proof",
+    "managed runtime endpoint proof",
+    "rollback proof for live promotion"
+  ]
+}

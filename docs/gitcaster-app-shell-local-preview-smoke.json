@@ -1,0 +1,147 @@
+{
+  "type": "gitcaster.app-shell-local-preview-smoke.public-alpha.v1",
+  "status": "passed",
+  "localPreviewOnly": true,
+  "createdAt": "2026-05-30T12:55:42.604Z",
+  "catalog": {
+    "path": "apps/web/public/gitcaster-app-shell-catalog.json",
+    "entriesTotal": 11,
+    "miniappShells": 2,
+    "localFixtures": 2
+  },
+  "staticExport": {
+    "root": "docs",
+    "routeSmokeCount": 14
+  },
+  "claims": {
+    "nativeStoragePublished": false,
+    "nativeDomainMapped": false,
+    "managedRuntimeAvailable": false,
+    "runtimeEndpointLive": false,
+    "rollbackVerified": false,
+    "productionReady": false
+  },
+  "blockedCapabilities": [
+    {
+      "id": "native-storage",
+      "status": "blocked_external"
+    },
+    {
+      "id": "native-domain",
+      "status": "blocked_external"
+    },
+    {
+      "id": "managed-runtime",
+      "status": "blocked_external"
+    },
+    {
+      "id": "runtime-endpoint",
+      "status": "blocked_external"
+    },
+    {
+      "id": "production-readiness",
+      "status": "blocked_external"
+    },
+    {
+      "id": "rollback",
+      "status": "blocked_external"
+    }
+  ],
+  "routeSmokes": [
+    {
+      "route": "/ecosystem",
+      "html": "docs/ecosystem/index.html",
+      "expectedText": "GitCaster ecosystem",
+      "status": "passed"
+    },
+    {
+      "route": "/ecosystem/caster-claim-miniapp",
+      "html": "docs/ecosystem/caster-claim-miniapp/index.html",
+      "expectedText": "Caster Claim Miniapp",
+      "status": "passed"
+    },
+    {
+      "route": "/open-source/app-shell-catalog",
+      "html": "docs/open-source/app-shell-catalog/index.html",
+      "expectedText": "App shell catalog",
+      "status": "passed"
+    },
+    {
+      "route": "/ecosystem#caster-intelligence",
+      "entryId": "caster-intelligence",
+      "html": "docs/ecosystem/index.html",
+      "expectedText": "Caster Intelligence",
+      "status": "passed"
+    },
+    {
+      "route": "/ecosystem/caster-claim-miniapp",
+      "entryId": "caster-claim-miniapp",
+      "html": "docs/ecosystem/caster-claim-miniapp/index.html",
+      "expectedText": "Caster Claim Miniapp",
+      "status": "passed"
+    },
+    {
+      "route": "/ecosystem#casteragents",
+      "entryId": "casteragents",
+      "html": "docs/ecosystem/index.html",
+      "expectedText": "CasterAgents",
+      "status": "passed"
+    },
+    {
+      "route": "/ecosystem#casterai",
+      "entryId": "casterai",
+      "html": "docs/ecosystem/index.html",
+      "expectedText": "CasterAI",
+      "status": "passed"
+    },
+    {
+      "route": "/ecosystem#casterapp",
+      "entryId": "casterapp",
+      "html": "docs/ecosystem/index.html",
+      "expectedText": "CasterApp",
+      "status": "passed"
+    },
+    {
+      "route": "/ecosystem#tapcaster",
+      "entryId": "tapcaster",
+      "html": "docs/ecosystem/index.html",
+      "expectedText": "TapCaster",
+      "status": "passed"
+    },
+    {
+      "route": "/ecosystem#casterchain-agents",
+      "entryId": "casterchain-agents",
+      "html": "docs/ecosystem/index.html",
+      "expectedText": "CasterChain Agents",
+      "status": "passed"
+    },
+    {
+      "route": "/ecosystem#caster-punks",
+      "entryId": "caster-punks",
+      "html": "docs/ecosystem/index.html",
+      "expectedText": "Caster Punks",
+      "status": "passed"
+    },
+    {
+      "route": "/ecosystem#castergames-xgames",
+      "entryId": "castergames-xgames",
+      "html": "docs/ecosystem/index.html",
+      "expectedText": "CasterGames / xgames",
+      "status": "passed"
+    },
+    {
+      "route": "/ecosystem#farcaster-miniapps",
+      "entryId": "farcaster-miniapps",
+      "html": "docs/ecosystem/index.html",
+      "expectedText": "Farcaster miniapps",
+      "status": "passed"
+    },
+    {
+      "route": "/ecosystem#agent-workspace-skills",
+      "entryId": "agent-workspace-skills",
+      "html": "docs/ecosystem/index.html",
+      "expectedText": "Agent workspace/skills",
+      "status": "passed"
+    }
+  ]
+}

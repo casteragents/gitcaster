@@ -66,6 +66,8 @@ export const evidenceLinks: EvidenceLink[] = [
   { label: "App shell catalog source", path: "packages/ecosystem/src/app-shell-catalog.ts", status: "public-alpha" },
   { label: "App shell catalog fixture", path: "examples/app-shells/gitcaster-app-shell-catalog.local.json", status: "public-alpha" },
   { label: "App shell catalog evidence", path: "launch/evidence/app-shell-catalog-public-hardening-source.json", status: "public-alpha" },
+  { label: "App shell local preview smoke", path: "apps/web/public/gitcaster-app-shell-local-preview-smoke.json", status: "public-alpha" },
+  { label: "App shell local preview evidence", path: "launch/evidence/app-shell-local-preview-smoke-public-alpha.json", status: "public-alpha" },
   { label: "QStorage publish", path: "blocked: CASTER_QSTORAGE_ENDPOINT", status: "requires-endpoint" },
   { label: "CasterCloud deploy", path: "blocked: CASTER_CLOUD_DEPLOY_ENDPOINT", status: "requires-endpoint" },
   { label: ".caster domains", path: "blocked: CASTER_DOMAIN_REGISTRY_ENDPOINT", status: "requires-registry" },

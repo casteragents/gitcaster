@@ -56,6 +56,15 @@ export default function OpenSourcePage() {
         </div>
         <div className="grid">
           <div className="card">
+            <h3>App shell local preview smoke</h3>
+            <p>Static route smoke proof now checks the app and miniapp preview pages, catalog names, redacted evidence, and blocked promotion labels.</p>
+            <div className="mini-list">
+              <a href={sitePath("/open-source/app-shell-local-preview-smoke")}>Website page</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/scripts/ecosystem">Checker</a>
+              <a href="https://github.com/casteragents/gitcaster/tree/main/launch/evidence/app-shell-local-preview-smoke-public-alpha.json">Evidence</a>
+            </div>
+          </div>
+          <div className="card">
             <h3>CLI deploy plan dry-run</h3>
             <p>The CLI can now read local deploy manifests, write redacted plan evidence, and keep runtime, custody, billing, storage, domain, rollback, and release promotion blocked.</p>
             <div className="mini-list">

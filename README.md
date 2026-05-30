@@ -14,6 +14,7 @@ This public repository is intentionally scoped for contribution and website visi
 - `packages/ros-adapters` and `examples/ros`: local ROS-style launch, topic, and message bridge helpers.
 - `packages/api-tutorials` and `examples/api`: local API and SDK request-shape tutorials with placeholder-only auth examples.
 - `packages/playground-templates` and `examples/miniapps`: local miniapp shell templates, manifests, and blocked-runtime proof fixtures.
+- `packages/ecosystem`, `examples/app-shells`, and `apps/web/app/ecosystem`: public-alpha app and miniapp shell catalog plus local preview smoke proof.
 - `packages/sdk-typescript` and `examples/sdk`: public-alpha TypeScript client helpers with proof-gated runtime methods.
 - `apps/cli` and `examples/cli`: public-alpha local command helpers for payload building, MCP serve planning, and redacted deploy-plan dry-runs.
 - `apps/git-remote-gitcaster` and `examples/git-remote`: public-alpha remote-helper source and blocked transport fixtures.
@@ -51,6 +52,7 @@ Every public GitCaster push should first post a Casterchain app update from `@ca
 pnpm install
 pnpm run api-tutorials:check
 pnpm run miniapp-templates:check
+pnpm run app-shell-preview-smoke:check
 pnpm run sdk:check
 pnpm run cli:check
 pnpm run cli-deploy-plan:check
